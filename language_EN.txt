@@ -1,0 +1,27 @@
+﻿;
+This game will make you Angry!;Title
+Continue;
+Get angry!;
+Don't get angry!;
+Help;
+Info;
+Help;
+Enter Story-Code;
+Back;
+A  Y U NO WORK!-Studios production. Pre-Alpha 0.00090;
+Version;
+Click Get angry! to start the game. Defend the world against the cruel swots!;
+Help for dummies;
+Language;
+Deutsch;
+English;
+------------------------------;
+This game will make you Angry!;
+Menu;
+Attacks;
+TEST Attack1;
+TEST Attack2;
+TEST Specialattack1;
+Alive swots: ;
+Kills: ;
+Glasses: ;
