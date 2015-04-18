@@ -70,7 +70,8 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Erstellt das Spiel-fenster.
      */
     public void Game() {
-        setLanguage(SetLanguage.language);
+        //setLanguage(SetLanguage.language);
+        setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
         gamescreen = new JFrame(getWords(18));
         //MenueLeiste();

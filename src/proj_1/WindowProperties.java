@@ -27,7 +27,8 @@ public abstract class WindowProperties {
 
     public Clip clip;
     public String[] words;
-
+    public static String language = "EN";//TODO: Auf sinnvollere Position legen
+    
     /*
      Fügt Hintergrundmusik ein. Das abgespielte Lied muss unter dem Pfad 
      "proj_1/ScreenLaun/" zu finden sin. Der Name des Lieds wird, mit 

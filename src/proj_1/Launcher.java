@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Scanner;
 
-
 /**
  *
  * @author Wir
@@ -39,7 +38,7 @@ public class Launcher extends Cutscenes {
      * Erzeugt den Launcher
      */
     public void Launcher() {
-        setLanguage(SetLanguage.language);
+        setLanguage(language);
         launcher = new JFrame(getWords(1));
         MenueLeiste();
 
@@ -106,6 +105,28 @@ public class Launcher extends Cutscenes {
             }
         });
         hilfeMenue.add(Spielhilfe);
+
+        
+        JMenu sprachenMenu = new JMenu("Sprachen");//TODO: Sprache einfügen
+
+        menuezeile.add(sprachenMenu);
+
+        JMenuItem languageGer = new JMenuItem("Deutsch");//TODO: Sprache einfügen
+        languageGer.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                sprachReset("DE");
+            }
+        });
+        sprachenMenu.add(languageGer);
+
+        JMenuItem languageEng = new JMenuItem("Englisch");//TODO: Sprache einfügen
+        languageEng.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                sprachReset("EN");
+            }
+        });
+        sprachenMenu.add(languageEng);
+
 
     }
     /*
@@ -215,6 +236,22 @@ public class Launcher extends Cutscenes {
         JOptionPane.showMessageDialog(launcher, getWords(10),
                 getWords(11),
                 JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /*
+     Wählt die Sprache aus und startet dann den Launcher neu. Die mitgegebene 
+     String ist der Name der Sprache.
+     */
+    private void sprachReset(String sprache) {
+        language = sprache;
+        launcher.setVisible(false);
+        stopBgMusic();
+        System.out.println("Launcher wird unsichtbar und anschließend zerstört"
+                + "(dispose). Neuer Launcher wird gestartet.");
+        launcher.dispose();
+        Launcher l = new Launcher();
+        l.Launcher();
+
     }
 
     /*
