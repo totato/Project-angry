@@ -265,8 +265,13 @@ public class Launcher extends Cutscenes {
      Versteckt den Launcher. Soll Später das Spiel beginnen.
      */
     private void beginnen() {
-        Game g = new Game();
-        g.Game();
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new GameGUI();
+            }
+        });
+       // Game g = new Game();
+        //g.Game();
         stopBgMusic();
         launcher.setVisible(false);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
