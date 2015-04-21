@@ -27,6 +27,7 @@ public abstract class WindowProperties {
 
     public Clip clip;
     public String[] words;
+    public String[] saveData;
     public static String language = "EN";//TODO: Auf sinnvollere Position legen
     
     /*
@@ -134,6 +135,32 @@ public abstract class WindowProperties {
 
     public String getWords(int line) {
         return words[line];
+    }
+    
+    /*Lädt das Spiel aus einem von 10 Slots. Jeder Slot ist ein .txt Dokument.
+    Die Slots haben nummern von 0 bis 9, namen wären also
+    "Slot_1.txt".
+    Je nach parametern wird etwas im eigentlichen Spiel verändert.
+    
+    */
+    public void ladeSpiel(){
+        try {
+            BufferedReader reader = new BufferedReader(
+                    new FileReader("Save.txt"));
+            int i = 0;
+            String zeile = "";
+            while ((zeile = reader.readLine()) != null && i < saveData.length) {
+                String[] values = zeile.split("\\;");
+                saveData[i] = values[0];
+                i++;
+            }
+        } catch (IOException ioex) {
+            System.err.println("Datei nicht Gefunden");
+        }
+    }
+       
+    public String getSave(int line) {
+        return saveData[line];
     }
 
 }
