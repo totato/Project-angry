@@ -7,23 +7,16 @@ package proj_1;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.KeyStroke;
-import javax.swing.SpringLayout;
 import javax.swing.Timer;
 
 /**
@@ -34,13 +27,13 @@ import javax.swing.Timer;
  */
 public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu müde dafür.
 
-    private JFrame gamescreen;
+    private JFrame gamescreen;      //TODO: Modifizieren sobald GUI fertig ist!
     private JPanel gameCard;
     private JLabel backgroundGame;
     private JPanel cutsceneCard;
     private JLabel backgroundMenu;
     private JLabel cutscenePicture;
-    private JPanel gamecards; //Merke: gameCard != gamecards. Vielleicht bessere Namen einfügen?
+    private JPanel gamecards;
     private CardLayout clgame;
     private JButton buttonToMenu;
     private JButton buttonToGame;
@@ -50,8 +43,6 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     private JLabel main;
     private int beendeteLevel;//Level die schon beendet wurden.
 
-    //Die einzelnen Buttons, da man sie über externe Methoden drückbar/
-    //nicht drückbar machen muss.
     private JButton attack1;//Button für permanente Angriffe
     private JButton attack2;
     //...
@@ -70,11 +61,9 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Erstellt das Spiel-fenster.
      */
     public void Game() {
-        //setLanguage(SetLanguage.language);
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
         gamescreen = new JFrame(getWords(18));
-        //MenueLeiste();
         // Erzeugt die Karten für das Fenster
         createCards(gamescreen.getContentPane());
 
@@ -93,12 +82,15 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         //a. jeweils nach cutscenes
         //b. nach beendigung eines levels
         //feuern lassen.
+        loadGame();
     }
 
     /*
      Erzeugt die Karten
      Jede Karte ist als JPanel definiert, da sie im grunde nur die enthaltenen 
      Objekte wie z.B Textfenster zusammenfasst.
+    
+     Wird, sobald GameGUI fertig ist, wahrscheinlich redundant.
      */
     private void createCards(Container pane) {
 
@@ -222,11 +214,9 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
                 changeCard("g card");
             }
         });
-        
+
         buttonAbortGame = new JButton("");
         setButtonBackground(buttonAbortGame, "GameIcon.png");//TODO: einfügen
-
-        
 
         buttonAbortGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -235,15 +225,15 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         });
         menuCard.add(buttonToGame, BorderLayout.SOUTH);
         menuCard.add(buttonAbortGame, BorderLayout.EAST);//TODO: In ein 
-                                                //anständiges Layout einfügen
+        //anständiges Layout einfügen
 
         cutsceneCard = new JPanel();//Wird später für Cutscenes genutzt.
 
         cutsceneCard.setLayout(new BorderLayout());
         cutscenePicture = new JLabel();
         cutsceneCard.add(cutscenePicture, BorderLayout.NORTH);
-        
-         buttonBackToGame = new JButton(getWords(9));
+
+        buttonBackToGame = new JButton(getWords(9));
         buttonBackToGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 changeCard("g card");
@@ -252,13 +242,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         cutsceneCard.add(buttonBackToGame, BorderLayout.SOUTH);
 
         cutsceneCard.add(buttonBackToGame, BorderLayout.SOUTH);
-        
-        
-        
-        
-        
-        
-        
+
         gamecards = new JPanel(new CardLayout());
 
         gamecards.add(gameCard, "g card");
@@ -403,26 +387,39 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
                 changeCard("c card");
                 //TODO: Level wird auf x gesetzt
                 levelReset(100);
-            }
-            if (beendeteLevel == 1) {
+            } else if (beendeteLevel == 1) {
                 //TODO: Zweite cutscene wird abgespielt
                 changeCard("c card");
                 //TODO: Level wird auf x gesetzt
                 levelReset(1000);
-            }
-            if (beendeteLevel == 2) {
+            } else if (beendeteLevel == 2) {
                 //TODO: Zweite cutscene wird abgespielt
                 changeCard("c card");
                 //TODO: Level wird auf x gesetzt
                 levelReset(10000);
-            }
-            //Beginnt Cutscene und schiebt sie ins Fenster
-
+            } else //Beginnt Cutscene und schiebt sie ins Fenster
             if (lebendeStreber <= 0) {//Keine Level mehr verfügbar!
                 System.out.println("Error: this should not happen!");
                 changeCard("c card");
             }
             beendeteLevel++;
+        }
+    }
+
+    /*
+     Lädt das Spiel und ändert die Parameter entsprechend.
+    
+     TODO: verschieben?
+     */
+    private void loadGame() {
+        beendeteLevel = Integer.parseInt(ladeSpiel(1));
+        brillen = Integer.parseInt(ladeSpiel(2));
+        lebendeStreber = Integer.parseInt(ladeSpiel(3));
+        getoeteteStreber = Integer.parseInt(ladeSpiel(4));
+        if (beendeteLevel <= 10) {//Prueft ob wir im Endlosspiel sind TODO!
+            buttonUpdate();
+        } else {
+            buttonEndlessUpdate();
         }
     }
     /*
@@ -431,11 +428,12 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      */
 
     private void backToLauncher() {
+        speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
         Launcher l = new Launcher();
         l.Launcher();
         //TODO: Musik vom Spiel beenden.
         gamescreen.setVisible(false);
-        
+
         System.out.println("gamescreen wird unsichtbar und anschließend zerstört"
                 + "(dispose)");
         gamescreen.dispose();

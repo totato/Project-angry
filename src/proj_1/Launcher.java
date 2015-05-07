@@ -9,13 +9,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.Scanner;
 
 /**
  *
@@ -31,7 +24,6 @@ public class Launcher extends Cutscenes {
     private CardLayout cl;
     private JPanel cards;
     private JPanel cutsceneCard;
-    //private String language = "DE";
     private JMenuBar menuezeile;
 
     /**
@@ -265,13 +257,15 @@ public class Launcher extends Cutscenes {
      Versteckt den Launcher. Soll Später das Spiel beginnen.
      */
     private void beginnen() {
+        /*
          java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
     new GameGUI();
           }
       });
-      //Game g = new Game();
-       // g.Game();
+                */
+      Game g = new Game();
+        g.Game();
         stopBgMusic();
         launcher.setVisible(false);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"

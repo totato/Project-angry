@@ -8,7 +8,7 @@ Info;
 Help;
 Enter Story-Code;
 Back;
-A  Y U NO WORK!-Studios production. Pre-Alpha 0.00102;
+A  Y U NO WORK!-Studios production. Pre-Alpha 0.00090;
 Version;
 Click Get angry! to start the game. Defend the world against the cruel swots!;
 Help for dummies;

@@ -8,7 +8,7 @@ Info;
 Hilfe;
 Story-Code eingeben;
 Zurück;
-Eine Y U NO WORK!-Studios Produktion. Pre-Alpha 0.00102;
+Eine Y U NO WORK!-Studios Produktion. Pre-Alpha 0.00090;
 Version;
 Klicke auf Get angry! Um zum Spiel zu gelangen. Verteidige dort die Welt gegen die grausamen Streber!;
 Hilfe für Dummies;

@@ -1,18 +1,5 @@
-;
-(Levelnummer);
-(Brillenzahl);
-(Leb.Streber);
-(Tote Streber);
-(Skill1[true]);
-(Skill2[true]);
-(Skill3[false]);
-(Skill4[false]);
-(Skill5[false]);
-(Skill6[true]);
-(Skill7[true]);
-(Skill8[true]);
-{[(...)]}
-
-(Waffe1[true]);//-1 wenn noch nicht freigeschaltet
-(Waffe2[true]);//-1 wenn noch nicht freigeschaltet
-{[(...)]}
+This is your save file. Stop cheating, start playing!
+2
+311
+89
+911

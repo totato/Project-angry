@@ -12,7 +12,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 /**
  *
  * @author (Vermutlich) drei Leute die nichts besseres zu tun haben. Version
- * 0.00100
+ * 0.00102
  */
 public class Main {
 

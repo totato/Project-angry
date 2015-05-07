@@ -17,7 +17,7 @@ import static proj_1.WindowProperties.language;
  *
  * @author Vika
  */
-public class GameGUI extends Cutscenes {
+public class GameGUI extends Game {
 
     private JFrame gamescreen;
     private JPanel gameCard;
@@ -84,11 +84,9 @@ public class GameGUI extends Cutscenes {
     // End of variables declaration     
 
     public GameGUI() {
-        //setLanguage(SetLanguage.language);
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
         gamescreen = new JFrame(getWords(18));
-        //MenueLeiste();
         // Erzeugt die Karten für das Fenster
         createCards(gamescreen.getContentPane());
 

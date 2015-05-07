@@ -5,7 +5,6 @@
  */
 package proj_1;
 
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,6 +18,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Zwei Leute die nichts besseres zu tun haben
@@ -29,7 +31,7 @@ public abstract class WindowProperties {
     public String[] words;
     public String[] saveData;
     public static String language = "EN";//TODO: Auf sinnvollere Position legen
-    
+
     /*
      Fügt Hintergrundmusik ein. Das abgespielte Lied muss unter dem Pfad 
      "proj_1/ScreenLaun/" zu finden sin. Der Name des Lieds wird, mit 
@@ -136,31 +138,65 @@ public abstract class WindowProperties {
     public String getWords(int line) {
         return words[line];
     }
-    
-    /*Lädt das Spiel aus einem von 10 Slots. Jeder Slot ist ein .txt Dokument.
-    Die Slots haben nummern von 0 bis 9, namen wären also
-    "Slot_1.txt".
-    Je nach parametern wird etwas im eigentlichen Spiel verändert.
-    
-    */
-    public void ladeSpiel(){
+
+    public String ladeSpiel(int line) {
         try {
-            BufferedReader reader = new BufferedReader(
-                    new FileReader("Save.txt"));
-            int i = 0;
-            String zeile = "";
-            while ((zeile = reader.readLine()) != null && i < saveData.length) {
-                String[] values = zeile.split("\\;");
-                saveData[i] = values[0];
-                i++;
+            FileReader fr = new FileReader("Save.txt");
+            BufferedReader textReader = new BufferedReader(fr);
+            saveData = new String[10];
+            int i;
+            for (i = 0; i < 5; i++) {
+                saveData[i] = textReader.readLine();
             }
+        textReader.close( );
         } catch (IOException ioex) {
             System.err.println("Datei nicht Gefunden");
         }
+        return saveData[line];
+
+        /*
+         saveData = new String[50];//TODO: Zahl ändern
+         try {
+         BufferedReader reader = new BufferedReader(
+         new FileReader("Save.txt"));
+         int i = 0;
+         String zeile = "";
+         while ((zeile = reader.readLine()) != null && i < saveData.length) {
+         String[] values = zeile.split("\\;");
+         saveData[i] = values[0];
+         i++;
+         }
+         } catch (IOException ioex) {
+         System.err.println("Datei nicht Gefunden");
+         }*/
     }
-       
+
     public String getSave(int line) {
         return saveData[line];
     }
 
+    /*Schreibt alles mitgegebene in eine .txt-datei, die man im projektordner 
+     findet. TODO: Der Pfad muss angepasst werden, so dass die Datei 
+     mitkompiliert.
+    
+     TODO: Das muss schöner gehen. e.v. getter/setter oder was ähnliches?
+    
+     TODO: Fähigkeiten und Waffen hinzufügen
+     */
+    public void speichereSpiel(int levelnr, int brillen, int lebStre,
+            int totStre) {
+        try {
+            FileWriter saveFinder = new FileWriter("Save.txt");
+            PrintWriter saveWriter = new PrintWriter(saveFinder);
+            saveWriter.println("This is your save file. Stop cheating, "
+                                     + "start playing!");
+            saveWriter.println(levelnr);//Levelnummer
+            saveWriter.println(brillen);
+            saveWriter.println(lebStre);
+            saveWriter.println(totStre);
+            saveWriter.close();
+        } catch (IOException ioex) {
+            System.err.println("Datei nicht Gefunden");
+        }
+    }
 }
