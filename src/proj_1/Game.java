@@ -90,14 +90,13 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Jede Karte ist als JPanel definiert, da sie im grunde nur die enthaltenen 
      Objekte wie z.B Textfenster zusammenfasst.
     
-     Wird, sobald GameGUI fertig ist, wahrscheinlich redundant.
+    TODO: Wird, sobald GameGUI fertig ist, wahrscheinlich redundant.
      */
     private void createCards(Container pane) {
 
         JPanel gameCard = new JPanel();
         gameCard.addKeyListener(null);
-        gameCard.setLayout(new BorderLayout()); //TODO: Welches Layout 
-        //soll das Spiel haben?
+        gameCard.setLayout(new BorderLayout());
 
         JPanel p1 = new JPanel();
         p1.setLayout(new BorderLayout());
@@ -143,7 +142,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         buy1 = new JButton(getWords(23));//TODO: Lesen aus Sprachdatei
         buy1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                specialKill(200, 100);
+                specialKill(200, 100, 0);
             }
         });
 
@@ -224,8 +223,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
             }
         });
         menuCard.add(buttonToGame, BorderLayout.SOUTH);
-        menuCard.add(buttonAbortGame, BorderLayout.EAST);//TODO: In ein 
-        //anständiges Layout einfügen
+        menuCard.add(buttonAbortGame, BorderLayout.EAST);
 
         cutsceneCard = new JPanel();//Wird später für Cutscenes genutzt.
 
@@ -277,6 +275,26 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         timer.start();
         System.out.println("Menu gewechselt");
     }
+    
+    /*
+    Sorgt dafür das eine Wegwerfwaffe gekauft wird. Die Mitgegebenen Parameter
+    sind dabei die Waffe (item), die kosten der Waffe (cost) und die
+    Nummer, in der die Waffe gekauft werden soll (number). 
+    Falls diese -1 ist, die Waffe also noch nicht freigeschaltet wurde,
+    wird nicht gekauft, selbiges bei fehlender Brillenzahl.
+    Der return wert ist die neue Zahl der gekauften Wegwerfwaffe.
+    
+    TODO: item muss globale variable werden!
+    */
+    private void buyItem(int item1, int cost, int number){
+        if (item1 != -1){
+            if(brillen-(cost*number) >= 0){
+                brillen = brillen-(cost*number);
+                item1 = item1 + number;
+            }
+        }
+    }
+            
 
     /*
      Wird aufgerufen wenn es einen (oder mehrere) Kills gibt (durch Waffen). 
@@ -300,22 +318,25 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Wird aufgerufen wenn Tode nicht durch Angriffe sondern durch (einmal Kaufbare)
      Spezialevents ausgelöst wurden. . Zieht die Anzahl toter Streber von der 
      Gesamtzahl ab, fügt aber keine Kronen hinzu. Fügt auch die erste angegebene 
-     Zahl den Gesamtkills zu. Der zweite int Wert wird von den Brillen abgezogen,
-     die Kosten für den spezialangriff werden also mit reingegeben.
+     Zahl den Gesamtkills zu.Der zweite Intwertist der Angriff, der ausgeführt
+    wurde. Der dritte int Wert wird von den Brillen abgezogen.
+    Entstehen durch den ANgriff keine Kosten zusätzlich zum Kauf wird hier 
+    einfach "0" mitgegeben.
+    
+    TODO: EIne Methode pro Specialkill schreiben?
      */
-    private void specialKill(int killed, int kosten) {
-        if (kosten <= brillen) {
+    private void specialKill(int killed,int item1, int brillenabzug) {
+        if (brillenabzug <= brillen) {
             lebendeStreber = lebendeStreber - killed;
             getoeteteStreber = getoeteteStreber + killed;
-            brillen = brillen - kosten;
+            brillen = brillen - brillenabzug;
+            item1--;
             buttonUpdate();
             System.out.println("specialKill wird ausgeführt.");
             levelPruefer();
         } else {
             System.out.println("Zu wenig Brillen.");
             //TODO: Errornachricht an Spieler ausgeben
-
-            //TODO: Alternative: Ausgrauen bis die Benutzung möglich ist?
         }
 
     }
@@ -412,10 +433,11 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      TODO: verschieben?
      */
     private void loadGame() {
-        beendeteLevel = Integer.parseInt(ladeSpiel(1));
-        brillen = Integer.parseInt(ladeSpiel(2));
-        lebendeStreber = Integer.parseInt(ladeSpiel(3));
-        getoeteteStreber = Integer.parseInt(ladeSpiel(4));
+        ladeSpiel();
+        beendeteLevel = Integer.parseInt(getSave(1));
+        brillen = Integer.parseInt(getSave(2));
+        lebendeStreber = Integer.parseInt(getSave(3));
+        getoeteteStreber = Integer.parseInt(getSave(4));
         if (beendeteLevel <= 10) {//Prueft ob wir im Endlosspiel sind TODO!
             buttonUpdate();
         } else {

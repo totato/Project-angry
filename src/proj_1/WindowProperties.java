@@ -30,7 +30,7 @@ public abstract class WindowProperties {
     public Clip clip;
     public String[] words;
     public String[] saveData;
-    public static String language = "EN";//TODO: Auf sinnvollere Position legen
+    public static String language = "EN";
 
     /*
      Fügt Hintergrundmusik ein. Das abgespielte Lied muss unter dem Pfad 
@@ -139,7 +139,7 @@ public abstract class WindowProperties {
         return words[line];
     }
 
-    public String ladeSpiel(int line) {
+    public void ladeSpiel() {
         try {
             FileReader fr = new FileReader("Save.txt");
             BufferedReader textReader = new BufferedReader(fr);
@@ -152,23 +152,7 @@ public abstract class WindowProperties {
         } catch (IOException ioex) {
             System.err.println("Datei nicht Gefunden");
         }
-        return saveData[line];
 
-        /*
-         saveData = new String[50];//TODO: Zahl ändern
-         try {
-         BufferedReader reader = new BufferedReader(
-         new FileReader("Save.txt"));
-         int i = 0;
-         String zeile = "";
-         while ((zeile = reader.readLine()) != null && i < saveData.length) {
-         String[] values = zeile.split("\\;");
-         saveData[i] = values[0];
-         i++;
-         }
-         } catch (IOException ioex) {
-         System.err.println("Datei nicht Gefunden");
-         }*/
     }
 
     public String getSave(int line) {
