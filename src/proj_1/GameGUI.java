@@ -132,6 +132,7 @@ public class GameGUI extends WindowProperties {
     private javax.swing.JButton toSkilltreeB;
     // End of variables declaration       
 
+    // Eigenschaften des Fensters
     public GameGUI() {
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
@@ -157,6 +158,7 @@ public class GameGUI extends WindowProperties {
         //feuern lassen.
     }
 
+    // der Rest
     private void createCards(Container pane) {
         //--------------------------gamePanel------------------
         gamePanel = new javax.swing.JPanel();
@@ -274,11 +276,7 @@ public class GameGUI extends WindowProperties {
         aliveEnemy.setText("Gesamtstreber: 0");
 
         attackB4.setText("jButton1");
-        attackB4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                attackB4ActionPerformed(evt);
-            }
-        });
+
 
         attackB6.setText("jButton1");
 
@@ -463,11 +461,7 @@ public class GameGUI extends WindowProperties {
         jCheckBox3.setText("jCheckBox1");
 
         jCheckBox4.setText("jCheckBox1");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
-            }
-        });
+
 
         jCheckBox5.setText("jCheckBox1");
 
@@ -991,21 +985,6 @@ public class GameGUI extends WindowProperties {
         clgame = (CardLayout) (gamecards.getLayout());
     }
 
-    private void toMenuBActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void attackB4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void toSkilltreeBActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
 
     private void backToLauncher() {
         Launcher l = new Launcher();
