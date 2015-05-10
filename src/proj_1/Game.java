@@ -59,7 +59,8 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     private JLabel lebendeZeiger;//JLabel was die Anzahl der noch lebenden Streber anzeigt
     //Oder auch nicht.
     private JLabel toteZeiger;//Zeigt die gemachten Kills an. Wird immer größer.
-
+    private int streberTyp;//TODO: String oder Int zum angeben des Streber
+                                //typs?
     /*
      Erstellt das Spiel-fenster.
      */
@@ -286,6 +287,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     Soll vom shop benutzt werden.
     
     TODO: Funktioniert das so oder braucht jeder Faktor eine eigene Methode?
+            Oder mit return-value?
     */
     private void buyItem(int upgrade, int cost,int effekt){
         if (upgrade != -1){
@@ -296,6 +298,32 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         }
     }
             
+    
+    /*
+    Massives TODO:!
+    Manche Angriffe sind gegen manche Strebertypen ineffektiv. Nötig vor der 
+    Implementierung ist es, alle Angriffe und Strebertypen zu definieren.
+    */
+    private boolean streberPruefung(int usedAttack){
+        
+        if(usedAttack>streberTyp){
+                    return true;
+
+        }
+        return false;
+                
+    }
+    
+    /*
+    TODO:!
+    Wechselt nach jedem Kill, mit halb zufälliger Wahrscheinlichkeit, den
+    aktuellen Strebertypen.
+    Alternative: Wechselt alle x-Streber (also, jedes Battallion, beispielsweise,)
+    den Strebertypen.
+    */
+    private void streberWechsel(int killTotal){
+        
+    }
 
     /*
      Wird aufgerufen wenn es einen (oder mehrere) Kills gibt (durch Waffen). 
@@ -304,7 +332,8 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Stärkere Angriffe geben einem also mehr Brillen.
      */
     private void kill(int killed) {
-
+        //TODO: e.v. Strebertyp implementierung überarbeiten
+        if (streberPruefung(10)){
         brillen = brillen + ((killed*killFaktor)*brillenFaktor);
         lebendeStreber = lebendeStreber - (killed*killFaktor);
         getoeteteStreber = getoeteteStreber + (killed*killFaktor);
@@ -312,7 +341,10 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         System.out.println("kill wird ausgeführt." + brillen + ";"
                 + getoeteteStreber + ";" + lebendeStreber);
         levelPruefer();
-
+        }else{
+            System.out.println("Nicht sehr effetktiv...");
+            //TODO: Output an Spieler
+        }
     }
 
     /* 
@@ -325,6 +357,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     einfach "0" mitgegeben.
     
     TODO: EIne Methode pro Specialkill schreiben?
+    TODO: Je nach Spielsystemen überarbeiten
      */
     private void specialKill(int killed,int item1, int brillenabzug) {
         if (brillenabzug <= brillen) {
