@@ -10,14 +10,17 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import javax.swing.*;
-import static proj_1.WindowProperties.language;
+import javax.swing.AbstractAction;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+import javax.swing.Timer;
 
 /**
  *
  * @author Vika
  */
-public class GameGUI extends Game {
+public class GameGUI extends WindowProperties {
 
     private JFrame gamescreen;
     private JPanel gameCard;
@@ -27,61 +30,107 @@ public class GameGUI extends Game {
     private Timer timer;
     private int beendeteLevel;//Level die schon beendet wurden.
 
-    private javax.swing.JButton attack01;
-    private javax.swing.JButton attack02;
-    private javax.swing.JButton attack03;
-    private javax.swing.JButton attack04;
-    private javax.swing.JButton attack05;
-    private javax.swing.JButton attack06;
-    private javax.swing.JLabel attacksLabel;
+    private java.awt.TextArea InfoMenu;
+    private javax.swing.JLabel aliveEnemy;
+    private javax.swing.JButton attackB1;
+    private javax.swing.JButton attackB2;
+    private javax.swing.JButton attackB3;
+    private javax.swing.JButton attackB4;
+    private javax.swing.JButton attackB5;
+    private javax.swing.JButton attackB6;
+    private javax.swing.JButton buyB;
+    private javax.swing.JButton buySkillB;
+    private javax.swing.JLabel deadEnemy;
+    private javax.swing.JPanel gamePanel;
     private javax.swing.JLabel glasses;
-    private javax.swing.JLabel infoLabel;
-    private javax.swing.JButton buttonToGame;
-    private javax.swing.JButton buttonSave;
-    private javax.swing.JButton buttonReset;
-    private javax.swing.JButton buttonToLauncher;
+    private javax.swing.JLabel glassesM;
+    private java.awt.TextArea infoGame;
+    private javax.swing.JLabel inventarLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox14;
+    private javax.swing.JCheckBox jCheckBox15;
+    private javax.swing.JCheckBox jCheckBox16;
+    private javax.swing.JCheckBox jCheckBox17;
+    private javax.swing.JCheckBox jCheckBox18;
+    private javax.swing.JCheckBox jCheckBox19;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox20;
+    private javax.swing.JCheckBox jCheckBox21;
+    private javax.swing.JCheckBox jCheckBox22;
+    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JLabel shopKeeper;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel txtShopKeeper;
-    private javax.swing.JLabel txtInventory;
-    private javax.swing.JLabel txtWeapon;
-    private javax.swing.JLabel txtShop;
-    private javax.swing.JLabel txtEquipment;
-    private javax.swing.JLabel txtSkills;
-    private javax.swing.JLabel txtLessons;
-    private javax.swing.JLabel txtForSale;
-    private javax.swing.JLabel txtEvents;
-    private javax.swing.JPanel gamePanel;
-    private javax.swing.JPanel menuPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel killedEnemy;
-    private javax.swing.JLabel livingEnemy;
-    private javax.swing.JLabel lvlInfo;
-    private java.awt.Label mainScreen;
-    private javax.swing.JButton buttonToMenu;
-    // End of variables declaration     
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lvlLabel;
+    private javax.swing.JLabel mainScreen;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JButton resetB;
+    private javax.swing.JButton saveB;
+    private javax.swing.JLabel shopLabel;
+    private javax.swing.JLabel shopkeeper;
+    private javax.swing.JLabel skillP;
+    private javax.swing.JPanel skillPanel;
+    private javax.swing.JLabel skillTrainer;
+    private javax.swing.JLabel skillpoints;
+    private javax.swing.JButton toGameB;
+    private javax.swing.JButton toGameB2;
+    private javax.swing.JButton toLauncherB;
+    private javax.swing.JButton toMenuB;
+    private javax.swing.JButton toMenuB2;
+    private javax.swing.JButton toSkilltree;
+    private javax.swing.JButton toSkilltreeB;
+    // End of variables declaration       
 
     public GameGUI() {
         setLanguage(language);
@@ -90,11 +139,11 @@ public class GameGUI extends Game {
         // Erzeugt die Karten für das Fenster
         createCards(gamescreen.getContentPane());
 
-        gamescreen.setPreferredSize(new java.awt.Dimension(477, 570));
+        //gamescreen.setPreferredSize(new java.awt.Dimension(720, 723));
         gamescreen.setResizable(false);
         gamescreen.setDefaultCloseOperation(3);
         gamescreen.setLocationRelativeTo(null);
-        gamescreen.setBounds(new java.awt.Rectangle(0, 0, 200, 450));
+        // gamescreen.setBounds(new java.awt.Rectangle(0, 0, 200, 450));
 
         setIconPicture(gamescreen, "GameIcon.png");     //TODO: Muss gemacht 
         //und eingefügt werden
@@ -109,470 +158,828 @@ public class GameGUI extends Game {
     }
 
     private void createCards(Container pane) {
-//-------------------------Card game------------------------------------
+        //--------------------------gamePanel------------------
         gamePanel = new javax.swing.JPanel();
-        mainScreen = new java.awt.Label();
-        livingEnemy = new javax.swing.JLabel();
-        killedEnemy = new javax.swing.JLabel();
+        attackB1 = new javax.swing.JButton();
+        mainScreen = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
-        jSeparator1 = new javax.swing.JSeparator();
-        lvlInfo = new javax.swing.JLabel();
-        infoLabel = new javax.swing.JLabel();
-        attacksLabel = new javax.swing.JLabel();
-        attack01 = new javax.swing.JButton();
-        attack02 = new javax.swing.JButton();
-        attack03 = new javax.swing.JButton();
-        attack04 = new javax.swing.JButton();
-        attack05 = new javax.swing.JButton();
-        attack06 = new javax.swing.JButton();
+        deadEnemy = new javax.swing.JLabel();
+        aliveEnemy = new javax.swing.JLabel();
+        attackB4 = new javax.swing.JButton();
+        attackB6 = new javax.swing.JButton();
+        toMenuB = new javax.swing.JButton();
         glasses = new javax.swing.JLabel();
-        buttonToMenu = new javax.swing.JButton();
-//-----------------Card menu-------------------------------------------
-
+        lvlLabel = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        skillP = new javax.swing.JLabel();
+        attackB2 = new javax.swing.JButton();
+        attackB3 = new javax.swing.JButton();
+        attackB5 = new javax.swing.JButton();
+        infoGame = new java.awt.TextArea();
+        toSkilltreeB = new javax.swing.JButton();
+        //----------------------------menuPanel------------------------------
         menuPanel = new javax.swing.JPanel();
-        shopKeeper = new javax.swing.JLabel();
-        txtInventory = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        txtWeapon = new javax.swing.JLabel();
-        buttonToGame = new javax.swing.JButton();
-        txtShop = new javax.swing.JLabel();
-        buttonSave = new javax.swing.JButton();
-        buttonReset = new javax.swing.JButton();
-        txtEquipment = new javax.swing.JLabel();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        txtSkills = new javax.swing.JLabel();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        txtLessons = new javax.swing.JLabel();
+        toGameB = new javax.swing.JButton();
+        shopkeeper = new javax.swing.JLabel();
+        inventarLabel = new javax.swing.JLabel();
+        shopLabel = new javax.swing.JLabel();
+        toLauncherB = new javax.swing.JButton();
+        glassesM = new javax.swing.JLabel();
+        resetB = new javax.swing.JButton();
+        saveB = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        buyB = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
-        txtForSale = new javax.swing.JLabel();
         jCheckBox6 = new javax.swing.JCheckBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jCheckBox7 = new javax.swing.JCheckBox();
-        txtEvents = new javax.swing.JLabel();
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        txtShopKeeper = new javax.swing.JLabel();
-        buttonToLauncher = new javax.swing.JButton();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        jLabel6 = new javax.swing.JLabel();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
+        jCheckBox14 = new javax.swing.JCheckBox();
+        jCheckBox15 = new javax.swing.JCheckBox();
+        jCheckBox16 = new javax.swing.JCheckBox();
+        jCheckBox17 = new javax.swing.JCheckBox();
+        jCheckBox18 = new javax.swing.JCheckBox();
+        jCheckBox19 = new javax.swing.JCheckBox();
+        jCheckBox20 = new javax.swing.JCheckBox();
+        jCheckBox21 = new javax.swing.JCheckBox();
+        jCheckBox22 = new javax.swing.JCheckBox();
+        toSkilltree = new javax.swing.JButton();
+        InfoMenu = new java.awt.TextArea();
+        //------------------------------ skillPanel--------------------------
+        skillPanel = new javax.swing.JPanel();
+        buySkillB = new javax.swing.JButton();
+        skillTrainer = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
+        toMenuB2 = new javax.swing.JButton();
+        toGameB2 = new javax.swing.JButton();
+        skillpoints = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
-        gamePanel.addKeyListener(null);
-        mainScreen.setBackground(new java.awt.Color(255, 255, 255));
-        mainScreen.setText("label1");
+        gamePanel.setPreferredSize(new java.awt.Dimension(620, 700));
 
-        livingEnemy.setText("Gesamtstreber: 8");
+        attackB1.setText("jButton1");
 
-        killedEnemy.setText("Getötete Streber : 0");
+        mainScreen.setBackground(new java.awt.Color(204, 204, 255));
+        mainScreen.setText("gegner");
 
-        jProgressBar1.setName("Tote Streber"); // NOI18N
+        deadEnemy.setText("getötete Streber: 0");
 
-        lvlInfo.setBackground(new java.awt.Color(153, 153, 153));
-        lvlInfo.setText("                    LVL (Bild)");
+        aliveEnemy.setText("Gesamtstreber: 0");
 
-        infoLabel.setText("Aufgabe            ");
-
-        attacksLabel.setText("Angriffe");
-
-        attack01.setText("jButton2");
-        attack01.addActionListener(new java.awt.event.ActionListener() {
+        attackB4.setText("jButton1");
+        attackB4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                attackB4ActionPerformed(evt);
             }
         });
 
-        attack02.setText("jButton3");
-        attack02.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        attackB6.setText("jButton1");
 
-            }
-        });
+        toMenuB.setBackground(new java.awt.Color(0, 0, 0));
+        toMenuB.setForeground(new java.awt.Color(255, 255, 255));
+        toMenuB.setText("Menu");
+        toMenuB.getInputMap(toMenuB.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "menu");
 
-        attack03.setText("jButton3");
-        attack03.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });
-
-        attack04.setText("jButton3");
-        attack04.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });
-
-        attack05.setText("jButton3");
-        attack05.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });
-
-        attack06.setText("jButton3");
-        attack06.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });
-
-        glasses.setText("Brillen: 0");
-
-        buttonToMenu.setBackground(new java.awt.Color(0, 0, 0));
-        buttonToMenu.setForeground(new java.awt.Color(240, 240, 240));
-        buttonToMenu.setText("Menü");
-        buttonToMenu.getInputMap(buttonToMenu.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "menu");
-
-        buttonToMenu.getActionMap().put("menu", new AbstractAction() {
+        toMenuB.getActionMap().put("menu", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
                 changeCard("m card");
             }
         });
 
-        buttonToMenu.addActionListener(new ActionListener() {
+        toMenuB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 changeCard("m card");
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(gamePanel);
-        gamePanel.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(attack01, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+        glasses.setText("Brillen : 0");
+
+        lvlLabel.setText("LVL ");
+
+        skillP.setText("Skill Punkte :0");
+
+        attackB2.setText("jButton1");
+
+        attackB3.setText("jButton1");
+
+        attackB5.setText("jButton1");
+
+        toSkilltreeB.setBackground(new java.awt.Color(0, 0, 0));
+        toSkilltreeB.setForeground(new java.awt.Color(255, 255, 255));
+        toSkilltreeB.setText("Skillbaum");
+
+        toSkilltreeB.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                changeCard("s card");
+            }
+        });
+
+        javax.swing.GroupLayout gamePanelLayout = new javax.swing.GroupLayout(gamePanel);
+        gamePanel.setLayout(gamePanelLayout);
+        gamePanelLayout.setHorizontalGroup(
+                gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gamePanelLayout.createSequentialGroup()
+                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
+                                        .addComponent(attackB1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(attackB2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(attackB3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(attackB4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)
-                                        .addComponent(attack02, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(attackB5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)
-                                        .addComponent(attack03, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(attack04, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(attack05, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(attack06, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(attacksLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(mainScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(killedEnemy, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(livingEnemy, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lvlInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(glasses, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buttonToMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14))
-        );
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(17, 17, 17)
-                                        .addComponent(livingEnemy)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(killedEnemy)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lvlInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(34, 34, 34)
-                                        .addComponent(glasses)
-                                        .addGap(46, 46, 46))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(attackB6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(gamePanelLayout.createSequentialGroup()
                                         .addContainerGap()
-                                        .addComponent(mainScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(attacksLabel)
+                                        .addComponent(mainScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(glasses, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(toMenuB, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(skillP, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(toSkilltreeB, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(20, 20, 20))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(deadEnemy, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(aliveEnemy, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(52, 52, 52))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addContainerGap())
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                                        .addComponent(lvlLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addContainerGap())
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                                        .addComponent(infoGame, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addContainerGap())))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap())))
+        );
+        gamePanelLayout.setVerticalGroup(
+                gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gamePanelLayout.createSequentialGroup()
+                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(aliveEnemy)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(deadEnemy)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(attack02, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(attack03, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(attack04, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(attack05, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(attack06, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(attack01, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(buttonToMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(37, Short.MAX_VALUE))
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lvlLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(infoGame, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(glasses)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(skillP)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(toMenuB, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(toSkilltreeB, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(mainScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(attackB6, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(attackB4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(attackB1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(attackB2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(attackB3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(attackB5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())
         );
 
+        //getContentPane().add(gamePanel, "card2");
+        toGameB.setBackground(new java.awt.Color(0, 0, 0));
+        toGameB.setForeground(new java.awt.Color(255, 255, 255));
+        toGameB.setText("Zurück");
+        toGameB.setToolTipText("");
+        toGameB.getInputMap(toGameB.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "game");
 
-//------------------------Card Menu-----------------------------------------------
-        shopKeeper.setBackground(new java.awt.Color(255, 255, 255));
-        shopKeeper.setText("Hier Bild vom Verkäufer");
-
-        txtInventory.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        txtInventory.setText("Inventar");
-
-        jRadioButton1.setText("jRadioButton1");
-
-        jRadioButton2.setText("jRadioButton2");
-
-        jRadioButton3.setText("jRadioButton3");
-
-        jRadioButton4.setText("jRadioButton4");
-
-        jRadioButton5.setText("jRadioButton5");
-
-        txtWeapon.setText("Waffen");
-
-        buttonToGame.setBackground(new java.awt.Color(0, 0, 0));
-        buttonToGame.setForeground(new java.awt.Color(255, 255, 255));
-        buttonToGame.setText("Zurück");
-        buttonToGame.setActionCommand("");
-        buttonToGame.getInputMap(buttonToGame.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "game");
-
-        buttonToGame.getActionMap().put("game", new AbstractAction() {
+        toGameB.getActionMap().put("game", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
                 changeCard("g card");
             }
         });
 
-        buttonToGame.addActionListener(new ActionListener() {
+        toGameB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 changeCard("g card");
             }
         });
 
-        txtShop.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        txtShop.setText("Shop");
+        shopkeeper.setText("bild shop besitzer");
 
-        buttonSave.setText("Speichern");
+        inventarLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        inventarLabel.setText("Inventar");
 
-        buttonReset.setText("Reset");
+        shopLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        shopLabel.setText("Shop");
 
-        txtEquipment.setText("Ausrüstung");
+        toLauncherB.setText("Zum Launcher");
 
-        jRadioButton6.setText("jRadioButton6");
+        glassesM.setText("Brillen :");
 
-        jRadioButton7.setText("jRadioButton7");
+        resetB.setText("Reset");
 
-        jRadioButton8.setText("jRadioButton8");
+        saveB.setText("Speichern");
 
-        txtSkills.setText("Skills");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Zu verkaufen");
 
-        jRadioButton9.setText("jRadioButton9");
-        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jLabel2.setText("Ausrüstung");
 
-            }
-        });
+        jLabel3.setText("Waffen");
 
-        jRadioButton10.setText("jRadioButton10");
+        buyB.setText("Kaufen");
 
-        jRadioButton11.setText("jRadioButton11");
+        jCheckBox1.setText("jCheckBox1");
 
-        jRadioButton12.setText("jRadioButton12");
+        jCheckBox2.setText("jCheckBox1");
 
-        jRadioButton13.setText("jRadioButton13");
+        jCheckBox3.setText("jCheckBox1");
 
-        jRadioButton14.setText("jRadioButton14");
-
-        txtLessons.setText("Unterricht");
-
-        jCheckBox4.setText("jCheckBox4");
+        jCheckBox4.setText("jCheckBox1");
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                jCheckBox4ActionPerformed(evt);
             }
         });
 
-        jCheckBox5.setText("jCheckBox5");
+        jCheckBox5.setText("jCheckBox1");
 
-        txtForSale.setText("Zu verkaufen");
+        jCheckBox6.setText("jCheckBox1");
 
-        jCheckBox6.setText("jCheckBox6");
+        jLabel4.setText("Ausrüstung");
+
+        jLabel5.setText("Waffen");
 
         jCheckBox7.setText("jCheckBox7");
-
-        txtEvents.setText("Events");
 
         jCheckBox8.setText("jCheckBox8");
 
         jCheckBox9.setText("jCheckBox9");
 
-        jLabel10.setText("Beschreibung");
+        jCheckBox10.setText("jCheckBox10");
 
-        jLabel11.setText("Beschreibung2");
+        jLabel6.setText("Events");
 
-        txtShopKeeper.setText("Verkäufer sagt: Heute alles FSK 6");
+        jCheckBox11.setText("jCheckBox11");
 
-        buttonToLauncher.setText("Zum Launcher");
+        jCheckBox12.setText("jCheckBox12");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(menuPanel);
-        menuPanel.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(txtShop, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(buttonToLauncher, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                                        .addComponent(txtInventory, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(14, 14, 14))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addGap(11, 11, 11)
-                                                        .addComponent(buttonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(txtLessons, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jCheckBox4)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(txtForSale, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jCheckBox5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addComponent(jCheckBox6)
-                                                .addComponent(jCheckBox7)
-                                                .addComponent(txtEvents, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jCheckBox8)
-                                                .addComponent(jCheckBox9)
-                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(33, 33, 33)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(shopKeeper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(txtShopKeeper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                        .addGap(32, 32, 32)
-                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(jRadioButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(txtWeapon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                .addComponent(txtEquipment, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(jRadioButton6)
-                                                                .addComponent(jRadioButton7)
-                                                                .addComponent(txtSkills, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(jRadioButton9)
-                                                                .addComponent(jRadioButton10)
-                                                                .addComponent(jRadioButton11)
-                                                                .addComponent(jRadioButton12)
-                                                                .addComponent(jRadioButton8)
-                                                                .addComponent(jRadioButton13)
-                                                                .addComponent(jRadioButton14))
-                                                        .addGap(32, 32, 32))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(buttonToGame, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(37, 37, 37))))))
+        jCheckBox13.setText("jCheckBox13");
+
+        jCheckBox14.setText("jCheckBox14");
+
+        jCheckBox15.setText("jCheckBox15");
+
+        jCheckBox16.setText("jCheckBox16");
+
+        jCheckBox17.setText("jCheckBox17");
+
+        jCheckBox18.setText("jCheckBox18");
+
+        jCheckBox19.setText("jCheckBox19");
+
+        jCheckBox20.setText("jCheckBox20");
+
+        jCheckBox21.setText("jCheckBox21");
+
+        jCheckBox22.setText("jCheckBox22");
+
+        toSkilltree.setText("Skillbaum");
+        toSkilltree.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                changeCard("s card");
+            }
+        });
+
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+                menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, menuPanelLayout.createSequentialGroup()
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(InfoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, menuPanelLayout.createSequentialGroup()
+                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addGap(21, 21, 21)
+                                                                        .addComponent(resetB, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                .addComponent(jCheckBox2)
+                                                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jCheckBox3)
+                                                                                .addComponent(jCheckBox4)))
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(jCheckBox11)
+                                                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jCheckBox12)))
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(jCheckBox1)
+                                                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jCheckBox5)
+                                                                                .addComponent(jCheckBox6)
+                                                                                .addComponent(jCheckBox7)
+                                                                                .addComponent(jCheckBox8)
+                                                                                .addComponent(jCheckBox9)
+                                                                                .addComponent(jCheckBox10)))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addComponent(saveB, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGap(37, 37, 37)
+                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(glassesM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(toLauncherB, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                                                .addComponent(shopkeeper, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(buyB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                                        .addComponent(toSkilltree, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(shopLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                        .addGap(1, 1, 1)
+                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(inventarLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                                                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                .addComponent(jCheckBox17)
+                                                                .addComponent(jCheckBox18)
+                                                                .addComponent(jCheckBox19)
+                                                                .addComponent(jCheckBox20)
+                                                                .addComponent(jCheckBox21)
+                                                                .addComponent(jCheckBox22)))
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(toGameB, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jCheckBox14)
+                                                                .addComponent(jCheckBox13)
+                                                                .addComponent(jCheckBox15)
+                                                                .addComponent(jCheckBox16))
+                                                        .addGap(38, 38, 38)))))
+                        .addGap(22, 22, 22))
         );
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtInventory, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtShop, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(buttonToLauncher, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(txtLessons)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jCheckBox4)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jCheckBox5)
-                                                        .addGap(45, 45, 45)
-                                                        .addComponent(txtForSale)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        menuPanelLayout.setVerticalGroup(
+                menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(toLauncherB, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(inventarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(shopkeeper, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(InfoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(glassesM, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(buyB, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(31, Short.MAX_VALUE))
+                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                        .addComponent(shopLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addGap(55, 55, 55)
+                                                                        .addComponent(jLabel2)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(jCheckBox13)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(jCheckBox14)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jCheckBox15)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jCheckBox16))
+                                                                .addGroup(menuPanelLayout.createSequentialGroup()
+                                                                        .addGap(16, 16, 16)
+                                                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addGap(27, 27, 27)
+                                                                        .addComponent(jLabel4)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jCheckBox2)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jCheckBox3)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jCheckBox4)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(jCheckBox1)))
+                                                        .addGap(35, 35, 35)
+                                                        .addComponent(jLabel5))
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(menuPanelLayout.createSequentialGroup()
                                                         .addComponent(jCheckBox6)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jCheckBox5)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(jCheckBox7)
-                                                        .addGap(29, 29, 29)
-                                                        .addComponent(txtEvents)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(jCheckBox8)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jCheckBox9)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jCheckBox10))
+                                                .addGroup(menuPanelLayout.createSequentialGroup()
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jCheckBox9))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                        .addGap(11, 11, 11)
-                                                        .addComponent(shopKeeper, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtShopKeeper, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(txtSkills)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton14)
+                                                        .addComponent(jCheckBox21)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jCheckBox22)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jCheckBox20)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jCheckBox19)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jCheckBox18)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jCheckBox17)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtEquipment)
+                                        .addComponent(jLabel6)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jCheckBox11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton6)
+                                        .addComponent(jCheckBox12)
+                                        .addGap(12, 12, 12)
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(saveB, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(toSkilltree, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtWeapon, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton2)
+                                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(resetB, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(toGameB, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(16, 16, 16))))
+        );
+        // getContentPane().add(menuPanel, "card3");
+        buySkillB.setText("Freischalten");
+
+        skillTrainer.setText("Bild vom Lehrer ?");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setText("Skillbaum");
+
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
+        jButton3.setText("jButton3");
+
+        jButton4.setText("jButton4");
+
+        jButton5.setText("jButton5");
+
+        jButton6.setText("jButton6");
+
+        jButton7.setText("jButton7");
+
+        jButton8.setText("jButton8");
+
+        jButton9.setText("jButton9");
+
+        jButton10.setText("jButton10");
+
+        jButton11.setText("jButton11");
+
+        jButton12.setText("jButton12");
+
+        jButton13.setText("jButton13");
+
+        jButton14.setText("jButton14");
+
+        jButton15.setText("jButton15");
+
+        jButton16.setText("jButton16");
+
+        jButton17.setText("jButton14");
+
+        jButton18.setText("jButton14");
+
+        jButton19.setText("jButton14");
+
+        jButton20.setText("jButton14");
+
+        jButton21.setText("jButton14");
+
+        jButton22.setText("jButton14");
+
+        jButton23.setText("jButton14");
+
+        jButton24.setText("jButton14");
+
+        jButton25.setText("jButton14");
+
+        jButton26.setText("jButton14");
+
+        jButton27.setText("jButton27");
+
+        jButton28.setText("jButton28");
+
+        jButton29.setText("jButton29");
+
+        jButton30.setText("jButton30");
+
+        jButton31.setText("jButton31");
+
+        jButton32.setText("jButton32");
+
+        jButton33.setText("jButton33");
+
+        toMenuB2.setBackground(new java.awt.Color(0, 0, 0));
+        toMenuB2.setForeground(new java.awt.Color(255, 255, 255));
+        toMenuB2.setText("Menu");
+        toMenuB2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                changeCard("m card");
+            }
+        });
+
+        toGameB2.setBackground(new java.awt.Color(0, 0, 0));
+        toGameB2.setForeground(new java.awt.Color(255, 255, 255));
+        toGameB2.setText("Zurück");
+        toGameB2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                changeCard("m card");
+            }
+        });
+
+        skillpoints.setText("Skillpunkte: 0");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout skillPanelLayout = new javax.swing.GroupLayout(skillPanel);
+        skillPanel.setLayout(skillPanelLayout);
+        skillPanelLayout.setHorizontalGroup(
+                skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(skillPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(skillTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buySkillB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(skillpoints, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                        .addGap(167, 167, 167)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                                        .addContainerGap())
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                        .addGap(54, 54, 54)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                        .addGap(83, 83, 83)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jButton27)
+                                                                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton28)
+                                                                .addComponent(jButton32))
+                                                        .addGap(0, 17, Short.MAX_VALUE)))
+                                        .addGap(71, 71, 71)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(49, 49, 49)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                        .addGap(23, 23, 23)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jButton29)
+                                                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton30)
+                                                                .addComponent(jButton31))))
+                                        .addGap(21, 21, 21))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                                                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jButton10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                                        .addGap(34, 34, 34)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addGroup(skillPanelLayout.createSequentialGroup()
+                                                                                .addComponent(jButton8)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                .addComponent(jButton9))
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                                                                .addComponent(jButton2)
+                                                                                .addGap(39, 39, 39)
+                                                                                .addComponent(jButton4))
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                                                                .addComponent(jButton6)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                .addComponent(jButton3)))
+                                                                .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(60, 60, 60))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                                        .addComponent(jButton33)
+                                                        .addGap(167, 167, 167))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addComponent(toGameB2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(toMenuB2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap())))
+        );
+        skillPanelLayout.setVerticalGroup(
+                skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillPanelLayout.createSequentialGroup()
+                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(18, 18, 18)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                .addComponent(jButton2)
+                                                                .addComponent(jButton4)
+                                                                .addComponent(jButton5))
+                                                        .addGap(16, 16, 16)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                .addComponent(jButton3)
+                                                                .addComponent(jButton6)
+                                                                .addComponent(jButton7))
+                                                        .addGap(18, 18, 18)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                .addComponent(jButton8)
+                                                                .addComponent(jButton9)
+                                                                .addComponent(jButton10))
+                                                        .addGap(18, 18, 18)
+                                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                .addComponent(jButton11)
+                                                                .addComponent(jButton12)))
+                                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(skillTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton4)))
-                        .addGap(3, 3, 3)
-                        .addComponent(jRadioButton5)
+                                        .addComponent(skillpoints))
+                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                        .addGap(286, 286, 286)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton13)
+                                                .addComponent(jButton14)
+                                                .addComponent(jButton15)
+                                                .addComponent(jButton16))
+                                        .addGap(4, 4, 4)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton18)
+                                                .addComponent(jButton19)
+                                                .addComponent(jButton22)
+                                                .addComponent(jButton23)
+                                                .addComponent(buySkillB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(buttonToGame, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buttonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12))
+                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton17)
+                                .addComponent(jButton20)
+                                .addComponent(jButton24)
+                                .addComponent(jButton25))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(skillPanelLayout.createSequentialGroup()
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(33, 33, 33)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton27)
+                                                .addComponent(jButton29))
+                                        .addGap(25, 25, 25)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton28)
+                                                .addComponent(jButton30))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton31)
+                                                .addComponent(jButton32))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                                        .addGroup(skillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(toMenuB2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(toGameB2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane1))
+                        .addContainerGap())
         );
 
-
+        //getContentPane().add(skillPanel, "card4");
         gamecards = new JPanel(new CardLayout());
 
         gamecards.add(gamePanel, "g card");
         gamecards.add(menuPanel, "m card");
+        gamecards.add(skillPanel, "s card");
         //gamecards.add(cutsceneCard, "c card");
 
         //Pane wird der Methode übergeben (oben in den Klammern)
@@ -582,8 +989,23 @@ public class GameGUI extends Game {
 
         // Hier wird gesagt es es sich nun um ein Cardlayout handelt
         clgame = (CardLayout) (gamecards.getLayout());
-        // pack();
-    }// </editor-fold>                          
+    }
+
+    private void toMenuBActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void attackB4ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void toSkilltreeBActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
 
     private void backToLauncher() {
         Launcher l = new Launcher();
@@ -614,4 +1036,5 @@ public class GameGUI extends Game {
          timer.start();*/
         System.out.println("zu  " + name + "  gewechselt");
     }
+
 }
