@@ -48,6 +48,9 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     //...
     private JButton buy1;//Button für einmal benututzbare kills
     //...
+    
+    private int brillenFaktor;
+    private int killFaktor;
 
     private int brillen;//Eine Brille entspricht einem toten Streber entsrpicht einem Kill
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!
@@ -277,20 +280,18 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     }
     
     /*
-    Sorgt dafür das eine Wegwerfwaffe gekauft wird. Die Mitgegebenen Parameter
-    sind dabei die Waffe (item), die kosten der Waffe (cost) und die
-    Nummer, in der die Waffe gekauft werden soll (number). 
-    Falls diese -1 ist, die Waffe also noch nicht freigeschaltet wurde,
-    wird nicht gekauft, selbiges bei fehlender Brillenzahl.
-    Der return wert ist die neue Zahl der gekauften Wegwerfwaffe.
+    Wird aufgerufen um Upgrades zu kaufen.
+    Der erste eingegebene Int-Wert ist der faktor (das Upgrade), der zweite der
+    Preis, der dritte die Veränderung er Faktors.
+    Soll vom shop benutzt werden.
     
-    TODO: item muss globale variable werden!
+    TODO: Funktioniert das so oder braucht jeder Faktor eine eigene Methode?
     */
-    private void buyItem(int item1, int cost, int number){
-        if (item1 != -1){
-            if(brillen-(cost*number) >= 0){
-                brillen = brillen-(cost*number);
-                item1 = item1 + number;
+    private void buyItem(int upgrade, int cost,int effekt){
+        if (upgrade != -1){
+            if(brillen-cost >= 0){
+                brillen = brillen-cost;
+                upgrade = upgrade+effekt;
             }
         }
     }
@@ -304,9 +305,9 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      */
     private void kill(int killed) {
 
-        brillen = brillen + killed;
-        lebendeStreber = lebendeStreber - killed;
-        getoeteteStreber = getoeteteStreber + killed;
+        brillen = brillen + ((killed*killFaktor)*brillenFaktor);
+        lebendeStreber = lebendeStreber - (killed*killFaktor);
+        getoeteteStreber = getoeteteStreber + (killed*killFaktor);
         buttonUpdate();
         System.out.println("kill wird ausgeführt." + brillen + ";"
                 + getoeteteStreber + ";" + lebendeStreber);
