@@ -1017,6 +1017,8 @@ public class GameGUI extends WindowProperties {
                 + "(dispose)");
         gamescreen.dispose();
     }
+    
+    
     /*Wechselt die gezeigte Karte. Die neue Karte ist die, deren
      Namen angegeben wurde
      */
