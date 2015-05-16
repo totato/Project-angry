@@ -18,7 +18,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Vika
+ * @author Wir.
  */
 public class GameGUI extends WindowProperties {
 
@@ -28,10 +28,9 @@ public class GameGUI extends WindowProperties {
     private JPanel gamecards;
     private CardLayout clgame;
     private Timer timer;
-    private int beendeteLevel;//Level die schon beendet wurden.
 
     private java.awt.TextArea InfoMenu;
-    private javax.swing.JLabel aliveEnemy;
+     javax.swing.JLabel aliveEnemy;
     private javax.swing.JButton attackB1;
     private javax.swing.JButton attackB2;
     private javax.swing.JButton attackB3;
@@ -40,10 +39,10 @@ public class GameGUI extends WindowProperties {
     private javax.swing.JButton attackB6;
     private javax.swing.JButton buyB;
     private javax.swing.JButton buySkillB;
-    private javax.swing.JLabel deadEnemy;
+     javax.swing.JLabel deadEnemy;
     private javax.swing.JPanel gamePanel;
-    private javax.swing.JLabel glasses;
-    private javax.swing.JLabel glassesM;
+     javax.swing.JLabel glasses;
+     javax.swing.JLabel glassesM;
     private java.awt.TextArea infoGame;
     private javax.swing.JLabel inventarLabel;
     private javax.swing.JButton jButton1;
@@ -112,7 +111,7 @@ public class GameGUI extends WindowProperties {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lvlLabel;
+    javax.swing.JLabel lvlLabel;
     private javax.swing.JLabel mainScreen;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton resetB;
@@ -151,7 +150,6 @@ public class GameGUI extends WindowProperties {
         //backgroundMusic("rewind.wav");TODO: Muss gemacht und eingefügt werden
         gamescreen.pack();
         gamescreen.setVisible(true);
-
         //levelPruefer();//TODO: An bessere position verlegen und 
         //a. jeweils nach cutscenes
         //b. nach beendigung eines levels
@@ -266,7 +264,13 @@ public class GameGUI extends WindowProperties {
 
         gamePanel.setPreferredSize(new java.awt.Dimension(620, 700));
 
-        attackB1.setText("jButton1");
+        attackB1.setText("1B attack");
+        attackB1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               // kill(1);  TODO:!
+            }
+        });
+        
 
         mainScreen.setBackground(new java.awt.Color(204, 204, 255));
         mainScreen.setText("gegner");
@@ -275,10 +279,10 @@ public class GameGUI extends WindowProperties {
 
         aliveEnemy.setText("Gesamtstreber: 0");
 
-        attackB4.setText("jButton1");
+        attackB4.setText("4b attack");
 
 
-        attackB6.setText("jButton1");
+        attackB6.setText("6b attack");
 
         toMenuB.setBackground(new java.awt.Color(0, 0, 0));
         toMenuB.setForeground(new java.awt.Color(255, 255, 255));
@@ -303,11 +307,11 @@ public class GameGUI extends WindowProperties {
 
         skillP.setText("Skill Punkte :0");
 
-        attackB2.setText("jButton1");
+        attackB2.setText("2b attack");
 
-        attackB3.setText("jButton1");
+        attackB3.setText("3b attack");
 
-        attackB5.setText("jButton1");
+        attackB5.setText("5b attack");
 
         toSkilltreeB.setBackground(new java.awt.Color(0, 0, 0));
         toSkilltreeB.setForeground(new java.awt.Color(255, 255, 255));
@@ -1017,5 +1021,6 @@ public class GameGUI extends WindowProperties {
          timer.start();*/
         System.out.println("zu  " + name + "  gewechselt");
     }
+    
 
 }

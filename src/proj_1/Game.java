@@ -25,7 +25,7 @@ import javax.swing.Timer;
  *
  * Jajaaa. Natürlich. Nur du. Ich schreib Wir hin, aber du.... WIE DU WILLST!
  */
-public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu müde dafür.
+public class Game extends GameGUI {//Hier ev. noh private einfügen. binzu müde dafür.
 
     private JFrame gamescreen;      //TODO: Modifizieren sobald GUI fertig ist!
     private JPanel gameCard;
@@ -48,7 +48,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     //...
     private JButton buy1;//Button für einmal benututzbare kills
     //...
-    
+
     private int brillenFaktor;
     private int killFaktor;
 
@@ -60,10 +60,11 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
     //Oder auch nicht.
     private JLabel toteZeiger;//Zeigt die gemachten Kills an. Wird immer größer.
     private int streberTyp;//TODO: String oder Int zum angeben des Streber
-                                //typs?
+    //typs?
     /*
      Erstellt das Spiel-fenster.
      */
+
     public void Game() {
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
@@ -94,7 +95,7 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Jede Karte ist als JPanel definiert, da sie im grunde nur die enthaltenen 
      Objekte wie z.B Textfenster zusammenfasst.
     
-    TODO: Wird, sobald GameGUI fertig ist, wahrscheinlich redundant.
+     TODO: Wird, sobald GameGUI fertig ist, wahrscheinlich redundant.
      */
     private void createCards(Container pane) {
 
@@ -279,50 +280,49 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         timer.start();
         System.out.println("Menu gewechselt");
     }
-    
+
     /*
-    Wird aufgerufen um Upgrades zu kaufen.
-    Der erste eingegebene Int-Wert ist der faktor (das Upgrade), der zweite der
-    Preis, der dritte die Veränderung er Faktors.
-    Soll vom shop benutzt werden.
+     Wird aufgerufen um Upgrades zu kaufen.
+     Der erste eingegebene Int-Wert ist der faktor (das Upgrade), der zweite der
+     Preis, der dritte die Veränderung er Faktors.
+     Soll vom shop benutzt werden.
     
-    TODO: Funktioniert das so oder braucht jeder Faktor eine eigene Methode?
-            Oder mit return-value?
-    */
-    private void buyItem(int upgrade, int cost,int effekt){
-        if (upgrade != -1){
-            if(brillen-cost >= 0){
-                brillen = brillen-cost;
-                upgrade = upgrade+effekt;
+     TODO: Funktioniert das so oder braucht jeder Faktor eine eigene Methode?
+     Oder mit return-value?
+     */
+    private void buySkill(int upgrade, int cost, int effekt) {
+        if (upgrade != -1) {
+            if (brillen - cost >= 0) {
+                brillen = brillen - cost;
+                upgrade = upgrade + effekt;
             }
         }
     }
-            
-    
+
     /*
-    Massives TODO:!
-    Manche Angriffe sind gegen manche Strebertypen ineffektiv. Nötig vor der 
-    Implementierung ist es, alle Angriffe und Strebertypen zu definieren.
-    */
-    private boolean streberPruefung(int usedAttack){
-        
-        if(usedAttack>streberTyp){
-                    return true;
+     Massives TODO:!
+     Manche Angriffe sind gegen manche Strebertypen ineffektiv. Nötig vor der 
+     Implementierung ist es, alle Angriffe und Strebertypen zu definieren.
+     */
+    private boolean streberPruefung(int usedAttack) {
+
+        if (usedAttack > streberTyp) {
+            return true;
 
         }
         return false;
-                
+
     }
-    
+
     /*
-    TODO:!
-    Wechselt nach jedem Kill, mit halb zufälliger Wahrscheinlichkeit, den
-    aktuellen Strebertypen.
-    Alternative: Wechselt alle x-Streber (also, jedes Battallion, beispielsweise,)
-    den Strebertypen.
-    */
-    private void streberWechsel(int killTotal){
-        
+     TODO:!
+     Wechselt nach jedem Kill, mit halb zufälliger Wahrscheinlichkeit, den
+     aktuellen Strebertypen.
+     Alternative: Wechselt alle x-Streber (also, jedes Battallion, beispielsweise,)
+     den Strebertypen.
+     */
+    private void streberWechsel(int killTotal) {
+
     }
 
     /*
@@ -333,15 +333,15 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      */
     private void kill(int killed) {
         //TODO: e.v. Strebertyp implementierung überarbeiten
-        if (streberPruefung(10)){
-        brillen = brillen + ((killed*killFaktor)*brillenFaktor);
-        lebendeStreber = lebendeStreber - (killed*killFaktor);
-        getoeteteStreber = getoeteteStreber + (killed*killFaktor);
-        buttonUpdate();
-        System.out.println("kill wird ausgeführt." + brillen + ";"
-                + getoeteteStreber + ";" + lebendeStreber);
-        levelPruefer();
-        }else{
+        if (streberPruefung(10)) {
+            brillen = brillen + ((killed * killFaktor) * brillenFaktor);
+            lebendeStreber = lebendeStreber - (killed * killFaktor);
+            getoeteteStreber = getoeteteStreber + (killed * killFaktor);
+            buttonUpdate();
+            System.out.println("kill wird ausgeführt." + brillen + ";"
+                    + getoeteteStreber + ";" + lebendeStreber);
+            levelPruefer();
+        } else {
             System.out.println("Nicht sehr effetktiv...");
             //TODO: Output an Spieler
         }
@@ -352,14 +352,14 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      Spezialevents ausgelöst wurden. . Zieht die Anzahl toter Streber von der 
      Gesamtzahl ab, fügt aber keine Kronen hinzu. Fügt auch die erste angegebene 
      Zahl den Gesamtkills zu.Der zweite Intwertist der Angriff, der ausgeführt
-    wurde. Der dritte int Wert wird von den Brillen abgezogen.
-    Entstehen durch den ANgriff keine Kosten zusätzlich zum Kauf wird hier 
-    einfach "0" mitgegeben.
+     wurde. Der dritte int Wert wird von den Brillen abgezogen.
+     Entstehen durch den ANgriff keine Kosten zusätzlich zum Kauf wird hier 
+     einfach "0" mitgegeben.
     
-    TODO: EIne Methode pro Specialkill schreiben?
-    TODO: Je nach Spielsystemen überarbeiten
+     TODO: EIne Methode pro Specialkill schreiben?
+     TODO: Je nach Spielsystemen überarbeiten
      */
-    private void specialKill(int killed,int item1, int brillenabzug) {
+    private void specialKill(int killed, int item1, int brillenabzug) {
         if (brillenabzug <= brillen) {
             lebendeStreber = lebendeStreber - killed;
             getoeteteStreber = getoeteteStreber + killed;
@@ -402,15 +402,26 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      verändert wird.
      */
     private void buttonUpdate() {
-        lebendeZeiger.setText(getWords(24) + lebendeStreber);
-        toteZeiger.setText(getWords(25) + getoeteteStreber);
-        brillenZeiger.setText(getWords(26) + brillen);
+        aliveEnemy.setText(getWords(24) + lebendeStreber);
+        deadEnemy.setText(getWords(25) + getoeteteStreber);
+        glasses.setText(getWords(26) + brillen);
+        glassesM.setText(getWords(26) + brillen);
 
         brillenZeiger.repaint();
         lebendeZeiger.repaint();
         toteZeiger.repaint();
+        glassesM.repaint();
     }
 
+    /*
+     Repainted alles, as nicht nach jedem Kill, sondern nach jedem Levelwechsel
+     repainted werden soll.
+     TODO:!*/
+    private void buttonLevelUpdate() {
+        lvlLabel.setText("LVL: " + beendeteLevel);//TODO: Übersetzungsdokument aufrufen
+
+        lvlLabel.repaint();
+    }
     /*
      Sorgt dafür, dass neue Werte angezeigt werden. 
      Sollte überall dort verwendet werden, wo 
@@ -419,7 +430,9 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
      c. die Zahl der lebendigen Streber
      verändert wird, die Zahl der noch lebendigen Streber 
      aber nicht angezeigt wird.
+     TODO: Neue Werte einfügen
      */
+
     private void buttonEndlessUpdate() {
         lebendeZeiger.setText("?");
         toteZeiger.setText(getWords(25) + getoeteteStreber);
@@ -472,10 +485,14 @@ public class Game extends Cutscenes {//Hier ev. noh private einfügen. binzu mü
         brillen = Integer.parseInt(getSave(2));
         lebendeStreber = Integer.parseInt(getSave(3));
         getoeteteStreber = Integer.parseInt(getSave(4));
+        //TODO: Weitere zu ladende Werte einfügen, auch bei ladeSpiel
         if (beendeteLevel <= 10) {//Prueft ob wir im Endlosspiel sind TODO!
             buttonUpdate();
+            buttonLevelUpdate();
         } else {
             buttonEndlessUpdate();
+            buttonLevelUpdate();
+
         }
     }
     /*
