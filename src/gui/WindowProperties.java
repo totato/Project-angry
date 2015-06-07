@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.CardLayout;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +16,7 @@ import javax.swing.JLabel;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import javax.swing.JPanel;
 
 /**
  *
@@ -178,4 +180,5 @@ public abstract class WindowProperties {
             System.err.println("Datei nicht Gefunden");
         }
     }
+
 }

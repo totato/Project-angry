@@ -260,7 +260,7 @@ public class Launcher extends Cutscenes {
         
          java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-    new GameGUI();
+    new MainGUI();
           }
       });
                 

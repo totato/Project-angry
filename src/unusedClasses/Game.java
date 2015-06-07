@@ -1,5 +1,7 @@
-package gui;
+package unusedClasses;
 
+import gui.Launcher;
+import gui.MainGUI;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -20,7 +22,7 @@ import javax.swing.Timer;
  *
  * Jajaaa. Natürlich. Nur du. Ich schreib Wir hin, aber du.... WIE DU WILLST!
  */
-public class Game extends GameGUI {//Hier ev. noh private einfügen. binzu müde dafür.
+public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde dafür.
 
     private JFrame gamescreen;      //TODO: Modifizieren sobald GUI fertig ist!
     private JPanel gameCard;
@@ -397,7 +399,7 @@ public class Game extends GameGUI {//Hier ev. noh private einfügen. binzu müde
      verändert wird.
      */
     private void buttonUpdate() {
-        aliveEnemy.setText(getWords(24) + lebendeStreber);
+        /*aliveEnemy.setText(getWords(24) + lebendeStreber);
         deadEnemy.setText(getWords(25) + getoeteteStreber);
         glasses.setText(getWords(26) + brillen);
         glassesM.setText(getWords(26) + brillen);
@@ -405,7 +407,7 @@ public class Game extends GameGUI {//Hier ev. noh private einfügen. binzu müde
         brillenZeiger.repaint();
         lebendeZeiger.repaint();
         toteZeiger.repaint();
-        glassesM.repaint();
+        glassesM.repaint();*/
     }
 
     /*
@@ -413,9 +415,9 @@ public class Game extends GameGUI {//Hier ev. noh private einfügen. binzu müde
      repainted werden soll.
      TODO:!*/
     private void buttonLevelUpdate() {
-        lvlLabel.setText("LVL: " + beendeteLevel);//TODO: Übersetzungsdokument aufrufen
+     /*   lvlLabel.setText("LVL: " + beendeteLevel);//TODO: Übersetzungsdokument aufrufen
 
-        lvlLabel.repaint();
+        lvlLabel.repaint();*/
     }
     /*
      Sorgt dafür, dass neue Werte angezeigt werden. 
