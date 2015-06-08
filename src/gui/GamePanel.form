@@ -231,7 +231,7 @@
     </Component>
     <Component class="gui.Screen" name="mainScreen">
       <Properties>
-        <Property name="text" type="java.lang.String" value="screen1"/>
+        <Property name="text" type="java.lang.String" value="mainScreen"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

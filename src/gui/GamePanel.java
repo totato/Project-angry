@@ -146,7 +146,7 @@ public class GamePanel extends javax.swing.JPanel {
         add(bAttack1);
         bAttack1.setBounds(20, 630, 60, 100);
 
-        mainScreen.setText("screen1");
+        mainScreen.setText("mainScreen");
         add(mainScreen);
         mainScreen.setBounds(20, 20, 410, 580);
 
@@ -193,4 +193,9 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextAreaGame;
     private gui.Screen mainScreen;
     // End of variables declaration//GEN-END:variables
+
+    public Screen getScreen(){
+        return mainScreen;
+    }
+
 }

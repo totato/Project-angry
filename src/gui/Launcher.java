@@ -5,10 +5,14 @@
  */
 package gui;
 
+import game.Game;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -65,7 +69,11 @@ public class Launcher extends Cutscenes {
         spielOeffnen.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("beginne Spiel");
-                beginnen();
+                try {
+                    beginnen();
+                } catch (IOException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -98,7 +106,6 @@ public class Launcher extends Cutscenes {
         });
         hilfeMenue.add(Spielhilfe);
 
-        
         JMenu sprachenMenu = new JMenu("Sprachen");//TODO: Sprache einfügen
 
         menuezeile.add(sprachenMenu);
@@ -118,7 +125,6 @@ public class Launcher extends Cutscenes {
             }
         });
         sprachenMenu.add(languageEng);
-
 
     }
     /*
@@ -256,21 +262,26 @@ public class Launcher extends Cutscenes {
     /*
      Versteckt den Launcher. Soll Später das Spiel beginnen.
      */
-    private void beginnen() {
+    private void beginnen() throws IOException {
+
+        MainGUI mainGUI = new MainGUI();
         
-         java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-    new MainGUI();
-          }
-      });
-                
-      //Game g = new Game();
-        //g.Game();
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
+            MainGUI mainGUI;
+            public void run() {
+                 mainGUI = new MainGUI();
+            }
+        });*/
+        
+
         stopBgMusic();
         launcher.setVisible(false);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                 + "(dispose)");
         launcher.dispose();
+        
+        Game g = new Game(mainGUI);
+        g.loadLevel(5);
 
     }
 

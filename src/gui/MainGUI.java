@@ -33,6 +33,20 @@ public class MainGUI extends WindowProperties {
     private gui.ShopPanel shopPanel1;
     private gui.SkillPanel skillPanel1;
 
+    public GamePanel getGamePanel1() {
+        return gamePanel1;
+    }
+
+    public ShopPanel getShopPanel1() {
+        return shopPanel1;
+    }
+
+    public SkillPanel getSkillPanel1() {
+        return skillPanel1;
+    }
+    
+    
+
     public MainGUI() {
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
