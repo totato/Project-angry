@@ -265,22 +265,22 @@ public class Launcher extends Cutscenes {
     private void beginnen() throws IOException {
 
         MainGUI mainGUI = new MainGUI();
-        
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
-            MainGUI mainGUI;
-            public void run() {
-                 mainGUI = new MainGUI();
-            }
-        });*/
-        
 
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
+         MainGUI mainGUI;
+         public void run() {
+         mainGUI = new MainGUI();
+         }
+         });*/
         stopBgMusic();
         launcher.setVisible(false);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                 + "(dispose)");
         launcher.dispose();
-        
+
         Game g = new Game(mainGUI);
+
+        mainGUI.setGame(g);
         g.loadLevel(5);
 
     }

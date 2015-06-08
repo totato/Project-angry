@@ -5,6 +5,7 @@
  */
 package gui;
 
+import game.Game;
 import static gui.WindowProperties.language;
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -28,6 +29,8 @@ public class MainGUI extends WindowProperties {
     static JPanel gamecards;
     static CardLayout clgame;
     private Timer timer;
+    
+    private Game game;
 
     private gui.GamePanel gamePanel1;
     private gui.ShopPanel shopPanel1;
@@ -45,7 +48,9 @@ public class MainGUI extends WindowProperties {
         return skillPanel1;
     }
     
-    
+    public void setGame(Game game){
+        this.game = game;
+    }
 
     public MainGUI() {
         setLanguage(language);
