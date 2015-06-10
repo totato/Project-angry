@@ -103,7 +103,7 @@ public class MainGUI extends WindowProperties {
     
     private void backToLauncher() {
         Launcher l = new Launcher();
-        l.Launcher();
+        //l.Launcher();
         //TODO: Musik vom Spiel beenden.
         gamescreen.setVisible(false);
 

@@ -500,7 +500,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
     private void backToLauncher() {
         speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
         Launcher l = new Launcher();
-        l.Launcher();
+        //l.Launcher();
         //TODO: Musik vom Spiel beenden.
         gamescreen.setVisible(false);
 

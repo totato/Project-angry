@@ -16,7 +16,7 @@ public class Main {
      */
     public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         Launcher l = new Launcher();
-        l.Launcher();
+        //l.Launcher();
     }
 
         // TODO: Erster verweis/Beginnt Programm bzw. Launcher, 

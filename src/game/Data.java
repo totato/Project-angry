@@ -10,6 +10,8 @@ public class Data {
     private static final int ANZAHL_WAFFEN = 6;
     private static final int ANZAHL_AUSRÜSTUNG = 3;
     
+    public static final int START_AUTO_DAMAGE = 0;
+    
 
     private int brillen;//Eine Brille entspricht einem toten Streber entsrpicht einem Kill
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!
@@ -20,6 +22,8 @@ public class Data {
     private int autoDamage; //Schaden den man macht, wenn man gerade nicht klickt
     private int[] waffenStufen; //Die Stufen jeder Waffe
     private int[] ausrüstungStufen; //Die Stufen jeder Ausrüstung
+    
+    private int aktWaffe;
     
     public Data(){
         brillen = 0;
@@ -32,7 +36,7 @@ public class Data {
             b = false;
         }
         
-        autoDamage = 0;
+        autoDamage = START_AUTO_DAMAGE;
         
         waffenStufen = new int[ANZAHL_WAFFEN];
         for(int i: waffenStufen){
@@ -45,5 +49,84 @@ public class Data {
             i = 0;
         }
         
+        aktWaffe = 1;
+        
     }
+
+    public int getBrillen() {
+        return brillen;
+    }
+
+    public int getLebendeStreber() {
+        return lebendeStreber;
+    }
+
+    public int getGetoeteteStreber() {
+        return getoeteteStreber;
+    }
+
+    public int getAktLevel() {
+        return aktLevel;
+    }
+
+    public int getAutoDamage() {
+        return autoDamage;
+    }
+    
+    public boolean getSkillUnlocked(int i){
+        return skillsUnlocked[i];
+    }
+    
+    public int getWaffenStufe(int i){
+        return waffenStufen[i];
+    }
+    
+    public int getAusrüstungsStufe(int i){
+        return ausrüstungStufen[i];
+    }
+
+    public int getAktWaffe() {
+        return aktWaffe;
+    }
+    
+    
+
+    public void setBrillen(int brillen) {
+        this.brillen = brillen;
+    }
+
+    public void setLebendeStreber(int lebendeStreber) {
+        this.lebendeStreber = lebendeStreber;
+    }
+
+    public void setGetoeteteStreber(int getoeteteStreber) {
+        this.getoeteteStreber = getoeteteStreber;
+    }
+
+    public void setAktLevel(int aktLevel) {
+        this.aktLevel = aktLevel;
+    }
+
+    public void setAutoDamage(int autoDamage) {
+        this.autoDamage = autoDamage;
+    }
+    
+    public void setSkillUnlocked(int i, boolean b){
+        skillsUnlocked[i] = b;
+    }
+    
+    public void setWaffenStufe(int i, int ws){
+        waffenStufen[i] = ws;
+    }
+    
+    public void setAusrüstungsStufe(int i, boolean as){
+        skillsUnlocked[i] = as;
+    }
+
+    public void setAktWaffe(int aktWaffe) {
+        this.aktWaffe = aktWaffe;
+    }
+    
+    
+  
 }

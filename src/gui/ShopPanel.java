@@ -256,7 +256,7 @@ public class ShopPanel extends javax.swing.JPanel {
     private void bToLauncherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToLauncherActionPerformed
               //speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
         Launcher l = new Launcher();
-        l.Launcher();
+        //l.Launcher();
         //TODO: Musik vom Spiel beenden.
         MainGUI.gamescreen.setVisible(false);
 

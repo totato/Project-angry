@@ -10,6 +10,9 @@ import javax.swing.JLabel;
  */
 public class Screen extends JLabel{
     
+    private static final int XSIZE = 410;
+    private static final int YSIZE = 580;
+    
     private BufferedImage background;
     private BufferedImage aktStreber;
     private String aktStreberAnzahl;
@@ -32,7 +35,7 @@ public class Screen extends JLabel{
     
     @Override
     public void paintComponent(Graphics g){
-        g.drawImage(background, TOP, TOP, null);
-        g.drawImage(aktStreber, CENTER, CENTER, null);
+        g.drawImage(background, 0, 0, null);
+        g.drawImage(aktStreber, XSIZE/2-aktStreber.getWidth()/2, YSIZE/2 - aktStreber.getHeight()/2, null);
     }
 }

@@ -1,0 +1,9 @@
+-START-
+Startanzahl Streber
+Streber Respawnrate (pro Sekunde)
+Pfad des Background-Bilds
+Pfad des Streber-Bilds
+-END-
+
+Alles was nicht zwischen -START- und -END- ist wird ignoriert, dort aber keine Leerzeilen machen
+hier wird auch noch Boss, Musik oder Cutscene etc. reinkommen 
