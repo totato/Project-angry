@@ -34,8 +34,8 @@ public class GamePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jSeparator = new javax.swing.JSeparator();
-        jLabelAliveGame = new javax.swing.JLabel();
-        jLabelDeadGame = new javax.swing.JLabel();
+        lebendeStreberAnzeiger = new javax.swing.JLabel();
+        toteStreberAnzeiger = new javax.swing.JLabel();
         jProgressBar = new javax.swing.JProgressBar();
         jLabelEXPGame = new javax.swing.JLabel();
         jLabelGlassesGame = new javax.swing.JLabel();
@@ -63,13 +63,17 @@ public class GamePanel extends javax.swing.JPanel {
         add(jSeparator);
         jSeparator.setBounds(440, 90, 200, 10);
 
-        jLabelAliveGame.setText("Gesamt Streber : 0");
-        add(jLabelAliveGame);
-        jLabelAliveGame.setBounds(440, 20, 200, 14);
+        lebendeStreberAnzeiger.setText("Lebende Streber : 0");
+        add(lebendeStreberAnzeiger);
+        lebendeStreberAnzeiger.setBounds(440, 20, 200, 14);
+        lebendeStreberAnzeiger.getAccessibleContext().setAccessibleName("lebendeStreberAnzeiger");
+        lebendeStreberAnzeiger.getAccessibleContext().setAccessibleDescription("");
 
-        jLabelDeadGame.setText("Getötete Streber : 0");
-        add(jLabelDeadGame);
-        jLabelDeadGame.setBounds(440, 40, 200, 14);
+        toteStreberAnzeiger.setText("Getötete Streber : 0");
+        add(toteStreberAnzeiger);
+        toteStreberAnzeiger.setBounds(440, 40, 200, 14);
+        toteStreberAnzeiger.getAccessibleContext().setAccessibleName("toteStreberAnzeiger");
+
         add(jProgressBar);
         jProgressBar.setBounds(440, 70, 200, 14);
 
@@ -181,9 +185,7 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JButton bGrenade;
     private javax.swing.JButton bToShopGame;
     private javax.swing.JButton bToSkillGame;
-    private javax.swing.JLabel jLabelAliveGame;
     private javax.swing.JLabel jLabelBackgroundGame;
-    private javax.swing.JLabel jLabelDeadGame;
     private javax.swing.JLabel jLabelEXPGame;
     private javax.swing.JLabel jLabelGlassesGame;
     private javax.swing.JLabel jLabelLVL;
@@ -191,11 +193,22 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPaneGame;
     private javax.swing.JSeparator jSeparator;
     private javax.swing.JTextArea jTextAreaGame;
+    private javax.swing.JLabel lebendeStreberAnzeiger;
     private gui.Screen mainScreen;
+    private javax.swing.JLabel toteStreberAnzeiger;
     // End of variables declaration//GEN-END:variables
 
     public Screen getScreen(){
         return mainScreen;
     }
+    
+    public void setLebendeStreber(int ls){
+        lebendeStreberAnzeiger.setText("Lebende Streber: " + ls);
+    }
+    
+    public void setToteStreber(int ts){
+        toteStreberAnzeiger.setText("Lebende Streber: " + ts);
+    }
+
 
 }

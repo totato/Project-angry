@@ -1,0 +1,5 @@
+-START(Zahl, welche Upgrade-Stufe angibt)-
+Name
+Schaden/getötete Streber pro Klick
+reload time (in Millisekunden)
+-END(Zahl)-

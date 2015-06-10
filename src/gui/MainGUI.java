@@ -48,6 +48,14 @@ public class MainGUI extends WindowProperties {
         return skillPanel1;
     }
     
+    public void setLebendeStreber(int ls){
+        gamePanel1.setLebendeStreber(ls);
+    }
+    
+    public void setToteStreber(int ts){
+        gamePanel1.setToteStreber(ts);
+    }
+    
     public void setGame(Game game){
         this.game = game;
     }

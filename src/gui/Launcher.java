@@ -71,10 +71,13 @@ public class Launcher extends Cutscenes {
                 + "(dispose)");
         launcher.dispose();
 
-        Game g = new Game(mainGUI);
+        Game game = new Game(mainGUI);
 
-        mainGUI.setGame(g);
-        g.loadGame();
+        mainGUI.setGame(game);
+        game.loadGame();
+        
+        Thread gameThread = new Thread(game);
+        gameThread.start();
 
     }
 

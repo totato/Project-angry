@@ -31,24 +31,26 @@ import javax.imageio.ImageIO;
  * @author Toast
  */
 public class Game implements Runnable {
-
-    MainGUI m;
-    Data data;
-    Screen scr;
+    
+    private static final long frameTime = 100;
+    
+    private MainGUI m;
+    private Data data;
+    private Screen scr;
 
     //Levelinformationen
-    int respawnRate;
-
+    private int respawnRate;
+    
     public Game(MainGUI m) {
         this.m = m;
         scr = m.getGamePanel1().getScreen();
     }
-
+    
     public void loadGame() throws IOException {
         data = new Data();
         loadLevel(1);
     }
-
+    
     public void loadLevel(int levelnr) throws IOException {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
@@ -59,19 +61,43 @@ public class Game implements Runnable {
         respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
         scr.setBG(ladeBild(zeilen.get(startPos + 3)));
         scr.setAktStreber(ladeBild(zeilen.get(startPos + 4)));
-
+        
+    }
+    
+    public void useAktWeapon(){
+        
     }
     
     
-
+    
     @Override
     public void run() {
-        while(true){
+        
+        int i = 0;
+        long startTime;
+        
+        while (true) {
             
-            //Thread.sleep(10);
+            startTime = System.currentTimeMillis();
+            
+            i++;
+            if (i >= 1000 / frameTime) {
+                i = 0;
+                data.setLebendeStreber(data.getLebendeStreber() + respawnRate);
+            } 
+            
+            m.setLebendeStreber(data.getLebendeStreber());
+            m.setToteStreber(data.getGetoeteteStreber());
+            if (frameTime - (System.currentTimeMillis() - startTime)>0) {
+                try {
+                    Thread.sleep(frameTime - (System.currentTimeMillis() - startTime));
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }
-
+    
     private BufferedImage ladeBild(String quelle) {
         try {
             return ImageIO.read(getClass().getClassLoader().getResourceAsStream(quelle));
@@ -80,9 +106,9 @@ public class Game implements Runnable {
         }
         return null;
     }
-
+    
     private ArrayList<String> ladeTXT(String quelle) throws FileNotFoundException {
-
+        
         BufferedReader stdin;
         try {
             stdin = new BufferedReader(new FileReader(getClass().getClassLoader().getResource(quelle).toString().substring(6)));
@@ -91,12 +117,12 @@ public class Game implements Runnable {
                 dokument.add(stdin.readLine());
             }
             return dokument;
-
+            
         } catch (IOException ex) {
             System.err.print("Textdatei nicht gefunden");
         }
         return null;
-
+        
     }
-
+    
 }
