@@ -27,6 +27,7 @@ public class ShopPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tbShopGroup = new javax.swing.ButtonGroup();
         jLabelShopkeeper = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaShop = new javax.swing.JTextArea();
@@ -62,7 +63,6 @@ public class ShopPanel extends javax.swing.JPanel {
         tbInventoryB4 = new javax.swing.JToggleButton();
         tbInventoryB5 = new javax.swing.JToggleButton();
         tbInventoryC1 = new javax.swing.JToggleButton();
-        tbInventoryC2 = new javax.swing.JToggleButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         hierWarPlatzÜbrig = new javax.swing.JLabel();
@@ -78,6 +78,7 @@ public class ShopPanel extends javax.swing.JPanel {
         add(jLabelShopkeeper);
         jLabelShopkeeper.setBounds(170, 70, 310, 370);
 
+        jTextAreaShop.setEditable(false);
         jTextAreaShop.setColumns(20);
         jTextAreaShop.setRows(5);
         jScrollPane1.setViewportView(jTextAreaShop);
@@ -97,50 +98,62 @@ public class ShopPanel extends javax.swing.JPanel {
         add(jLabelShop);
         jLabelShop.setBounds(10, 10, 150, 40);
 
+        tbShopGroup.add(tbShopD2);
         tbShopD2.setText("jToggleButton1");
         add(tbShopD2);
         tbShopD2.setBounds(20, 620, 105, 30);
 
+        tbShopGroup.add(tbShopA1);
         tbShopA1.setText("jToggleButton1");
         add(tbShopA1);
         tbShopA1.setBounds(20, 90, 105, 30);
 
+        tbShopGroup.add(tbShopA2);
         tbShopA2.setText("jToggleButton1");
         add(tbShopA2);
         tbShopA2.setBounds(20, 130, 105, 30);
 
+        tbShopGroup.add(tbShopA3);
         tbShopA3.setText("jToggleButton1");
         add(tbShopA3);
         tbShopA3.setBounds(20, 170, 105, 30);
 
+        tbShopGroup.add(tbShopB1);
         tbShopB1.setText("jToggleButton1");
         add(tbShopB1);
         tbShopB1.setBounds(20, 250, 105, 30);
 
+        tbShopGroup.add(tbShopB2);
         tbShopB2.setText("jToggleButton1");
         add(tbShopB2);
         tbShopB2.setBounds(20, 290, 105, 30);
 
+        tbShopGroup.add(tbShopB3);
         tbShopB3.setText("jToggleButton1");
         add(tbShopB3);
         tbShopB3.setBounds(20, 330, 105, 30);
 
+        tbShopGroup.add(tbShopB4);
         tbShopB4.setText("jToggleButton1");
         add(tbShopB4);
         tbShopB4.setBounds(20, 370, 105, 30);
 
+        tbShopGroup.add(tbShopB5);
         tbShopB5.setText("jToggleButton1");
         add(tbShopB5);
         tbShopB5.setBounds(20, 410, 105, 30);
 
+        tbShopGroup.add(tbShopC1);
         tbShopC1.setText("jToggleButton1");
         add(tbShopC1);
         tbShopC1.setBounds(20, 460, 105, 30);
 
+        tbShopGroup.add(tbShopC2);
         tbShopC2.setText("jToggleButton1");
         add(tbShopC2);
         tbShopC2.setBounds(20, 500, 105, 30);
 
+        tbShopGroup.add(tbShopD1);
         tbShopD1.setText("jToggleButton1");
         add(tbShopD1);
         tbShopD1.setBounds(20, 580, 105, 30);
@@ -192,45 +205,50 @@ public class ShopPanel extends javax.swing.JPanel {
         add(jLabel9);
         jLabel9.setBounds(20, 230, 100, 14);
 
+        tbShopGroup.add(tbInventoryA1);
         tbInventoryA1.setText("jToggleButton1");
         add(tbInventoryA1);
         tbInventoryA1.setBounds(520, 90, 105, 30);
 
+        tbShopGroup.add(tbInventoryA2);
         tbInventoryA2.setText("jToggleButton1");
         add(tbInventoryA2);
         tbInventoryA2.setBounds(520, 130, 105, 30);
 
+        tbShopGroup.add(tbInventoryA3);
         tbInventoryA3.setText("jToggleButton1");
         add(tbInventoryA3);
         tbInventoryA3.setBounds(520, 170, 105, 30);
 
+        tbShopGroup.add(tbInventoryB1);
         tbInventoryB1.setText("jToggleButton1");
         add(tbInventoryB1);
         tbInventoryB1.setBounds(520, 250, 105, 30);
 
+        tbShopGroup.add(tbInventoryB2);
         tbInventoryB2.setText("jToggleButton1");
         add(tbInventoryB2);
         tbInventoryB2.setBounds(520, 290, 105, 30);
 
+        tbShopGroup.add(tbInventoryB3);
         tbInventoryB3.setText("jToggleButton1");
         add(tbInventoryB3);
         tbInventoryB3.setBounds(520, 330, 105, 30);
 
+        tbShopGroup.add(tbInventoryB4);
         tbInventoryB4.setText("jToggleButton1");
         add(tbInventoryB4);
         tbInventoryB4.setBounds(520, 370, 105, 30);
 
+        tbShopGroup.add(tbInventoryB5);
         tbInventoryB5.setText("jToggleButton1");
         add(tbInventoryB5);
         tbInventoryB5.setBounds(520, 410, 105, 30);
 
+        tbShopGroup.add(tbInventoryC1);
         tbInventoryC1.setText("jToggleButton1");
         add(tbInventoryC1);
         tbInventoryC1.setBounds(520, 460, 105, 30);
-
-        tbInventoryC2.setText("jToggleButton1");
-        add(tbInventoryC2);
-        tbInventoryC2.setBounds(520, 500, 105, 30);
 
         jLabel10.setText("Ausrüstung");
         add(jLabel10);
@@ -293,7 +311,6 @@ public class ShopPanel extends javax.swing.JPanel {
     private javax.swing.JToggleButton tbInventoryB4;
     private javax.swing.JToggleButton tbInventoryB5;
     private javax.swing.JToggleButton tbInventoryC1;
-    private javax.swing.JToggleButton tbInventoryC2;
     private javax.swing.JToggleButton tbShopA1;
     private javax.swing.JToggleButton tbShopA2;
     private javax.swing.JToggleButton tbShopA3;
@@ -306,5 +323,6 @@ public class ShopPanel extends javax.swing.JPanel {
     private javax.swing.JToggleButton tbShopC2;
     private javax.swing.JToggleButton tbShopD1;
     private javax.swing.JToggleButton tbShopD2;
+    private javax.swing.ButtonGroup tbShopGroup;
     // End of variables declaration//GEN-END:variables
 }

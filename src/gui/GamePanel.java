@@ -33,6 +33,7 @@ public class GamePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tbAttackGroup = new javax.swing.ButtonGroup();
         jSeparator = new javax.swing.JSeparator();
         tbAttack3 = new javax.swing.JToggleButton();
         tbAttack4 = new javax.swing.JToggleButton();
@@ -63,26 +64,32 @@ public class GamePanel extends javax.swing.JPanel {
         add(jSeparator);
         jSeparator.setBounds(440, 90, 200, 10);
 
+        tbAttackGroup.add(tbAttack3);
         tbAttack3.setText("jToggleButton1");
         add(tbAttack3);
         tbAttack3.setBounds(160, 630, 60, 100);
 
+        tbAttackGroup.add(tbAttack4);
         tbAttack4.setText("jToggleButton1");
         add(tbAttack4);
         tbAttack4.setBounds(230, 630, 60, 100);
 
+        tbAttackGroup.add(tbAttack5);
         tbAttack5.setText("jToggleButton1");
         add(tbAttack5);
         tbAttack5.setBounds(300, 630, 60, 100);
 
+        tbAttackGroup.add(tbAttack6);
         tbAttack6.setText("jToggleButton1");
         add(tbAttack6);
         tbAttack6.setBounds(370, 630, 60, 100);
 
+        tbAttackGroup.add(tbAttack1);
         tbAttack1.setText("jToggleButton1");
         add(tbAttack1);
         tbAttack1.setBounds(20, 630, 60, 100);
 
+        tbAttackGroup.add(tbAttack2);
         tbAttack2.setText("jToggleButton1");
         add(tbAttack2);
         tbAttack2.setBounds(90, 630, 60, 100);
@@ -117,6 +124,7 @@ public class GamePanel extends javax.swing.JPanel {
         add(jLabelLVL);
         jLabelLVL.setBounds(440, 110, 200, 50);
 
+        jTextAreaGame.setEditable(false);
         jTextAreaGame.setColumns(20);
         jTextAreaGame.setRows(5);
         jScrollPaneGame.setViewportView(jTextAreaGame);
@@ -195,6 +203,7 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JToggleButton tbAttack4;
     private javax.swing.JToggleButton tbAttack5;
     private javax.swing.JToggleButton tbAttack6;
+    private javax.swing.ButtonGroup tbAttackGroup;
     private javax.swing.JLabel toteStreberAnzeiger;
     // End of variables declaration//GEN-END:variables
 

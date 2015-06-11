@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="tbAttackGroup">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[650, 750]"/>
@@ -39,6 +43,9 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="tbAttack3">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tbAttackGroup"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Constraints>
@@ -49,6 +56,9 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="tbAttack4">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tbAttackGroup"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Constraints>
@@ -59,6 +69,9 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="tbAttack5">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tbAttackGroup"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Constraints>
@@ -69,6 +82,9 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="tbAttack6">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tbAttackGroup"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Constraints>
@@ -79,6 +95,9 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="tbAttack1">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tbAttackGroup"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Constraints>
@@ -89,6 +108,9 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="tbAttack2">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tbAttackGroup"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Constraints>
@@ -184,6 +206,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="jTextAreaGame">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
           </Properties>
