@@ -5,6 +5,7 @@
  */
 package gui;
 
+import game.Game;
 import gui.WindowProperties;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,13 +26,15 @@ public class GamePanel extends javax.swing.JPanel {
     public GamePanel() {
         initComponents();
         shortKeys();
-       
+
     }
-private void shortKeys(){
-    
-    WindowProperties.setShortKeys(bToShopGame,"shop card", KeyEvent.VK_N );
-    WindowProperties.setShortKeys(bToSkillGame,"skill card", KeyEvent.VK_M );
-}
+
+    private void shortKeys() {
+
+        WindowProperties.setShortKeys(bToShopGame, "shop card", KeyEvent.VK_N);
+        WindowProperties.setShortKeys(bToSkillGame, "skill card", KeyEvent.VK_M);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,31 +77,61 @@ private void shortKeys(){
 
         tbAttackGroup.add(tbAttack3);
         tbAttack3.setText("jToggleButton1");
+        tbAttack3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack3ActionPerformed(evt);
+            }
+        });
         add(tbAttack3);
         tbAttack3.setBounds(160, 630, 60, 100);
 
         tbAttackGroup.add(tbAttack4);
         tbAttack4.setText("jToggleButton1");
+        tbAttack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack4ActionPerformed(evt);
+            }
+        });
         add(tbAttack4);
         tbAttack4.setBounds(230, 630, 60, 100);
 
         tbAttackGroup.add(tbAttack5);
         tbAttack5.setText("jToggleButton1");
+        tbAttack5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack5ActionPerformed(evt);
+            }
+        });
         add(tbAttack5);
         tbAttack5.setBounds(300, 630, 60, 100);
 
         tbAttackGroup.add(tbAttack6);
         tbAttack6.setText("jToggleButton1");
+        tbAttack6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack6ActionPerformed(evt);
+            }
+        });
         add(tbAttack6);
         tbAttack6.setBounds(370, 630, 60, 100);
 
         tbAttackGroup.add(tbAttack1);
         tbAttack1.setText("jToggleButton1");
+        tbAttack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack1ActionPerformed(evt);
+            }
+        });
         add(tbAttack1);
         tbAttack1.setBounds(20, 630, 60, 100);
 
         tbAttackGroup.add(tbAttack2);
         tbAttack2.setText("jToggleButton1");
+        tbAttack2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack2ActionPerformed(evt);
+            }
+        });
         add(tbAttack2);
         tbAttack2.setBounds(90, 630, 60, 100);
 
@@ -181,13 +214,42 @@ private void shortKeys(){
 
     private void bToShopGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopGameActionPerformed
 
-                MainGUI.getAktMainGUI().changeCard("shop card");
-       // TODO add your handling code here:
+        MainGUI.getAktMainGUI().changeCard("shop card");
+        // TODO add your handling code here:
     }//GEN-LAST:event_bToShopGameActionPerformed
 
     private void bToSkillGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillGameActionPerformed
- MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
+        MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
     }//GEN-LAST:event_bToSkillGameActionPerformed
+
+    private void tbAttack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack1ActionPerformed
+        Game.getAktGame().setAktWeapon(1);
+    }//GEN-LAST:event_tbAttack1ActionPerformed
+
+    private void tbAttack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack2ActionPerformed
+        Game.getAktGame().setAktWeapon(2);
+
+    }//GEN-LAST:event_tbAttack2ActionPerformed
+
+    private void tbAttack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack3ActionPerformed
+        Game.getAktGame().setAktWeapon(3);
+
+    }//GEN-LAST:event_tbAttack3ActionPerformed
+
+    private void tbAttack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack4ActionPerformed
+        Game.getAktGame().setAktWeapon(4);
+
+    }//GEN-LAST:event_tbAttack4ActionPerformed
+
+    private void tbAttack5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack5ActionPerformed
+        Game.getAktGame().setAktWeapon(5);
+
+    }//GEN-LAST:event_tbAttack5ActionPerformed
+
+    private void tbAttack6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack6ActionPerformed
+        Game.getAktGame().setAktWeapon(6);
+
+    }//GEN-LAST:event_tbAttack6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -215,17 +277,16 @@ private void shortKeys(){
     private javax.swing.JLabel toteStreberAnzeiger;
     // End of variables declaration//GEN-END:variables
 
-    public Screen getScreen(){
+    public Screen getScreen() {
         return mainScreen;
     }
-    
-    public void setLebendeStreber(int ls){
+
+    public void setLebendeStreber(int ls) {
         lebendeStreberAnzeiger.setText("Lebende Streber: " + ls);
     }
-    
-    public void setToteStreber(int ts){
+
+    public void setToteStreber(int ts) {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
-
 
 }

@@ -45,7 +45,6 @@ public class Game implements Runnable {
     //Informationen, die sich aus data ergeben
     private int respawnRate;
     private Waffe[] waffen;
-    
 
     public Game() {
 
@@ -57,7 +56,7 @@ public class Game implements Runnable {
 
     public void loadGame() throws IOException {
         data = new Data();
-        loadLevel(1,true);
+        loadLevel(1, true);
         loadGame(data);
     }
 
@@ -79,6 +78,10 @@ public class Game implements Runnable {
         respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
         scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
         scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
+
+    }
+
+    public void setAktWeapon(int waffennummer) {
 
     }
 
