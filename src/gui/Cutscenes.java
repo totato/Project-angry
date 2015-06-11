@@ -28,7 +28,7 @@ public class Cutscenes extends WindowProperties {
 
         if (cutsceneNumber == 1) {
             backgroundMusic("rewind.wav");
-            setBackgrPicture(cutsceneLabel, "ButtonIcon1.png");
+            setBackgrPicture(cutsceneLabel, "ScreenLaun/ButtonIcon1.png");
 
             cutsceneFrame.add(cutsceneLabel, BorderLayout.CENTER);
             cutsceneTimer = new Timer(20000, new AbstractAction() {

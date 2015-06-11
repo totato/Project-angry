@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author tseidelm
+ * @author Informatiker ohne Hobbies.
  */
 public class Screen extends JLabel{
     

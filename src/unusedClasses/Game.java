@@ -198,7 +198,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         backgroundMenu = new JLabel();
         menuCard.setLayout(new BorderLayout());
         menuCard.add(backgroundMenu, BorderLayout.CENTER);
-        setBackgrPicture(backgroundMenu, "MenuBG.jpg");
+        setBackgrPicture(backgroundMenu, "ScreenLaun/MenuBG.jpg");
         buttonToGame = new JButton("");
         setButtonBackground(buttonToGame, "ButtonIcon1.png");
 

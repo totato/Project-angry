@@ -48,8 +48,8 @@ public class Launcher extends Cutscenes {
         launcher.setDefaultCloseOperation(3);
         launcher.setLocationRelativeTo(null);
 
-        setIconPicture(launcher, "20941.png");
-        backgroundMusic("titleSong.wav");
+        setIconPicture(launcher, "ScreenLaun/20941.png");
+        backgroundMusic("exSound/titleSong.wav");
 
         launcher.pack();
         launcher.setVisible(true);
@@ -178,7 +178,7 @@ public class Launcher extends Cutscenes {
         //Die Objekte werden der launcherCard hinzugefügt
         launcherCard.add(background, BorderLayout.CENTER);
         launcherCard.add(cutscenekey, BorderLayout.SOUTH);
-        setBackgrPicture(background, "BackScreen.png");
+        setBackgrPicture(background, "ExLauncher/BackScreen.png");
 
         //Das gleiche nun mit den Cutscenes
         cutsceneCard = new JPanel();

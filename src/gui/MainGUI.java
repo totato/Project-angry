@@ -6,6 +6,7 @@
 package gui;
 
 import game.Game;
+import gui.WindowProperties;
 import static gui.WindowProperties.language;
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -20,7 +21,9 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Vika
+ * @author Vika.
+ * Nein, tschuldigung. WIRka.
+ *  WIRka.
  */
 public class MainGUI extends WindowProperties {
 
@@ -74,7 +77,7 @@ public class MainGUI extends WindowProperties {
         gamescreen.setDefaultCloseOperation(3);
         gamescreen.setLocationRelativeTo(null);
 
-        setIconPicture(gamescreen, "GameIcon.png");     //TODO: Muss gemacht 
+        setIconPicture(gamescreen, "ScreenLaun/GameIcon.png");     //TODO: Muss gemacht 
         //und eingefügt werden
         //backgroundMusic("rewind.wav");TODO: Muss gemacht und eingefügt werden
         gamescreen.pack();
@@ -121,11 +124,11 @@ public class MainGUI extends WindowProperties {
     }
 
     
-    /*Wechselt die gezeigte Karte. Die neue Karte ist die, deren
+    /*
+    Wechselt die gezeigte Karte. Die neue Karte ist die, deren
      Namen angegeben wurde
      */
-        static void changeCard(String name,CardLayout cl, JPanel cards ) {
-
+        public static void changeCard(String name,CardLayout cl, JPanel cards ) {
         //Cutscenes.playcutscene(1, pfad);
         cl.show(cards, name);
         /*buttonToMenu.setEnabled(false);

@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Zwei Leute die nichts besseres zu tun haben
+ * @author Drei Leute die nichts besseres zu tun haben
  */
 public abstract class WindowProperties {
 
@@ -32,13 +32,12 @@ public abstract class WindowProperties {
     /*
      Fügt Hintergrundmusik ein. Das abgespielte Lied muss unter dem Pfad 
      "proj_1/ScreenLaun/" zu finden sin. Der Name des Lieds wird, mit 
-     Dateianhang, in die Methode mit eingegeben.
-    
-   
+     Dateianhang, in die Methode mit eingegeben.   
      */
-    public void backgroundMusic(String dateiname) {
+    public void backgroundMusic(String dateipfad) {
+        //TODO: Catch wenn Soundausgabe fehlt
         System.out.println("*Musik spielt*");
-        String pfadsoundlaun = "proj_1/ScreenLaun/" + dateiname;
+        String pfadsoundlaun = dateipfad;
 
         try {
             AudioInputStream audio = AudioSystem.getAudioInputStream(this.getClass().getClassLoader().getResource(pfadsoundlaun));
@@ -66,29 +65,28 @@ public abstract class WindowProperties {
      Gibt als return ein ImageIcon heraus. Dieses wird primär in den Methoden 
      genutzt die ImageIcons brauchen und ist dazu da, nicht jedes mal manuell 
      das Icon bekommen zu müssen. Das ImageIcon muss unter dem Pfad 
-     "proj_1/ScreenLaun/" gespeichert sein.
+     "proj_1/[ordner]/" gespeichert sein, wobei "ordner" der zweite mitgegebene Parameter ist.
      */
-    public ImageIcon getImageIcon(String name) {
-        String pfad = "proj_1/ScreenLaun/" + name;
+    public ImageIcon getImageIcon(String ordnerUName) {
+        //String pfad = "Proj_1/"+ ordnerUName;
+         String pfad = ordnerUName;
         ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(pfad));
         return icon;
     }
 
     /*
-     Fügt einem JLabel ein Hintergrundbild zu. Da die Methode getImageIcon 
-     aufruft muss das Hintergrundbild unter dem Pfad "proj_1/ScreenLaun/"
-     gespeichert sein.
+     Fügt einem JLabel ein Hintergrundbild zu. Der Dateiname und der Ordner
+     in dem die Datei gespeichert wurde werden zusammen mitgegeben.
      */
-    public void setBackgrPicture(JLabel label, String dateiname) {
-        ImageIcon bgPicture = getImageIcon(dateiname);
+    public void setBackgrPicture(JLabel label, String pfad) {
+        ImageIcon bgPicture = getImageIcon(pfad);
         label.setIcon(bgPicture);
         System.out.println("Hintergrund gesetzt");
     }
 
     /*
-     Fügt einem JFrame ein Icon zu. Da die Methode getImageIcon 
-     aufruft muss das Icon unter dem Pfad "proj_1/ScreenLaun/"
-     gespeichert sein.
+     Fügt einem JFrame ein Icon zu. Der Dateiname und der Ordner
+     in dem die Datei gespeichert wurde werden zusammen mitgegeben.
      */
     public void setIconPicture(JFrame frame, String pfad) {
         ImageIcon icon = getImageIcon(pfad);
@@ -97,9 +95,8 @@ public abstract class WindowProperties {
     }
 
     /*
-     Fügt einem JButton ein Hintergrundbild zu. Da die Methode getImageIcon 
-     aufruft muss das Hintergrundbild unter dem Pfad "proj_1/ScreenLaun/"
-     gespeichert sein.
+     Fügt einem JButton ein Hintergrundbild zu. Der Dateiname und der Ordner
+     in dem die Datei gespeichert wurde werden zusammen mitgegeben.
      */
     public void setButtonBackground(JButton button, String pfad) {
         ImageIcon background = getImageIcon(pfad);
@@ -145,7 +142,7 @@ public abstract class WindowProperties {
             for (i = 0; i < 5; i++) {
                 saveData[i] = textReader.readLine();
             }
-        textReader.close( );
+            textReader.close();
         } catch (IOException ioex) {
             System.err.println("Datei nicht Gefunden");
         }
@@ -170,7 +167,7 @@ public abstract class WindowProperties {
             FileWriter saveFinder = new FileWriter("Save.txt");
             PrintWriter saveWriter = new PrintWriter(saveFinder);
             saveWriter.println("This is your save file. Stop cheating, "
-                                     + "start playing!");
+                    + "start playing!");
             saveWriter.println(levelnr);//Levelnummer
             saveWriter.println(brillen);
             saveWriter.println(lebStre);
