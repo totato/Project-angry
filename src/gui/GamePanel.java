@@ -147,6 +147,11 @@ public class GamePanel extends javax.swing.JPanel {
                 bToShopGameActionPerformed(evt);
             }
         });
+        bToShopGame.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                bToShopGameKeyTyped(evt);
+            }
+        });
         add(bToShopGame);
         bToShopGame.setBounds(510, 620, 130, 60);
 
@@ -180,6 +185,10 @@ public class GamePanel extends javax.swing.JPanel {
     private void bToSkillGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillGameActionPerformed
  MainGUI.changeCard("skill card",MainGUI.clgame,MainGUI.gamecards);        // TODO add your handling code here:
     }//GEN-LAST:event_bToSkillGameActionPerformed
+
+    private void bToShopGameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bToShopGameKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bToShopGameKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
