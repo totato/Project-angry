@@ -22,20 +22,18 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Vika.
- * Nein, tschuldigung. WIRka.
- *  WIRka.
+ * @author Vika. Nein, tschuldigung. WIRka. WIRka.
  */
 public class MainGUI extends WindowProperties {
 
     private static MainGUI aktMainGUI;
-    
-    static JFrame gamescreen;
-   // private JPanel cutsceneCard;
-    static JPanel gamecards;
-    static CardLayout clgame;
+
+    private JFrame gamescreen;
+    // private JPanel cutsceneCard;
+    private JPanel gamecards;
+    private CardLayout clgame;
     private Timer timer;
-    
+
     private Game game;
 
     private gui.GamePanel gamePanel1;
@@ -53,12 +51,12 @@ public class MainGUI extends WindowProperties {
     public SkillPanel getSkillPanel1() {
         return skillPanel1;
     }
-    
-    public void setLebendeStreber(int ls){
+
+    public void setLebendeStreber(int ls) {
         gamePanel1.setLebendeStreber(ls);
     }
-    
-    public void setToteStreber(int ts){
+
+    public void setToteStreber(int ts) {
         gamePanel1.setToteStreber(ts);
     }
 
@@ -69,7 +67,7 @@ public class MainGUI extends WindowProperties {
     public static void setAktMainGUI(MainGUI aktMainGUI) {
         MainGUI.aktMainGUI = aktMainGUI;
     }
-    
+
     public MainGUI() {
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
@@ -114,11 +112,9 @@ public class MainGUI extends WindowProperties {
 
         // Hier wird gesagt es es sich nun um ein Cardlayout handelt
         clgame = (CardLayout) (gamecards.getLayout());
-        
-               
+
     }
 
-    
     private void backToLauncher() {
         Launcher l = new Launcher();
         //l.Launcher();
@@ -130,14 +126,13 @@ public class MainGUI extends WindowProperties {
         gamescreen.dispose();
     }
 
-    
     /*
-    Wechselt die gezeigte Karte. Die neue Karte ist die, deren
+     Wechselt die gezeigte Karte. Die neue Karte ist die, deren
      Namen angegeben wurde
      */
-        public static void changeCard(String name,CardLayout cl, JPanel cards ) {
+    public void changeCard(String name) {
         //Cutscenes.playcutscene(1, pfad);
-        cl.show(cards, name);
+        clgame.show(getGamecards(), name);
         /*buttonToMenu.setEnabled(false);
          buttonToGame.setEnabled(false);
          timer = new Timer(1900, new AbstractAction() {
@@ -149,4 +144,13 @@ public class MainGUI extends WindowProperties {
          timer.start();*/
         System.out.println("zu  " + name + "  gewechselt");
     }
+
+    public JPanel getGamecards() {
+        return gamecards;
+    }
+
+    public JFrame getGamescreen() {
+        return gamescreen;
+    }
+
 }

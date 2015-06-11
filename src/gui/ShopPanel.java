@@ -271,11 +271,11 @@ private void shortKeys(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
- MainGUI.changeCard("game card",MainGUI.clgame,MainGUI.gamecards);        
+ MainGUI.getAktMainGUI().changeCard("game card");        
     }//GEN-LAST:event_bToGameShopActionPerformed
 
     private void bToSkillShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillShopActionPerformed
- MainGUI.changeCard("skill card",MainGUI.clgame,MainGUI.gamecards);      
+ MainGUI.getAktMainGUI().changeCard("skill card");      
     }//GEN-LAST:event_bToSkillShopActionPerformed
 
     private void bToLauncherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToLauncherActionPerformed
@@ -283,11 +283,11 @@ private void shortKeys(){
         Launcher l = new Launcher();
         //l.Launcher();
         //TODO: Musik vom Spiel beenden.
-        MainGUI.gamescreen.setVisible(false);
+        MainGUI.getAktMainGUI().getGamescreen().setVisible(false);
 
         System.out.println("gamescreen wird unsichtbar und anschließend zerstört"
                 + "(dispose)");
-        MainGUI.gamescreen.dispose();
+        MainGUI.getAktMainGUI().getGamescreen().dispose();
     }//GEN-LAST:event_bToLauncherActionPerformed
 
 

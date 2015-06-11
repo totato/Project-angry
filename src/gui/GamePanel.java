@@ -181,12 +181,12 @@ private void shortKeys(){
 
     private void bToShopGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopGameActionPerformed
 
-                MainGUI.changeCard("shop card",MainGUI.clgame,MainGUI.gamecards);
+                MainGUI.getAktMainGUI().changeCard("shop card");
        // TODO add your handling code here:
     }//GEN-LAST:event_bToShopGameActionPerformed
 
     private void bToSkillGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillGameActionPerformed
- MainGUI.changeCard("skill card",MainGUI.clgame,MainGUI.gamecards);        // TODO add your handling code here:
+ MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
     }//GEN-LAST:event_bToSkillGameActionPerformed
 
 

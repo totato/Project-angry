@@ -313,11 +313,11 @@ private void shortKeys(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameSkillActionPerformed
-        MainGUI.changeCard("game card",MainGUI.clgame,MainGUI.gamecards);
+        MainGUI.getAktMainGUI().changeCard("game card");
     }//GEN-LAST:event_bToGameSkillActionPerformed
 
     private void bToShopSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopSkillActionPerformed
-     MainGUI.changeCard("shop card",MainGUI.clgame,MainGUI.gamecards);
+     MainGUI.getAktMainGUI().changeCard("shop card");
     }//GEN-LAST:event_bToShopSkillActionPerformed
 
 

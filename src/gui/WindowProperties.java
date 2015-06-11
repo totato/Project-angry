@@ -189,7 +189,7 @@ public abstract class WindowProperties {
         button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
         button.getActionMap().put("x", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                MainGUI.changeCard(card, MainGUI.clgame, MainGUI.gamecards);
+                MainGUI.getAktMainGUI().changeCard(card);
             }
         });
     }
@@ -203,10 +203,11 @@ public abstract class WindowProperties {
         return null;
     }
     
-    public static ArrayList<String> ladeTXT(String quelle) throws FileNotFoundException {
+    public static ArrayList<String> ladeTXT(String quelle) throws IOException {
         
         BufferedReader stdin;
         try {
+            System.out.println(WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6));
             stdin = new BufferedReader(new FileReader(WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6)));
             ArrayList<String> dokument = new ArrayList();
             while (stdin.ready()) {
@@ -214,7 +215,7 @@ public abstract class WindowProperties {
             }
             return dokument;
             
-        } catch (IOException ex) {
+        } catch (FileNotFoundException  ex) {
             System.err.print("Textdatei nicht gefunden");
         }
         return null;
