@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
+import javax.swing.JButton;
 import javax.swing.KeyStroke;
 
 /**
@@ -22,8 +23,17 @@ public class GamePanel extends javax.swing.JPanel {
      */
     public GamePanel() {
         initComponents();
+       
     }
+private void setShortKeys(JButton button, String card ){
+     button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "x");
 
+        button.getActionMap().put("x", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                MainGUI.changeCard("shop card",MainGUI.clgame,MainGUI.gamecards);
+            }
+        });
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -147,11 +157,6 @@ public class GamePanel extends javax.swing.JPanel {
                 bToShopGameActionPerformed(evt);
             }
         });
-        bToShopGame.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                bToShopGameKeyTyped(evt);
-            }
-        });
         add(bToShopGame);
         bToShopGame.setBounds(510, 620, 130, 60);
 
@@ -185,10 +190,6 @@ public class GamePanel extends javax.swing.JPanel {
     private void bToSkillGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillGameActionPerformed
  MainGUI.changeCard("skill card",MainGUI.clgame,MainGUI.gamecards);        // TODO add your handling code here:
     }//GEN-LAST:event_bToSkillGameActionPerformed
-
-    private void bToShopGameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bToShopGameKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bToShopGameKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

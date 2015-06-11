@@ -23,7 +23,7 @@ public class Screen extends JLabel{
     private boolean inScreen;
     
     public Screen(){
-        this.addMouseListener(new MouseListener(){
+        /*this.addMouseListener(new MouseListener(){
 
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -50,7 +50,7 @@ public class Screen extends JLabel{
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
             
-        });
+        });*/
     }
     
     public void setBG(BufferedImage bg){
