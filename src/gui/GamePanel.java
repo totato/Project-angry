@@ -34,6 +34,12 @@ public class GamePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jSeparator = new javax.swing.JSeparator();
+        tbAttack3 = new javax.swing.JToggleButton();
+        tbAttack4 = new javax.swing.JToggleButton();
+        tbAttack5 = new javax.swing.JToggleButton();
+        tbAttack6 = new javax.swing.JToggleButton();
+        tbAttack1 = new javax.swing.JToggleButton();
+        tbAttack2 = new javax.swing.JToggleButton();
         lebendeStreberAnzeiger = new javax.swing.JLabel();
         toteStreberAnzeiger = new javax.swing.JLabel();
         jProgressBar = new javax.swing.JProgressBar();
@@ -45,13 +51,7 @@ public class GamePanel extends javax.swing.JPanel {
         bToSkillGame = new javax.swing.JButton();
         bToShopGame = new javax.swing.JButton();
         bEvent = new javax.swing.JButton();
-        bGrenade = new javax.swing.JButton();
-        bAttack16 = new javax.swing.JButton();
-        bAttack3 = new javax.swing.JButton();
-        bAttack4 = new javax.swing.JButton();
-        bAttack2 = new javax.swing.JButton();
-        bAttack5 = new javax.swing.JButton();
-        bAttack1 = new javax.swing.JButton();
+        bAttack7 = new javax.swing.JButton();
         mainScreen = new gui.Screen();
         jLabelBackgroundGame = new javax.swing.JLabel();
 
@@ -62,6 +62,30 @@ public class GamePanel extends javax.swing.JPanel {
         setLayout(null);
         add(jSeparator);
         jSeparator.setBounds(440, 90, 200, 10);
+
+        tbAttack3.setText("jToggleButton1");
+        add(tbAttack3);
+        tbAttack3.setBounds(160, 630, 60, 100);
+
+        tbAttack4.setText("jToggleButton1");
+        add(tbAttack4);
+        tbAttack4.setBounds(230, 630, 60, 100);
+
+        tbAttack5.setText("jToggleButton1");
+        add(tbAttack5);
+        tbAttack5.setBounds(300, 630, 60, 100);
+
+        tbAttack6.setText("jToggleButton1");
+        add(tbAttack6);
+        tbAttack6.setBounds(370, 630, 60, 100);
+
+        tbAttack1.setText("jToggleButton1");
+        add(tbAttack1);
+        tbAttack1.setBounds(20, 630, 60, 100);
+
+        tbAttack2.setText("jToggleButton1");
+        add(tbAttack2);
+        tbAttack2.setBounds(90, 630, 60, 100);
 
         lebendeStreberAnzeiger.setText("Lebende Streber : 0");
         add(lebendeStreberAnzeiger);
@@ -122,33 +146,9 @@ public class GamePanel extends javax.swing.JPanel {
         add(bEvent);
         bEvent.setBounds(440, 680, 60, 60);
 
-        bGrenade.setText("jButton7");
-        add(bGrenade);
-        bGrenade.setBounds(440, 620, 60, 60);
-
-        bAttack16.setText("jButton1");
-        add(bAttack16);
-        bAttack16.setBounds(370, 630, 60, 100);
-
-        bAttack3.setText("jButton1");
-        add(bAttack3);
-        bAttack3.setBounds(160, 630, 60, 100);
-
-        bAttack4.setText("jButton1");
-        add(bAttack4);
-        bAttack4.setBounds(230, 630, 60, 100);
-
-        bAttack2.setText("jButton1");
-        add(bAttack2);
-        bAttack2.setBounds(90, 630, 60, 100);
-
-        bAttack5.setText("jButton1");
-        add(bAttack5);
-        bAttack5.setBounds(300, 630, 60, 100);
-
-        bAttack1.setText("jButton1");
-        add(bAttack1);
-        bAttack1.setBounds(20, 630, 60, 100);
+        bAttack7.setText("jButton7");
+        add(bAttack7);
+        bAttack7.setBounds(440, 620, 60, 60);
 
         mainScreen.setText("mainScreen");
         add(mainScreen);
@@ -175,14 +175,8 @@ public class GamePanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAttack1;
-    private javax.swing.JButton bAttack16;
-    private javax.swing.JButton bAttack2;
-    private javax.swing.JButton bAttack3;
-    private javax.swing.JButton bAttack4;
-    private javax.swing.JButton bAttack5;
+    private javax.swing.JButton bAttack7;
     private javax.swing.JButton bEvent;
-    private javax.swing.JButton bGrenade;
     private javax.swing.JButton bToShopGame;
     private javax.swing.JButton bToSkillGame;
     private javax.swing.JLabel jLabelBackgroundGame;
@@ -195,6 +189,12 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextAreaGame;
     private javax.swing.JLabel lebendeStreberAnzeiger;
     private gui.Screen mainScreen;
+    private javax.swing.JToggleButton tbAttack1;
+    private javax.swing.JToggleButton tbAttack2;
+    private javax.swing.JToggleButton tbAttack3;
+    private javax.swing.JToggleButton tbAttack4;
+    private javax.swing.JToggleButton tbAttack5;
+    private javax.swing.JToggleButton tbAttack6;
     private javax.swing.JLabel toteStreberAnzeiger;
     // End of variables declaration//GEN-END:variables
 
