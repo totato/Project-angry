@@ -20,6 +20,8 @@ public class Screen extends JLabel{
     private BufferedImage aktStreber = new BufferedImage(1,2,3);
     private String aktStreberAnzahl;
     
+    private boolean inScreen;
+    
     public Screen(){
         this.addMouseListener(new MouseListener(){
 
@@ -40,7 +42,7 @@ public class Screen extends JLabel{
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                inScreen = true;
             }
 
             @Override

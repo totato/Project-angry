@@ -11,4 +11,27 @@ package game;
  */
 public class Waffe {
     
+    private String Name;
+    private int damage;
+    private long reloadTime;
+
+    public Waffe(String Name, int damage, long reloadTime) {
+        this.Name = Name;
+        this.damage = damage;
+        this.reloadTime = reloadTime;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public long getReloadTime() {
+        return reloadTime;
+    }
+    
+    
 }
