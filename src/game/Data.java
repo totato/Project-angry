@@ -132,9 +132,6 @@ public class Data {
             getoeteteStreber += lebendeStreber;
             lebendeStreber = 0;
         }
-        if (lebendeStreber < 0) {
-            lebendeStreber = 0;
-        }
 
     }
 
