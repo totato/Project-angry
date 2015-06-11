@@ -28,7 +28,7 @@ public class Data {
         brillen = 0;
 
         getoeteteStreber = 0;
-        aktLevel = 0;
+        aktLevel = 1;
 
         skillsUnlocked = new boolean[ANZAHL_SKILLS];
         for (boolean b : skillsUnlocked) {

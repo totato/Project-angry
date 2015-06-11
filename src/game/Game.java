@@ -32,68 +32,79 @@ import javax.imageio.ImageIO;
  * @author Toast
  */
 public class Game implements Runnable {
-    
+
     private static final long frameTime = 100;
-    
+    private static final int WAFFEN_ANZAHL = 6;
+
     private static Game aktGame;
-    
+
     private MainGUI m;
     private Data data;
     private Screen scr;
 
-    //Levelinformationen
+    //Informationen, die sich aus data ergeben
     private int respawnRate;
+    private Waffe[] waffen;
     
+
     public Game() {
-        
+
         m = MainGUI.getAktMainGUI();
         scr = m.getGamePanel1().getScreen();
-        
+        waffen = new Waffe[WAFFEN_ANZAHL];
+
     }
-    
+
     public void loadGame() throws IOException {
         data = new Data();
-        loadLevel(1);
+        loadLevel(1,true);
+        loadGame(data);
     }
-    
-    public void loadLevel(int levelnr) throws IOException {
+
+    public void loadGame(Data data) throws IOException {
+        this.data = data;
+        loadLevel(data.getAktLevel(), false);
+
+    }
+
+    public void loadLevel(int levelnr, boolean neu) throws IOException {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
         List<String> zeilen = WindowProperties.ladeTXT("Levels/Level_" + Integer.toString(levelnr) + ".txt");
         int startPos = zeilen.indexOf("-START-");
-        data.setAktLevel(levelnr);
-        data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
+        if (neu) {
+            data.setAktLevel(levelnr);
+            data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
+        }
         respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
         scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
         scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
-        
+
     }
-    
-    public void useAktWeapon(){
+
+    public void useAktWeapon() {
         data.killStreber(5);
     }
-    
-    
-    
+
     @Override
     public void run() {
-        
+
         int i = 0;
         long startTime;
-        
+
         while (true) {
-            
+
             startTime = System.currentTimeMillis();
-            
+
             i++;
             if (i >= 1000 / frameTime) {
                 i = 0;
                 data.setLebendeStreber(data.getLebendeStreber() + respawnRate);
-            } 
-            
+            }
+
             m.setLebendeStreber(data.getLebendeStreber());
             m.setToteStreber(data.getGetoeteteStreber());
-            if (frameTime - (System.currentTimeMillis() - startTime)>0) {
+            if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {
                     Thread.sleep(frameTime - (System.currentTimeMillis() - startTime));
                 } catch (InterruptedException ex) {
@@ -110,5 +121,5 @@ public class Game implements Runnable {
     public static void setAktGame(Game aktGame) {
         Game.aktGame = aktGame;
     }
-    
+
 }
