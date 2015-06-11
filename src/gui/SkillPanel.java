@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author Vika
@@ -16,8 +18,13 @@ public class SkillPanel extends javax.swing.JPanel {
      */
     public SkillPanel() {
         initComponents();
+        shortKeys();
     }
-
+private void shortKeys(){
+    
+    WindowProperties.setShortKeys(bToShopSkill,"shop card", KeyEvent.VK_N );
+    WindowProperties.setShortKeys(bToGameSkill,"game card", KeyEvent.VK_B );
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -86,7 +93,7 @@ public class SkillPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(10, 400, 220, 340);
 
-        jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proj_1/ScreenLaun/MenuBG.jpg"))); // NOI18N
+        jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/MenuBG.jpg"))); // NOI18N
         jLabelSensei.setText("jLabel1");
         add(jLabelSensei);
         jLabelSensei.setBounds(10, 10, 220, 300);

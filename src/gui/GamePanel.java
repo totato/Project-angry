@@ -5,6 +5,7 @@
  */
 package gui;
 
+import gui.WindowProperties;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -23,16 +24,13 @@ public class GamePanel extends javax.swing.JPanel {
      */
     public GamePanel() {
         initComponents();
+        shortKeys();
        
     }
-private void setShortKeys(JButton button, String card ){
-     button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "x");
-
-        button.getActionMap().put("x", new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                MainGUI.changeCard("shop card",MainGUI.clgame,MainGUI.gamecards);
-            }
-        });
+private void shortKeys(){
+    
+    WindowProperties.setShortKeys(bToShopGame,"shop card", KeyEvent.VK_N );
+    WindowProperties.setShortKeys(bToSkillGame,"skill card", KeyEvent.VK_M );
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -172,7 +170,7 @@ private void setShortKeys(JButton button, String card ){
         add(mainScreen);
         mainScreen.setBounds(20, 20, 410, 580);
 
-        jLabelBackgroundGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proj_1/ScreenLaun/gamePanelBG.jpg"))); // NOI18N
+        jLabelBackgroundGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/gamePanelBG.jpg"))); // NOI18N
         jLabelBackgroundGame.setText("jLabel2");
         jLabelBackgroundGame.setMaximumSize(new java.awt.Dimension(650, 750));
         jLabelBackgroundGame.setMinimumSize(new java.awt.Dimension(650, 750));

@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author Vika
@@ -16,8 +18,13 @@ public class ShopPanel extends javax.swing.JPanel {
      */
     public ShopPanel() {
         initComponents();
+        shortKeys();
     }
-
+private void shortKeys(){
+    
+    WindowProperties.setShortKeys(bToGameShop,"game card", KeyEvent.VK_B );
+    WindowProperties.setShortKeys(bToSkillShop,"skill card", KeyEvent.VK_M );
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,8 +56,8 @@ public class ShopPanel extends javax.swing.JPanel {
         bToLauncher = new javax.swing.JButton();
         jLabelGlassesShop = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        bToSkill = new javax.swing.JButton();
-        bToGame = new javax.swing.JButton();
+        bToSkillShop = new javax.swing.JButton();
+        bToGameShop = new javax.swing.JButton();
         bSave = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -73,7 +80,7 @@ public class ShopPanel extends javax.swing.JPanel {
         setLayout(null);
 
         jLabelShopkeeper.setBackground(new java.awt.Color(204, 255, 204));
-        jLabelShopkeeper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proj_1/ScreenLaun/Screen.png"))); // NOI18N
+        jLabelShopkeeper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/Screen.png"))); // NOI18N
         jLabelShopkeeper.setText("jLabel1");
         add(jLabelShopkeeper);
         jLabelShopkeeper.setBounds(170, 70, 310, 370);
@@ -175,23 +182,23 @@ public class ShopPanel extends javax.swing.JPanel {
         add(jLabel7);
         jLabel7.setBounds(20, 560, 100, 14);
 
-        bToSkill.setText("Skillbaum");
-        bToSkill.addActionListener(new java.awt.event.ActionListener() {
+        bToSkillShop.setText("Skillbaum");
+        bToSkillShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bToSkillActionPerformed(evt);
+                bToSkillShopActionPerformed(evt);
             }
         });
-        add(bToSkill);
-        bToSkill.setBounds(500, 700, 140, 40);
+        add(bToSkillShop);
+        bToSkillShop.setBounds(500, 700, 140, 40);
 
-        bToGame.setText("Zurück");
-        bToGame.addActionListener(new java.awt.event.ActionListener() {
+        bToGameShop.setText("Zurück");
+        bToGameShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bToGameActionPerformed(evt);
+                bToGameShopActionPerformed(evt);
             }
         });
-        add(bToGame);
-        bToGame.setBounds(500, 650, 140, 40);
+        add(bToGameShop);
+        bToGameShop.setBounds(500, 650, 140, 40);
 
         bSave.setText("Speichern");
         add(bSave);
@@ -263,13 +270,13 @@ public class ShopPanel extends javax.swing.JPanel {
         hierWarPlatzÜbrig.setBounds(500, 550, 140, 90);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bToGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameActionPerformed
+    private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
  MainGUI.changeCard("game card",MainGUI.clgame,MainGUI.gamecards);        
-    }//GEN-LAST:event_bToGameActionPerformed
+    }//GEN-LAST:event_bToGameShopActionPerformed
 
-    private void bToSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillActionPerformed
+    private void bToSkillShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillShopActionPerformed
  MainGUI.changeCard("skill card",MainGUI.clgame,MainGUI.gamecards);      
-    }//GEN-LAST:event_bToSkillActionPerformed
+    }//GEN-LAST:event_bToSkillShopActionPerformed
 
     private void bToLauncherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToLauncherActionPerformed
               //speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
@@ -287,9 +294,9 @@ public class ShopPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuyShop;
     private javax.swing.JButton bSave;
-    private javax.swing.JButton bToGame;
+    private javax.swing.JButton bToGameShop;
     private javax.swing.JButton bToLauncher;
-    private javax.swing.JButton bToSkill;
+    private javax.swing.JButton bToSkillShop;
     private javax.swing.JLabel hierWarPlatzÜbrig;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

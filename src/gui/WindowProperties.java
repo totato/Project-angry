@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,7 +17,9 @@ import javax.swing.JLabel;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import javax.swing.AbstractAction;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -177,5 +180,14 @@ public abstract class WindowProperties {
             System.err.println("Datei nicht Gefunden");
         }
     }
+    
+    public static void setShortKeys(JButton button,final String card, int sign ){
+     button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
+        button.getActionMap().put("x", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                MainGUI.changeCard(card,MainGUI.clgame,MainGUI.gamecards);
+            }
+        });
+}
 
 }
