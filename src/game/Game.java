@@ -7,6 +7,7 @@ package game;
 
 import gui.MainGUI;
 import gui.Screen;
+import gui.WindowProperties;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -34,6 +35,8 @@ public class Game implements Runnable {
     
     private static final long frameTime = 100;
     
+    private static Game aktGame;
+    
     private MainGUI m;
     private Data data;
     private Screen scr;
@@ -41,9 +44,11 @@ public class Game implements Runnable {
     //Levelinformationen
     private int respawnRate;
     
-    public Game(MainGUI m) {
-        this.m = m;
+    public Game() {
+        
+        m = MainGUI.getAktMainGUI();
         scr = m.getGamePanel1().getScreen();
+        
     }
     
     public void loadGame() throws IOException {
@@ -54,18 +59,18 @@ public class Game implements Runnable {
     public void loadLevel(int levelnr) throws IOException {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
-        List<String> zeilen = ladeTXT("Levels/Level_" + Integer.toString(levelnr) + ".txt");
+        List<String> zeilen = WindowProperties.ladeTXT("Levels/Level_" + Integer.toString(levelnr) + ".txt");
         int startPos = zeilen.indexOf("-START-");
         data.setAktLevel(levelnr);
         data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
         respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
-        scr.setBG(ladeBild(zeilen.get(startPos + 3)));
-        scr.setAktStreber(ladeBild(zeilen.get(startPos + 4)));
+        scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
+        scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
         
     }
     
     public void useAktWeapon(){
-        
+        data.killStreber(5);
     }
     
     
@@ -97,32 +102,13 @@ public class Game implements Runnable {
             }
         }
     }
-    
-    private BufferedImage ladeBild(String quelle) {
-        try {
-            return ImageIO.read(getClass().getClassLoader().getResourceAsStream(quelle));
-        } catch (IOException ex) {
-            System.out.print("Bild nicht gefunden");
-        }
-        return null;
+
+    public static Game getAktGame() {
+        return aktGame;
     }
-    
-    private ArrayList<String> ladeTXT(String quelle) throws FileNotFoundException {
-        
-        BufferedReader stdin;
-        try {
-            stdin = new BufferedReader(new FileReader(getClass().getClassLoader().getResource(quelle).toString().substring(6)));
-            ArrayList<String> dokument = new ArrayList();
-            while (stdin.ready()) {
-                dokument.add(stdin.readLine());
-            }
-            return dokument;
-            
-        } catch (IOException ex) {
-            System.err.print("Textdatei nicht gefunden");
-        }
-        return null;
-        
+
+    public static void setAktGame(Game aktGame) {
+        Game.aktGame = aktGame;
     }
     
 }

@@ -224,7 +224,7 @@ private void shortKeys(){
     }
     
     public void setToteStreber(int ts){
-        toteStreberAnzeiger.setText("Lebende Streber: " + ts);
+        toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
 
 

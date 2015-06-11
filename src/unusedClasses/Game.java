@@ -200,7 +200,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         menuCard.add(backgroundMenu, BorderLayout.CENTER);
         setBackgrPicture(backgroundMenu, "ScreenLaun/MenuBG.jpg");
         buttonToGame = new JButton("");
-        setButtonBackground(buttonToGame, "ButtonIcon1.png");
+        //setButtonBackground(buttonToGame, "ButtonIcon1.png");
 
         buttonToGame.getInputMap(buttonToGame.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "game");
 
@@ -217,7 +217,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         });
 
         buttonAbortGame = new JButton("");
-        setButtonBackground(buttonAbortGame, "GameIcon.png");//TODO: einfügen
+        //setButtonBackground(buttonAbortGame, "GameIcon.png");//TODO: einfügen
 
         buttonAbortGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -13,6 +13,7 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,6 +28,8 @@ import javax.swing.Timer;
  */
 public class MainGUI extends WindowProperties {
 
+    private static MainGUI aktMainGUI;
+    
     static JFrame gamescreen;
    // private JPanel cutsceneCard;
     static JPanel gamecards;
@@ -58,11 +61,15 @@ public class MainGUI extends WindowProperties {
     public void setToteStreber(int ts){
         gamePanel1.setToteStreber(ts);
     }
-    
-    public void setGame(Game game){
-        this.game = game;
+
+    public static MainGUI getAktMainGUI() {
+        return aktMainGUI;
     }
 
+    public static void setAktMainGUI(MainGUI aktMainGUI) {
+        MainGUI.aktMainGUI = aktMainGUI;
+    }
+    
     public MainGUI() {
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");

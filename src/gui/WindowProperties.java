@@ -2,7 +2,9 @@ package gui;
 
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.sound.sampled.AudioInputStream;
@@ -17,6 +19,8 @@ import javax.swing.JLabel;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
@@ -72,7 +76,7 @@ public abstract class WindowProperties {
      */
     public ImageIcon getImageIcon(String ordnerUName) {
         //String pfad = "Proj_1/"+ ordnerUName;
-         String pfad = ordnerUName;
+        String pfad = ordnerUName;
         ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(pfad));
         return icon;
     }
@@ -101,12 +105,12 @@ public abstract class WindowProperties {
      Fügt einem JButton ein Hintergrundbild zu. Der Dateiname und der Ordner
      in dem die Datei gespeichert wurde werden zusammen mitgegeben.
      */
-    public void setButtonBackground(JButton button, String pfad) {
+    /*public void setButtonBackground(JButton button, String pfad) {
         ImageIcon background = getImageIcon(pfad);
         button.setContentAreaFilled(true);
         button.setIcon(background);
         System.out.println("Button hat Hintergrund");
-    }
+    }*/
 
     /*
      Klärt, aus welchem Dokument die getWords Methode Zeilen entnimmt.
@@ -180,14 +184,41 @@ public abstract class WindowProperties {
             System.err.println("Datei nicht Gefunden");
         }
     }
-    
-    public static void setShortKeys(JButton button,final String card, int sign ){
-     button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
+
+    public static void setShortKeys(JButton button, final String card, int sign) {
+        button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
         button.getActionMap().put("x", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                MainGUI.changeCard(card,MainGUI.clgame,MainGUI.gamecards);
+                MainGUI.changeCard(card, MainGUI.clgame, MainGUI.gamecards);
             }
         });
-}
+    }
+    
+    public static BufferedImage ladeBild(String quelle) {
+        try {
+            return ImageIO.read(WindowProperties.class.getClassLoader().getResourceAsStream(quelle));
+        } catch (IOException ex) {
+            System.out.print("Bild nicht gefunden");
+        }
+        return null;
+    }
+    
+    public static ArrayList<String> ladeTXT(String quelle) throws FileNotFoundException {
+        
+        BufferedReader stdin;
+        try {
+            stdin = new BufferedReader(new FileReader(WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6)));
+            ArrayList<String> dokument = new ArrayList();
+            while (stdin.ready()) {
+                dokument.add(stdin.readLine());
+            }
+            return dokument;
+            
+        } catch (IOException ex) {
+            System.err.print("Textdatei nicht gefunden");
+        }
+        return null;
+        
+    }
 
 }

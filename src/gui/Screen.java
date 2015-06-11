@@ -1,5 +1,6 @@
 package gui;
 
+import game.Game;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -23,21 +24,23 @@ public class Screen extends JLabel{
     private boolean inScreen;
     
     public Screen(){
-        /*this.addMouseListener(new MouseListener(){
+        
+        inScreen = false;
+        
+        this.addMouseListener(new MouseListener(){
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Game.getAktGame().useAktWeapon();
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
@@ -47,10 +50,10 @@ public class Screen extends JLabel{
 
             @Override
             public void mouseExited(MouseEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               inScreen = false;
             }
             
-        });*/
+        });
     }
     
     public void setBG(BufferedImage bg){

@@ -2,4 +2,5 @@
 Name
 Schaden/getötete Streber pro Klick
 reload time (in Millisekunden)
+Kosten
 -END(Zahl)-
