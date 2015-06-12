@@ -85,6 +85,8 @@ private void shortKeys(){
         setMinimumSize(new java.awt.Dimension(650, 750));
         setLayout(null);
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         jTextAreaSkill.setEditable(false);
         jTextAreaSkill.setColumns(20);
         jTextAreaSkill.setRows(5);

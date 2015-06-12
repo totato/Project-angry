@@ -85,6 +85,8 @@ private void shortKeys(){
         add(jLabelShopkeeper);
         jLabelShopkeeper.setBounds(170, 70, 310, 370);
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         jTextAreaShop.setEditable(false);
         jTextAreaShop.setColumns(20);
         jTextAreaShop.setRows(5);

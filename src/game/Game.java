@@ -5,6 +5,7 @@
  */
 package game;
 
+import gui.GamePanel;
 import gui.MainGUI;
 import gui.Screen;
 import gui.WindowProperties;
@@ -81,8 +82,8 @@ public class Game implements Runnable {
 
     }
 
-    public void setAktWeapon(int waffennummer) {
-
+    public void setAktWeapon(int weaponnumber) {
+        MainGUI.getAktMainGUI().addTextToTextAria(GamePanel.getjTextAreaGame(), "Zur Waffe "+weaponnumber+" gewechselt");
     }
 
     public void useAktWeapon() {

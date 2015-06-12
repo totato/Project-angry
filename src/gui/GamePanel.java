@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
+import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 
 /**
@@ -19,6 +20,7 @@ import javax.swing.KeyStroke;
  * @author Vika
  */
 public class GamePanel extends javax.swing.JPanel {
+
 
     /**
      * Creates new form gamePanel
@@ -33,6 +35,9 @@ public class GamePanel extends javax.swing.JPanel {
 
         WindowProperties.setShortKeys(bToShopGame, "shop card", KeyEvent.VK_N);
         WindowProperties.setShortKeys(bToSkillGame, "skill card", KeyEvent.VK_M);
+    }
+       public static JTextArea getjTextAreaGame() {
+        return jTextAreaGame;
     }
 
     /**
@@ -165,6 +170,8 @@ public class GamePanel extends javax.swing.JPanel {
         add(jLabelLVL);
         jLabelLVL.setBounds(440, 110, 200, 50);
 
+        jScrollPaneGame.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         jTextAreaGame.setEditable(false);
         jTextAreaGame.setColumns(20);
         jTextAreaGame.setRows(5);
@@ -264,7 +271,7 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JProgressBar jProgressBar;
     private javax.swing.JScrollPane jScrollPaneGame;
     private javax.swing.JSeparator jSeparator;
-    private javax.swing.JTextArea jTextAreaGame;
+    private static javax.swing.JTextArea jTextAreaGame;
     private javax.swing.JLabel lebendeStreberAnzeiger;
     private gui.Screen mainScreen;
     private javax.swing.JToggleButton tbAttack1;
@@ -288,5 +295,9 @@ public class GamePanel extends javax.swing.JPanel {
     public void setToteStreber(int ts) {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
+
+ 
+
+
 
 }

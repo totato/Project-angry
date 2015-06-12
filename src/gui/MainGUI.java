@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.Timer;
 
@@ -143,6 +144,26 @@ public class MainGUI extends WindowProperties {
          });
          timer.start();*/
         System.out.println("zu  " + name + "  gewechselt");
+    }
+
+    public void addTextToTextAria(JTextArea ta, String text) {
+        int maxSigns = 30;
+        int lastSpace = 0;
+        while (text.length() > maxSigns) {
+            System.out.println("Text Lenght"+text.length());
+
+            for (int i = 0; i < maxSigns; i++) {
+                if (text.charAt(i) == 32) {
+                    lastSpace = i;
+                }
+            }
+
+
+                ta.setText(GamePanel.getjTextAreaGame().getText() +"  "+ text.substring(0, lastSpace) + "\n");
+                
+                text = text.substring(lastSpace + 1);
+        }
+        ta.setText(GamePanel.getjTextAreaGame().getText()+"  " + text + "\n");
     }
 
     public JPanel getGamecards() {
