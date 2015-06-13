@@ -371,4 +371,8 @@ private void shortKeys(){
     private javax.swing.JToggleButton tbSkillE8;
     private javax.swing.JToggleButton tbSkillF;
     // End of variables declaration//GEN-END:variables
+
+    void disableButtons() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

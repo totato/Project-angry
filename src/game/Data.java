@@ -48,7 +48,7 @@ public class Data {
             i = 0;
         }
 
-        aktWaffe = 1;
+        aktWaffe = 0;
 
     }
 
@@ -87,6 +87,12 @@ public class Data {
     public int getAktWaffe() {
         return aktWaffe;
     }
+
+    public int[] getWaffenStufen() {
+        return waffenStufen;
+    }
+    
+    
 
     public void setBrillen(int brillen) {
         this.brillen = brillen;

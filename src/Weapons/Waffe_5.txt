@@ -1,6 +1,6 @@
 -START1-
 Großer Stein 
-5
+1
 0
 2
 -END1-

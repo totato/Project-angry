@@ -64,6 +64,7 @@ public class Game implements Runnable {
     public void loadGame(Data data) throws IOException {
         this.data = data;
         loadLevel(data.getAktLevel(), false);
+        waffen = Game.loadWeapons(data.getWaffenStufen());
 
     }
 
@@ -81,6 +82,29 @@ public class Game implements Runnable {
         scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
 
         int githubistscheise = 666;
+    }
+    
+    public static Waffe[] loadWeapons(int[] waffenstufen) throws IOException{
+        
+        List<String> waffenTXT;
+        int startPos;
+        
+        Waffe[] waffen = new Waffe[WAFFEN_ANZAHL];
+        
+        for (int i = 0; i < WAFFEN_ANZAHL; i++) {
+
+            if (waffenstufen[i] > 0) {
+                waffenTXT = WindowProperties.ladeTXT("Weapons/Waffe_" + i + ".txt");
+                if (!waffenTXT.isEmpty()) {
+                    startPos = waffenTXT.indexOf("-START" + waffenstufen[i] + "-");
+                    waffen[i] = new Waffe(waffenTXT.get(startPos + 1), Integer.parseInt(waffenTXT.get(startPos + 2)), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)));
+                }
+            } else {
+                waffen[i] = new Waffe("Filler", 0, 0, 0);
+            }
+        }
+        
+        return waffen;
     }
 
     public void changeWeapon(int waffennummer) {

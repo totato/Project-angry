@@ -173,5 +173,11 @@ public class MainGUI extends WindowProperties {
     public JFrame getGamescreen() {
         return gamescreen;
     }
+    
+    public void disableButtons(){
+        gamePanel1.disableButtons();
+        shopPanel1.disableButtons();
+        skillPanel1.disableButtons();
+    }
 
 }
