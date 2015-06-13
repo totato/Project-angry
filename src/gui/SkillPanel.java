@@ -372,7 +372,7 @@ private void shortKeys(){
     private javax.swing.JToggleButton tbSkillF;
     // End of variables declaration//GEN-END:variables
 
-    void disableButtons() {
+    void initialisieren() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

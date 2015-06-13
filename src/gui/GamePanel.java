@@ -296,7 +296,7 @@ public class GamePanel extends javax.swing.JPanel {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
 
-    void disableButtons() {
+    void initialisieren() {
         int foo = 3; // nur damit ich die klasse comiten kann
         //TODO disable alle Buttons, auf die man nicht klicken kann (z.B. weil Waffe nciht gekauft) und setzte den aktuell ausgewählten Button auf aktWaffe
     }

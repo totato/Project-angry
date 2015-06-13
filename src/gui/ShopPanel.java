@@ -335,7 +335,7 @@ private void shortKeys(){
     private javax.swing.ButtonGroup tbShopGroup;
     // End of variables declaration//GEN-END:variables
 
-    void disableButtons() {
+    void initialisieren() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
