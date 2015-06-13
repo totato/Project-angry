@@ -81,30 +81,39 @@ public class Game implements Runnable {
         scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
         scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
 
-        int githubistscheise = 666;
     }
-    
-    public static Waffe[] loadWeapons(int[] waffenstufen) throws IOException{
-        
+
+    public static Waffe[] loadWeapons(int[] waffenstufen) throws IOException {
+
+        Waffe[] waffen = new Waffe[WAFFEN_ANZAHL];
+
+        for (int i = 0; i < WAFFEN_ANZAHL; i++) {
+            
+            waffen[i] = Game.loadWeapon(i, Game.getAktGame().getData().getWaffenStufe(i));
+
+        }
+
+        return waffen;
+    }
+
+    public static Waffe loadWeapon(int waffennummer, int waffenstufe) throws IOException {
+
         List<String> waffenTXT;
         int startPos;
-        
-        Waffe[] waffen = new Waffe[WAFFEN_ANZAHL];
-        
-        for (int i = 0; i < WAFFEN_ANZAHL; i++) {
 
-            if (waffenstufen[i] > 0) {
-                waffenTXT = WindowProperties.ladeTXT("Weapons/Waffe_" + i + ".txt");
-                if (!waffenTXT.isEmpty()) {
-                    startPos = waffenTXT.indexOf("-START" + waffenstufen[i] + "-");
-                    waffen[i] = new Waffe(waffenTXT.get(startPos + 1), Integer.parseInt(waffenTXT.get(startPos + 2)), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)));
-                }
-            } else {
-                waffen[i] = new Waffe("Filler", 0, 0, 0);
+        Waffe waffe = null;
+
+        if (waffenstufe > 0) {
+            waffenTXT = WindowProperties.ladeTXT("Weapons/Waffe_" + waffennummer + ".txt");
+            if (!waffenTXT.isEmpty()) {
+                startPos = waffenTXT.indexOf("-START" + waffenstufe + "-");
+                waffe = new Waffe(waffenTXT.get(startPos + 1), Integer.parseInt(waffenTXT.get(startPos + 2)), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)));
             }
+        } else {
+            waffe = new Waffe("Filler", 0, 0, 0);
         }
-        
-        return waffen;
+
+        return waffe;
     }
 
     public void changeWeapon(int waffennummer) {
@@ -113,7 +122,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
 
-        m.addTextToTextAria(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
+        m.addTextToTextArier(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
 
     }
 
@@ -151,6 +160,10 @@ public class Game implements Runnable {
 
     public static Game getAktGame() {
         return aktGame;
+    }
+
+    public Data getData() {
+        return data;
     }
 
     public static void setAktGame(Game aktGame) {

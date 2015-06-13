@@ -146,7 +146,7 @@ public class MainGUI extends WindowProperties {
         System.out.println("zu  " + name + "  gewechselt");
     }
 
-    public void addTextToTextAria(JTextArea ta, String text) {
+    public void addTextToTextArier(JTextArea ta, String text) {
         int maxSigns = 30;
         int lastSpace = 0;
         while (text.length() > maxSigns) {

@@ -295,6 +295,8 @@ public class GamePanel extends javax.swing.JPanel {
     public void setToteStreber(int ts) {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
+    
+    
 
     void initialisieren() {
         int foo = 3; // nur damit ich die klasse comiten kann

@@ -134,10 +134,15 @@ public class Data {
         if (lebendeStreber >= anzahl) {
             lebendeStreber -= anzahl;
             getoeteteStreber += anzahl;
+            brillen += anzahl;
         } else {
             getoeteteStreber += lebendeStreber;
+            brillen += lebendeStreber;
             lebendeStreber = 0;
+            
         }
+        
+        
 
     }
 
