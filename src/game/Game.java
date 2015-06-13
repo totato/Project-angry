@@ -34,7 +34,7 @@ import javax.imageio.ImageIO;
  */
 public class Game implements Runnable {
 
-    private static final long frameTime = 100;
+    private static final long frameTime = 10;
     private static final int WAFFEN_ANZAHL = 6;
 
     private static Game aktGame;
@@ -80,14 +80,21 @@ public class Game implements Runnable {
         scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
         scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
 
+        int githubistscheise = 666;
     }
 
-    public void setAktWeapon(int weaponnumber) {
-        MainGUI.getAktMainGUI().addTextToTextAria(GamePanel.getjTextAreaGame(), "Zur Waffe "+weaponnumber+" gewechselt");
+    public void changeWeapon(int waffennummer) {
+
+        if (data.getWaffenStufe(waffennummer) > 0) {
+            data.setAktWaffe(waffennummer);
+        }
+
+        m.addTextToTextAria(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
+
     }
 
     public void useAktWeapon() {
-        data.killStreber(5);
+        data.killStreber(waffen[data.getAktWaffe()].getDamage());
     }
 
     @Override

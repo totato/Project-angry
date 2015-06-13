@@ -230,31 +230,31 @@ public class GamePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_bToSkillGameActionPerformed
 
     private void tbAttack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack1ActionPerformed
-        Game.getAktGame().setAktWeapon(1);
+        Game.getAktGame().changeWeapon(0);
     }//GEN-LAST:event_tbAttack1ActionPerformed
 
     private void tbAttack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack2ActionPerformed
-        Game.getAktGame().setAktWeapon(2);
+        Game.getAktGame().changeWeapon(1);
 
     }//GEN-LAST:event_tbAttack2ActionPerformed
 
     private void tbAttack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack3ActionPerformed
-        Game.getAktGame().setAktWeapon(3);
+        Game.getAktGame().changeWeapon(2);
 
     }//GEN-LAST:event_tbAttack3ActionPerformed
 
     private void tbAttack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack4ActionPerformed
-        Game.getAktGame().setAktWeapon(4);
+        Game.getAktGame().changeWeapon(3);
 
     }//GEN-LAST:event_tbAttack4ActionPerformed
 
     private void tbAttack5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack5ActionPerformed
-        Game.getAktGame().setAktWeapon(5);
+        Game.getAktGame().changeWeapon(4);
 
     }//GEN-LAST:event_tbAttack5ActionPerformed
 
     private void tbAttack6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack6ActionPerformed
-        Game.getAktGame().setAktWeapon(6);
+        Game.getAktGame().changeWeapon(5);
 
     }//GEN-LAST:event_tbAttack6ActionPerformed
 
