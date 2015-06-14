@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import javax.swing.JToggleButton;
 import javax.swing.KeyStroke;
 
 /**
@@ -20,7 +21,6 @@ import javax.swing.KeyStroke;
  * @author Vika
  */
 public class GamePanel extends javax.swing.JPanel {
-
 
     /**
      * Creates new form gamePanel
@@ -36,8 +36,42 @@ public class GamePanel extends javax.swing.JPanel {
         WindowProperties.setShortKeys(bToShopGame, "shop card", KeyEvent.VK_N);
         WindowProperties.setShortKeys(bToSkillGame, "skill card", KeyEvent.VK_M);
     }
-       public static JTextArea getjTextAreaGame() {
+
+    public static JTextArea getjTextAreaGame() {
         return jTextAreaGame;
+    }
+
+    private void changeTBPicture(JToggleButton aW) {
+        if (aW == tbAttack0) {
+            tbAttack0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon0B.png")));
+        } else {
+            tbAttack0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon0.png")));
+        }
+        if (aW == tbAttack1) {
+            tbAttack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon1B.png")));
+        } else {
+            tbAttack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon1.png")));
+        }
+        if (aW == tbAttack2) {
+            tbAttack2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon2B.png")));
+        } else {
+            tbAttack2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon2.png")));
+        }
+        if (aW == tbAttack3) {
+            tbAttack3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon3B.png")));
+        } else {
+            tbAttack3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon3.png")));
+        }
+        if (aW == tbAttack4) {
+            tbAttack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon4B.png")));
+        } else {
+            tbAttack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon4.png")));
+        }
+        if (aW == tbAttack5) {
+            tbAttack5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon5B.png")));
+        } else {
+            tbAttack5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon5.png")));
+        }
     }
 
     /**
@@ -51,12 +85,12 @@ public class GamePanel extends javax.swing.JPanel {
 
         tbAttackGroup = new javax.swing.ButtonGroup();
         jSeparator = new javax.swing.JSeparator();
+        tbAttack2 = new javax.swing.JToggleButton();
         tbAttack3 = new javax.swing.JToggleButton();
         tbAttack4 = new javax.swing.JToggleButton();
         tbAttack5 = new javax.swing.JToggleButton();
-        tbAttack6 = new javax.swing.JToggleButton();
+        tbAttack0 = new javax.swing.JToggleButton();
         tbAttack1 = new javax.swing.JToggleButton();
-        tbAttack2 = new javax.swing.JToggleButton();
         lebendeStreberAnzeiger = new javax.swing.JLabel();
         toteStreberAnzeiger = new javax.swing.JLabel();
         jProgressBar = new javax.swing.JProgressBar();
@@ -80,57 +114,8 @@ public class GamePanel extends javax.swing.JPanel {
         add(jSeparator);
         jSeparator.setBounds(440, 90, 200, 10);
 
-        tbAttackGroup.add(tbAttack3);
-        tbAttack3.setText("jToggleButton1");
-        tbAttack3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbAttack3ActionPerformed(evt);
-            }
-        });
-        add(tbAttack3);
-        tbAttack3.setBounds(160, 630, 60, 100);
-
-        tbAttackGroup.add(tbAttack4);
-        tbAttack4.setText("jToggleButton1");
-        tbAttack4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbAttack4ActionPerformed(evt);
-            }
-        });
-        add(tbAttack4);
-        tbAttack4.setBounds(230, 630, 60, 100);
-
-        tbAttackGroup.add(tbAttack5);
-        tbAttack5.setText("jToggleButton1");
-        tbAttack5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbAttack5ActionPerformed(evt);
-            }
-        });
-        add(tbAttack5);
-        tbAttack5.setBounds(300, 630, 60, 100);
-
-        tbAttackGroup.add(tbAttack6);
-        tbAttack6.setText("jToggleButton1");
-        tbAttack6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbAttack6ActionPerformed(evt);
-            }
-        });
-        add(tbAttack6);
-        tbAttack6.setBounds(370, 630, 60, 100);
-
-        tbAttackGroup.add(tbAttack1);
-        tbAttack1.setText("jToggleButton1");
-        tbAttack1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbAttack1ActionPerformed(evt);
-            }
-        });
-        add(tbAttack1);
-        tbAttack1.setBounds(20, 630, 60, 100);
-
         tbAttackGroup.add(tbAttack2);
+        tbAttack2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon2.png"))); // NOI18N
         tbAttack2.setText("jToggleButton1");
         tbAttack2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +123,63 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
         add(tbAttack2);
-        tbAttack2.setBounds(90, 630, 60, 100);
+        tbAttack2.setBounds(160, 630, 60, 100);
+
+        tbAttackGroup.add(tbAttack3);
+        tbAttack3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon3.png"))); // NOI18N
+        tbAttack3.setText("jToggleButton1");
+        tbAttack3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack3ActionPerformed(evt);
+            }
+        });
+        add(tbAttack3);
+        tbAttack3.setBounds(230, 630, 60, 100);
+
+        tbAttackGroup.add(tbAttack4);
+        tbAttack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon4.png"))); // NOI18N
+        tbAttack4.setText("jToggleButton1");
+        tbAttack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack4ActionPerformed(evt);
+            }
+        });
+        add(tbAttack4);
+        tbAttack4.setBounds(300, 630, 60, 100);
+
+        tbAttackGroup.add(tbAttack5);
+        tbAttack5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon5.png"))); // NOI18N
+        tbAttack5.setText("jToggleButton1");
+        tbAttack5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack5ActionPerformed(evt);
+            }
+        });
+        add(tbAttack5);
+        tbAttack5.setBounds(370, 630, 60, 100);
+
+        tbAttack0.setBackground(new java.awt.Color(0, 0, 0));
+        tbAttackGroup.add(tbAttack0);
+        tbAttack0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon0.png"))); // NOI18N
+        tbAttack0.setText("jToggleButton1");
+        tbAttack0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack0ActionPerformed(evt);
+            }
+        });
+        add(tbAttack0);
+        tbAttack0.setBounds(20, 630, 60, 100);
+
+        tbAttackGroup.add(tbAttack1);
+        tbAttack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon1.png"))); // NOI18N
+        tbAttack1.setText("jToggleButton1");
+        tbAttack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbAttack1ActionPerformed(evt);
+            }
+        });
+        add(tbAttack1);
+        tbAttack1.setBounds(90, 630, 60, 100);
 
         lebendeStreberAnzeiger.setText("Lebende Streber : 0");
         add(lebendeStreberAnzeiger);
@@ -229,34 +270,36 @@ public class GamePanel extends javax.swing.JPanel {
         MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
     }//GEN-LAST:event_bToSkillGameActionPerformed
 
-    private void tbAttack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack1ActionPerformed
+    private void tbAttack0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack0ActionPerformed
         Game.getAktGame().changeWeapon(0);
+        changeTBPicture(tbAttack0);
+    }//GEN-LAST:event_tbAttack0ActionPerformed
+
+    private void tbAttack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack1ActionPerformed
+        Game.getAktGame().changeWeapon(1);
+        changeTBPicture(tbAttack1);
+
     }//GEN-LAST:event_tbAttack1ActionPerformed
 
     private void tbAttack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack2ActionPerformed
-        Game.getAktGame().changeWeapon(1);
-
+        Game.getAktGame().changeWeapon(2);
+        changeTBPicture(tbAttack2);
     }//GEN-LAST:event_tbAttack2ActionPerformed
 
     private void tbAttack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack3ActionPerformed
-        Game.getAktGame().changeWeapon(2);
-
+        Game.getAktGame().changeWeapon(3);
+        changeTBPicture(tbAttack3);
     }//GEN-LAST:event_tbAttack3ActionPerformed
 
     private void tbAttack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack4ActionPerformed
-        Game.getAktGame().changeWeapon(3);
-
+        Game.getAktGame().changeWeapon(4);
+        changeTBPicture(tbAttack4);
     }//GEN-LAST:event_tbAttack4ActionPerformed
 
     private void tbAttack5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack5ActionPerformed
-        Game.getAktGame().changeWeapon(4);
-
-    }//GEN-LAST:event_tbAttack5ActionPerformed
-
-    private void tbAttack6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack6ActionPerformed
         Game.getAktGame().changeWeapon(5);
-
-    }//GEN-LAST:event_tbAttack6ActionPerformed
+        changeTBPicture(tbAttack5);
+    }//GEN-LAST:event_tbAttack5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -274,12 +317,12 @@ public class GamePanel extends javax.swing.JPanel {
     private static javax.swing.JTextArea jTextAreaGame;
     private javax.swing.JLabel lebendeStreberAnzeiger;
     private gui.Screen mainScreen;
+    private javax.swing.JToggleButton tbAttack0;
     private javax.swing.JToggleButton tbAttack1;
     private javax.swing.JToggleButton tbAttack2;
     private javax.swing.JToggleButton tbAttack3;
     private javax.swing.JToggleButton tbAttack4;
     private javax.swing.JToggleButton tbAttack5;
-    private javax.swing.JToggleButton tbAttack6;
     private javax.swing.ButtonGroup tbAttackGroup;
     private javax.swing.JLabel toteStreberAnzeiger;
     // End of variables declaration//GEN-END:variables
@@ -295,16 +338,10 @@ public class GamePanel extends javax.swing.JPanel {
     public void setToteStreber(int ts) {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
-    
-    
 
     void initialisieren() {
         int foo = 3; // nur damit ich die klasse comiten kann
         //TODO disable alle Buttons, auf die man nicht klicken kann (z.B. weil Waffe nciht gekauft) und setzte den aktuell ausgewählten Button auf aktWaffe
     }
-
- 
-
-
 
 }
