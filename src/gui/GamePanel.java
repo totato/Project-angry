@@ -181,25 +181,29 @@ public class GamePanel extends javax.swing.JPanel {
         add(tbAttack1);
         tbAttack1.setBounds(90, 630, 60, 100);
 
+        lebendeStreberAnzeiger.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lebendeStreberAnzeiger.setText("Lebende Streber : 0");
         add(lebendeStreberAnzeiger);
-        lebendeStreberAnzeiger.setBounds(440, 20, 200, 14);
+        lebendeStreberAnzeiger.setBounds(440, 20, 200, 17);
         lebendeStreberAnzeiger.getAccessibleContext().setAccessibleName("lebendeStreberAnzeiger");
         lebendeStreberAnzeiger.getAccessibleContext().setAccessibleDescription("");
 
+        toteStreberAnzeiger.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         toteStreberAnzeiger.setText("Getötete Streber : 0");
         add(toteStreberAnzeiger);
-        toteStreberAnzeiger.setBounds(440, 40, 200, 14);
+        toteStreberAnzeiger.setBounds(440, 40, 200, 17);
         toteStreberAnzeiger.getAccessibleContext().setAccessibleName("toteStreberAnzeiger");
 
         add(jProgressBar);
         jProgressBar.setBounds(440, 70, 200, 14);
 
+        jLabelEXPGame.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelEXPGame.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEXPGame.setText("Erfahrung: 0");
         add(jLabelEXPGame);
         jLabelEXPGame.setBounds(440, 580, 200, 20);
 
+        jLabelGlassesGame.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelGlassesGame.setForeground(new java.awt.Color(255, 255, 255));
         jLabelGlassesGame.setText("Brillen: 0");
         add(jLabelGlassesGame);
@@ -221,6 +225,9 @@ public class GamePanel extends javax.swing.JPanel {
         add(jScrollPaneGame);
         jScrollPaneGame.setBounds(440, 170, 200, 380);
 
+        bToSkillGame.setBackground(new java.awt.Color(0, 0, 0));
+        bToSkillGame.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToSkillGame.setForeground(new java.awt.Color(255, 255, 255));
         bToSkillGame.setText("Skillbaum");
         bToSkillGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,7 +237,11 @@ public class GamePanel extends javax.swing.JPanel {
         add(bToSkillGame);
         bToSkillGame.setBounds(510, 680, 130, 60);
 
+        bToShopGame.setBackground(new java.awt.Color(0, 0, 0));
+        bToShopGame.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToShopGame.setForeground(new java.awt.Color(255, 255, 255));
         bToShopGame.setText("Shop");
+        bToShopGame.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bToShopGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bToShopGameActionPerformed(evt);
@@ -239,10 +250,12 @@ public class GamePanel extends javax.swing.JPanel {
         add(bToShopGame);
         bToShopGame.setBounds(510, 620, 130, 60);
 
+        bEvent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon7.png"))); // NOI18N
         bEvent.setText("jButton7");
         add(bEvent);
         bEvent.setBounds(440, 680, 60, 60);
 
+        bAttack7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon6.png"))); // NOI18N
         bAttack7.setText("jButton7");
         add(bAttack7);
         bAttack7.setBounds(440, 620, 60, 60);

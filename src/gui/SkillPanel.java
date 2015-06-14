@@ -100,19 +100,25 @@ private void shortKeys(){
         add(jLabelSensei);
         jLabelSensei.setBounds(10, 10, 220, 300);
 
+        jLabelEXPSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelEXPSkill.setText("Erfahrung: 0");
         add(jLabelEXPSkill);
-        jLabelEXPSkill.setBounds(10, 320, 100, 14);
+        jLabelEXPSkill.setBounds(10, 314, 100, 20);
 
+        jLabelGlassesSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelGlassesSkill.setText("Brillen: 0");
         add(jLabelGlassesSkill);
-        jLabelGlassesSkill.setBounds(130, 320, 100, 14);
+        jLabelGlassesSkill.setBounds(130, 314, 100, 20);
 
-        bBuyGlassesSkill.setText("Freischalten");
+        bBuyGlassesSkill.setBackground(new java.awt.Color(0, 0, 0));
+        bBuyGlassesSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bBuyGlassesSkill.setForeground(new java.awt.Color(255, 255, 255));
+        bBuyGlassesSkill.setText("Kaufen");
         add(bBuyGlassesSkill);
         bBuyGlassesSkill.setBounds(130, 340, 100, 50);
 
-        jLabelSkilltree.setText("Skillbaum");
+        jLabelSkilltree.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelSkilltree.setText("             Skillbaum");
         add(jLabelSkilltree);
         jLabelSkilltree.setBounds(290, 10, 300, 40);
 
@@ -291,6 +297,9 @@ private void shortKeys(){
         add(tbSkillA1);
         tbSkillA1.setBounds(380, 60, 120, 40);
 
+        bToShopSkill.setBackground(new java.awt.Color(0, 0, 0));
+        bToShopSkill.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToShopSkill.setForeground(new java.awt.Color(255, 255, 255));
         bToShopSkill.setText("Shop");
         bToShopSkill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,6 +309,9 @@ private void shortKeys(){
         add(bToShopSkill);
         bToShopSkill.setBounds(240, 690, 120, 50);
 
+        bToGameSkill.setBackground(new java.awt.Color(0, 0, 0));
+        bToGameSkill.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToGameSkill.setForeground(new java.awt.Color(255, 255, 255));
         bToGameSkill.setText("Zurück");
         bToGameSkill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,7 +321,10 @@ private void shortKeys(){
         add(bToGameSkill);
         bToGameSkill.setBounds(520, 690, 120, 50);
 
-        bBuyEXPSkill.setText("Freischalten");
+        bBuyEXPSkill.setBackground(new java.awt.Color(0, 0, 0));
+        bBuyEXPSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bBuyEXPSkill.setForeground(new java.awt.Color(255, 255, 255));
+        bBuyEXPSkill.setText("Kaufen");
         add(bBuyEXPSkill);
         bBuyEXPSkill.setBounds(10, 340, 100, 50);
     }// </editor-fold>//GEN-END:initComponents

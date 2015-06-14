@@ -41,12 +41,9 @@ private void shortKeys(){
         bBuyShop = new javax.swing.JButton();
         jLabelInventory = new javax.swing.JLabel();
         jLabelShop = new javax.swing.JLabel();
-        tbShopD2 = new javax.swing.JToggleButton();
         tbShopA1 = new javax.swing.JToggleButton();
         tbShopA2 = new javax.swing.JToggleButton();
-        tbShopA3 = new javax.swing.JToggleButton();
         tbShopB1 = new javax.swing.JToggleButton();
-        tbShopB2 = new javax.swing.JToggleButton();
         tbShopB3 = new javax.swing.JToggleButton();
         tbShopB4 = new javax.swing.JToggleButton();
         tbShopB5 = new javax.swing.JToggleButton();
@@ -73,6 +70,8 @@ private void shortKeys(){
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         hierWarPlatzÜbrig = new javax.swing.JLabel();
+        tbShopA4 = new javax.swing.JToggleButton();
+        tbShopB6 = new javax.swing.JToggleButton();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
@@ -95,78 +94,107 @@ private void shortKeys(){
         add(jScrollPane1);
         jScrollPane1.setBounds(170, 490, 310, 160);
 
+        bBuyShop.setBackground(new java.awt.Color(51, 51, 51));
+        bBuyShop.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        bBuyShop.setForeground(new java.awt.Color(255, 255, 255));
         bBuyShop.setText("Kaufen");
         add(bBuyShop);
         bBuyShop.setBounds(170, 660, 310, 80);
 
-        jLabelInventory.setText("Inventar");
+        jLabelInventory.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelInventory.setText("    Inventar");
         add(jLabelInventory);
-        jLabelInventory.setBounds(490, 10, 150, 40);
+        jLabelInventory.setBounds(480, 10, 150, 40);
 
-        jLabelShop.setText("Shop");
+        jLabelShop.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelShop.setText("    Shop");
         add(jLabelShop);
         jLabelShop.setBounds(10, 10, 150, 40);
 
-        tbShopGroup.add(tbShopD2);
-        tbShopD2.setText("jToggleButton1");
-        add(tbShopD2);
-        tbShopD2.setBounds(20, 620, 105, 30);
-
+        tbShopA1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA1);
-        tbShopA1.setText("jToggleButton1");
+        tbShopA1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA1.setText("Helm");
         add(tbShopA1);
-        tbShopA1.setBounds(20, 90, 105, 30);
+        tbShopA1.setBounds(10, 90, 140, 30);
 
+        tbShopA2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA2);
-        tbShopA2.setText("jToggleButton1");
+        tbShopA2.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA2.setText("Weste");
         add(tbShopA2);
-        tbShopA2.setBounds(20, 130, 105, 30);
+        tbShopA2.setBounds(10, 130, 140, 30);
 
-        tbShopGroup.add(tbShopA3);
-        tbShopA3.setText("jToggleButton1");
-        add(tbShopA3);
-        tbShopA3.setBounds(20, 170, 105, 30);
-
+        tbShopB1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB1);
-        tbShopB1.setText("jToggleButton1");
+        tbShopB1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB1.setText("Blick?");
+        tbShopB1.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB1.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB1.setPreferredSize(new java.awt.Dimension(105, 23));
         add(tbShopB1);
-        tbShopB1.setBounds(20, 250, 105, 30);
+        tbShopB1.setBounds(10, 250, 140, 30);
 
-        tbShopGroup.add(tbShopB2);
-        tbShopB2.setText("jToggleButton1");
-        add(tbShopB2);
-        tbShopB2.setBounds(20, 290, 105, 30);
-
+        tbShopB3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB3);
-        tbShopB3.setText("jToggleButton1");
+        tbShopB3.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB3.setText("Nahkampfwaffe");
+        tbShopB3.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB3.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB3.setPreferredSize(new java.awt.Dimension(105, 23));
         add(tbShopB3);
-        tbShopB3.setBounds(20, 330, 105, 30);
+        tbShopB3.setBounds(10, 330, 140, 30);
 
+        tbShopB4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB4);
-        tbShopB4.setText("jToggleButton1");
+        tbShopB4.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB4.setText("Schusswaffe");
+        tbShopB4.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB4.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB4.setPreferredSize(new java.awt.Dimension(105, 23));
         add(tbShopB4);
-        tbShopB4.setBounds(20, 370, 105, 30);
+        tbShopB4.setBounds(10, 370, 140, 30);
 
+        tbShopB5.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB5);
-        tbShopB5.setText("jToggleButton1");
+        tbShopB5.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB5.setText("Taschenmonster");
+        tbShopB5.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB5.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB5.setPreferredSize(new java.awt.Dimension(105, 23));
         add(tbShopB5);
-        tbShopB5.setBounds(20, 410, 105, 30);
+        tbShopB5.setBounds(10, 410, 140, 30);
 
+        tbShopC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC1);
-        tbShopC1.setText("jToggleButton1");
+        tbShopC1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopC1.setText("Granate");
+        tbShopC1.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopC1.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopC1.setPreferredSize(new java.awt.Dimension(105, 23));
         add(tbShopC1);
-        tbShopC1.setBounds(20, 460, 105, 30);
+        tbShopC1.setBounds(10, 460, 140, 30);
 
+        tbShopC2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC2);
-        tbShopC2.setText("jToggleButton1");
+        tbShopC2.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopC2.setText("Munition");
+        tbShopC2.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopC2.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopC2.setPreferredSize(new java.awt.Dimension(105, 23));
         add(tbShopC2);
-        tbShopC2.setBounds(20, 500, 105, 30);
+        tbShopC2.setBounds(10, 500, 140, 30);
 
+        tbShopD1.setBackground(new java.awt.Color(51, 51, 51));
         tbShopGroup.add(tbShopD1);
-        tbShopD1.setText("jToggleButton1");
+        tbShopD1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopD1.setText("Kung Fury");
         add(tbShopD1);
-        tbShopD1.setBounds(20, 580, 105, 30);
+        tbShopD1.setBounds(10, 580, 140, 30);
 
+        bToLauncher.setBackground(new java.awt.Color(0, 0, 0));
+        bToLauncher.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToLauncher.setForeground(new java.awt.Color(255, 255, 255));
         bToLauncher.setText("Launcher");
         bToLauncher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,14 +204,19 @@ private void shortKeys(){
         add(bToLauncher);
         bToLauncher.setBounds(170, 20, 310, 40);
 
+        jLabelGlassesShop.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelGlassesShop.setText("Brillen: 0");
         add(jLabelGlassesShop);
         jLabelGlassesShop.setBounds(170, 450, 310, 30);
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Events");
         add(jLabel7);
-        jLabel7.setBounds(20, 560, 100, 14);
+        jLabel7.setBounds(10, 560, 120, 17);
 
+        bToSkillShop.setBackground(new java.awt.Color(0, 0, 0));
+        bToSkillShop.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToSkillShop.setForeground(new java.awt.Color(255, 255, 255));
         bToSkillShop.setText("Skillbaum");
         bToSkillShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +226,9 @@ private void shortKeys(){
         add(bToSkillShop);
         bToSkillShop.setBounds(500, 700, 140, 40);
 
+        bToGameShop.setBackground(new java.awt.Color(0, 0, 0));
+        bToGameShop.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bToGameShop.setForeground(new java.awt.Color(255, 255, 255));
         bToGameShop.setText("Zurück");
         bToGameShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,74 +238,116 @@ private void shortKeys(){
         add(bToGameShop);
         bToGameShop.setBounds(500, 650, 140, 40);
 
+        bSave.setBackground(new java.awt.Color(0, 0, 0));
+        bSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bSave.setForeground(new java.awt.Color(255, 255, 255));
         bSave.setText("Speichern");
         add(bSave);
-        bSave.setBounds(10, 670, 140, 70);
+        bSave.setBounds(10, 660, 140, 80);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Ausrüstung");
         add(jLabel8);
-        jLabel8.setBounds(20, 70, 100, 14);
+        jLabel8.setBounds(10, 70, 120, 17);
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Waffen");
         add(jLabel9);
-        jLabel9.setBounds(20, 230, 100, 14);
+        jLabel9.setBounds(10, 230, 120, 17);
 
+        tbInventoryA1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA1);
-        tbInventoryA1.setText("jToggleButton1");
+        tbInventoryA1.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryA1.setText("Helm");
         add(tbInventoryA1);
-        tbInventoryA1.setBounds(520, 90, 105, 30);
+        tbInventoryA1.setBounds(500, 90, 140, 30);
 
+        tbInventoryA2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA2);
-        tbInventoryA2.setText("jToggleButton1");
+        tbInventoryA2.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryA2.setText("Weste");
         add(tbInventoryA2);
-        tbInventoryA2.setBounds(520, 130, 105, 30);
+        tbInventoryA2.setBounds(500, 130, 140, 30);
 
+        tbInventoryA3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA3);
-        tbInventoryA3.setText("jToggleButton1");
+        tbInventoryA3.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryA3.setText("Schuhe");
         add(tbInventoryA3);
-        tbInventoryA3.setBounds(520, 170, 105, 30);
+        tbInventoryA3.setBounds(500, 170, 140, 30);
 
+        tbInventoryB1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB1);
-        tbInventoryB1.setText("jToggleButton1");
+        tbInventoryB1.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryB1.setText("Blick?");
         add(tbInventoryB1);
-        tbInventoryB1.setBounds(520, 250, 105, 30);
+        tbInventoryB1.setBounds(500, 250, 140, 30);
 
+        tbInventoryB2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB2);
-        tbInventoryB2.setText("jToggleButton1");
+        tbInventoryB2.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryB2.setText("Ausruf");
         add(tbInventoryB2);
-        tbInventoryB2.setBounds(520, 290, 105, 30);
+        tbInventoryB2.setBounds(500, 290, 140, 30);
 
+        tbInventoryB3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB3);
-        tbInventoryB3.setText("jToggleButton1");
+        tbInventoryB3.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryB3.setText("Nahkampfwaffe");
         add(tbInventoryB3);
-        tbInventoryB3.setBounds(520, 330, 105, 30);
+        tbInventoryB3.setBounds(500, 330, 140, 30);
 
+        tbInventoryB4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB4);
-        tbInventoryB4.setText("jToggleButton1");
+        tbInventoryB4.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryB4.setText("Schusswaffe");
         add(tbInventoryB4);
-        tbInventoryB4.setBounds(520, 370, 105, 30);
+        tbInventoryB4.setBounds(500, 370, 140, 30);
 
+        tbInventoryB5.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB5);
-        tbInventoryB5.setText("jToggleButton1");
+        tbInventoryB5.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryB5.setText("Taschenmonster");
         add(tbInventoryB5);
-        tbInventoryB5.setBounds(520, 410, 105, 30);
+        tbInventoryB5.setBounds(500, 410, 140, 30);
 
+        tbInventoryC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryC1);
-        tbInventoryC1.setText("jToggleButton1");
+        tbInventoryC1.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryC1.setText("Granate");
         add(tbInventoryC1);
-        tbInventoryC1.setBounds(520, 460, 105, 30);
+        tbInventoryC1.setBounds(500, 460, 140, 30);
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Ausrüstung");
         add(jLabel10);
-        jLabel10.setBounds(520, 70, 100, 14);
+        jLabel10.setBounds(500, 70, 120, 17);
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Waffen");
         add(jLabel11);
-        jLabel11.setBounds(520, 230, 100, 14);
+        jLabel11.setBounds(500, 230, 120, 17);
 
         hierWarPlatzÜbrig.setText("jLabel5");
         add(hierWarPlatzÜbrig);
-        hierWarPlatzÜbrig.setBounds(500, 550, 140, 90);
+        hierWarPlatzÜbrig.setBounds(500, 550, 150, 90);
+
+        tbShopA4.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbShopA4);
+        tbShopA4.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA4.setText("Schule");
+        add(tbShopA4);
+        tbShopA4.setBounds(10, 170, 140, 30);
+
+        tbShopB6.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbShopB6);
+        tbShopB6.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB6.setText("Ausruf");
+        tbShopB6.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB6.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB6.setPreferredSize(new java.awt.Dimension(105, 23));
+        add(tbShopB6);
+        tbShopB6.setBounds(10, 290, 140, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
@@ -322,16 +400,15 @@ private void shortKeys(){
     private javax.swing.JToggleButton tbInventoryC1;
     private javax.swing.JToggleButton tbShopA1;
     private javax.swing.JToggleButton tbShopA2;
-    private javax.swing.JToggleButton tbShopA3;
+    private javax.swing.JToggleButton tbShopA4;
     private javax.swing.JToggleButton tbShopB1;
-    private javax.swing.JToggleButton tbShopB2;
     private javax.swing.JToggleButton tbShopB3;
     private javax.swing.JToggleButton tbShopB4;
     private javax.swing.JToggleButton tbShopB5;
+    private javax.swing.JToggleButton tbShopB6;
     private javax.swing.JToggleButton tbShopC1;
     private javax.swing.JToggleButton tbShopC2;
     private javax.swing.JToggleButton tbShopD1;
-    private javax.swing.JToggleButton tbShopD2;
     private javax.swing.ButtonGroup tbShopGroup;
     // End of variables declaration//GEN-END:variables
 
