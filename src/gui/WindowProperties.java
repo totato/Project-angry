@@ -217,6 +217,8 @@ public abstract class WindowProperties {
             
         } catch (FileNotFoundException  ex) {
             System.err.print("Textdatei nicht gefunden");
+        } catch(NullPointerException ex){
+            System.err.print("Textdatei nicht gefunden");
         }
         return null;
         

@@ -6,6 +6,7 @@
 package gui;
 
 import java.awt.event.KeyEvent;
+import game.Game;
 
 /**
  *
@@ -115,6 +116,11 @@ private void shortKeys(){
         tbShopGroup.add(tbShopA1);
         tbShopA1.setForeground(new java.awt.Color(255, 255, 255));
         tbShopA1.setText("Helm");
+        tbShopA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopA1ActionPerformed(evt);
+            }
+        });
         add(tbShopA1);
         tbShopA1.setBounds(10, 90, 140, 30);
 
@@ -132,6 +138,11 @@ private void shortKeys(){
         tbShopB1.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB1.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB1.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopB1ActionPerformed(evt);
+            }
+        });
         add(tbShopB1);
         tbShopB1.setBounds(10, 250, 140, 30);
 
@@ -142,6 +153,11 @@ private void shortKeys(){
         tbShopB3.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB3.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB3.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopB3ActionPerformed(evt);
+            }
+        });
         add(tbShopB3);
         tbShopB3.setBounds(10, 330, 140, 30);
 
@@ -152,6 +168,11 @@ private void shortKeys(){
         tbShopB4.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB4.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB4.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopB4ActionPerformed(evt);
+            }
+        });
         add(tbShopB4);
         tbShopB4.setBounds(10, 370, 140, 30);
 
@@ -162,6 +183,11 @@ private void shortKeys(){
         tbShopB5.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB5.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB5.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopB5ActionPerformed(evt);
+            }
+        });
         add(tbShopB5);
         tbShopB5.setBounds(10, 410, 140, 30);
 
@@ -172,6 +198,11 @@ private void shortKeys(){
         tbShopC1.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC1.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopC1.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopC1ActionPerformed(evt);
+            }
+        });
         add(tbShopC1);
         tbShopC1.setBounds(10, 460, 140, 30);
 
@@ -280,6 +311,11 @@ private void shortKeys(){
         tbShopGroup.add(tbInventoryB1);
         tbInventoryB1.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB1.setText("Blick?");
+        tbInventoryB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryB1ActionPerformed(evt);
+            }
+        });
         add(tbInventoryB1);
         tbInventoryB1.setBounds(500, 250, 140, 30);
 
@@ -287,6 +323,11 @@ private void shortKeys(){
         tbShopGroup.add(tbInventoryB2);
         tbInventoryB2.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB2.setText("Ausruf");
+        tbInventoryB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryB2ActionPerformed(evt);
+            }
+        });
         add(tbInventoryB2);
         tbInventoryB2.setBounds(500, 290, 140, 30);
 
@@ -294,6 +335,11 @@ private void shortKeys(){
         tbShopGroup.add(tbInventoryB3);
         tbInventoryB3.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB3.setText("Nahkampfwaffe");
+        tbInventoryB3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryB3ActionPerformed(evt);
+            }
+        });
         add(tbInventoryB3);
         tbInventoryB3.setBounds(500, 330, 140, 30);
 
@@ -301,6 +347,11 @@ private void shortKeys(){
         tbShopGroup.add(tbInventoryB4);
         tbInventoryB4.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB4.setText("Schusswaffe");
+        tbInventoryB4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryB4ActionPerformed(evt);
+            }
+        });
         add(tbInventoryB4);
         tbInventoryB4.setBounds(500, 370, 140, 30);
 
@@ -308,6 +359,11 @@ private void shortKeys(){
         tbShopGroup.add(tbInventoryB5);
         tbInventoryB5.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB5.setText("Taschenmonster");
+        tbInventoryB5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryB5ActionPerformed(evt);
+            }
+        });
         add(tbInventoryB5);
         tbInventoryB5.setBounds(500, 410, 140, 30);
 
@@ -315,6 +371,11 @@ private void shortKeys(){
         tbShopGroup.add(tbInventoryC1);
         tbInventoryC1.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryC1.setText("Granate");
+        tbInventoryC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryC1ActionPerformed(evt);
+            }
+        });
         add(tbInventoryC1);
         tbInventoryC1.setBounds(500, 460, 140, 30);
 
@@ -346,6 +407,11 @@ private void shortKeys(){
         tbShopB6.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB6.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB6.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopB6ActionPerformed(evt);
+            }
+        });
         add(tbShopB6);
         tbShopB6.setBounds(10, 290, 140, 30);
     }// </editor-fold>//GEN-END:initComponents
@@ -369,6 +435,58 @@ private void shortKeys(){
                 + "(dispose)");
         MainGUI.getAktMainGUI().getGamescreen().dispose();
     }//GEN-LAST:event_bToLauncherActionPerformed
+
+    private void tbShopA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopA1ActionPerformed
+        
+    }//GEN-LAST:event_tbShopA1ActionPerformed
+
+    private void tbShopB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB1ActionPerformed
+        this.selectWaffe(0, true);
+    }//GEN-LAST:event_tbShopB1ActionPerformed
+
+    private void tbShopB6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB6ActionPerformed
+        this.selectWaffe(1, true);
+    }//GEN-LAST:event_tbShopB6ActionPerformed
+
+    private void tbShopB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB3ActionPerformed
+        this.selectWaffe(2, true);
+    }//GEN-LAST:event_tbShopB3ActionPerformed
+
+    private void tbShopB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB4ActionPerformed
+        this.selectWaffe(3, true);
+    }//GEN-LAST:event_tbShopB4ActionPerformed
+
+    private void tbShopB5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB5ActionPerformed
+        this.selectWaffe(4, true);
+    }//GEN-LAST:event_tbShopB5ActionPerformed
+
+    private void tbShopC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC1ActionPerformed
+        this.selectWaffe(5, true);
+    }//GEN-LAST:event_tbShopC1ActionPerformed
+
+    private void tbInventoryB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB1ActionPerformed
+        this.selectWaffe(0, false);
+    }//GEN-LAST:event_tbInventoryB1ActionPerformed
+
+    private void tbInventoryB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB2ActionPerformed
+        this.selectWaffe(1, false);
+    }//GEN-LAST:event_tbInventoryB2ActionPerformed
+
+    private void tbInventoryB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB3ActionPerformed
+        this.selectWaffe(2, false);
+    }//GEN-LAST:event_tbInventoryB3ActionPerformed
+
+    private void tbInventoryB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB4ActionPerformed
+        this.selectWaffe(3, false);
+    }//GEN-LAST:event_tbInventoryB4ActionPerformed
+
+    private void tbInventoryB5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB5ActionPerformed
+        this.selectWaffe(4, false);
+    }//GEN-LAST:event_tbInventoryB5ActionPerformed
+
+    private void tbInventoryC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryC1ActionPerformed
+        this.selectWaffe(5, false);
+    }//GEN-LAST:event_tbInventoryC1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -414,5 +532,10 @@ private void shortKeys(){
 
     void initialisieren() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void selectWaffe(int i, boolean upgrade){
+        Game.getAktGame().setShopInfo(i, upgrade);
+        jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
     }
 }

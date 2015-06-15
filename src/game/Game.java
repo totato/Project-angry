@@ -47,7 +47,7 @@ public class Game implements Runnable {
     private int respawnRate;
     private Waffe[] waffen;
     private Waffe[] waffenUpgrades;
-    
+
     //Shop-Informationen
     int selectedWeapon;
     boolean upgradebar;
@@ -59,8 +59,8 @@ public class Game implements Runnable {
         waffen = new Waffe[WAFFEN_ANZAHL];
 
     }
-    
-    public void setShopInfo(int waffennummer, boolean upgradebar){
+
+    public void setShopInfo(int waffennummer, boolean upgradebar) {
         this.selectedWeapon = waffennummer;
         this.upgradebar = upgradebar;
     }
@@ -99,8 +99,8 @@ public class Game implements Runnable {
         Waffe[] waffen = new Waffe[WAFFEN_ANZAHL];
 
         for (int i = 0; i < WAFFEN_ANZAHL; i++) {
-            
-            waffen[i] = Game.loadWeapon(i, Game.getAktGame().getData().getWaffenStufe(i));
+
+            waffen[i] = Game.loadWeapon(i, waffenstufen[i]);
 
         }
 
@@ -118,10 +118,14 @@ public class Game implements Runnable {
             waffenTXT = WindowProperties.ladeTXT("Weapons/Waffe_" + waffennummer + ".txt");
             if (!waffenTXT.isEmpty()) {
                 startPos = waffenTXT.indexOf("-START" + waffenstufe + "-");
-                waffe = new Waffe(waffenTXT.get(startPos + 1), Integer.parseInt(waffenTXT.get(startPos + 2)), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)));
+                if (startPos > -1) {
+                    waffe = new Waffe(waffenTXT.get(startPos + 1), Integer.parseInt(waffenTXT.get(startPos + 2)), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)));
+                } else {
+                    waffe = new Waffe("MAX", 0, 0, 0);
+                }
             }
         } else {
-            waffe = new Waffe("Filler", 0, 0, 0);
+            waffe = new Waffe("MIN", 0, 0, 0);
         }
 
         return waffe;
@@ -180,9 +184,9 @@ public class Game implements Runnable {
     public static void setAktGame(Game aktGame) {
         Game.aktGame = aktGame;
     }
-    
-    public Waffe getWaffe(int nummer, boolean upgrade){
-        if(upgrade){
+
+    public Waffe getWaffe(int nummer, boolean upgrade) {
+        if (upgrade) {
             return waffenUpgrades[nummer];
         } else {
             return waffen[nummer];
