@@ -83,7 +83,7 @@ private void shortKeys(){
         setLayout(null);
 
         jLabelShopkeeper.setBackground(new java.awt.Color(204, 255, 204));
-        jLabelShopkeeper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/Screen.png"))); // NOI18N
+        jLabelShopkeeper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/shopKeeper01.png"))); // NOI18N
         jLabelShopkeeper.setText("jLabel1");
         add(jLabelShopkeeper);
         jLabelShopkeeper.setBounds(170, 70, 310, 370);
