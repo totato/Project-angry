@@ -20,7 +20,7 @@ import javax.swing.KeyStroke;
  *
  * @author Vika
  */
-public class GamePanel extends javax.swing.JPanel {
+public class GamePanel extends javax.swing.JPanel implements Panel {
 
     /**
      * Creates new form gamePanel
@@ -368,9 +368,20 @@ public class GamePanel extends javax.swing.JPanel {
         jLabelEXPGame.setText("Erfahrung: " + exp);
     }
 
-    void initialisieren() {
+    @Override
+    public void disableButtons() {
         int foo = 3; // nur damit ich die klasse comiten kann
         //TODO disable alle Buttons, auf die man nicht klicken kann (z.B. weil Waffe nciht gekauft) und setzte den aktuell ausgewählten Button auf aktWaffe
+    }
+
+    @Override
+    public void switchTo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void switchFrom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

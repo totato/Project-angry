@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author Vika
  */
-public class ShopPanel extends javax.swing.JPanel {
+public class ShopPanel extends javax.swing.JPanel implements Panel {
 
     /**
      * Creates new form ShopPanel
@@ -550,12 +550,23 @@ private void shortKeys(){
     private javax.swing.ButtonGroup tbShopGroup;
     // End of variables declaration//GEN-END:variables
 
-    void initialisieren() {
+    @Override
+    public void disableButtons() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public void selectWaffe(int i, boolean upgrade){
         Game.getAktGame().setShopInfo(i, upgrade);
         jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
+    }
+
+    @Override
+    public void switchTo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void switchFrom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

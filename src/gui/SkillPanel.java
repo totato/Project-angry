@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
  *
  * @author Vika
  */
-public class SkillPanel extends javax.swing.JPanel {
+public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     /**
      * Creates new form SkillPanel
@@ -387,7 +387,18 @@ private void shortKeys(){
     private javax.swing.JToggleButton tbSkillF;
     // End of variables declaration//GEN-END:variables
 
-    void initialisieren() {
+    @Override
+    public void disableButtons() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void switchTo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void switchFrom() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

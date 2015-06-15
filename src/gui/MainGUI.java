@@ -170,10 +170,10 @@ public class MainGUI extends WindowProperties {
         return gamescreen;
     }
     
-    public void initialisieren(){
-        gamePanel1.initialisieren();
-        shopPanel1.initialisieren();
-        skillPanel1.initialisieren();
+    public void disableButtons(){
+        gamePanel1.disableButtons();
+        shopPanel1.disableButtons();
+        skillPanel1.disableButtons();
     }
 
 }
