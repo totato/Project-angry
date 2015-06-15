@@ -46,6 +46,11 @@ public class Game implements Runnable {
     //Informationen, die sich aus data ergeben
     private int respawnRate;
     private Waffe[] waffen;
+    private Waffe[] waffenUpgrades;
+    
+    //Shop-Informationen
+    int selectedWeapon;
+    boolean upgradebar;
 
     public Game() {
 
@@ -53,6 +58,11 @@ public class Game implements Runnable {
         scr = m.getGamePanel1().getScreen();
         waffen = new Waffe[WAFFEN_ANZAHL];
 
+    }
+    
+    public void setShopInfo(int waffennummer, boolean upgradebar){
+        this.selectedWeapon = waffennummer;
+        this.upgradebar = upgradebar;
     }
 
     public void loadGame() throws IOException {
@@ -65,6 +75,7 @@ public class Game implements Runnable {
         this.data = data;
         loadLevel(data.getAktLevel(), false);
         waffen = Game.loadWeapons(data.getWaffenStufen());
+        waffenUpgrades = Game.loadWeapons(data.getUpgradeStufen());
 
     }
 
@@ -168,6 +179,14 @@ public class Game implements Runnable {
 
     public static void setAktGame(Game aktGame) {
         Game.aktGame = aktGame;
+    }
+    
+    public Waffe getWaffe(int nummer, boolean upgrade){
+        if(upgrade){
+            return waffenUpgrades[nummer];
+        } else {
+            return waffen[nummer];
+        }
     }
 
 }

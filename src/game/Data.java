@@ -92,7 +92,15 @@ public class Data {
         return waffenStufen;
     }
     
-    
+    public int[] getUpgradeStufen(){
+        int[] upgradeStufen = waffenStufen.clone();
+        
+        for(int i = 0; i< upgradeStufen.length; i++){
+            upgradeStufen[i]++;
+        }
+        
+        return upgradeStufen;
+    }
 
     public void setBrillen(int brillen) {
         this.brillen = brillen;
