@@ -343,6 +343,14 @@ public class GamePanel extends javax.swing.JPanel {
     public Screen getScreen() {
         return mainScreen;
     }
+    
+    //Diese Reihenfolge: Lebende Streber, Tote Streber, Brillen Erfahrung
+    public void setAnzeiger(int ls, int ts, int br, int exp){
+        setLebendeStreber(ls);
+        setToteStreber(ts);
+        setBrillen(br);
+        setErfahrung(exp);
+    }
 
     public void setLebendeStreber(int ls) {
         lebendeStreberAnzeiger.setText("Lebende Streber: " + ls);
@@ -350,6 +358,14 @@ public class GamePanel extends javax.swing.JPanel {
 
     public void setToteStreber(int ts) {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
+    }
+    
+    public void setBrillen(int br) {
+        jLabelGlassesGame.setText("Brillen: " + br);
+    }
+    
+    public void setErfahrung(int exp) {
+        jLabelEXPGame.setText("Erfahrung: " + exp);
     }
 
     void initialisieren() {

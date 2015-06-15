@@ -16,6 +16,7 @@ public class Data {
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!
     private int getoeteteStreber;//getötete Streber. Steigt immer weiter, wird aber niemals abgezogen.
     private int aktLevel;
+    private int exp;
 
     private boolean[] skillsUnlocked; //Welche Skills schon freigeschaltet sind
     private int autoDamage; //Schaden den man macht, wenn man gerade nicht klickt
@@ -26,6 +27,7 @@ public class Data {
 
     public Data() {
         brillen = 0;
+        exp = 0;
 
         getoeteteStreber = 0;
         aktLevel = 1;
@@ -143,15 +145,23 @@ public class Data {
             lebendeStreber -= anzahl;
             getoeteteStreber += anzahl;
             brillen += anzahl;
+            exp += anzahl;
         } else {
             getoeteteStreber += lebendeStreber;
             brillen += lebendeStreber;
+            exp += lebendeStreber;
             lebendeStreber = 0;
             
         }
-        
-        
 
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
     }
 
 }

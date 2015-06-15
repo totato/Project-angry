@@ -39,7 +39,6 @@ public class Game implements Runnable {
 
     private static Game aktGame;
 
-    private MainGUI m;
     private Data data;
     private Screen scr;
 
@@ -53,9 +52,10 @@ public class Game implements Runnable {
     boolean upgradebar;
 
     public Game() {
+        
+        Game.setAktGame(this);
 
-        m = MainGUI.getAktMainGUI();
-        scr = m.getGamePanel1().getScreen();
+        scr = MainGUI.getAktMainGUI().getGamePanel1().getScreen();
         waffen = new Waffe[WAFFEN_ANZAHL];
 
     }
@@ -92,6 +92,25 @@ public class Game implements Runnable {
         scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
         scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
 
+    }
+    
+    //Rückgabewert entspricht dem im Shop angezeigten Text
+    public String buyUpgrade(int waffennummer) throws IOException{
+        if(data.getBrillen() < waffenUpgrades[waffennummer].getKosten()){
+            return "Nicht genug Brillen";
+        }
+        if(waffenUpgrades[waffennummer].getName().equals("MAX")){
+            return "(Bisheriges) Maximallevel erreicht";
+        }
+        
+        String ausgabe = "";
+        ausgabe += "Waffe " + waffen[waffennummer] + " zu Waffe " + waffenUpgrades[waffennummer] + " geupgradet.";
+        
+        data.setWaffenStufe(waffennummer, data.getWaffenStufe(waffennummer) + 1);
+        waffen[waffennummer] = waffenUpgrades[waffennummer];
+        waffenUpgrades[waffennummer] = Game.loadWeapon(waffennummer, data.getWaffenStufe(waffennummer) + 1);
+        
+        return ausgabe;
     }
 
     public static Waffe[] loadWeapons(int[] waffenstufen) throws IOException {
@@ -137,7 +156,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
 
-        m.addTextToTextArier(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
+        MainGUI.getAktMainGUI().addTextToTextArier(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
 
     }
 
@@ -161,8 +180,8 @@ public class Game implements Runnable {
                 data.setLebendeStreber(data.getLebendeStreber() + respawnRate);
             }
 
-            m.setLebendeStreber(data.getLebendeStreber());
-            m.setToteStreber(data.getGetoeteteStreber());
+            MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
+            
             if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {
                     Thread.sleep(frameTime - (System.currentTimeMillis() - startTime));
@@ -191,6 +210,14 @@ public class Game implements Runnable {
         } else {
             return waffen[nummer];
         }
+    }
+
+    public int getSelectedWeapon() {
+        return selectedWeapon;
+    }
+
+    public boolean isUpgradebar() {
+        return upgradebar;
     }
 
 }

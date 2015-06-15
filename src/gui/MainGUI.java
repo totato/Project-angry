@@ -24,6 +24,7 @@ import javax.swing.Timer;
 /**
  *
  * @author Vika. Nein, tschuldigung. WIRka. WIRka.
+ * ...   WIRklich?
  */
 public class MainGUI extends WindowProperties {
 
@@ -53,14 +54,6 @@ public class MainGUI extends WindowProperties {
         return skillPanel1;
     }
 
-    public void setLebendeStreber(int ls) {
-        gamePanel1.setLebendeStreber(ls);
-    }
-
-    public void setToteStreber(int ts) {
-        gamePanel1.setToteStreber(ts);
-    }
-
     public static MainGUI getAktMainGUI() {
         return aktMainGUI;
     }
@@ -70,6 +63,9 @@ public class MainGUI extends WindowProperties {
     }
 
     public MainGUI() {
+        
+        MainGUI.setAktMainGUI(this);
+        
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
         gamescreen = new JFrame(getWords(18));

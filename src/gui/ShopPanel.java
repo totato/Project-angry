@@ -7,6 +7,9 @@ package gui;
 
 import java.awt.event.KeyEvent;
 import game.Game;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -99,6 +102,11 @@ private void shortKeys(){
         bBuyShop.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         bBuyShop.setForeground(new java.awt.Color(255, 255, 255));
         bBuyShop.setText("Kaufen");
+        bBuyShop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBuyShopActionPerformed(evt);
+            }
+        });
         add(bBuyShop);
         bBuyShop.setBounds(170, 660, 310, 80);
 
@@ -487,6 +495,18 @@ private void shortKeys(){
     private void tbInventoryC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryC1ActionPerformed
         this.selectWaffe(5, false);
     }//GEN-LAST:event_tbInventoryC1ActionPerformed
+
+    private void bBuyShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyShopActionPerformed
+        if(Game.getAktGame().isUpgradebar()){
+            try {
+                jTextAreaShop.setText(Game.getAktGame().buyUpgrade(Game.getAktGame().getSelectedWeapon()));
+            } catch (IOException ex) {
+                Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+        }
+    }//GEN-LAST:event_bBuyShopActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

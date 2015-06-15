@@ -73,10 +73,9 @@ public class Launcher extends Cutscenes {
         
 
         MainGUI mainGUI = new MainGUI();
-        MainGUI.setAktMainGUI(mainGUI);
+        
         
         Game game = new Game();
-        Game.setAktGame(game);
         
         
         game.loadGame();
