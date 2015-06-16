@@ -370,7 +370,24 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
 
     @Override
     public void disableButtons() {
-        int foo = 3; // nur damit ich die klasse comiten kann
+        //Faust
+       // if(Game.getWaffenStufe(0)){
+            tbAttack0.setEnabled(true);
+      //  }else {
+            tbAttack0.setEnabled(false);
+     //   }
+        
+        tbAttack1.setEnabled(false);
+        tbAttack2.setEnabled(false);
+        tbAttack3.setEnabled(false);
+        tbAttack4.setEnabled(false);
+        tbAttack4.setEnabled(false);
+        tbAttack5.setEnabled(false);
+        bAttack7.setEnabled(false); //Grenades
+        // Disabled wenn: Waffe nicht gekauft
+        // Keine Granaten
+        //
+        //
         //TODO disable alle Buttons, auf die man nicht klicken kann (z.B. weil Waffe nciht gekauft) und setzte den aktuell ausgewählten Button auf aktWaffe
     }
 
