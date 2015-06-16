@@ -47,10 +47,10 @@ private void shortKeys(){
         jLabelShop = new javax.swing.JLabel();
         tbShopA1 = new javax.swing.JToggleButton();
         tbShopA2 = new javax.swing.JToggleButton();
-        tbShopB1 = new javax.swing.JToggleButton();
+        tbShopB0 = new javax.swing.JToggleButton();
+        tbShopB2 = new javax.swing.JToggleButton();
         tbShopB3 = new javax.swing.JToggleButton();
         tbShopB4 = new javax.swing.JToggleButton();
-        tbShopB5 = new javax.swing.JToggleButton();
         tbShopC1 = new javax.swing.JToggleButton();
         tbShopC2 = new javax.swing.JToggleButton();
         tbShopD1 = new javax.swing.JToggleButton();
@@ -65,17 +65,17 @@ private void shortKeys(){
         tbInventoryA1 = new javax.swing.JToggleButton();
         tbInventoryA2 = new javax.swing.JToggleButton();
         tbInventoryA3 = new javax.swing.JToggleButton();
+        tbInventoryB0 = new javax.swing.JToggleButton();
         tbInventoryB1 = new javax.swing.JToggleButton();
         tbInventoryB2 = new javax.swing.JToggleButton();
         tbInventoryB3 = new javax.swing.JToggleButton();
         tbInventoryB4 = new javax.swing.JToggleButton();
-        tbInventoryB5 = new javax.swing.JToggleButton();
         tbInventoryC1 = new javax.swing.JToggleButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         hierWarPlatzÜbrig = new javax.swing.JLabel();
-        tbShopA4 = new javax.swing.JToggleButton();
-        tbShopB6 = new javax.swing.JToggleButton();
+        tbShopA3 = new javax.swing.JToggleButton();
+        tbShopB1 = new javax.swing.JToggleButton();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
@@ -139,25 +139,40 @@ private void shortKeys(){
         add(tbShopA2);
         tbShopA2.setBounds(10, 130, 140, 30);
 
-        tbShopB1.setBackground(new java.awt.Color(0, 0, 0));
-        tbShopGroup.add(tbShopB1);
-        tbShopB1.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopB1.setText("Blick?");
-        tbShopB1.setMaximumSize(new java.awt.Dimension(105, 23));
-        tbShopB1.setMinimumSize(new java.awt.Dimension(105, 23));
-        tbShopB1.setPreferredSize(new java.awt.Dimension(105, 23));
-        tbShopB1.addActionListener(new java.awt.event.ActionListener() {
+        tbShopB0.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbShopB0);
+        tbShopB0.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB0.setText("Blick?");
+        tbShopB0.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB0.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB0.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbShopB1ActionPerformed(evt);
+                tbShopB0ActionPerformed(evt);
             }
         });
-        add(tbShopB1);
-        tbShopB1.setBounds(10, 250, 140, 30);
+        add(tbShopB0);
+        tbShopB0.setBounds(10, 250, 140, 30);
+
+        tbShopB2.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbShopB2);
+        tbShopB2.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB2.setText("Nahkampfwaffe");
+        tbShopB2.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB2.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB2.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopB2ActionPerformed(evt);
+            }
+        });
+        add(tbShopB2);
+        tbShopB2.setBounds(10, 330, 140, 30);
 
         tbShopB3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB3);
         tbShopB3.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopB3.setText("Nahkampfwaffe");
+        tbShopB3.setText("Schusswaffe");
         tbShopB3.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB3.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB3.setPreferredSize(new java.awt.Dimension(105, 23));
@@ -167,12 +182,12 @@ private void shortKeys(){
             }
         });
         add(tbShopB3);
-        tbShopB3.setBounds(10, 330, 140, 30);
+        tbShopB3.setBounds(10, 370, 140, 30);
 
         tbShopB4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB4);
         tbShopB4.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopB4.setText("Schusswaffe");
+        tbShopB4.setText("Taschenmonster");
         tbShopB4.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB4.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopB4.setPreferredSize(new java.awt.Dimension(105, 23));
@@ -182,22 +197,7 @@ private void shortKeys(){
             }
         });
         add(tbShopB4);
-        tbShopB4.setBounds(10, 370, 140, 30);
-
-        tbShopB5.setBackground(new java.awt.Color(0, 0, 0));
-        tbShopGroup.add(tbShopB5);
-        tbShopB5.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopB5.setText("Taschenmonster");
-        tbShopB5.setMaximumSize(new java.awt.Dimension(105, 23));
-        tbShopB5.setMinimumSize(new java.awt.Dimension(105, 23));
-        tbShopB5.setPreferredSize(new java.awt.Dimension(105, 23));
-        tbShopB5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbShopB5ActionPerformed(evt);
-            }
-        });
-        add(tbShopB5);
-        tbShopB5.setBounds(10, 410, 140, 30);
+        tbShopB4.setBounds(10, 410, 140, 30);
 
         tbShopC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC1);
@@ -315,65 +315,65 @@ private void shortKeys(){
         add(tbInventoryA3);
         tbInventoryA3.setBounds(500, 170, 140, 30);
 
+        tbInventoryB0.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbInventoryB0);
+        tbInventoryB0.setForeground(new java.awt.Color(255, 255, 255));
+        tbInventoryB0.setText("Blick?");
+        tbInventoryB0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbInventoryB0ActionPerformed(evt);
+            }
+        });
+        add(tbInventoryB0);
+        tbInventoryB0.setBounds(500, 250, 140, 30);
+
         tbInventoryB1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB1);
         tbInventoryB1.setForeground(new java.awt.Color(255, 255, 255));
-        tbInventoryB1.setText("Blick?");
+        tbInventoryB1.setText("Ausruf");
         tbInventoryB1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbInventoryB1ActionPerformed(evt);
             }
         });
         add(tbInventoryB1);
-        tbInventoryB1.setBounds(500, 250, 140, 30);
+        tbInventoryB1.setBounds(500, 290, 140, 30);
 
         tbInventoryB2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB2);
         tbInventoryB2.setForeground(new java.awt.Color(255, 255, 255));
-        tbInventoryB2.setText("Ausruf");
+        tbInventoryB2.setText("Nahkampfwaffe");
         tbInventoryB2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbInventoryB2ActionPerformed(evt);
             }
         });
         add(tbInventoryB2);
-        tbInventoryB2.setBounds(500, 290, 140, 30);
+        tbInventoryB2.setBounds(500, 330, 140, 30);
 
         tbInventoryB3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB3);
         tbInventoryB3.setForeground(new java.awt.Color(255, 255, 255));
-        tbInventoryB3.setText("Nahkampfwaffe");
+        tbInventoryB3.setText("Schusswaffe");
         tbInventoryB3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbInventoryB3ActionPerformed(evt);
             }
         });
         add(tbInventoryB3);
-        tbInventoryB3.setBounds(500, 330, 140, 30);
+        tbInventoryB3.setBounds(500, 370, 140, 30);
 
         tbInventoryB4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB4);
         tbInventoryB4.setForeground(new java.awt.Color(255, 255, 255));
-        tbInventoryB4.setText("Schusswaffe");
+        tbInventoryB4.setText("Taschenmonster");
         tbInventoryB4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbInventoryB4ActionPerformed(evt);
             }
         });
         add(tbInventoryB4);
-        tbInventoryB4.setBounds(500, 370, 140, 30);
-
-        tbInventoryB5.setBackground(new java.awt.Color(0, 0, 0));
-        tbShopGroup.add(tbInventoryB5);
-        tbInventoryB5.setForeground(new java.awt.Color(255, 255, 255));
-        tbInventoryB5.setText("Taschenmonster");
-        tbInventoryB5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbInventoryB5ActionPerformed(evt);
-            }
-        });
-        add(tbInventoryB5);
-        tbInventoryB5.setBounds(500, 410, 140, 30);
+        tbInventoryB4.setBounds(500, 410, 140, 30);
 
         tbInventoryC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryC1);
@@ -401,27 +401,27 @@ private void shortKeys(){
         add(hierWarPlatzÜbrig);
         hierWarPlatzÜbrig.setBounds(500, 550, 150, 90);
 
-        tbShopA4.setBackground(new java.awt.Color(0, 0, 0));
-        tbShopGroup.add(tbShopA4);
-        tbShopA4.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopA4.setText("Schuhe");
-        add(tbShopA4);
-        tbShopA4.setBounds(10, 170, 140, 30);
+        tbShopA3.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbShopA3);
+        tbShopA3.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA3.setText("Schuhe");
+        add(tbShopA3);
+        tbShopA3.setBounds(10, 170, 140, 30);
 
-        tbShopB6.setBackground(new java.awt.Color(0, 0, 0));
-        tbShopGroup.add(tbShopB6);
-        tbShopB6.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopB6.setText("Ausruf");
-        tbShopB6.setMaximumSize(new java.awt.Dimension(105, 23));
-        tbShopB6.setMinimumSize(new java.awt.Dimension(105, 23));
-        tbShopB6.setPreferredSize(new java.awt.Dimension(105, 23));
-        tbShopB6.addActionListener(new java.awt.event.ActionListener() {
+        tbShopB1.setBackground(new java.awt.Color(0, 0, 0));
+        tbShopGroup.add(tbShopB1);
+        tbShopB1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopB1.setText("Ausruf");
+        tbShopB1.setMaximumSize(new java.awt.Dimension(105, 23));
+        tbShopB1.setMinimumSize(new java.awt.Dimension(105, 23));
+        tbShopB1.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopB1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbShopB6ActionPerformed(evt);
+                tbShopB1ActionPerformed(evt);
             }
         });
-        add(tbShopB6);
-        tbShopB6.setBounds(10, 290, 140, 30);
+        add(tbShopB1);
+        tbShopB1.setBounds(10, 290, 140, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
@@ -448,56 +448,56 @@ private void shortKeys(){
         
     }//GEN-LAST:event_tbShopA1ActionPerformed
 
-    private void tbShopB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB1ActionPerformed
+    private void tbShopB0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB0ActionPerformed
         this.selectWaffe(0, true);
+    }//GEN-LAST:event_tbShopB0ActionPerformed
+
+    private void tbShopB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB1ActionPerformed
+        this.selectWaffe(1, true);
     }//GEN-LAST:event_tbShopB1ActionPerformed
 
-    private void tbShopB6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB6ActionPerformed
-        this.selectWaffe(1, true);
-    }//GEN-LAST:event_tbShopB6ActionPerformed
+    private void tbShopB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB2ActionPerformed
+        this.selectWaffe(2, true);
+    }//GEN-LAST:event_tbShopB2ActionPerformed
 
     private void tbShopB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB3ActionPerformed
-        this.selectWaffe(2, true);
+        this.selectWaffe(3, true);
     }//GEN-LAST:event_tbShopB3ActionPerformed
 
     private void tbShopB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB4ActionPerformed
-        this.selectWaffe(3, true);
-    }//GEN-LAST:event_tbShopB4ActionPerformed
-
-    private void tbShopB5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB5ActionPerformed
         this.selectWaffe(4, true);
-    }//GEN-LAST:event_tbShopB5ActionPerformed
+    }//GEN-LAST:event_tbShopB4ActionPerformed
 
     private void tbShopC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC1ActionPerformed
         this.selectWaffe(5, true);
     }//GEN-LAST:event_tbShopC1ActionPerformed
 
-    private void tbInventoryB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB1ActionPerformed
+    private void tbInventoryB0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB0ActionPerformed
         this.selectWaffe(0, false);
+    }//GEN-LAST:event_tbInventoryB0ActionPerformed
+
+    private void tbInventoryB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB1ActionPerformed
+        this.selectWaffe(1, false);
     }//GEN-LAST:event_tbInventoryB1ActionPerformed
 
     private void tbInventoryB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB2ActionPerformed
-        this.selectWaffe(1, false);
+        this.selectWaffe(2, false);
     }//GEN-LAST:event_tbInventoryB2ActionPerformed
 
     private void tbInventoryB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB3ActionPerformed
-        this.selectWaffe(2, false);
+        this.selectWaffe(3, false);
     }//GEN-LAST:event_tbInventoryB3ActionPerformed
 
     private void tbInventoryB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB4ActionPerformed
-        this.selectWaffe(3, false);
-    }//GEN-LAST:event_tbInventoryB4ActionPerformed
-
-    private void tbInventoryB5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryB5ActionPerformed
         this.selectWaffe(4, false);
-    }//GEN-LAST:event_tbInventoryB5ActionPerformed
+    }//GEN-LAST:event_tbInventoryB4ActionPerformed
 
     private void tbInventoryC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbInventoryC1ActionPerformed
         this.selectWaffe(5, false);
     }//GEN-LAST:event_tbInventoryC1ActionPerformed
 
     private void bBuyShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyShopActionPerformed
-        if(Game.getAktGame().isUpgradebar()){
+        if(Game.getAktGame().upgradeSelected()){
             try {
                 jTextAreaShop.setText(Game.getAktGame().buyUpgrade(Game.getAktGame().getSelectedWeapon()));
             } catch (IOException ex) {
@@ -530,46 +530,67 @@ private void shortKeys(){
     private javax.swing.JToggleButton tbInventoryA1;
     private javax.swing.JToggleButton tbInventoryA2;
     private javax.swing.JToggleButton tbInventoryA3;
+    private javax.swing.JToggleButton tbInventoryB0;
     private javax.swing.JToggleButton tbInventoryB1;
     private javax.swing.JToggleButton tbInventoryB2;
     private javax.swing.JToggleButton tbInventoryB3;
     private javax.swing.JToggleButton tbInventoryB4;
-    private javax.swing.JToggleButton tbInventoryB5;
     private javax.swing.JToggleButton tbInventoryC1;
     private javax.swing.JToggleButton tbShopA1;
     private javax.swing.JToggleButton tbShopA2;
-    private javax.swing.JToggleButton tbShopA4;
+    private javax.swing.JToggleButton tbShopA3;
+    private javax.swing.JToggleButton tbShopB0;
     private javax.swing.JToggleButton tbShopB1;
+    private javax.swing.JToggleButton tbShopB2;
     private javax.swing.JToggleButton tbShopB3;
     private javax.swing.JToggleButton tbShopB4;
-    private javax.swing.JToggleButton tbShopB5;
-    private javax.swing.JToggleButton tbShopB6;
     private javax.swing.JToggleButton tbShopC1;
     private javax.swing.JToggleButton tbShopC2;
     private javax.swing.JToggleButton tbShopD1;
     private javax.swing.ButtonGroup tbShopGroup;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void disableButtons() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
     
     public void selectWaffe(int i, boolean upgrade){
         Game.getAktGame().setShopInfo(i, upgrade);
         jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
+        this.disableButtons();
     }
         public void setGlasses(int br){
          jLabelGlassesShop.setText("Brillen: " + br);
     }
+        
+        @Override
+    public void disableButtons() {
+        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());
+        tbInventoryA1.setEnabled(false); //vorläufig
+        tbInventoryA2.setEnabled(false);
+        tbInventoryA3.setEnabled(false);
+        tbShopA1.setEnabled(false);
+        tbShopA2.setEnabled(false);
+        tbShopA3.setEnabled(false);
+        
+        tbInventoryB0.setEnabled(Game.getAktGame().getData().getWaffenStufe(0) > 0);
+        tbInventoryB1.setEnabled(Game.getAktGame().getData().getWaffenStufe(1) > 0);
+        tbInventoryB2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2) > 0);
+        tbInventoryB3.setEnabled(Game.getAktGame().getData().getWaffenStufe(3) > 0);
+        tbInventoryB4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4) > 0);
+        
+        tbShopB0.setEnabled(!Game.getAktGame().getWaffe(0, true).getName().equals("MAX"));
+        tbShopB1.setEnabled(!Game.getAktGame().getWaffe(1, true).getName().equals("MAX"));
+        tbShopB2.setEnabled(!Game.getAktGame().getWaffe(2, true).getName().equals("MAX"));
+        tbShopB3.setEnabled(!Game.getAktGame().getWaffe(3, true).getName().equals("MAX"));
+        tbShopB4.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
+    }
 
     @Override
     public void switchTo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void switchFrom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 }

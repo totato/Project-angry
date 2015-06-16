@@ -6,6 +6,7 @@
 package gui;
 
 import game.Game;
+import static gui.WindowProperties.language;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -79,6 +80,7 @@ public class Launcher extends Cutscenes {
         
         
         game.loadGame();
+        mainGUI.disableButtons();
         
         Thread gameThread = new Thread(game);
         gameThread.start();

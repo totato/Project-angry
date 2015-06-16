@@ -23,8 +23,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Vika. Nein, tschuldigung. WIRka. WIRka.
- * ...   WIRklich?
+ * @author Vika. Nein, tschuldigung. WIRka. WIRka. ... WIRklich?
  */
 public class MainGUI extends WindowProperties {
 
@@ -41,6 +40,8 @@ public class MainGUI extends WindowProperties {
     private gui.GamePanel gamePanel1;
     private gui.ShopPanel shopPanel1;
     private gui.SkillPanel skillPanel1;
+
+    private Panel aktPanel;
 
     public GamePanel getGamePanel1() {
         return gamePanel1;
@@ -63,9 +64,9 @@ public class MainGUI extends WindowProperties {
     }
 
     public MainGUI() {
-        
+
         MainGUI.setAktMainGUI(this);
-        
+
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
         gamescreen = new JFrame(getWords(18));
@@ -88,6 +89,7 @@ public class MainGUI extends WindowProperties {
         //a. jeweils nach cutscenes
         //b. nach beendigung eines levels
         //feuern lassen.
+        aktPanel = gamePanel1;
     }
 
     private void createCards(Container pane) {
@@ -128,6 +130,21 @@ public class MainGUI extends WindowProperties {
      Namen angegeben wurde
      */
     public void changeCard(String name) {
+
+        aktPanel.switchFrom();
+        switch (name) {
+            case "shop card":
+                aktPanel = shopPanel1;
+                break;
+            case "game card":
+                aktPanel = gamePanel1;
+                break;
+            case "skill card":
+                aktPanel = skillPanel1;
+                break;
+        }
+        aktPanel.switchTo();
+
         //Cutscenes.playcutscene(1, pfad);
         clgame.show(getGamecards(), name);
         /*buttonToMenu.setEnabled(false);
@@ -146,7 +163,7 @@ public class MainGUI extends WindowProperties {
         int maxSigns = 30;
         int lastSpace = 0;
         while (text.length() > maxSigns) {
-            System.out.println("Text Lenght"+text.length());
+            System.out.println("Text Lenght" + text.length());
 
             for (int i = 0; i < maxSigns; i++) {
                 if (text.charAt(i) == 32) {
@@ -154,12 +171,11 @@ public class MainGUI extends WindowProperties {
                 }
             }
 
+            ta.setText(GamePanel.getjTextAreaGame().getText() + "  " + text.substring(0, lastSpace) + "\n");
 
-                ta.setText(GamePanel.getjTextAreaGame().getText() +"  "+ text.substring(0, lastSpace) + "\n");
-                
-                text = text.substring(lastSpace + 1);
+            text = text.substring(lastSpace + 1);
         }
-        ta.setText(GamePanel.getjTextAreaGame().getText()+"  " + text + "\n");
+        ta.setText(GamePanel.getjTextAreaGame().getText() + "  " + text + "\n");
     }
 
     public JPanel getGamecards() {
@@ -169,8 +185,8 @@ public class MainGUI extends WindowProperties {
     public JFrame getGamescreen() {
         return gamescreen;
     }
-    
-    public void disableButtons(){
+
+    public void disableButtons() {
         gamePanel1.disableButtons();
         shopPanel1.disableButtons();
         skillPanel1.disableButtons();

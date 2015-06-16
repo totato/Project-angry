@@ -417,12 +417,12 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
 
     @Override
     public void switchTo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
     public void switchFrom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
 }
