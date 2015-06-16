@@ -156,7 +156,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
 
-        MainGUI.getAktMainGUI().addTextToTextArier(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
+        MainGUI.getAktMainGUI().addTextToTextArea(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
 
     }
 
@@ -177,10 +177,13 @@ public class Game implements Runnable {
             i++;
             if (i >= 1000 / frameTime) {
                 i = 0;
+                data.setVorherLebendeStreber(data.getLebendeStreber());
                 data.setLebendeStreber(data.getLebendeStreber() + respawnRate);
             }
 
-            MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
+            MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(),data.getVorherLebendeStreber() ,data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
+            MainGUI.getAktMainGUI().getShopPanel1().setGlasses(data.getBrillen());
+            MainGUI.getAktMainGUI().getSkillPanel1().setLabels(data.getBrillen(), data.getExp());
             
             if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {

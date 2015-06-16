@@ -224,7 +224,7 @@ private void shortKeys(){
         add(tbShopC2);
         tbShopC2.setBounds(10, 500, 140, 30);
 
-        tbShopD1.setBackground(new java.awt.Color(51, 51, 51));
+        tbShopD1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopD1);
         tbShopD1.setForeground(new java.awt.Color(255, 255, 255));
         tbShopD1.setText("Kung Fury");
@@ -404,7 +404,7 @@ private void shortKeys(){
         tbShopA4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA4);
         tbShopA4.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopA4.setText("Schule");
+        tbShopA4.setText("Schuhe");
         add(tbShopA4);
         tbShopA4.setBounds(10, 170, 140, 30);
 
@@ -558,6 +558,9 @@ private void shortKeys(){
     public void selectWaffe(int i, boolean upgrade){
         Game.getAktGame().setShopInfo(i, upgrade);
         jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
+    }
+        public void setGlasses(int br){
+         jLabelGlassesShop.setText("Brillen: " + br);
     }
 
     @Override

@@ -14,6 +14,7 @@ public class Data {
 
     private int brillen;//Eine Brille entspricht einem toten Streber entsrpicht einem Kill
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!
+    private int vorherLebendeStreber;//Noch lebende Streber, voheriger wert, wenn da 0 erreicht nächstes level!
     private int getoeteteStreber;//getötete Streber. Steigt immer weiter, wird aber niemals abgezogen.
     private int aktLevel;
     private int exp;
@@ -62,6 +63,10 @@ public class Data {
         return lebendeStreber;
     }
 
+    public int getVorherLebendeStreber() {
+        return vorherLebendeStreber;
+    }
+
     public int getGetoeteteStreber() {
         return getoeteteStreber;
     }
@@ -93,25 +98,26 @@ public class Data {
     public int[] getWaffenStufen() {
         return waffenStufen;
     }
-    
-    public int[] getUpgradeStufen(){
+
+    public int[] getUpgradeStufen() {
         int[] upgradeStufen = waffenStufen.clone();
-        
-        for(int i = 0; i< upgradeStufen.length; i++){
+
+        for (int i = 0; i < upgradeStufen.length; i++) {
             upgradeStufen[i]++;
         }
-        
+
         return upgradeStufen;
     }
 
     public void setBrillen(int brillen) {
         this.brillen = brillen;
     }
-
     public void setLebendeStreber(int lebendeStreber) {
         this.lebendeStreber = lebendeStreber;
     }
-
+    public void setVorherLebendeStreber(int vorherLebendeStreber) {
+        this.vorherLebendeStreber = vorherLebendeStreber;
+    }
     public void setGetoeteteStreber(int getoeteteStreber) {
         this.getoeteteStreber = getoeteteStreber;
     }
@@ -142,6 +148,7 @@ public class Data {
 
     public void killStreber(int anzahl) {
         if (lebendeStreber >= anzahl) {
+            vorherLebendeStreber = lebendeStreber;
             lebendeStreber -= anzahl;
             getoeteteStreber += anzahl;
             brillen += anzahl;
@@ -151,7 +158,7 @@ public class Data {
             brillen += lebendeStreber;
             exp += lebendeStreber;
             lebendeStreber = 0;
-            
+
         }
 
     }

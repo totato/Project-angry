@@ -20,11 +20,13 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         initComponents();
         shortKeys();
     }
-private void shortKeys(){
-    
-    WindowProperties.setShortKeys(bToShopSkill,"shop card", KeyEvent.VK_N );
-    WindowProperties.setShortKeys(bToGameSkill,"game card", KeyEvent.VK_B );
-}
+
+    private void shortKeys() {
+
+        WindowProperties.setShortKeys(bToShopSkill, "shop card", KeyEvent.VK_N);
+        WindowProperties.setShortKeys(bToGameSkill, "game card", KeyEvent.VK_B);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -334,7 +336,7 @@ private void shortKeys(){
     }//GEN-LAST:event_bToGameSkillActionPerformed
 
     private void bToShopSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopSkillActionPerformed
-     MainGUI.getAktMainGUI().changeCard("shop card");
+        MainGUI.getAktMainGUI().changeCard("shop card");
     }//GEN-LAST:event_bToShopSkillActionPerformed
 
 
@@ -386,6 +388,19 @@ private void shortKeys(){
     private javax.swing.JToggleButton tbSkillE8;
     private javax.swing.JToggleButton tbSkillF;
     // End of variables declaration//GEN-END:variables
+
+    public void setGlasses(int br) {
+        jLabelGlassesSkill.setText("Brillen: " + br);
+    }
+
+    public void setEXP(int exp) {
+        jLabelEXPSkill.setText("Brillen: " + exp);
+    }
+
+    public void setLabels(int br, int exp) {
+        setGlasses(br);
+        setEXP(exp);
+    }
 
     @Override
     public void disableButtons() {

@@ -7,10 +7,12 @@ package gui;
 
 import game.Game;
 import gui.WindowProperties;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JToggleButton;
@@ -21,6 +23,19 @@ import javax.swing.KeyStroke;
  * @author Vika
  */
 public class GamePanel extends javax.swing.JPanel implements Panel {
+// Bilder werden geladen
+private ImageIcon grAttack0B = new ImageIcon(getClass().getResource("/Grafiken/weapon0B.png"));
+private ImageIcon grAttack0 = new ImageIcon(getClass().getResource("/Grafiken/weapon0.png"));
+private ImageIcon grAttack1B = new ImageIcon(getClass().getResource("/Grafiken/weapon1B.png"));
+private ImageIcon grAttack1 = new ImageIcon(getClass().getResource("/Grafiken/weapon1.png"));
+private ImageIcon grAttack2B = new ImageIcon(getClass().getResource("/Grafiken/weapon2B.png"));
+private ImageIcon grAttack2 = new ImageIcon(getClass().getResource("/Grafiken/weapon2.png"));
+private ImageIcon grAttack3B = new ImageIcon(getClass().getResource("/Grafiken/weapon3B.png"));
+private ImageIcon grAttack3 = new ImageIcon(getClass().getResource("/Grafiken/weapon3.png"));
+private ImageIcon grAttack4B = new ImageIcon(getClass().getResource("/Grafiken/weapon4B.png"));
+private ImageIcon grAttack4 = new ImageIcon(getClass().getResource("/Grafiken/weapon4.png"));
+private ImageIcon grAttack5B = new ImageIcon(getClass().getResource("/Grafiken/weapon5B.png"));
+private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/weapon5.png"));
 
     /**
      * Creates new form gamePanel
@@ -28,6 +43,8 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
     public GamePanel() {
         initComponents();
         shortKeys();
+        tbAttack0.setSelected(true);
+        changeTBPicture(tbAttack0);
 
     }
 
@@ -41,36 +58,36 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
         return jTextAreaGame;
     }
 
-    private void changeTBPicture(JToggleButton aW) {
+    private void changeTBPicture(JToggleButton aW ) {
         if (aW == tbAttack0) {
-            tbAttack0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon0B.png")));
+            tbAttack0.setIcon(grAttack0B);
         } else {
-            tbAttack0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon0.png")));
+            tbAttack0.setIcon(grAttack0);
         }
         if (aW == tbAttack1) {
-            tbAttack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon1B.png")));
-        } else {
-            tbAttack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon1.png")));
+            tbAttack1.setIcon(grAttack1B);
+        }  else  {
+            tbAttack1.setIcon(grAttack1);
         }
         if (aW == tbAttack2) {
-            tbAttack2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon2B.png")));
-        } else {
-            tbAttack2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon2.png")));
+            tbAttack2.setIcon(grAttack2B);
+        }  else {
+            tbAttack2.setIcon(grAttack2);
         }
         if (aW == tbAttack3) {
-            tbAttack3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon3B.png")));
-        } else {
-            tbAttack3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon3.png")));
+            tbAttack3.setIcon(grAttack3B);
+        }  else  {
+            tbAttack3.setIcon(grAttack3);
         }
         if (aW == tbAttack4) {
-            tbAttack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon4B.png")));
-        } else {
-            tbAttack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon4.png")));
+            tbAttack4.setIcon(grAttack4B);
+        }  else  {
+            tbAttack4.setIcon(grAttack4);
         }
         if (aW == tbAttack5) {
-            tbAttack5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon5B.png")));
-        } else {
-            tbAttack5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon5.png")));
+            tbAttack5.setIcon(grAttack5B);
+        }  else  {
+            tbAttack5.setIcon(grAttack5);
         }
     }
 
@@ -343,27 +360,34 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
     public Screen getScreen() {
         return mainScreen;
     }
-    
-    //Diese Reihenfolge: Lebende Streber, Tote Streber, Brillen Erfahrung
-    public void setAnzeiger(int ls, int ts, int br, int exp){
-        setLebendeStreber(ls);
+
+    //Diese Reihenfolge: Lebende Streber,vorherLebendeStreber, Tote Streber, Brillen Erfahrung
+    public void setAnzeiger(int ls, int vls, int ts, int br, int exp) {
+        setLebendeStreber(ls, vls);
         setToteStreber(ts);
         setBrillen(br);
         setErfahrung(exp);
     }
 
-    public void setLebendeStreber(int ls) {
+    public void setLebendeStreber(int ls, int vls) {
         lebendeStreberAnzeiger.setText("Lebende Streber: " + ls);
+        if (vls > ls) {
+            lebendeStreberAnzeiger.setForeground(Color.green);
+        }
+        if (vls < ls) {
+            lebendeStreberAnzeiger.setForeground(Color.red);
+        }
+
     }
 
     public void setToteStreber(int ts) {
         toteStreberAnzeiger.setText("Getötete Streber: " + ts);
     }
-    
+
     public void setBrillen(int br) {
         jLabelGlassesGame.setText("Brillen: " + br);
     }
-    
+
     public void setErfahrung(int exp) {
         jLabelEXPGame.setText("Erfahrung: " + exp);
     }
@@ -371,12 +395,12 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
     @Override
     public void disableButtons() {
         //Faust
-       // if(Game.getWaffenStufe(0)){
-            tbAttack0.setEnabled(true);
-      //  }else {
-            tbAttack0.setEnabled(false);
+        // if(Game.getWaffenStufe(0)){
+        tbAttack0.setEnabled(true);
+        //  }else {
+        tbAttack0.setEnabled(false);
      //   }
-        
+
         tbAttack1.setEnabled(false);
         tbAttack2.setEnabled(false);
         tbAttack3.setEnabled(false);
