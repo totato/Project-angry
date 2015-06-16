@@ -396,7 +396,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
     public void disableButtons() {
         //Faust
         // if(Game.getWaffenStufe(0)){
-        tbAttack0.setEnabled(true);
+        /*tbAttack0.setEnabled(true);
         //  }else {
         tbAttack0.setEnabled(false);
      //   }
@@ -407,7 +407,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         tbAttack4.setEnabled(false);
         tbAttack4.setEnabled(false);
         tbAttack5.setEnabled(false);
-        bAttack7.setEnabled(false); //Grenades
+        bAttack7.setEnabled(false); //Grenades*/
         // Disabled wenn: Waffe nicht gekauft
         // Keine Granaten
         //

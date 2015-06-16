@@ -11,6 +11,7 @@ import gui.Screen;
 import gui.WindowProperties;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -195,8 +196,10 @@ public class Game implements Runnable {
             }
             
             MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getVorherLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
-            MainGUI.getAktMainGUI().getShopPanel1().setGlasses(data.getBrillen());
-            MainGUI.getAktMainGUI().getSkillPanel1().setLabels(data.getBrillen(), data.getExp());
+            
+            if(new File(this.getClass().getClassLoader().getResource("Levels/Level_" + (data.getAktLevel()+ 1) + ".txt").getPath()).exists()){
+                
+            }
             
             if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {

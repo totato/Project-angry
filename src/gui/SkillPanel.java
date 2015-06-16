@@ -5,6 +5,7 @@
  */
 package gui;
 
+import game.Game;
 import java.awt.event.KeyEvent;
 
 /**
@@ -409,7 +410,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     @Override
     public void switchTo() {
-       
+       MainGUI.getAktMainGUI().getSkillPanel1().setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
     }
 
     @Override
