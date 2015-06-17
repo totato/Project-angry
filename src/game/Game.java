@@ -34,12 +34,12 @@ import javax.imageio.ImageIO;
  * @author Toast
  */
 public class Game implements Runnable {
-    
+
     private static final long frameTime = 10;
     private static final int WAFFEN_ANZAHL = 6;
-    
+
     private static Game aktGame;
-    
+
     private Data data;
     private Screen scr;
 
@@ -51,48 +51,55 @@ public class Game implements Runnable {
     //Shop-Informationen
     int selectedWeapon;
     boolean upgradeSelected;
-    
+
     public Game() {
-        
+
         Game.setAktGame(this);
-        
+
         scr = MainGUI.getAktMainGUI().getGamePanel1().getScreen();
         waffen = new Waffe[WAFFEN_ANZAHL];
-        
+
     }
-    
+
     public void setShopInfo(int waffennummer, boolean upgradeSelected) {
         this.selectedWeapon = waffennummer;
         this.upgradeSelected = upgradeSelected;
     }
-    
+
     public void loadGame() throws IOException {
         data = new Data();
         loadLevel(1, true);
         loadGame(data);
     }
-    
+
     public void loadGame(Data data) throws IOException {
         this.data = data;
         loadLevel(data.getAktLevel(), false);
         waffen = Game.loadWeapons(data.getWaffenStufen());
         waffenUpgrades = Game.loadWeapons(data.getUpgradeStufen());
-        
+
     }
-    
-    public void loadLevel(int levelnr, boolean neu) throws IOException {
+
+    //Rückgabewert gibt Erfolg an
+    public boolean loadLevel(int levelnr, boolean neu) throws IOException {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
-        List<String> zeilen = WindowProperties.ladeTXT("Levels/Level_" + Integer.toString(levelnr) + ".txt");
+        List<String> zeilen = WindowProperties.ladeTXT("Levels/Levels.txt");
         int startPos = zeilen.indexOf("-START-");
-        if (neu) {
-            data.setAktLevel(levelnr);
-            data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
+        if (startPos > -1) {
+            if (neu) {
+                data.setAktLevel(levelnr);
+                data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
+            }
+            respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
+            scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
+            scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
+            
+            return true;
         }
-        respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
-        scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
-        scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
         
+        return false;
+
     }
 
     //Rückgabewert entspricht dem im Shop angezeigten Text
@@ -103,50 +110,48 @@ public class Game implements Runnable {
         if (waffenUpgrades[waffennummer].getName().equals("MAX")) {
             return "(Bisheriges) Maximallevel erreicht";
         }
-        
+
         return upgradeWeapon(waffennummer);
-        
+
     }
-    
+
     public String upgradeWeapon(int waffennummer) throws IOException {
-        
+
         String ausgabe = "";
-        
+
         if (data.getWaffenStufe(waffennummer) > 0) {
             ausgabe += "Waffe " + waffen[waffennummer].getName() + " zu Waffe " + waffenUpgrades[waffennummer].getName() + " geupgradet.";
         } else {
             ausgabe += "Waffe " + waffenUpgrades[waffennummer].getName() + " gekauft.";
         }
-        
-        
-        
+
         data.setWaffenStufe(waffennummer, data.getWaffenStufe(waffennummer) + 1);
         waffen[waffennummer] = waffenUpgrades[waffennummer];
         waffenUpgrades[waffennummer] = Game.loadWeapon(waffennummer, data.getWaffenStufe(waffennummer) + 1);
-        
+
         return ausgabe;
     }
-    
+
     public static Waffe[] loadWeapons(int[] waffenstufen) throws IOException {
-        
+
         Waffe[] waffen = new Waffe[WAFFEN_ANZAHL];
-        
+
         for (int i = 0; i < WAFFEN_ANZAHL; i++) {
-            
+
             waffen[i] = Game.loadWeapon(i, waffenstufen[i]);
-            
+
         }
-        
+
         return waffen;
     }
-    
+
     public static Waffe loadWeapon(int waffennummer, int waffenstufe) throws IOException {
-        
+
         List<String> waffenTXT;
         int startPos;
-        
+
         Waffe waffe = null;
-        
+
         if (waffenstufe > 0) {
             waffenTXT = WindowProperties.ladeTXT("Weapons/Waffe_" + waffennummer + ".txt");
             if (!waffenTXT.isEmpty()) {
@@ -160,47 +165,47 @@ public class Game implements Runnable {
         } else {
             waffe = new Waffe("MIN", 0, 0, 0);
         }
-        
+
         return waffe;
     }
-    
+
     public void changeWeapon(int waffennummer) {
-        
+
         if (data.getWaffenStufe(waffennummer) > 0) {
             data.setAktWaffe(waffennummer);
         }
-        
-        MainGUI.getAktMainGUI().addTextToTextArea(GamePanel.getjTextAreaGame(),30 ,"Zur Waffe " + waffennummer + " gewechselt");
-        
+
+        MainGUI.getAktMainGUI().addTextToTextArea(GamePanel.getjTextAreaGame(), 30, "Zur Waffe " + waffennummer + " gewechselt");
+
     }
-    
+
     public void useAktWeapon() {
         data.killStreber(waffen[data.getAktWaffe()].getDamage());
     }
-    
+
     @Override
     public void run() {
-        
+
         int i = 0;
         long startTime;
-        
+
         while (true) {
-            
+
             startTime = System.currentTimeMillis();
-            
+
             i++;
             if (i >= 1000 / frameTime) {
                 i = 0;
                 data.setVorherLebendeStreber(data.getLebendeStreber());
                 data.setLebendeStreber(data.getLebendeStreber() + respawnRate);
             }
-            
+
             MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getVorherLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
-            
-            if(new File(this.getClass().getClassLoader().getResource("Levels/Level_" + (data.getAktLevel()+ 1) + ".txt").getPath()).exists()){
-                
+
+            if (new File(this.getClass().getClassLoader().getResource("Levels/Level_" + (data.getAktLevel() + 1) + ".txt").getPath()).exists()) {
+
             }
-            
+
             if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {
                     Thread.sleep(frameTime - (System.currentTimeMillis() - startTime));
@@ -210,19 +215,19 @@ public class Game implements Runnable {
             }
         }
     }
-    
+
     public static Game getAktGame() {
         return aktGame;
     }
-    
+
     public Data getData() {
         return data;
     }
-    
+
     public static void setAktGame(Game aktGame) {
         Game.aktGame = aktGame;
     }
-    
+
     public Waffe getWaffe(int nummer, boolean upgrade) {
         if (upgrade) {
             return waffenUpgrades[nummer];
@@ -230,13 +235,13 @@ public class Game implements Runnable {
             return waffen[nummer];
         }
     }
-    
+
     public int getSelectedWeapon() {
         return selectedWeapon;
     }
-    
+
     public boolean upgradeSelected() {
         return upgradeSelected;
     }
-    
+
 }

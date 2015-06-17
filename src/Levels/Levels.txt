@@ -1,6 +1,6 @@
--START-
+-START1-
 211
 1
 Grafiken/Level_1_BG.png
 Grafiken/Level_1_Streber.png
--END-
+-END1-
