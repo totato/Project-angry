@@ -160,7 +160,7 @@ public class MainGUI extends WindowProperties {
     }
 
     public void addTextToTextArea(JTextArea ta,int maxSigns, String text) {
-        //int maxSigns = 30;
+        //int maxSigns = 30; for gamePanel
         int lastSpace = 0;
         while (text.length() > maxSigns) {
             System.out.println("Text Lenght" + text.length());

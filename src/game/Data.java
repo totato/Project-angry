@@ -19,7 +19,7 @@ public class Data {
     private int aktLevel;
     private int exp;
 
-    private boolean[] skillsUnlocked; //Welche Skills schon freigeschaltet sind
+    private int[] skillsStufen; //Welche Skills schon freigeschaltet sind
     private int autoDamage; //Schaden den man macht, wenn man gerade nicht klickt
     private int[] waffenStufen; //Die Stufen jeder Waffe
     private int[] ausrüstungStufen; //Die Stufen jeder Ausrüstung
@@ -33,9 +33,9 @@ public class Data {
         getoeteteStreber = 0;
         aktLevel = 1;
 
-        skillsUnlocked = new boolean[ANZAHL_SKILLS];
-        for (boolean b : skillsUnlocked) {
-            b = false;
+        skillsStufen = new int[ANZAHL_SKILLS];
+        for (int b : skillsStufen) {
+            b = 0;
         }
 
         autoDamage = START_AUTO_DAMAGE;
@@ -79,8 +79,8 @@ public class Data {
         return autoDamage;
     }
 
-    public boolean getSkillUnlocked(int i) {
-        return skillsUnlocked[i];
+    public int getSkillUnlocked(int i) {
+        return skillsStufen[i];
     }
 
     public int getWaffenStufe(int i) {
@@ -130,16 +130,16 @@ public class Data {
         this.autoDamage = autoDamage;
     }
 
-    public void setSkillUnlocked(int i, boolean b) {
-        skillsUnlocked[i] = b;
+    public void setSkillUnlocked(int i, int b) {
+        skillsStufen[i] = b;
     }
 
     public void setWaffenStufe(int i, int ws) {
         waffenStufen[i] = ws;
     }
 
-    public void setAusrüstungsStufe(int i, boolean as) {
-        skillsUnlocked[i] = as;
+    public void setAusrüstungStufen(int i, int as) {
+        ausrüstungStufen[i] = as;
     }
 
     public void setAktWaffe(int aktWaffe) {

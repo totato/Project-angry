@@ -2,7 +2,6 @@
 bedingung für Skill (jToggleButton)
 Name
 Beschreibung
-
 Autoschaden
 Spawnrate Streber
 Wk auf Brillen
