@@ -17,7 +17,7 @@ public class Waffe {
     private int reloadTime;
     private int kosten;
 
-    public Waffe(String name, int damage, int reloadTime, int kosten) {
+    public Waffe(String name, String beschreibung, int damage, int reloadTime, int kosten) {
         this.name = name;
         this.beschreibung = beschreibung;
         this.damage = damage;

@@ -85,7 +85,7 @@ public class Game implements Runnable {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
         List<String> zeilen = WindowProperties.ladeTXT("Levels/Levels.txt");
-        int startPos = zeilen.indexOf("-START-");
+        int startPos = zeilen.indexOf("-START" + levelnr +"-");
         if (startPos > -1) {
             if (neu) {
                 data.setAktLevel(levelnr);
@@ -157,13 +157,13 @@ public class Game implements Runnable {
             if (!waffenTXT.isEmpty()) {
                 startPos = waffenTXT.indexOf("-START" + waffenstufe + "-");
                 if (startPos > -1) {
-                    waffe = new Waffe(waffenTXT.get(startPos + 1), Integer.parseInt(waffenTXT.get(startPos + 2)), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)));
+                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)));
                 } else {
-                    waffe = new Waffe("MAX", 0, 0, 0);
+                    waffe = new Waffe("MAX","Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0);
                 }
             }
         } else {
-            waffe = new Waffe("MIN", 0, 0, 0);
+            waffe = new Waffe("MIN", "Diese Waffe gibt es nicht", 0, 0, 0);
         }
 
         return waffe;

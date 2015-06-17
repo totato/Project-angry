@@ -1,4 +1,4 @@
--START(1)-
+-START1-
 0
 Meditation
 Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
@@ -9,4 +9,4 @@ Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Z
 0
 100
 5
--END(1)-
+-END1-
