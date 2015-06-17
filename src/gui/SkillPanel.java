@@ -97,7 +97,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         add(jScrollPane1);
         jScrollPane1.setBounds(10, 400, 220, 340);
 
-        jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/MenuBG.jpg"))); // NOI18N
+        jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/sensei01.png"))); // NOI18N
         jLabelSensei.setText("jLabel1");
         add(jLabelSensei);
         jLabelSensei.setBounds(10, 10, 220, 300);

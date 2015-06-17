@@ -169,7 +169,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
         
-        MainGUI.getAktMainGUI().addTextToTextArea(GamePanel.getjTextAreaGame(), "Zur Waffe " + waffennummer + " gewechselt");
+        MainGUI.getAktMainGUI().addTextToTextArea(GamePanel.getjTextAreaGame(),30 ,"Zur Waffe " + waffennummer + " gewechselt");
         
     }
     

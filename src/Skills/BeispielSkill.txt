@@ -1,0 +1,11 @@
+-START(Buchstabe und Nummer des Buttons am ende)-
+Name
+Beschreibung
+Autoschaden
+Spawnrate Streber
+Wk auf Brillen
+Wk auf EXP
+Kritische Treffer
+Kosten Brillen
+Kosten Exp
+-END(Buchstabe und Zahl)-

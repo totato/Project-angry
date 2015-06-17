@@ -159,8 +159,8 @@ public class MainGUI extends WindowProperties {
         System.out.println("zu  " + name + "  gewechselt");
     }
 
-    public void addTextToTextArea(JTextArea ta, String text) {
-        int maxSigns = 30;
+    public void addTextToTextArea(JTextArea ta,int maxSigns, String text) {
+        //int maxSigns = 30;
         int lastSpace = 0;
         while (text.length() > maxSigns) {
             System.out.println("Text Lenght" + text.length());

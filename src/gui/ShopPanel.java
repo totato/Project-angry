@@ -504,7 +504,8 @@ private void shortKeys(){
                 Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+            //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+            MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
     }//GEN-LAST:event_bBuyShopActionPerformed
 
