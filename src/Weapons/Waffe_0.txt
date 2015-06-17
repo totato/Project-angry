@@ -1,11 +1,13 @@
 -START1-
-Antonios nerviges Gerede
+Fäuste
+Du realisierst das du deine Hand zu einer Faust machen kannst.
 5
 0
 2
 -END1-
 -START2-
 Antonios Pseudophilosophie
+
 10
 0
 2

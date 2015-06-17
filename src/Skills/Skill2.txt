@@ -1,0 +1,12 @@
+-START(1)-
+tbSkill1
+Fäuste
+Du realisierst das du deine Hand zu einer Faust machen kannst.
+0
+0
+0
+0
+0
+50
+10
+-END(1)-
