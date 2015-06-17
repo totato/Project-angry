@@ -1,4 +1,4 @@
--START(Skill Stufe)-
+-START(Buchstabe und Nummer des Buttons am ende)-
 bedingung für Skill (jToggleButton)
 Name
 Beschreibung
@@ -9,4 +9,4 @@ Wk auf EXP
 Kritische Treffer
 Kosten Brillen
 Kosten Exp
--END(Skill Stufe)-
+-END(Buchstabe und Zahl)-
