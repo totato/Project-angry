@@ -202,9 +202,6 @@ public class Game implements Runnable {
 
             MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getVorherLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
 
-            if (new File(this.getClass().getClassLoader().getResource("Levels/Level_" + (data.getAktLevel() + 1) + ".txt").getPath()).exists()) {
-
-            }
 
             if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {
