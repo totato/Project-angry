@@ -47,6 +47,8 @@ public class Game implements Runnable {
     private int respawnRate;
     private Waffe[] waffen;
     private Waffe[] waffenUpgrades;
+    
+    private boolean weiter;
 
     //Shop-Informationen
     int selectedWeapon;
@@ -77,6 +79,8 @@ public class Game implements Runnable {
         loadLevel(data.getAktLevel(), false);
         waffen = Game.loadWeapons(data.getWaffenStufen());
         waffenUpgrades = Game.loadWeapons(data.getUpgradeStufen());
+        
+        weiter = data.getAktLevel() < maxLevel();
 
     }
 
@@ -193,6 +197,15 @@ public class Game implements Runnable {
 
             startTime = System.currentTimeMillis();
 
+            if(data.getLebendeStreber() == 0 && weiter){
+                try {
+                    this.loadLevel(data.getAktLevel() + 1, true);
+                    weiter = data.getAktLevel() == maxLevel();
+                } catch (IOException ex) {
+                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
             i++;
             if (i >= 1000 / frameTime) {
                 i = 0;
@@ -240,5 +253,15 @@ public class Game implements Runnable {
     public boolean upgradeSelected() {
         return upgradeSelected;
     }
-
+    
+    private int maxLevel() throws IOException{
+        List<String> waffenTXT = WindowProperties.ladeTXT("Levels/Levels.txt");
+        
+        for(int i = 1; true; i++){
+            if(waffenTXT.indexOf("-START" + i + "-") == -1){
+                return i-1;
+            }
+        }
+        
+    }
 }
