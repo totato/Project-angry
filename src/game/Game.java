@@ -47,13 +47,15 @@ public class Game implements Runnable {
     private int respawnRate;
     private Waffe[] waffen;
     private Waffe[] waffenUpgrades;
-    
+
     private boolean weiter;
 
     //Shop-Informationen
     int selectedWeapon;
     boolean upgradeSelected;
-    
+
+    long startTime;
+    long aktDelay;
     //long nextAttack;
 
     public Game() {
@@ -81,7 +83,7 @@ public class Game implements Runnable {
         loadLevel(data.getAktLevel(), false);
         waffen = Game.loadWeapons(data.getWaffenStufen());
         waffenUpgrades = Game.loadWeapons(data.getUpgradeStufen());
-        
+
         weiter = data.getAktLevel() < maxLevel();
 
     }
@@ -91,7 +93,7 @@ public class Game implements Runnable {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
         List<String> zeilen = WindowProperties.ladeTXT("Levels/Levels.txt");
-        int startPos = zeilen.indexOf("-START" + levelnr +"-");
+        int startPos = zeilen.indexOf("-START" + levelnr + "-");
         if (startPos > -1) {
             if (neu) {
                 data.setAktLevel(levelnr);
@@ -100,10 +102,10 @@ public class Game implements Runnable {
             respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
             scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
             scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
-            
+
             return true;
         }
-        
+
         return false;
 
     }
@@ -165,7 +167,7 @@ public class Game implements Runnable {
                 if (startPos > -1) {
                     waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)));
                 } else {
-                    waffe = new Waffe("MAX","Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0);
+                    waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0);
                 }
             }
         } else {
@@ -186,22 +188,22 @@ public class Game implements Runnable {
     }
 
     public void useAktWeapon() {
-        data.killStreber(waffen[data.getAktWaffe()].getDamage());
+        if (aktDelay <= 0) {
+            data.killStreber(waffen[data.getAktWaffe()].getDamage());
+            aktDelay = waffen[data.getAktWaffe()].getReloadTime();
+        }
     }
 
     @Override
     public void run() {
-        
-        
 
         int i = 0;
-        long startTime;
 
         while (true) {
 
             startTime = System.currentTimeMillis();
 
-            if(data.getLebendeStreber() == 0 && weiter){
+            if (data.getLebendeStreber() == 0 && weiter) {
                 try {
                     this.loadLevel(data.getAktLevel() + 1, true);
                     weiter = data.getAktLevel() == maxLevel();
@@ -209,7 +211,15 @@ public class Game implements Runnable {
                     Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            
+
+            if (aktDelay > 0) {
+                if (aktDelay - frameTime < 0) {
+                    aktDelay = 0;
+                } else {
+                    aktDelay -= frameTime;
+                }
+            }
+
             i++;
             if (i >= 1000 / frameTime) {
                 i = 0;
@@ -218,7 +228,6 @@ public class Game implements Runnable {
             }
 
             MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getVorherLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
-
 
             if (frameTime - (System.currentTimeMillis() - startTime) > 0) {
                 try {
@@ -257,15 +266,15 @@ public class Game implements Runnable {
     public boolean upgradeSelected() {
         return upgradeSelected;
     }
-    
-    private int maxLevel() throws IOException{
+
+    private int maxLevel() throws IOException {
         List<String> waffenTXT = WindowProperties.ladeTXT("Levels/Levels.txt");
-        
-        for(int i = 1; true; i++){
-            if(waffenTXT.indexOf("-START" + i + "-") == -1){
-                return i-1;
+
+        for (int i = 1; true; i++) {
+            if (waffenTXT.indexOf("-START" + i + "-") == -1) {
+                return i - 1;
             }
         }
-        
+
     }
 }
