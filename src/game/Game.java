@@ -53,6 +53,8 @@ public class Game implements Runnable {
     //Shop-Informationen
     int selectedWeapon;
     boolean upgradeSelected;
+    
+    //long nextAttack;
 
     public Game() {
 
@@ -189,6 +191,8 @@ public class Game implements Runnable {
 
     @Override
     public void run() {
+        
+        
 
         int i = 0;
         long startTime;
