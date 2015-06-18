@@ -124,7 +124,7 @@ public class SkillHandler {
             for(int subskillnr = 1; startPos >= 0; subskillnr++){
                 
                 startPos = skillTXT.indexOf("-START" + subskillnr + "-");
-                for(int befehlPos = startPos +1; befehlPos < endPos; befehlPos = befehlPos + 2){
+                for(int befehlPos = startPos +6; befehlPos < endPos; befehlPos = befehlPos + 2){
                     this.befehlAusführen(skillTXT.get(befehlPos), skillTXT.get(befehlPos+1));
                 }
             }

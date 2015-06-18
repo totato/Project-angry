@@ -50,8 +50,6 @@ public class Data {
 
     }
 
-    
-    
     public int getGranaten() {
         return granaten;
     }
@@ -59,7 +57,7 @@ public class Data {
     public void setGranaten(int granaten) {
         this.granaten = granaten;
     }
-    
+
     public int getBrillen() {
         return brillen;
     }
@@ -79,8 +77,6 @@ public class Data {
     public int getAktLevel() {
         return aktLevel;
     }
-
- 
 
     public int getSkillUnlocked(int i) {
         return skillsStufen[i];
@@ -115,12 +111,15 @@ public class Data {
     public void setBrillen(int brillen) {
         this.brillen = brillen;
     }
+
     public void setLebendeStreber(int lebendeStreber) {
         this.lebendeStreber = lebendeStreber;
     }
+
     public void setVorherLebendeStreber(int vorherLebendeStreber) {
         this.vorherLebendeStreber = vorherLebendeStreber;
     }
+
     public void setGetoeteteStreber(int getoeteteStreber) {
         this.getoeteteStreber = getoeteteStreber;
     }
@@ -150,8 +149,12 @@ public class Data {
             vorherLebendeStreber = lebendeStreber;
             lebendeStreber -= anzahl;
             getoeteteStreber += anzahl;
-            brillen += anzahl;
+            if ((0.5 + Math.random() + Game.getAktGame().getSkills().getBrillenWK()) >= 1.0) {
+                brillen += anzahl;
+            }
+            if ((0.2 + Math.random() + Game.getAktGame().getSkills().getExpWK()) >= 1.0) {
             exp += anzahl;
+            }
         } else {
             getoeteteStreber += lebendeStreber;
             brillen += lebendeStreber;
@@ -159,10 +162,6 @@ public class Data {
             lebendeStreber = 0;
         }
     }
-    
-    
-    
-    
 
     public int getExp() {
         return exp;

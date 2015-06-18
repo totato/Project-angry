@@ -189,6 +189,7 @@ public class Game implements Runnable {
 
     public void useWeapon(int nummer) {
         if (aktDelay <= 0) {
+            if(Math.random() + skills.getKritChance() >= 1.0)
             data.killStreber(waffen[nummer].getDamage());
             aktDelay = waffen[nummer].getReloadTime();
         }
@@ -199,10 +200,6 @@ public class Game implements Runnable {
             useWeapon(6);
         }
         data.setGranaten((data.getGranaten()-1));
-        
-        
-            
-        
     }
 
     @Override
@@ -232,10 +229,15 @@ public class Game implements Runnable {
             }
 
             i++;
+            
+            if(i >= 500 / frameTime){
+                data.killStreber(skills.getAutoDamage());
+            }
+            
             if (i >= 1000 / frameTime) {
                 i = 0;
                 data.setVorherLebendeStreber(data.getLebendeStreber());
-                data.setLebendeStreber(data.getLebendeStreber() + respawnRate);
+                data.setLebendeStreber((int) (data.getLebendeStreber() + Math.round((double) respawnRate * (1.0 - skills.getSpawnrateReduktion()))));
             }
 
             MainGUI.getAktMainGUI().getGamePanel1().setAnzeiger(data.getLebendeStreber(), data.getVorherLebendeStreber(), data.getGetoeteteStreber(), data.getBrillen(), data.getExp());
@@ -299,7 +301,9 @@ public class Game implements Runnable {
         gameThread.start();
     }
 
-    public void recalculateSkills() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public SkillHandler getSkills() {
+        return skills;
     }
+
+    
 }

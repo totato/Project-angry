@@ -2,35 +2,28 @@
 0
 Fäuste
 Du realisierst das du deine Hand zu einer Faust machen kannst.
-0
-0
-0
-0
-0
 50
 10
+WAFFEN-UPDATE
+0
 -END1-
 -START2-
 -1
 Präzision
 Du triffst nun manchmal einige Gegner.
-0
-0
-0
-0
-0.05
 150
 20
+KRIT-CHANCE
+0.05
+WAFFEN-UPDATE
+0
 -END2-
 -START3-
 -1
 Technik
 Der Daumen gehört nicht in die Faust!
-0
-0
-0
-0
-0
 300
 40
+WAFFEN-UPDATE
+0
 -END3-
