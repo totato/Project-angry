@@ -1,5 +1,5 @@
 -START(Skill Stufe)-
-bedingung für Skill (jToggleButton)
+bedingung für Skill (Nummer des anderen Skills, -1 wenn es auch so geht)
 Name
 Beschreibung
 Autoschaden

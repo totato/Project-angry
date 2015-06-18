@@ -10,17 +10,14 @@ public class Data {
     public static final int ANZAHL_WAFFEN = 7;
     private static final int ANZAHL_AUSRÜSTUNG = 3;
 
-    public static final int START_AUTO_DAMAGE = 0;
-
     private int brillen;//Eine Brille entspricht einem toten Streber entsrpicht einem Kill
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!
-    private int vorherLebendeStreber;//Noch lebende Streber, voheriger wert, wenn da 0 erreicht nächstes level!
+    private int vorherLebendeStreber;
     private int getoeteteStreber;//getötete Streber. Steigt immer weiter, wird aber niemals abgezogen.
     private int aktLevel;
     private int exp;
     private int granaten;//Zahl der noch vorhandenen Granaten
     private int[] skillsStufen; //Welche Skills schon freigeschaltet sind
-    private int autoDamage; //Schaden den man macht, wenn man gerade nicht klickt
     private int[] waffenStufen; //Die Stufen jeder Waffe
     private int[] ausrüstungStufen; //Die Stufen jeder Ausrüstung
 
@@ -37,8 +34,6 @@ public class Data {
         for (int b : skillsStufen) {
             b = 0;
         }
-
-        autoDamage = START_AUTO_DAMAGE;
 
         waffenStufen = new int[ANZAHL_WAFFEN];
         for (int i : waffenStufen) {
@@ -85,9 +80,7 @@ public class Data {
         return aktLevel;
     }
 
-    public int getAutoDamage() {
-        return autoDamage;
-    }
+ 
 
     public int getSkillUnlocked(int i) {
         return skillsStufen[i];
@@ -134,10 +127,6 @@ public class Data {
 
     public void setAktLevel(int aktLevel) {
         this.aktLevel = aktLevel;
-    }
-
-    public void setAutoDamage(int autoDamage) {
-        this.autoDamage = autoDamage;
     }
 
     public void setSkillUnlocked(int i, int b) {

@@ -1,8 +1,8 @@
 -START1-
-Skill1
-Fäuste
-Du realisierst das du deine Hand zu einer Faust machen kannst.
 0
+Treten
+Deine Beine sind selbständig geworden, und treten wärend du kämpst automatisch umher.
+1
 0
 0
 0
@@ -11,10 +11,10 @@ Du realisierst das du deine Hand zu einer Faust machen kannst.
 10
 -END1-
 -START2-
-0
-Präzision
-Du triffst nun manchmal einige Gegner.
-0
+-1
+Gleichgewicht
+Du fällst nun nicht mehr so oft hin.
+2
 0
 0
 0
@@ -23,10 +23,10 @@ Du triffst nun manchmal einige Gegner.
 20
 -END2-
 -START3-
-0
-Technik
-Der Daumen gehört nicht in die Faust!
-0
+-1
+Präzision
+Du triffst sogar manchmal jemand anderen als dich. 
+3
 0
 0
 0

@@ -1,9 +1,9 @@
 -START1-
-Skill1
-Treten
-Deine Beine sind selbständig geworden, und treten wärend du kämpst automatisch umher.
-1
 0
+Husten
+Das Querklangprojekt ist eine moderne Methode zum Husten training. Die Streber wollen sich nicht erkälten und rennen weg um ihre Schutzmasken zu holen.
+0
+0.01
 0
 0
 0
@@ -11,11 +11,11 @@ Deine Beine sind selbständig geworden, und treten wärend du kämpst automatisc
 10
 -END1-
 -START2-
+-1
+Mundgeruch
+Nie mehr wieder Zähne putzen!
 0
-Gleichgewicht
-Du fällst nun nicht mehr so oft hin.
-2
-0
+0.03
 0
 0
 0.05
@@ -23,11 +23,11 @@ Du fällst nun nicht mehr so oft hin.
 20
 -END2-
 -START3-
+-1
+Spucken
+Du hast weiter an deinem Husten trainiert, so das viele kleine ätzende Speicheltropfen deine Gegner einätzen. 
 0
-Präzision
-Du triffst sogar manchmal jemand anderen als dich. 
-3
-0
+0.06
 0
 0
 0

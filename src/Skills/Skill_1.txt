@@ -1,12 +1,36 @@
 -START1-
 0
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
+Fäuste
+Du realisierst das du deine Hand zu einer Faust machen kannst.
 0
 0
 0
 0
 0
-100
-5
+50
+10
 -END1-
+-START2-
+-1
+Präzision
+Du triffst nun manchmal einige Gegner.
+0
+0
+0
+0
+0.05
+150
+20
+-END2-
+-START3-
+-1
+Technik
+Der Daumen gehört nicht in die Faust!
+0
+0
+0
+0
+0
+300
+40
+-END3-

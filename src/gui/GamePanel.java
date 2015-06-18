@@ -415,10 +415,10 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         tbAttack4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4)>0);
         tbAttack5.setEnabled(Game.getAktGame().getData().getWaffenStufe(5)>0);
         System.out.println("Waffenbuttons überpfüft");
-        disableGrenButtons();
+        disableGrenButton();
      }
 
-    public void disableGrenButtons() {
+    public void disableGrenButton() {
         //TODO: Granaten im Array abrufen. Momentan: Platzhalter
         if(Game.getAktGame().getData().getWaffenStufe(6)<=0 ||
                 Game.getAktGame().getData().getGranaten() <=0){
@@ -430,12 +430,12 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
     
     @Override
     public void switchTo() {
-       
+       Game.getAktGame().resume();
     }
 
     @Override
     public void switchFrom() {
-        
+        Game.getAktGame().pause();
     }
 
 }

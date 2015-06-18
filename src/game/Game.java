@@ -35,6 +35,7 @@ public class Game implements Runnable {
 
     private Data data;
     private Screen scr;
+    private boolean active;
 
     //Informationen, die sich aus data ergeben
     private int respawnRate;
@@ -57,6 +58,7 @@ public class Game implements Runnable {
 
         scr = MainGUI.getAktMainGUI().getGamePanel1().getScreen();
         waffen = new Waffe[Data.ANZAHL_WAFFEN];
+        active = true;
 
     }
 
@@ -204,7 +206,7 @@ public class Game implements Runnable {
         
         int i = 0;
         
-        while (true) {
+        while (active) {
 
             startTime = System.currentTimeMillis();
 
@@ -281,5 +283,19 @@ public class Game implements Runnable {
             }
         }
 
+    }
+    
+    public void pause(){
+        active = false;
+    }
+    
+    public void resume(){
+        active = true;
+        Thread gameThread = new Thread(this);
+        gameThread.start();
+    }
+
+    public void recalculateSkills() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
