@@ -19,3 +19,10 @@ Der Daumen gehört nicht in die Faust!
 0
 2
 -END3-
+-START4-
+Neue Technik
+Fäute? Pff. Handkantenschlag 4 EVA!
+20
+0
+2
+-END4-

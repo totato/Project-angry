@@ -75,3 +75,66 @@ Improvisierter chemischer Kampfstoff
 0
 2
 -END11-
+-START12-
+Nuklearschlag
+
+70
+0
+2
+-END12-
+-START13-
+Orbitalschlag
+
+75
+0
+2
+-END13-
+-START14-
+Umgeleiteter Meteor
+
+80
+0
+2
+-END14-
+-START15-
+Poopoo-Bag
+
+85
+0
+2
+-END15-
+-START16-
+Interplanetares Bombardemant
+
+90
+0
+2
+-END16-
+-START17-
+KmfPz/MBT TRP “Saharet”
+
+95
+0
+2
+-END17-
+-START18-
+Umgeleiteter Planet
+
+100
+0
+2
+-END18-
+-START19-
+Deine Mama
+
+105
+0
+2
+-END19-
+-START20-
+Nokia
+
+110
+0
+2
+-END20-
