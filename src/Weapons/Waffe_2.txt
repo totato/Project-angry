@@ -1,12 +1,14 @@
 -START1-
 Antonios nerviges Gerede
+Das ist erst der Anfang
 5
 0
 2
 -END1-
 -START2-
 Antonios Pseudophilosophie
+lel
 10
-0
+1000
 2
 -END2-

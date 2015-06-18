@@ -5,6 +5,7 @@
  */
 package gui;
 
+import game.Game;
 import java.awt.event.KeyEvent;
 
 /**
@@ -44,41 +45,41 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         jLabelGlassesSkill = new javax.swing.JLabel();
         bBuyGlassesSkill = new javax.swing.JButton();
         jLabelSkilltree = new javax.swing.JLabel();
-        tbSkillD2 = new javax.swing.JToggleButton();
-        tbSkillB8 = new javax.swing.JToggleButton();
-        tbSkillB5 = new javax.swing.JToggleButton();
-        tbSkillB1 = new javax.swing.JToggleButton();
-        tbSkillB2 = new javax.swing.JToggleButton();
-        tbSkillB3 = new javax.swing.JToggleButton();
-        tbSkillB6 = new javax.swing.JToggleButton();
-        tbSkillB7 = new javax.swing.JToggleButton();
+        tbSkill26 = new javax.swing.JToggleButton();
+        tbSkill4 = new javax.swing.JToggleButton();
+        tbSkill3 = new javax.swing.JToggleButton();
+        tbSkill2 = new javax.swing.JToggleButton();
+        tbSkill5 = new javax.swing.JToggleButton();
+        tbSkill8 = new javax.swing.JToggleButton();
+        tbSkill6 = new javax.swing.JToggleButton();
         tbSkillB9 = new javax.swing.JToggleButton();
+        tbSkill7 = new javax.swing.JToggleButton();
         tbSkillB10 = new javax.swing.JToggleButton();
-        tbSkillB11 = new javax.swing.JToggleButton();
-        tbSkillB4 = new javax.swing.JToggleButton();
-        tbSkillC4 = new javax.swing.JToggleButton();
-        tbSkillC1 = new javax.swing.JToggleButton();
-        tbSkillC5 = new javax.swing.JToggleButton();
-        tbSkillC2 = new javax.swing.JToggleButton();
-        tbSkillC6 = new javax.swing.JToggleButton();
-        tbSkillC3 = new javax.swing.JToggleButton();
-        tbSkillC10 = new javax.swing.JToggleButton();
-        tbSkillC7 = new javax.swing.JToggleButton();
-        tbSkillC11 = new javax.swing.JToggleButton();
-        tbSkillC8 = new javax.swing.JToggleButton();
-        tbSkillC12 = new javax.swing.JToggleButton();
-        tbSkillC9 = new javax.swing.JToggleButton();
-        tbSkillF = new javax.swing.JToggleButton();
-        tbSkillD1 = new javax.swing.JToggleButton();
-        tbSkillE1 = new javax.swing.JToggleButton();
-        tbSkillE2 = new javax.swing.JToggleButton();
-        tbSkillE3 = new javax.swing.JToggleButton();
-        tbSkillE4 = new javax.swing.JToggleButton();
-        tbSkillE5 = new javax.swing.JToggleButton();
-        tbSkillE6 = new javax.swing.JToggleButton();
-        tbSkillE7 = new javax.swing.JToggleButton();
-        tbSkillE8 = new javax.swing.JToggleButton();
-        tbSkillA1 = new javax.swing.JToggleButton();
+        tbSkillB12 = new javax.swing.JToggleButton();
+        tbSkill11 = new javax.swing.JToggleButton();
+        tbSkill14 = new javax.swing.JToggleButton();
+        tbSkill13 = new javax.swing.JToggleButton();
+        tbSkill18 = new javax.swing.JToggleButton();
+        tbSkill17 = new javax.swing.JToggleButton();
+        tbSkill22 = new javax.swing.JToggleButton();
+        tbSkil21 = new javax.swing.JToggleButton();
+        tbSkillC16 = new javax.swing.JToggleButton();
+        tbSkill15 = new javax.swing.JToggleButton();
+        tbSkill20 = new javax.swing.JToggleButton();
+        tbSkill19 = new javax.swing.JToggleButton();
+        tbSkill24 = new javax.swing.JToggleButton();
+        tbSkill23 = new javax.swing.JToggleButton();
+        tbSkill35 = new javax.swing.JToggleButton();
+        tbSkill25 = new javax.swing.JToggleButton();
+        tbSkill27 = new javax.swing.JToggleButton();
+        tbSkill29 = new javax.swing.JToggleButton();
+        tbSkill31 = new javax.swing.JToggleButton();
+        tbSkill33 = new javax.swing.JToggleButton();
+        tbSkill28 = new javax.swing.JToggleButton();
+        tbSkill30 = new javax.swing.JToggleButton();
+        tbSkill32 = new javax.swing.JToggleButton();
+        tbSkill34 = new javax.swing.JToggleButton();
+        tbSkill1 = new javax.swing.JToggleButton();
         bToShopSkill = new javax.swing.JButton();
         bToGameSkill = new javax.swing.JButton();
         bBuyEXPSkill = new javax.swing.JButton();
@@ -97,7 +98,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         add(jScrollPane1);
         jScrollPane1.setBounds(10, 400, 220, 340);
 
-        jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/MenuBG.jpg"))); // NOI18N
+        jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/sensei01.png"))); // NOI18N
         jLabelSensei.setText("jLabel1");
         add(jLabelSensei);
         jLabelSensei.setBounds(10, 10, 220, 300);
@@ -124,180 +125,180 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         add(jLabelSkilltree);
         jLabelSkilltree.setBounds(290, 10, 300, 40);
 
-        buttonGroup1.add(tbSkillD2);
-        tbSkillD2.setText("jToggleButton1");
-        add(tbSkillD2);
-        tbSkillD2.setBounds(490, 390, 120, 40);
+        buttonGroup1.add(tbSkill26);
+        tbSkill26.setText("jToggleButton1");
+        add(tbSkill26);
+        tbSkill26.setBounds(490, 390, 120, 40);
 
-        buttonGroup1.add(tbSkillB8);
-        tbSkillB8.setText("jToggleButton2");
-        add(tbSkillB8);
-        tbSkillB8.setBounds(510, 110, 80, 30);
+        buttonGroup1.add(tbSkill4);
+        tbSkill4.setText("jToggleButton2");
+        add(tbSkill4);
+        tbSkill4.setBounds(510, 110, 80, 30);
 
-        buttonGroup1.add(tbSkillB5);
-        tbSkillB5.setText("jToggleButton2");
-        add(tbSkillB5);
-        tbSkillB5.setBounds(400, 110, 80, 30);
+        buttonGroup1.add(tbSkill3);
+        tbSkill3.setText("jToggleButton2");
+        add(tbSkill3);
+        tbSkill3.setBounds(400, 110, 80, 30);
 
-        buttonGroup1.add(tbSkillB1);
-        tbSkillB1.setText("jToggleButton2");
-        add(tbSkillB1);
-        tbSkillB1.setBounds(290, 110, 80, 30);
+        buttonGroup1.add(tbSkill2);
+        tbSkill2.setText("jToggleButton2");
+        add(tbSkill2);
+        tbSkill2.setBounds(290, 110, 80, 30);
 
-        buttonGroup1.add(tbSkillB2);
-        tbSkillB2.setText("jToggleButton2");
-        add(tbSkillB2);
-        tbSkillB2.setBounds(290, 150, 80, 30);
+        buttonGroup1.add(tbSkill5);
+        tbSkill5.setText("jToggleButton2");
+        add(tbSkill5);
+        tbSkill5.setBounds(290, 150, 80, 30);
 
-        buttonGroup1.add(tbSkillB3);
-        tbSkillB3.setText("jToggleButton2");
-        add(tbSkillB3);
-        tbSkillB3.setBounds(290, 190, 80, 30);
+        buttonGroup1.add(tbSkill8);
+        tbSkill8.setText("jToggleButton2");
+        add(tbSkill8);
+        tbSkill8.setBounds(290, 190, 80, 30);
 
-        buttonGroup1.add(tbSkillB6);
-        tbSkillB6.setText("jToggleButton2");
-        add(tbSkillB6);
-        tbSkillB6.setBounds(400, 150, 80, 30);
-
-        buttonGroup1.add(tbSkillB7);
-        tbSkillB7.setText("jToggleButton2");
-        add(tbSkillB7);
-        tbSkillB7.setBounds(400, 190, 80, 30);
+        buttonGroup1.add(tbSkill6);
+        tbSkill6.setText("jToggleButton2");
+        add(tbSkill6);
+        tbSkill6.setBounds(400, 150, 80, 30);
 
         buttonGroup1.add(tbSkillB9);
         tbSkillB9.setText("jToggleButton2");
         add(tbSkillB9);
-        tbSkillB9.setBounds(510, 150, 80, 30);
+        tbSkillB9.setBounds(400, 190, 80, 30);
+
+        buttonGroup1.add(tbSkill7);
+        tbSkill7.setText("jToggleButton2");
+        add(tbSkill7);
+        tbSkill7.setBounds(510, 150, 80, 30);
 
         buttonGroup1.add(tbSkillB10);
         tbSkillB10.setText("jToggleButton2");
         add(tbSkillB10);
         tbSkillB10.setBounds(510, 190, 80, 30);
 
-        buttonGroup1.add(tbSkillB11);
-        tbSkillB11.setText("jToggleButton2");
-        add(tbSkillB11);
-        tbSkillB11.setBounds(510, 230, 80, 30);
+        buttonGroup1.add(tbSkillB12);
+        tbSkillB12.setText("jToggleButton2");
+        add(tbSkillB12);
+        tbSkillB12.setBounds(510, 230, 80, 30);
 
-        buttonGroup1.add(tbSkillB4);
-        tbSkillB4.setText("jToggleButton2");
-        add(tbSkillB4);
-        tbSkillB4.setBounds(290, 230, 80, 30);
+        buttonGroup1.add(tbSkill11);
+        tbSkill11.setText("jToggleButton2");
+        add(tbSkill11);
+        tbSkill11.setBounds(290, 230, 80, 30);
 
-        buttonGroup1.add(tbSkillC4);
-        tbSkillC4.setText("jToggleButton2");
-        add(tbSkillC4);
-        tbSkillC4.setBounds(340, 280, 60, 23);
+        buttonGroup1.add(tbSkill14);
+        tbSkill14.setText("jToggleButton2");
+        add(tbSkill14);
+        tbSkill14.setBounds(340, 280, 60, 23);
 
-        buttonGroup1.add(tbSkillC1);
-        tbSkillC1.setText("jToggleButton2");
-        add(tbSkillC1);
-        tbSkillC1.setBounds(260, 280, 60, 23);
+        buttonGroup1.add(tbSkill13);
+        tbSkill13.setText("jToggleButton2");
+        add(tbSkill13);
+        tbSkill13.setBounds(260, 280, 60, 23);
 
-        buttonGroup1.add(tbSkillC5);
-        tbSkillC5.setText("jToggleButton2");
-        add(tbSkillC5);
-        tbSkillC5.setBounds(340, 310, 60, 23);
+        buttonGroup1.add(tbSkill18);
+        tbSkill18.setText("jToggleButton2");
+        add(tbSkill18);
+        tbSkill18.setBounds(340, 310, 60, 23);
 
-        buttonGroup1.add(tbSkillC2);
-        tbSkillC2.setText("jToggleButton2");
-        add(tbSkillC2);
-        tbSkillC2.setBounds(260, 310, 60, 23);
+        buttonGroup1.add(tbSkill17);
+        tbSkill17.setText("jToggleButton2");
+        add(tbSkill17);
+        tbSkill17.setBounds(260, 310, 60, 23);
 
-        buttonGroup1.add(tbSkillC6);
-        tbSkillC6.setText("jToggleButton2");
-        add(tbSkillC6);
-        tbSkillC6.setBounds(340, 340, 60, 23);
+        buttonGroup1.add(tbSkill22);
+        tbSkill22.setText("jToggleButton2");
+        add(tbSkill22);
+        tbSkill22.setBounds(340, 340, 60, 23);
 
-        buttonGroup1.add(tbSkillC3);
-        tbSkillC3.setText("jToggleButton2");
-        add(tbSkillC3);
-        tbSkillC3.setBounds(260, 340, 60, 23);
+        buttonGroup1.add(tbSkil21);
+        tbSkil21.setText("jToggleButton2");
+        add(tbSkil21);
+        tbSkil21.setBounds(260, 340, 60, 23);
 
-        buttonGroup1.add(tbSkillC10);
-        tbSkillC10.setText("jToggleButton2");
-        add(tbSkillC10);
-        tbSkillC10.setBounds(560, 280, 60, 23);
+        buttonGroup1.add(tbSkillC16);
+        tbSkillC16.setText("jToggleButton2");
+        add(tbSkillC16);
+        tbSkillC16.setBounds(560, 280, 60, 23);
 
-        buttonGroup1.add(tbSkillC7);
-        tbSkillC7.setText("jToggleButton2");
-        add(tbSkillC7);
-        tbSkillC7.setBounds(480, 280, 60, 23);
+        buttonGroup1.add(tbSkill15);
+        tbSkill15.setText("jToggleButton2");
+        add(tbSkill15);
+        tbSkill15.setBounds(480, 280, 60, 23);
 
-        buttonGroup1.add(tbSkillC11);
-        tbSkillC11.setText("jToggleButton2");
-        add(tbSkillC11);
-        tbSkillC11.setBounds(560, 310, 60, 23);
+        buttonGroup1.add(tbSkill20);
+        tbSkill20.setText("jToggleButton2");
+        add(tbSkill20);
+        tbSkill20.setBounds(560, 310, 60, 23);
 
-        buttonGroup1.add(tbSkillC8);
-        tbSkillC8.setText("jToggleButton2");
-        add(tbSkillC8);
-        tbSkillC8.setBounds(480, 310, 60, 23);
+        buttonGroup1.add(tbSkill19);
+        tbSkill19.setText("jToggleButton2");
+        add(tbSkill19);
+        tbSkill19.setBounds(480, 310, 60, 23);
 
-        buttonGroup1.add(tbSkillC12);
-        tbSkillC12.setText("jToggleButton2");
-        add(tbSkillC12);
-        tbSkillC12.setBounds(560, 340, 60, 23);
+        buttonGroup1.add(tbSkill24);
+        tbSkill24.setText("jToggleButton2");
+        add(tbSkill24);
+        tbSkill24.setBounds(560, 340, 60, 23);
 
-        buttonGroup1.add(tbSkillC9);
-        tbSkillC9.setText("jToggleButton2");
-        add(tbSkillC9);
-        tbSkillC9.setBounds(480, 340, 60, 23);
+        buttonGroup1.add(tbSkill23);
+        tbSkill23.setText("jToggleButton2");
+        add(tbSkill23);
+        tbSkill23.setBounds(480, 340, 60, 23);
 
-        buttonGroup1.add(tbSkillF);
-        tbSkillF.setText("jToggleButton1");
-        add(tbSkillF);
-        tbSkillF.setBounds(370, 620, 140, 50);
+        buttonGroup1.add(tbSkill35);
+        tbSkill35.setText("jToggleButton1");
+        add(tbSkill35);
+        tbSkill35.setBounds(370, 620, 140, 50);
 
-        buttonGroup1.add(tbSkillD1);
-        tbSkillD1.setText("jToggleButton1");
-        add(tbSkillD1);
-        tbSkillD1.setBounds(270, 390, 120, 40);
+        buttonGroup1.add(tbSkill25);
+        tbSkill25.setText("jToggleButton1");
+        add(tbSkill25);
+        tbSkill25.setBounds(270, 390, 120, 40);
 
-        buttonGroup1.add(tbSkillE1);
-        tbSkillE1.setText("jToggleButton2");
-        add(tbSkillE1);
-        tbSkillE1.setBounds(290, 450, 80, 30);
+        buttonGroup1.add(tbSkill27);
+        tbSkill27.setText("jToggleButton2");
+        add(tbSkill27);
+        tbSkill27.setBounds(290, 450, 80, 30);
 
-        buttonGroup1.add(tbSkillE2);
-        tbSkillE2.setText("jToggleButton2");
-        add(tbSkillE2);
-        tbSkillE2.setBounds(290, 490, 80, 30);
+        buttonGroup1.add(tbSkill29);
+        tbSkill29.setText("jToggleButton2");
+        add(tbSkill29);
+        tbSkill29.setBounds(290, 490, 80, 30);
 
-        buttonGroup1.add(tbSkillE3);
-        tbSkillE3.setText("jToggleButton2");
-        add(tbSkillE3);
-        tbSkillE3.setBounds(290, 530, 80, 30);
+        buttonGroup1.add(tbSkill31);
+        tbSkill31.setText("jToggleButton2");
+        add(tbSkill31);
+        tbSkill31.setBounds(290, 530, 80, 30);
 
-        buttonGroup1.add(tbSkillE4);
-        tbSkillE4.setText("jToggleButton2");
-        add(tbSkillE4);
-        tbSkillE4.setBounds(290, 570, 80, 30);
+        buttonGroup1.add(tbSkill33);
+        tbSkill33.setText("jToggleButton2");
+        add(tbSkill33);
+        tbSkill33.setBounds(290, 570, 80, 30);
 
-        buttonGroup1.add(tbSkillE5);
-        tbSkillE5.setText("jToggleButton2");
-        add(tbSkillE5);
-        tbSkillE5.setBounds(510, 450, 80, 30);
+        buttonGroup1.add(tbSkill28);
+        tbSkill28.setText("jToggleButton2");
+        add(tbSkill28);
+        tbSkill28.setBounds(510, 450, 80, 30);
 
-        buttonGroup1.add(tbSkillE6);
-        tbSkillE6.setText("jToggleButton2");
-        add(tbSkillE6);
-        tbSkillE6.setBounds(510, 490, 80, 30);
+        buttonGroup1.add(tbSkill30);
+        tbSkill30.setText("jToggleButton2");
+        add(tbSkill30);
+        tbSkill30.setBounds(510, 490, 80, 30);
 
-        buttonGroup1.add(tbSkillE7);
-        tbSkillE7.setText("jToggleButton2");
-        add(tbSkillE7);
-        tbSkillE7.setBounds(510, 530, 80, 30);
+        buttonGroup1.add(tbSkill32);
+        tbSkill32.setText("jToggleButton2");
+        add(tbSkill32);
+        tbSkill32.setBounds(510, 530, 80, 30);
 
-        buttonGroup1.add(tbSkillE8);
-        tbSkillE8.setText("jToggleButton2");
-        add(tbSkillE8);
-        tbSkillE8.setBounds(510, 570, 80, 30);
+        buttonGroup1.add(tbSkill34);
+        tbSkill34.setText("jToggleButton2");
+        add(tbSkill34);
+        tbSkill34.setBounds(510, 570, 80, 30);
 
-        buttonGroup1.add(tbSkillA1);
-        tbSkillA1.setText("jToggleButton1");
-        add(tbSkillA1);
-        tbSkillA1.setBounds(380, 60, 120, 40);
+        buttonGroup1.add(tbSkill1);
+        tbSkill1.setText("jToggleButton1");
+        add(tbSkill1);
+        tbSkill1.setBounds(380, 60, 120, 40);
 
         bToShopSkill.setBackground(new java.awt.Color(0, 0, 0));
         bToShopSkill.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -352,41 +353,41 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     private javax.swing.JLabel jLabelSkilltree;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaSkill;
-    private javax.swing.JToggleButton tbSkillA1;
-    private javax.swing.JToggleButton tbSkillB1;
+    private javax.swing.JToggleButton tbSkil21;
+    private javax.swing.JToggleButton tbSkill1;
+    private javax.swing.JToggleButton tbSkill11;
+    private javax.swing.JToggleButton tbSkill13;
+    private javax.swing.JToggleButton tbSkill14;
+    private javax.swing.JToggleButton tbSkill15;
+    private javax.swing.JToggleButton tbSkill17;
+    private javax.swing.JToggleButton tbSkill18;
+    private javax.swing.JToggleButton tbSkill19;
+    private javax.swing.JToggleButton tbSkill2;
+    private javax.swing.JToggleButton tbSkill20;
+    private javax.swing.JToggleButton tbSkill22;
+    private javax.swing.JToggleButton tbSkill23;
+    private javax.swing.JToggleButton tbSkill24;
+    private javax.swing.JToggleButton tbSkill25;
+    private javax.swing.JToggleButton tbSkill26;
+    private javax.swing.JToggleButton tbSkill27;
+    private javax.swing.JToggleButton tbSkill28;
+    private javax.swing.JToggleButton tbSkill29;
+    private javax.swing.JToggleButton tbSkill3;
+    private javax.swing.JToggleButton tbSkill30;
+    private javax.swing.JToggleButton tbSkill31;
+    private javax.swing.JToggleButton tbSkill32;
+    private javax.swing.JToggleButton tbSkill33;
+    private javax.swing.JToggleButton tbSkill34;
+    private javax.swing.JToggleButton tbSkill35;
+    private javax.swing.JToggleButton tbSkill4;
+    private javax.swing.JToggleButton tbSkill5;
+    private javax.swing.JToggleButton tbSkill6;
+    private javax.swing.JToggleButton tbSkill7;
+    private javax.swing.JToggleButton tbSkill8;
     private javax.swing.JToggleButton tbSkillB10;
-    private javax.swing.JToggleButton tbSkillB11;
-    private javax.swing.JToggleButton tbSkillB2;
-    private javax.swing.JToggleButton tbSkillB3;
-    private javax.swing.JToggleButton tbSkillB4;
-    private javax.swing.JToggleButton tbSkillB5;
-    private javax.swing.JToggleButton tbSkillB6;
-    private javax.swing.JToggleButton tbSkillB7;
-    private javax.swing.JToggleButton tbSkillB8;
+    private javax.swing.JToggleButton tbSkillB12;
     private javax.swing.JToggleButton tbSkillB9;
-    private javax.swing.JToggleButton tbSkillC1;
-    private javax.swing.JToggleButton tbSkillC10;
-    private javax.swing.JToggleButton tbSkillC11;
-    private javax.swing.JToggleButton tbSkillC12;
-    private javax.swing.JToggleButton tbSkillC2;
-    private javax.swing.JToggleButton tbSkillC3;
-    private javax.swing.JToggleButton tbSkillC4;
-    private javax.swing.JToggleButton tbSkillC5;
-    private javax.swing.JToggleButton tbSkillC6;
-    private javax.swing.JToggleButton tbSkillC7;
-    private javax.swing.JToggleButton tbSkillC8;
-    private javax.swing.JToggleButton tbSkillC9;
-    private javax.swing.JToggleButton tbSkillD1;
-    private javax.swing.JToggleButton tbSkillD2;
-    private javax.swing.JToggleButton tbSkillE1;
-    private javax.swing.JToggleButton tbSkillE2;
-    private javax.swing.JToggleButton tbSkillE3;
-    private javax.swing.JToggleButton tbSkillE4;
-    private javax.swing.JToggleButton tbSkillE5;
-    private javax.swing.JToggleButton tbSkillE6;
-    private javax.swing.JToggleButton tbSkillE7;
-    private javax.swing.JToggleButton tbSkillE8;
-    private javax.swing.JToggleButton tbSkillF;
+    private javax.swing.JToggleButton tbSkillC16;
     // End of variables declaration//GEN-END:variables
 
     public void setGlasses(int br) {
@@ -409,7 +410,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     @Override
     public void switchTo() {
-       
+       MainGUI.getAktMainGUI().getSkillPanel1().setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
     }
 
     @Override

@@ -1,77 +1,77 @@
 -START1-
-Taschenmonster01
+Großer Stein
 
 1
 0
 2
 -END1-
 -START2-
-Taschenmonster02
+Kartoffelstampfer
 
 10
 0
 2
 -END2-
 -START3-
-Taschenmonster03
+Windeln
 
 15
 0
 2
 -END3-
 -START4-
-Taschenmonster04
+Babyfotos
 
 30
 0
 2
 -END4-
 -START5-
-Taschenmonster05
+M61 Splitterhandgranate
 
 35
 0
 2
 -END5-
 -START6-
-Taschenmonster06
+Atomgranate
 
 40
 0
 2
 -END6-
 -START7-
-Taschenmonster07
+Pokeball
 
 45
 0
 2
 -END7-
 -START8-
-Taschenmonster08
+M830/M830A1 
 
 50
 0
 2
 -END8-
 -START9-
-Taschenmonster09
+Protonengranate
 
 55
 0
 2
 -END9-
 -START10-
-Taschenmonster10
+improvisierter Zielpunkt: Pzhbz. 2000
 
 60
 0
 2
 -END10-
 -START11-
-Taschenmonster11
+Improvisierter chemischer Kampfstoff
 
 65
 0
 2
--START11-
+-END11-

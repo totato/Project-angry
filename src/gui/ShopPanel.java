@@ -509,7 +509,8 @@ private void shortKeys(){
                 Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+            //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+            MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
     }//GEN-LAST:event_bBuyShopActionPerformed
 
@@ -585,17 +586,19 @@ private void shortKeys(){
         tbInventoryB2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2) > 0);
         tbInventoryB3.setEnabled(Game.getAktGame().getData().getWaffenStufe(3) > 0);
         tbInventoryB4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4) > 0);
+        tbInventoryC1.setEnabled(Game.getAktGame().getData().getWaffenStufe(5) > 0);
         
         tbShopB0.setEnabled(!Game.getAktGame().getWaffe(0, true).getName().equals("MAX"));
         tbShopB1.setEnabled(!Game.getAktGame().getWaffe(1, true).getName().equals("MAX"));
         tbShopB2.setEnabled(!Game.getAktGame().getWaffe(2, true).getName().equals("MAX"));
         tbShopB3.setEnabled(!Game.getAktGame().getWaffe(3, true).getName().equals("MAX"));
         tbShopB4.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
+        tbShopC1.setEnabled(!Game.getAktGame().getWaffe(5, true).getName().equals("MAX"));
     }
 
     @Override
     public void switchTo() {
-        
+        MainGUI.getAktMainGUI().getShopPanel1().setGlasses(Game.getAktGame().getData().getBrillen());
     }
 
     @Override

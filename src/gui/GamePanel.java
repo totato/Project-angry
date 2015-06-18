@@ -408,7 +408,6 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
 
     @Override
     public void disableButtons() {
-        //Faust
         tbAttack0.setEnabled(Game.getAktGame().getData().getWaffenStufe(0)>0);
         tbAttack1.setEnabled(Game.getAktGame().getData().getWaffenStufe(1)>0);
         tbAttack2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2)>0);
@@ -416,13 +415,12 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         tbAttack4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4)>0);
         tbAttack5.setEnabled(Game.getAktGame().getData().getWaffenStufe(5)>0);
         disableGrenButtons();
-          }
-
+          
+     }
 
     public void disableGrenButtons() { //TODO: Granatenzahl einbeziehen
         bAttack7.setEnabled(Game.getAktGame().getData().getWaffenStufe(7)>0);
     }
-
     
     @Override
     public void switchTo() {
