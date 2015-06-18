@@ -48,12 +48,7 @@ public class Game implements Runnable {
     private int selectedWeapon;
     private boolean upgradeSelected;
     
-    //Werte, die durch Skills steigen
-    int autoDamage;
-    int spawnrateReduktion;
-    int brillenWK;
-    int expWK;
-    int kritChance;
+    private SkillHandler skills;
 
     long startTime;
     long aktDelay;
@@ -66,6 +61,8 @@ public class Game implements Runnable {
         scr = MainGUI.getAktMainGUI().getGamePanel1().getScreen();
         waffen = new Waffe[Data.ANZAHL_WAFFEN];
         active = true;
+        skills = new SkillHandler();
+        
 
     }
 

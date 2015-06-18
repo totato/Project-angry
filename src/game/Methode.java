@@ -5,10 +5,12 @@
  */
 package game;
 
+import java.io.IOException;
+
 /**
  *
  * @author Toast
  */
-public class Skill {
-    
+public interface Methode {
+    public void mach(String s) throws IOException;
 }

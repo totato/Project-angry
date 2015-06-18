@@ -18,16 +18,16 @@ Beschreibung
 Kosten Brillen
 Kosten Exp
 Befehle: (Diese Zeile nicht schreiben)
-AUTO-DAMAGE:
+AUTO-DAMAGE
 (Zahl)
-SPAWNRATE-REDUKTION:
+SPAWNRATE-REDUKTION
 (Zahl)
-BRILLEN-WK:
+BRILLEN-WK
 (Zahl)
-EXP-WK:
+EXP-WK
 (Zahl)
-KRIT-CHANCE:
+KRIT-CHANCE
 (Zahl)
-WAFFEN-UPDATE:
+WAFFEN-UPDATE
 (Waffennummer)
 -END(Skill Stufe)-
