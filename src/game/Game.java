@@ -45,12 +45,19 @@ public class Game implements Runnable {
     private boolean weiter;
 
     //Shop-Informationen
-    int selectedWeapon;
-    boolean upgradeSelected;
+    private int selectedWeapon;
+    private boolean upgradeSelected;
+    
+    //Werte, die durch Skills steigen
+    int autoDamage;
+    int spawnrateReduktion;
+    int brillenWK;
+    int expWK;
+    int kritChance;
 
     long startTime;
     long aktDelay;
-    //long nextAttack;
+    
 
     public Game() {
 

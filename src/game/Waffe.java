@@ -9,29 +9,22 @@ package game;
  *
  * @author Toast
  */
-public class Waffe {
+public class Waffe extends Item {
 
-    private String name;
-    private String beschreibung;
+    
     private int damage;
     private int reloadTime;
-    private int kosten;
+    
 
     public Waffe(String name, String beschreibung, int damage, int reloadTime, int kosten) {
-        this.name = name;
-        this.beschreibung = beschreibung;
+        
+        super(name, beschreibung, kosten);
+        
         this.damage = damage;
         this.reloadTime = reloadTime;
-        this.kosten = kosten;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getBeschreibung() {
-        return beschreibung;
-    }
 
     public int getDamage() {
         return damage;
@@ -41,17 +34,14 @@ public class Waffe {
         return reloadTime;
     }
 
-    public int getKosten() {
-        return kosten;
-    }
 
     public String getDescription() {
         String desc = "";
-        desc += name + ":";
-        desc += "\n" + beschreibung;
+        desc += super.getName() + ":";
+        desc += "\n" + super.getBeschreibung();
         desc += "\nSchaden: " + damage;
         desc += "\nNachladezeit: " + reloadTime;
-        desc += "\nKosten: " + kosten;
+        desc += "\nKosten: " + super.getKosten();
 
         return desc;
     }

@@ -10,3 +10,22 @@ Kritische Treffer
 Kosten Brillen
 Kosten Exp
 -END(Skill Stufe)-
+
+-START(Skill Stufe)-
+bedingung für Skill (Nummer des anderen Skills, -1 wenn es auch so geht)
+Name
+Beschreibung
+Kosten Brillen
+Kosten Exp
+Befehle:
+AUTO-DAMAGE:
+(Zahl)
+SPAWNRATE-REDUKTION:
+(Zahl)
+BRILLEN-WK:
+(Zahl)
+EXP-WK:
+(Zahl)
+KRIT-CHANCE:
+(Zahl)
+-END(Skill Stufe)-
