@@ -19,11 +19,15 @@ public class SkillHandler {
 
     private static HashMap<String, Methode> faggots;
     //Werte, die durch Skills steigen
-    int autoDamage;
-    double spawnrateReduktion;
-    double brillenWK;
-    double expWK;
-    double kritChance;
+    private int autoDamage;
+    private double spawnrateReduktion;
+    private double brillenWK;
+    private double expWK;
+    private double kritChance;
+    
+    //Skilltree-Infos
+    private int skillSelected;
+    
 
     public SkillHandler() {
         faggots = new HashMap();
@@ -130,6 +134,34 @@ public class SkillHandler {
             }
             
         }
+    }
+    
+    public static String skillBeschreibung(int skillnr, int upgradeStufe) throws IOException{
+        
+        List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+        int startPos = skillTXT.indexOf("-START" + upgradeStufe + "-");
+        return skillTXT.get(startPos + 3) + "\n" + skillTXT.get(startPos + 4);
+        
+    }
+
+    public void setSkillSelected(int skillSelected) {
+        this.skillSelected = skillSelected;
+    }
+
+    public int getSkillSelected() {
+        return skillSelected;
+    }
+    
+    public int buySkill(int skillnr){
+        return 0;
+    }
+    
+    public int unlockSkill(int skillnr){
+        return 0;
+    }
+    
+    public void upgradeSkill(int skillnr){
+        
     }
 
 }

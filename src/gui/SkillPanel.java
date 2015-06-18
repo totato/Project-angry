@@ -6,7 +6,12 @@
 package gui;
 
 import game.Game;
+import game.SkillHandler;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,6 +25,9 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     public SkillPanel() {
         initComponents();
         shortKeys();
+        
+        jTextAreaSkill.setLineWrap(true);
+        jTextAreaSkill.setWrapStyleWord(true);
     }
 
     private void shortKeys() {
@@ -45,41 +53,41 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         jLabelGlassesSkill = new javax.swing.JLabel();
         bBuyGlassesSkill = new javax.swing.JButton();
         jLabelSkilltree = new javax.swing.JLabel();
-        tbSkill26 = new javax.swing.JToggleButton();
-        tbSkill4 = new javax.swing.JToggleButton();
+        tbSkill25 = new javax.swing.JToggleButton();
         tbSkill3 = new javax.swing.JToggleButton();
         tbSkill2 = new javax.swing.JToggleButton();
-        tbSkill5 = new javax.swing.JToggleButton();
+        tbSkill1 = new javax.swing.JToggleButton();
+        tbSkill4 = new javax.swing.JToggleButton();
         tbSkill8 = new javax.swing.JToggleButton();
-        tbSkill6 = new javax.swing.JToggleButton();
-        tbSkillB9 = new javax.swing.JToggleButton();
+        tbSkill5 = new javax.swing.JToggleButton();
         tbSkill7 = new javax.swing.JToggleButton();
-        tbSkillB10 = new javax.swing.JToggleButton();
-        tbSkillB12 = new javax.swing.JToggleButton();
+        tbSkill6 = new javax.swing.JToggleButton();
+        tbSkill9 = new javax.swing.JToggleButton();
         tbSkill11 = new javax.swing.JToggleButton();
-        tbSkill14 = new javax.swing.JToggleButton();
+        tbSkill10 = new javax.swing.JToggleButton();
         tbSkill13 = new javax.swing.JToggleButton();
-        tbSkill18 = new javax.swing.JToggleButton();
+        tbSkill12 = new javax.swing.JToggleButton();
         tbSkill17 = new javax.swing.JToggleButton();
-        tbSkill22 = new javax.swing.JToggleButton();
-        tbSkil21 = new javax.swing.JToggleButton();
-        tbSkillC16 = new javax.swing.JToggleButton();
+        tbSkill16 = new javax.swing.JToggleButton();
+        tbSkill21 = new javax.swing.JToggleButton();
+        tbSkil20 = new javax.swing.JToggleButton();
         tbSkill15 = new javax.swing.JToggleButton();
-        tbSkill20 = new javax.swing.JToggleButton();
+        tbSkill14 = new javax.swing.JToggleButton();
         tbSkill19 = new javax.swing.JToggleButton();
-        tbSkill24 = new javax.swing.JToggleButton();
+        tbSkill18 = new javax.swing.JToggleButton();
         tbSkill23 = new javax.swing.JToggleButton();
-        tbSkill35 = new javax.swing.JToggleButton();
-        tbSkill25 = new javax.swing.JToggleButton();
+        tbSkill22 = new javax.swing.JToggleButton();
+        tbSkill34 = new javax.swing.JToggleButton();
+        tbSkill24 = new javax.swing.JToggleButton();
+        tbSkill26 = new javax.swing.JToggleButton();
+        tbSkill28 = new javax.swing.JToggleButton();
+        tbSkill30 = new javax.swing.JToggleButton();
+        tbSkill32 = new javax.swing.JToggleButton();
         tbSkill27 = new javax.swing.JToggleButton();
         tbSkill29 = new javax.swing.JToggleButton();
         tbSkill31 = new javax.swing.JToggleButton();
         tbSkill33 = new javax.swing.JToggleButton();
-        tbSkill28 = new javax.swing.JToggleButton();
-        tbSkill30 = new javax.swing.JToggleButton();
-        tbSkill32 = new javax.swing.JToggleButton();
-        tbSkill34 = new javax.swing.JToggleButton();
-        tbSkill1 = new javax.swing.JToggleButton();
+        tbSkill0 = new javax.swing.JToggleButton();
         bToShopSkill = new javax.swing.JButton();
         bToGameSkill = new javax.swing.JButton();
         bBuyEXPSkill = new javax.swing.JButton();
@@ -125,180 +133,355 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         add(jLabelSkilltree);
         jLabelSkilltree.setBounds(290, 10, 300, 40);
 
-        buttonGroup1.add(tbSkill26);
-        tbSkill26.setText("jToggleButton1");
-        add(tbSkill26);
-        tbSkill26.setBounds(490, 390, 120, 40);
-
-        buttonGroup1.add(tbSkill4);
-        tbSkill4.setText("jToggleButton2");
-        add(tbSkill4);
-        tbSkill4.setBounds(510, 110, 80, 30);
+        buttonGroup1.add(tbSkill25);
+        tbSkill25.setText("jToggleButton1");
+        tbSkill25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill25ActionPerformed(evt);
+            }
+        });
+        add(tbSkill25);
+        tbSkill25.setBounds(490, 390, 120, 40);
 
         buttonGroup1.add(tbSkill3);
         tbSkill3.setText("jToggleButton2");
+        tbSkill3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill3ActionPerformed(evt);
+            }
+        });
         add(tbSkill3);
-        tbSkill3.setBounds(400, 110, 80, 30);
+        tbSkill3.setBounds(510, 110, 80, 30);
 
         buttonGroup1.add(tbSkill2);
         tbSkill2.setText("jToggleButton2");
+        tbSkill2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill2ActionPerformed(evt);
+            }
+        });
         add(tbSkill2);
-        tbSkill2.setBounds(290, 110, 80, 30);
+        tbSkill2.setBounds(400, 110, 80, 30);
 
-        buttonGroup1.add(tbSkill5);
-        tbSkill5.setText("jToggleButton2");
-        add(tbSkill5);
-        tbSkill5.setBounds(290, 150, 80, 30);
+        buttonGroup1.add(tbSkill1);
+        tbSkill1.setText("jToggleButton2");
+        tbSkill1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill1ActionPerformed(evt);
+            }
+        });
+        add(tbSkill1);
+        tbSkill1.setBounds(290, 110, 80, 30);
+
+        buttonGroup1.add(tbSkill4);
+        tbSkill4.setText("jToggleButton2");
+        tbSkill4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill4ActionPerformed(evt);
+            }
+        });
+        add(tbSkill4);
+        tbSkill4.setBounds(290, 150, 80, 30);
 
         buttonGroup1.add(tbSkill8);
         tbSkill8.setText("jToggleButton2");
+        tbSkill8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill8ActionPerformed(evt);
+            }
+        });
         add(tbSkill8);
         tbSkill8.setBounds(290, 190, 80, 30);
 
-        buttonGroup1.add(tbSkill6);
-        tbSkill6.setText("jToggleButton2");
-        add(tbSkill6);
-        tbSkill6.setBounds(400, 150, 80, 30);
-
-        buttonGroup1.add(tbSkillB9);
-        tbSkillB9.setText("jToggleButton2");
-        add(tbSkillB9);
-        tbSkillB9.setBounds(400, 190, 80, 30);
+        buttonGroup1.add(tbSkill5);
+        tbSkill5.setText("jToggleButton2");
+        tbSkill5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill5ActionPerformed(evt);
+            }
+        });
+        add(tbSkill5);
+        tbSkill5.setBounds(400, 150, 80, 30);
 
         buttonGroup1.add(tbSkill7);
         tbSkill7.setText("jToggleButton2");
+        tbSkill7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill7ActionPerformed(evt);
+            }
+        });
         add(tbSkill7);
-        tbSkill7.setBounds(510, 150, 80, 30);
+        tbSkill7.setBounds(400, 190, 80, 30);
 
-        buttonGroup1.add(tbSkillB10);
-        tbSkillB10.setText("jToggleButton2");
-        add(tbSkillB10);
-        tbSkillB10.setBounds(510, 190, 80, 30);
+        buttonGroup1.add(tbSkill6);
+        tbSkill6.setText("jToggleButton2");
+        tbSkill6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill6ActionPerformed(evt);
+            }
+        });
+        add(tbSkill6);
+        tbSkill6.setBounds(510, 150, 80, 30);
 
-        buttonGroup1.add(tbSkillB12);
-        tbSkillB12.setText("jToggleButton2");
-        add(tbSkillB12);
-        tbSkillB12.setBounds(510, 230, 80, 30);
+        buttonGroup1.add(tbSkill9);
+        tbSkill9.setText("jToggleButton2");
+        tbSkill9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill9ActionPerformed(evt);
+            }
+        });
+        add(tbSkill9);
+        tbSkill9.setBounds(510, 190, 80, 30);
 
         buttonGroup1.add(tbSkill11);
         tbSkill11.setText("jToggleButton2");
+        tbSkill11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill11ActionPerformed(evt);
+            }
+        });
         add(tbSkill11);
-        tbSkill11.setBounds(290, 230, 80, 30);
+        tbSkill11.setBounds(510, 230, 80, 30);
 
-        buttonGroup1.add(tbSkill14);
-        tbSkill14.setText("jToggleButton2");
-        add(tbSkill14);
-        tbSkill14.setBounds(340, 280, 60, 23);
+        buttonGroup1.add(tbSkill10);
+        tbSkill10.setText("jToggleButton2");
+        tbSkill10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill10ActionPerformed(evt);
+            }
+        });
+        add(tbSkill10);
+        tbSkill10.setBounds(290, 230, 80, 30);
 
         buttonGroup1.add(tbSkill13);
         tbSkill13.setText("jToggleButton2");
+        tbSkill13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill13ActionPerformed(evt);
+            }
+        });
         add(tbSkill13);
-        tbSkill13.setBounds(260, 280, 60, 23);
+        tbSkill13.setBounds(340, 280, 60, 23);
 
-        buttonGroup1.add(tbSkill18);
-        tbSkill18.setText("jToggleButton2");
-        add(tbSkill18);
-        tbSkill18.setBounds(340, 310, 60, 23);
+        buttonGroup1.add(tbSkill12);
+        tbSkill12.setText("jToggleButton2");
+        tbSkill12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill12ActionPerformed(evt);
+            }
+        });
+        add(tbSkill12);
+        tbSkill12.setBounds(260, 280, 60, 23);
 
         buttonGroup1.add(tbSkill17);
         tbSkill17.setText("jToggleButton2");
+        tbSkill17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill17ActionPerformed(evt);
+            }
+        });
         add(tbSkill17);
-        tbSkill17.setBounds(260, 310, 60, 23);
+        tbSkill17.setBounds(340, 310, 60, 23);
 
-        buttonGroup1.add(tbSkill22);
-        tbSkill22.setText("jToggleButton2");
-        add(tbSkill22);
-        tbSkill22.setBounds(340, 340, 60, 23);
+        buttonGroup1.add(tbSkill16);
+        tbSkill16.setText("jToggleButton2");
+        tbSkill16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill16ActionPerformed(evt);
+            }
+        });
+        add(tbSkill16);
+        tbSkill16.setBounds(260, 310, 60, 23);
 
-        buttonGroup1.add(tbSkil21);
-        tbSkil21.setText("jToggleButton2");
-        add(tbSkil21);
-        tbSkil21.setBounds(260, 340, 60, 23);
+        buttonGroup1.add(tbSkill21);
+        tbSkill21.setText("jToggleButton2");
+        tbSkill21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill21ActionPerformed(evt);
+            }
+        });
+        add(tbSkill21);
+        tbSkill21.setBounds(340, 340, 60, 23);
 
-        buttonGroup1.add(tbSkillC16);
-        tbSkillC16.setText("jToggleButton2");
-        add(tbSkillC16);
-        tbSkillC16.setBounds(560, 280, 60, 23);
+        buttonGroup1.add(tbSkil20);
+        tbSkil20.setText("jToggleButton2");
+        tbSkil20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkil20ActionPerformed(evt);
+            }
+        });
+        add(tbSkil20);
+        tbSkil20.setBounds(260, 340, 60, 23);
 
         buttonGroup1.add(tbSkill15);
         tbSkill15.setText("jToggleButton2");
+        tbSkill15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill15ActionPerformed(evt);
+            }
+        });
         add(tbSkill15);
-        tbSkill15.setBounds(480, 280, 60, 23);
+        tbSkill15.setBounds(560, 280, 60, 23);
 
-        buttonGroup1.add(tbSkill20);
-        tbSkill20.setText("jToggleButton2");
-        add(tbSkill20);
-        tbSkill20.setBounds(560, 310, 60, 23);
+        buttonGroup1.add(tbSkill14);
+        tbSkill14.setText("jToggleButton2");
+        tbSkill14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill14ActionPerformed(evt);
+            }
+        });
+        add(tbSkill14);
+        tbSkill14.setBounds(480, 280, 60, 23);
 
         buttonGroup1.add(tbSkill19);
         tbSkill19.setText("jToggleButton2");
+        tbSkill19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill19ActionPerformed(evt);
+            }
+        });
         add(tbSkill19);
-        tbSkill19.setBounds(480, 310, 60, 23);
+        tbSkill19.setBounds(560, 310, 60, 23);
 
-        buttonGroup1.add(tbSkill24);
-        tbSkill24.setText("jToggleButton2");
-        add(tbSkill24);
-        tbSkill24.setBounds(560, 340, 60, 23);
+        buttonGroup1.add(tbSkill18);
+        tbSkill18.setText("jToggleButton2");
+        tbSkill18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill18ActionPerformed(evt);
+            }
+        });
+        add(tbSkill18);
+        tbSkill18.setBounds(480, 310, 60, 23);
 
         buttonGroup1.add(tbSkill23);
         tbSkill23.setText("jToggleButton2");
+        tbSkill23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill23ActionPerformed(evt);
+            }
+        });
         add(tbSkill23);
-        tbSkill23.setBounds(480, 340, 60, 23);
+        tbSkill23.setBounds(560, 340, 60, 23);
 
-        buttonGroup1.add(tbSkill35);
-        tbSkill35.setText("jToggleButton1");
-        add(tbSkill35);
-        tbSkill35.setBounds(370, 620, 140, 50);
+        buttonGroup1.add(tbSkill22);
+        tbSkill22.setText("jToggleButton2");
+        tbSkill22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill22ActionPerformed(evt);
+            }
+        });
+        add(tbSkill22);
+        tbSkill22.setBounds(480, 340, 60, 23);
 
-        buttonGroup1.add(tbSkill25);
-        tbSkill25.setText("jToggleButton1");
-        add(tbSkill25);
-        tbSkill25.setBounds(270, 390, 120, 40);
+        buttonGroup1.add(tbSkill34);
+        tbSkill34.setText("jToggleButton1");
+        tbSkill34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill34ActionPerformed(evt);
+            }
+        });
+        add(tbSkill34);
+        tbSkill34.setBounds(370, 620, 140, 50);
 
-        buttonGroup1.add(tbSkill27);
-        tbSkill27.setText("jToggleButton2");
-        add(tbSkill27);
-        tbSkill27.setBounds(290, 450, 80, 30);
+        buttonGroup1.add(tbSkill24);
+        tbSkill24.setText("jToggleButton1");
+        tbSkill24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill24ActionPerformed(evt);
+            }
+        });
+        add(tbSkill24);
+        tbSkill24.setBounds(270, 390, 120, 40);
 
-        buttonGroup1.add(tbSkill29);
-        tbSkill29.setText("jToggleButton2");
-        add(tbSkill29);
-        tbSkill29.setBounds(290, 490, 80, 30);
-
-        buttonGroup1.add(tbSkill31);
-        tbSkill31.setText("jToggleButton2");
-        add(tbSkill31);
-        tbSkill31.setBounds(290, 530, 80, 30);
-
-        buttonGroup1.add(tbSkill33);
-        tbSkill33.setText("jToggleButton2");
-        add(tbSkill33);
-        tbSkill33.setBounds(290, 570, 80, 30);
+        buttonGroup1.add(tbSkill26);
+        tbSkill26.setText("jToggleButton2");
+        tbSkill26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill26ActionPerformed(evt);
+            }
+        });
+        add(tbSkill26);
+        tbSkill26.setBounds(290, 450, 80, 30);
 
         buttonGroup1.add(tbSkill28);
         tbSkill28.setText("jToggleButton2");
+        tbSkill28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill28ActionPerformed(evt);
+            }
+        });
         add(tbSkill28);
-        tbSkill28.setBounds(510, 450, 80, 30);
+        tbSkill28.setBounds(290, 490, 80, 30);
 
         buttonGroup1.add(tbSkill30);
         tbSkill30.setText("jToggleButton2");
+        tbSkill30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill30ActionPerformed(evt);
+            }
+        });
         add(tbSkill30);
-        tbSkill30.setBounds(510, 490, 80, 30);
+        tbSkill30.setBounds(290, 530, 80, 30);
 
         buttonGroup1.add(tbSkill32);
         tbSkill32.setText("jToggleButton2");
+        tbSkill32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill32ActionPerformed(evt);
+            }
+        });
         add(tbSkill32);
-        tbSkill32.setBounds(510, 530, 80, 30);
+        tbSkill32.setBounds(290, 570, 80, 30);
 
-        buttonGroup1.add(tbSkill34);
-        tbSkill34.setText("jToggleButton2");
-        add(tbSkill34);
-        tbSkill34.setBounds(510, 570, 80, 30);
+        buttonGroup1.add(tbSkill27);
+        tbSkill27.setText("jToggleButton2");
+        tbSkill27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill27ActionPerformed(evt);
+            }
+        });
+        add(tbSkill27);
+        tbSkill27.setBounds(510, 450, 80, 30);
 
-        buttonGroup1.add(tbSkill1);
-        tbSkill1.setText("jToggleButton1");
-        add(tbSkill1);
-        tbSkill1.setBounds(380, 60, 120, 40);
+        buttonGroup1.add(tbSkill29);
+        tbSkill29.setText("jToggleButton2");
+        tbSkill29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill29ActionPerformed(evt);
+            }
+        });
+        add(tbSkill29);
+        tbSkill29.setBounds(510, 490, 80, 30);
+
+        buttonGroup1.add(tbSkill31);
+        tbSkill31.setText("jToggleButton2");
+        tbSkill31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill31ActionPerformed(evt);
+            }
+        });
+        add(tbSkill31);
+        tbSkill31.setBounds(510, 530, 80, 30);
+
+        buttonGroup1.add(tbSkill33);
+        tbSkill33.setText("jToggleButton2");
+        tbSkill33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill33ActionPerformed(evt);
+            }
+        });
+        add(tbSkill33);
+        tbSkill33.setBounds(510, 570, 80, 30);
+
+        buttonGroup1.add(tbSkill0);
+        tbSkill0.setText("jToggleButton1");
+        tbSkill0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSkill0ActionPerformed(evt);
+            }
+        });
+        add(tbSkill0);
+        tbSkill0.setBounds(380, 60, 120, 40);
 
         bToShopSkill.setBackground(new java.awt.Color(0, 0, 0));
         bToShopSkill.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -340,6 +523,290 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         MainGUI.getAktMainGUI().changeCard("shop card");
     }//GEN-LAST:event_bToShopSkillActionPerformed
 
+    
+    private void tbSkill0ActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(0, Game.getAktGame().getData().getSkillUnlocked(0)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void tbSkill1ActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(1, Game.getAktGame().getData().getSkillUnlocked(1)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void tbSkill3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill3ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(3, Game.getAktGame().getData().getSkillUnlocked(3)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill3ActionPerformed
+
+    private void tbSkill2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill2ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(2, Game.getAktGame().getData().getSkillUnlocked(2)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill2ActionPerformed
+
+    
+    
+    private void tbSkill5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill5ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(5, Game.getAktGame().getData().getSkillUnlocked(5)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill5ActionPerformed
+
+    private void tbSkill4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill4ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(4, Game.getAktGame().getData().getSkillUnlocked(4)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill4ActionPerformed
+
+    private void tbSkill6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill6ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(6, Game.getAktGame().getData().getSkillUnlocked(6)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill6ActionPerformed
+
+    private void tbSkill8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill8ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(8, Game.getAktGame().getData().getSkillUnlocked(8)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill8ActionPerformed
+
+    private void tbSkill7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill7ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(7, Game.getAktGame().getData().getSkillUnlocked(7)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill7ActionPerformed
+
+    private void tbSkill9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill9ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(9, Game.getAktGame().getData().getSkillUnlocked(9)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill9ActionPerformed
+
+    private void tbSkill10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill10ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(10, Game.getAktGame().getData().getSkillUnlocked(10)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill10ActionPerformed
+
+    private void tbSkill11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill11ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(11, Game.getAktGame().getData().getSkillUnlocked(11)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill11ActionPerformed
+
+    private void tbSkill12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill12ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(12, Game.getAktGame().getData().getSkillUnlocked(12)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill12ActionPerformed
+
+    private void tbSkill13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill13ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(13, Game.getAktGame().getData().getSkillUnlocked(13)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill13ActionPerformed
+
+    private void tbSkill14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill14ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(14, Game.getAktGame().getData().getSkillUnlocked(14)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill14ActionPerformed
+
+    private void tbSkill15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill15ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(15, Game.getAktGame().getData().getSkillUnlocked(15)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill15ActionPerformed
+
+    private void tbSkill16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill16ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(16, Game.getAktGame().getData().getSkillUnlocked(16)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill16ActionPerformed
+
+    private void tbSkill17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill17ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(17, Game.getAktGame().getData().getSkillUnlocked(17)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill17ActionPerformed
+
+    private void tbSkill18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill18ActionPerformed
+       try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(18, Game.getAktGame().getData().getSkillUnlocked(18)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill18ActionPerformed
+
+    private void tbSkill19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill19ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(19, Game.getAktGame().getData().getSkillUnlocked(19)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill19ActionPerformed
+
+    private void tbSkil20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkil20ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(20, Game.getAktGame().getData().getSkillUnlocked(20)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkil20ActionPerformed
+
+    private void tbSkill21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill21ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(21, Game.getAktGame().getData().getSkillUnlocked(21)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill21ActionPerformed
+
+    private void tbSkill22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill22ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(22, Game.getAktGame().getData().getSkillUnlocked(22)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill22ActionPerformed
+
+    private void tbSkill23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill23ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(23, Game.getAktGame().getData().getSkillUnlocked(23)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill23ActionPerformed
+
+    private void tbSkill24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill24ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(24, Game.getAktGame().getData().getSkillUnlocked(24)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill24ActionPerformed
+
+    private void tbSkill25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill25ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(25, Game.getAktGame().getData().getSkillUnlocked(25)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill25ActionPerformed
+
+    private void tbSkill26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill26ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(26, Game.getAktGame().getData().getSkillUnlocked(26)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill26ActionPerformed
+
+    private void tbSkill27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill27ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(27, Game.getAktGame().getData().getSkillUnlocked(27)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill27ActionPerformed
+
+    private void tbSkill28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill28ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(28, Game.getAktGame().getData().getSkillUnlocked(28)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill28ActionPerformed
+
+    private void tbSkill29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill29ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(29, Game.getAktGame().getData().getSkillUnlocked(29)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill29ActionPerformed
+
+    private void tbSkill30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill30ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(30, Game.getAktGame().getData().getSkillUnlocked(30)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill30ActionPerformed
+
+    private void tbSkill31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill31ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(31, Game.getAktGame().getData().getSkillUnlocked(31)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill31ActionPerformed
+
+    private void tbSkill32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill32ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(32, Game.getAktGame().getData().getSkillUnlocked(32)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill32ActionPerformed
+
+    private void tbSkill33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill33ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(33, Game.getAktGame().getData().getSkillUnlocked(33)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill33ActionPerformed
+
+    private void tbSkill34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill34ActionPerformed
+        try {
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(34, Game.getAktGame().getData().getSkillUnlocked(34)));
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tbSkill34ActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuyEXPSkill;
@@ -353,17 +820,21 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     private javax.swing.JLabel jLabelSkilltree;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaSkill;
-    private javax.swing.JToggleButton tbSkil21;
+    private javax.swing.JToggleButton tbSkil20;
+    private javax.swing.JToggleButton tbSkill0;
     private javax.swing.JToggleButton tbSkill1;
+    private javax.swing.JToggleButton tbSkill10;
     private javax.swing.JToggleButton tbSkill11;
+    private javax.swing.JToggleButton tbSkill12;
     private javax.swing.JToggleButton tbSkill13;
     private javax.swing.JToggleButton tbSkill14;
     private javax.swing.JToggleButton tbSkill15;
+    private javax.swing.JToggleButton tbSkill16;
     private javax.swing.JToggleButton tbSkill17;
     private javax.swing.JToggleButton tbSkill18;
     private javax.swing.JToggleButton tbSkill19;
     private javax.swing.JToggleButton tbSkill2;
-    private javax.swing.JToggleButton tbSkill20;
+    private javax.swing.JToggleButton tbSkill21;
     private javax.swing.JToggleButton tbSkill22;
     private javax.swing.JToggleButton tbSkill23;
     private javax.swing.JToggleButton tbSkill24;
@@ -378,16 +849,12 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     private javax.swing.JToggleButton tbSkill32;
     private javax.swing.JToggleButton tbSkill33;
     private javax.swing.JToggleButton tbSkill34;
-    private javax.swing.JToggleButton tbSkill35;
     private javax.swing.JToggleButton tbSkill4;
     private javax.swing.JToggleButton tbSkill5;
     private javax.swing.JToggleButton tbSkill6;
     private javax.swing.JToggleButton tbSkill7;
     private javax.swing.JToggleButton tbSkill8;
-    private javax.swing.JToggleButton tbSkillB10;
-    private javax.swing.JToggleButton tbSkillB12;
-    private javax.swing.JToggleButton tbSkillB9;
-    private javax.swing.JToggleButton tbSkillC16;
+    private javax.swing.JToggleButton tbSkill9;
     // End of variables declaration//GEN-END:variables
 
     public void setGlasses(int br) {

@@ -47,12 +47,11 @@ public class Game implements Runnable {
     //Shop-Informationen
     private int selectedWeapon;
     private boolean upgradeSelected;
-    
+
     private SkillHandler skills;
 
     long startTime;
     long aktDelay;
-    
 
     public Game() {
 
@@ -62,7 +61,6 @@ public class Game implements Runnable {
         waffen = new Waffe[Data.ANZAHL_WAFFEN];
         active = true;
         skills = new SkillHandler();
-        
 
     }
 
@@ -118,7 +116,7 @@ public class Game implements Runnable {
             return "(Bisheriges) Maximallevel erreicht";
         }
 
-        data.setBrillen(data.getBrillen()-waffenUpgrades[waffennummer].getKosten());
+        data.setBrillen(data.getBrillen() - waffenUpgrades[waffennummer].getKosten());
         return upgradeWeapon(waffennummer);
 
     }
@@ -189,24 +187,27 @@ public class Game implements Runnable {
 
     public void useWeapon(int nummer) {
         if (aktDelay <= 0) {
-            if(Math.random() + skills.getKritChance() >= 1.0)
-            data.killStreber(waffen[nummer].getDamage());
+            if (Math.random() + skills.getKritChance() >= 1.0) {
+                data.killStreber(waffen[nummer].getDamage() * 3);
+            } else {
+                data.killStreber(waffen[nummer].getDamage());
+            }
             aktDelay = waffen[nummer].getReloadTime();
         }
     }
-    
-    public void useGrenade (){
-        if(data.getGranaten() > 0){
+
+    public void useGrenade() {
+        if (data.getGranaten() > 0) {
             useWeapon(6);
         }
-        data.setGranaten((data.getGranaten()-1));
+        data.setGranaten((data.getGranaten() - 1));
     }
 
     @Override
     public void run() {
-        
+
         int i = 0;
-        
+
         while (active) {
 
             startTime = System.currentTimeMillis();
@@ -229,11 +230,11 @@ public class Game implements Runnable {
             }
 
             i++;
-            
-            if(i >= 500 / frameTime){
+
+            if (i >= 500 / frameTime) {
                 data.killStreber(skills.getAutoDamage());
             }
-            
+
             if (i >= 1000 / frameTime) {
                 i = 0;
                 data.setVorherLebendeStreber(data.getLebendeStreber());
@@ -290,12 +291,12 @@ public class Game implements Runnable {
         }
 
     }
-    
-    public void pause(){
+
+    public void pause() {
         active = false;
     }
-    
-    public void resume(){
+
+    public void resume() {
         active = true;
         Thread gameThread = new Thread(this);
         gameThread.start();
@@ -305,5 +306,4 @@ public class Game implements Runnable {
         return skills;
     }
 
-    
 }
