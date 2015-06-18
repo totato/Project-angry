@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import java.awt.event.KeyEvent;
@@ -508,10 +503,14 @@ private void shortKeys(){
             } catch (IOException ex) {
                 Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         } else {
             //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
             MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
+        
+        disableButtons();
+        MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
     }//GEN-LAST:event_bBuyShopActionPerformed
 
     private void tbShopC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC2ActionPerformed

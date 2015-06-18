@@ -58,6 +58,8 @@ public abstract class WindowProperties {
             System.out.println(ioe);
         } catch (LineUnavailableException lua) {
             System.out.println(lua);
+        } catch (IllegalArgumentException iae){
+            System.out.println(iae);
         }
     }
 
@@ -65,7 +67,11 @@ public abstract class WindowProperties {
      Beendet die gerade spielende Hintergrundmusik.
      */
     public void stopBgMusic() {
+        try {
         clip.stop();
+        }catch (NullPointerException npe) {
+                 System.out.println(npe);
+                 }
     }
 
     /*

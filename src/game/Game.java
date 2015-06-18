@@ -30,7 +30,6 @@ import javax.imageio.ImageIO;
 public class Game implements Runnable {
 
     private static final long frameTime = 10;
-    private static final int WAFFEN_ANZAHL = 6;
 
     private static Game aktGame;
 
@@ -57,7 +56,7 @@ public class Game implements Runnable {
         Game.setAktGame(this);
 
         scr = MainGUI.getAktMainGUI().getGamePanel1().getScreen();
-        waffen = new Waffe[WAFFEN_ANZAHL];
+        waffen = new Waffe[Data.ANZAHL_WAFFEN];
 
     }
 
@@ -136,9 +135,9 @@ public class Game implements Runnable {
 
     public static Waffe[] loadWeapons(int[] waffenstufen) throws IOException {
 
-        Waffe[] waffen = new Waffe[WAFFEN_ANZAHL];
+        Waffe[] waffen = new Waffe[Data.ANZAHL_WAFFEN];
 
-        for (int i = 0; i < WAFFEN_ANZAHL; i++) {
+        for (int i = 0; i < Data.ANZAHL_WAFFEN; i++) {
 
             waffen[i] = Game.loadWeapon(i, waffenstufen[i]);
 
@@ -181,18 +180,29 @@ public class Game implements Runnable {
 
     }
 
-    public void useAktWeapon() {
+    public void useWeapon(int nummer) {
         if (aktDelay <= 0) {
-            data.killStreber(waffen[data.getAktWaffe()].getDamage());
-            aktDelay = waffen[data.getAktWaffe()].getReloadTime();
+            data.killStreber(waffen[nummer].getDamage());
+            aktDelay = waffen[nummer].getReloadTime();
         }
+    }
+    
+    public void useGrenade (){
+        if(data.getGranaten() > 0){
+            useWeapon(6);
+        }
+        data.setGranaten((data.getGranaten()-1));
+        
+        
+            
+        
     }
 
     @Override
     public void run() {
-
+        
         int i = 0;
-
+        
         while (true) {
 
             startTime = System.currentTimeMillis();

@@ -338,7 +338,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
     }//GEN-LAST:event_tbAttack5ActionPerformed
 
     private void bAttack7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAttack7ActionPerformed
-
+        Game.getAktGame().useGrenade();
     }//GEN-LAST:event_bAttack7ActionPerformed
 
     private void bEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEventActionPerformed
@@ -414,12 +414,18 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         tbAttack3.setEnabled(Game.getAktGame().getData().getWaffenStufe(3)>0);
         tbAttack4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4)>0);
         tbAttack5.setEnabled(Game.getAktGame().getData().getWaffenStufe(5)>0);
+        System.out.println("Waffenbuttons überpfüft");
         disableGrenButtons();
-          
      }
 
-    public void disableGrenButtons() { //TODO: Granatenzahl einbeziehen
-        bAttack7.setEnabled(Game.getAktGame().getData().getWaffenStufe(7)>0);
+    public void disableGrenButtons() {
+        //TODO: Granaten im Array abrufen. Momentan: Platzhalter
+        if(Game.getAktGame().getData().getWaffenStufe(6)<=0 ||
+                Game.getAktGame().getData().getGranaten() <=0){
+            bAttack7.setEnabled(false);
+        }else{
+             bAttack7.setEnabled(true);
+        }
     }
     
     @Override

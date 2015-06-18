@@ -36,7 +36,7 @@ public class Screen extends JLabel{
 
             @Override
             public void mousePressed(MouseEvent e) {
-                Game.getAktGame().useAktWeapon();
+                Game.getAktGame().useWeapon(Game.getAktGame().getData().getAktWaffe());
             }
 
             @Override

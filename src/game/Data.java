@@ -7,7 +7,7 @@ package game;
 public class Data {
 
     private static final int ANZAHL_SKILLS = 35;
-    private static final int ANZAHL_WAFFEN = 6;
+    public static final int ANZAHL_WAFFEN = 7;
     private static final int ANZAHL_AUSRÜSTUNG = 3;
 
     public static final int START_AUTO_DAMAGE = 0;
@@ -18,7 +18,7 @@ public class Data {
     private int getoeteteStreber;//getötete Streber. Steigt immer weiter, wird aber niemals abgezogen.
     private int aktLevel;
     private int exp;
-
+    private int granaten;//Zahl der noch vorhandenen Granaten
     private int[] skillsStufen; //Welche Skills schon freigeschaltet sind
     private int autoDamage; //Schaden den man macht, wenn man gerade nicht klickt
     private int[] waffenStufen; //Die Stufen jeder Waffe
@@ -55,6 +55,16 @@ public class Data {
 
     }
 
+    
+    
+    public int getGranaten() {
+        return granaten;
+    }
+
+    public void setGranaten(int granaten) {
+        this.granaten = granaten;
+    }
+    
     public int getBrillen() {
         return brillen;
     }
@@ -158,10 +168,12 @@ public class Data {
             brillen += lebendeStreber;
             exp += lebendeStreber;
             lebendeStreber = 0;
-
         }
-
     }
+    
+    
+    
+    
 
     public int getExp() {
         return exp;
