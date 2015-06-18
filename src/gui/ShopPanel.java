@@ -221,6 +221,11 @@ private void shortKeys(){
         tbShopC2.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setPreferredSize(new java.awt.Dimension(105, 23));
+        tbShopC2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbShopC2ActionPerformed(evt);
+            }
+        });
         add(tbShopC2);
         tbShopC2.setBounds(10, 500, 140, 30);
 
@@ -507,6 +512,10 @@ private void shortKeys(){
             jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
     }//GEN-LAST:event_bBuyShopActionPerformed
+
+    private void tbShopC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbShopC2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

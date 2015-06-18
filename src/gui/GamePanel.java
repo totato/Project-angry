@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
 import game.Game;
@@ -212,7 +208,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         toteStreberAnzeiger.getAccessibleContext().setAccessibleName("toteStreberAnzeiger");
 
         add(jProgressBar);
-        jProgressBar.setBounds(440, 70, 200, 14);
+        jProgressBar.setBounds(440, 70, 200, 19);
 
         jLabelEXPGame.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelEXPGame.setForeground(new java.awt.Color(255, 255, 255));
@@ -269,11 +265,21 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
 
         bEvent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon7.png"))); // NOI18N
         bEvent.setText("jButton7");
+        bEvent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEventActionPerformed(evt);
+            }
+        });
         add(bEvent);
         bEvent.setBounds(440, 680, 60, 60);
 
         bAttack7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon6.png"))); // NOI18N
         bAttack7.setText("jButton7");
+        bAttack7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAttack7ActionPerformed(evt);
+            }
+        });
         add(bAttack7);
         bAttack7.setBounds(440, 620, 60, 60);
 
@@ -330,6 +336,14 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         Game.getAktGame().changeWeapon(5);
         changeTBPicture(tbAttack5);
     }//GEN-LAST:event_tbAttack5ActionPerformed
+
+    private void bAttack7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAttack7ActionPerformed
+
+    }//GEN-LAST:event_bAttack7ActionPerformed
+
+    private void bEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bEventActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -395,26 +409,21 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
     @Override
     public void disableButtons() {
         //Faust
-        // if(Game.getWaffenStufe(0)){
-        tbAttack0.setEnabled(true);
-        //  }else {
-        tbAttack0.setEnabled(false);
-     //   }
+        tbAttack0.setEnabled(Game.getAktGame().getData().getWaffenStufe(0)>0);
+        tbAttack1.setEnabled(Game.getAktGame().getData().getWaffenStufe(1)>0);
+        tbAttack2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2)>0);
+        tbAttack3.setEnabled(Game.getAktGame().getData().getWaffenStufe(3)>0);
+        tbAttack4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4)>0);
+        tbAttack5.setEnabled(Game.getAktGame().getData().getWaffenStufe(5)>0);
+        disableGrenButtons();
+          }
 
-        tbAttack1.setEnabled(false);
-        tbAttack2.setEnabled(false);
-        tbAttack3.setEnabled(false);
-        tbAttack4.setEnabled(false);
-        tbAttack4.setEnabled(false);
-        tbAttack5.setEnabled(false);
-        bAttack7.setEnabled(false); //Grenades
-        // Disabled wenn: Waffe nicht gekauft
-        // Keine Granaten
-        //
-        //
-        //TODO disable alle Buttons, auf die man nicht klicken kann (z.B. weil Waffe nciht gekauft) und setzte den aktuell ausgewählten Button auf aktWaffe
+
+    public void disableGrenButtons() { //TODO: Granatenzahl einbeziehen
+        bAttack7.setEnabled(Game.getAktGame().getData().getWaffenStufe(7)>0);
     }
 
+    
     @Override
     public void switchTo() {
        
