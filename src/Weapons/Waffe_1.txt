@@ -1,13 +1,13 @@
 -START1-
-Antonios nerviges Gerede
-Das ist erst der Anfang
+Zwinkern
+Die Streber sind ein wenig verwirrt.
 5
 0
 2
 -END1-
 -START2-
-Antonios Pseudophilosophie
-Wenn Hitler die Frage ist, wie kann Liebe nicht die Antwort sein?
+Romantisches Zwinkern
+Du machst den Strebern Angst.
 10
 0
 2

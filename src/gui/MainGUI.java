@@ -177,7 +177,7 @@ public class MainGUI extends WindowProperties {
         }
         ta.setText(GamePanel.getjTextAreaGame().getText() + "  " + text + "\n");
     }
-
+    
     public JPanel getGamecards() {
         return gamecards;
     }

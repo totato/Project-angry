@@ -20,18 +20,18 @@ import javax.swing.KeyStroke;
  */
 public class GamePanel extends javax.swing.JPanel implements Panel {
 // Bilder werden geladen
-private ImageIcon grAttack0B = new ImageIcon(getClass().getResource("/Grafiken/weapon0B.png"));
-private ImageIcon grAttack0 = new ImageIcon(getClass().getResource("/Grafiken/weapon0.png"));
-private ImageIcon grAttack1B = new ImageIcon(getClass().getResource("/Grafiken/weapon1B.png"));
-private ImageIcon grAttack1 = new ImageIcon(getClass().getResource("/Grafiken/weapon1.png"));
-private ImageIcon grAttack2B = new ImageIcon(getClass().getResource("/Grafiken/weapon2B.png"));
-private ImageIcon grAttack2 = new ImageIcon(getClass().getResource("/Grafiken/weapon2.png"));
-private ImageIcon grAttack3B = new ImageIcon(getClass().getResource("/Grafiken/weapon3B.png"));
-private ImageIcon grAttack3 = new ImageIcon(getClass().getResource("/Grafiken/weapon3.png"));
-private ImageIcon grAttack4B = new ImageIcon(getClass().getResource("/Grafiken/weapon4B.png"));
-private ImageIcon grAttack4 = new ImageIcon(getClass().getResource("/Grafiken/weapon4.png"));
-private ImageIcon grAttack5B = new ImageIcon(getClass().getResource("/Grafiken/weapon5B.png"));
-private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/weapon5.png"));
+    private ImageIcon grAttack0B = new ImageIcon(getClass().getResource("/Grafiken/weapon0B.png"));
+    private ImageIcon grAttack0 = new ImageIcon(getClass().getResource("/Grafiken/weapon0.png"));
+    private ImageIcon grAttack1B = new ImageIcon(getClass().getResource("/Grafiken/weapon1B.png"));
+    private ImageIcon grAttack1 = new ImageIcon(getClass().getResource("/Grafiken/weapon1.png"));
+    private ImageIcon grAttack2B = new ImageIcon(getClass().getResource("/Grafiken/weapon2B.png"));
+    private ImageIcon grAttack2 = new ImageIcon(getClass().getResource("/Grafiken/weapon2.png"));
+    private ImageIcon grAttack3B = new ImageIcon(getClass().getResource("/Grafiken/weapon3B.png"));
+    private ImageIcon grAttack3 = new ImageIcon(getClass().getResource("/Grafiken/weapon3.png"));
+    private ImageIcon grAttack4B = new ImageIcon(getClass().getResource("/Grafiken/weapon4B.png"));
+    private ImageIcon grAttack4 = new ImageIcon(getClass().getResource("/Grafiken/weapon4.png"));
+    private ImageIcon grAttack5B = new ImageIcon(getClass().getResource("/Grafiken/weapon5B.png"));
+    private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/weapon5.png"));
 
     /**
      * Creates new form gamePanel
@@ -54,7 +54,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         return jTextAreaGame;
     }
 
-    private void changeTBPicture(JToggleButton aW ) {
+    private void changeTBPicture(JToggleButton aW) {
         if (aW == tbAttack0) {
             tbAttack0.setIcon(grAttack0B);
         } else {
@@ -82,7 +82,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         }
         if (aW == tbAttack5) {
             tbAttack5.setIcon(grAttack5B);
-        }  else  {
+        } else {
             tbAttack5.setIcon(grAttack5);
         }
     }
@@ -175,6 +175,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         tbAttackGroup.add(tbAttack0);
         tbAttack0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon0.png"))); // NOI18N
         tbAttack0.setText("jToggleButton1");
+        tbAttack0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tbAttack0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbAttack0ActionPerformed(evt);
@@ -208,7 +209,7 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
         toteStreberAnzeiger.getAccessibleContext().setAccessibleName("toteStreberAnzeiger");
 
         add(jProgressBar);
-        jProgressBar.setBounds(440, 70, 200, 19);
+        jProgressBar.setBounds(440, 70, 200, 14);
 
         jLabelEXPGame.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelEXPGame.setForeground(new java.awt.Color(255, 255, 255));
@@ -408,29 +409,29 @@ private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/we
 
     @Override
     public void disableButtons() {
-        tbAttack0.setEnabled(Game.getAktGame().getData().getWaffenStufe(0)>0);
-        tbAttack1.setEnabled(Game.getAktGame().getData().getWaffenStufe(1)>0);
-        tbAttack2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2)>0);
-        tbAttack3.setEnabled(Game.getAktGame().getData().getWaffenStufe(3)>0);
-        tbAttack4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4)>0);
-        tbAttack5.setEnabled(Game.getAktGame().getData().getWaffenStufe(5)>0);
+        tbAttack0.setEnabled(Game.getAktGame().getData().getWaffenStufe(0) > 0);
+        tbAttack1.setEnabled(Game.getAktGame().getData().getWaffenStufe(1) > 0);
+        tbAttack2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2) > 0);
+        tbAttack3.setEnabled(Game.getAktGame().getData().getWaffenStufe(3) > 0);
+        tbAttack4.setEnabled(Game.getAktGame().getData().getWaffenStufe(4) > 0);
+        tbAttack5.setEnabled(Game.getAktGame().getData().getWaffenStufe(5) > 0);
         System.out.println("Waffenbuttons überpfüft");
         disableGrenButton();
-     }
+    }
 
     public void disableGrenButton() {
         //TODO: Granaten im Array abrufen. Momentan: Platzhalter
-        if(Game.getAktGame().getData().getWaffenStufe(6)<=0 ||
-                Game.getAktGame().getData().getGranaten() <=0){
+        if (Game.getAktGame().getData().getWaffenStufe(6) <= 0
+                || Game.getAktGame().getData().getGranaten() <= 0) {
             bAttack7.setEnabled(false);
-        }else{
-             bAttack7.setEnabled(true);
+        } else {
+            bAttack7.setEnabled(true);
         }
     }
-    
+
     @Override
     public void switchTo() {
-       Game.getAktGame().resume();
+        Game.getAktGame().resume();
     }
 
     @Override

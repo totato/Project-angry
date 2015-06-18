@@ -1,20 +1,20 @@
 -START1-
-Antonios nerviges Gerede
-Das ist erst der Anfang
+Steinschleuder
+Nun kannst du rote Ballons mit Geschenken abschießen.
 5
 0
 2
 -END1-
 -START2-
-Antonios ungewollte Anmachsprüche
-Du bist die Schwuchtel in unserer Beziehung!
+Armbrust.
+Du hast nun eine richtige Waffe!
 10
 0
 2
 -END2-
 -START3-
-Antonios Pseudophilosophie
-Wenn Hitler die Frage ist, wie kann Liebe nicht die Antwort sein?
+Maschinen-Armbrust
+Frag Antonio was das ist.
 15
 0
 2

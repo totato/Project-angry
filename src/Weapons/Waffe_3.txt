@@ -1,13 +1,13 @@
 -START1-
-Antonios nerviges Gerede
-Das ist erst der Anfang
+Spitzer Bleistift
+Den hast du in eineim epischen Zweikampf einenem Streber abgenommen.
 5
 0
 2
 -END1-
 -START2-
-Antonios Pseudophilosophie
-Wenn Hitler die Frage ist, wie kann Liebe nicht die Antwort sein?
+Schlagstock
+Nun stellst du zumindestens ein wenig eine Gefahr da.
 10
 0
 2
