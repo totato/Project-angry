@@ -395,7 +395,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     }
 
     public void setEXP(int exp) {
-        jLabelEXPSkill.setText("Brillen: " + exp);
+        jLabelEXPSkill.setText("Erfahrung: " + exp);
     }
 
     public void setLabels(int br, int exp) {

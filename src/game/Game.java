@@ -112,6 +112,7 @@ public class Game implements Runnable {
             return "(Bisheriges) Maximallevel erreicht";
         }
 
+        data.setBrillen(data.getBrillen()-waffenUpgrades[waffennummer].getKosten());
         return upgradeWeapon(waffennummer);
 
     }
