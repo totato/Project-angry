@@ -17,7 +17,7 @@ Name
 Beschreibung
 Kosten Brillen
 Kosten Exp
-Befehle:
+Befehle: (Diese Zeile nicht schreiben)
 AUTO-DAMAGE:
 (Zahl)
 SPAWNRATE-REDUKTION:
@@ -28,4 +28,6 @@ EXP-WK:
 (Zahl)
 KRIT-CHANCE:
 (Zahl)
+WAFFEN-UPDATE:
+(Waffennummer)
 -END(Skill Stufe)-
