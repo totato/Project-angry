@@ -22,6 +22,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JLabel;
 
 /**
  *
@@ -64,6 +65,29 @@ public class Game implements Runnable {
 
     }
 
+        public String loadStoryText(int storynr, int storypart) throws IOException {
+        String text = "";
+        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_"+storynr+".txt");
+        int startPos = zeilen.indexOf("-START" + storypart + "-");
+        if (startPos > -1) {
+           text =zeilen.get(startPos + 1);
+        }
+        return text;
+    }
+    
+        public void loadStoryPicture(JLabel label,int storynr, int storypart) throws IOException {
+
+        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_"+storynr+".txt");
+        int startPos = zeilen.indexOf("-START" + storypart + "-");
+        if (startPos > -1) {
+           //label.setIcon(WindowProperties.getImageIcon(zeilen.get(startPos + 2))); 
+
+
+        }
+
+    }
+
+    
     public void setShopInfo(int waffennummer, boolean upgradeSelected) {
         this.selectedWeapon = waffennummer;
         this.upgradeSelected = upgradeSelected;

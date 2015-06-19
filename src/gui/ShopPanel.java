@@ -17,7 +17,10 @@ public class ShopPanel extends javax.swing.JPanel implements Panel {
      */
     public ShopPanel() {
         initComponents();
+         jTextAreaShop.setLineWrap(true);
+         jTextAreaShop.setWrapStyleWord(true);
         shortKeys();
+        
     }
 private void shortKeys(){
     
@@ -564,6 +567,7 @@ private void shortKeys(){
     
     public void selectWaffe(int i, boolean upgrade){
         Game.getAktGame().setShopInfo(i, upgrade);
+        //MainGUI.getAktMainGUI().setTextToTextArea(jTextAreaShop, 50,Game.getAktGame().getWaffe(i, upgrade).getDescription());
         jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
         this.disableButtons();
     }

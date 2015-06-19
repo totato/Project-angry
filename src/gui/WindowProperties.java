@@ -84,6 +84,7 @@ public abstract class WindowProperties {
         //String pfad = "Proj_1/"+ ordnerUName;
         String pfad = ordnerUName;
         ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(pfad));
+        //ImageIcon icon = new ImageIcon(WindowProperties.class.getResource(pfad));
         return icon;
     }
 
@@ -92,8 +93,8 @@ public abstract class WindowProperties {
      in dem die Datei gespeichert wurde werden zusammen mitgegeben.
      */
     public void setBackgrPicture(JLabel label, String pfad) {
-        ImageIcon bgPicture = getImageIcon(pfad);
-        label.setIcon(bgPicture);
+        //getImageIcon(pfad);
+        label.setIcon(getImageIcon(pfad));
         System.out.println("Hintergrund gesetzt");
     }
 

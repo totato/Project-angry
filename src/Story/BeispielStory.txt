@@ -1,0 +1,4 @@
+-START(Story Teil)-
+Text für TextArea
+Pfad für dazugehöriges Bild
+-END(Story Teil)-

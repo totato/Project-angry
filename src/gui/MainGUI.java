@@ -40,11 +40,16 @@ public class MainGUI extends WindowProperties {
     private gui.GamePanel gamePanel1;
     private gui.ShopPanel shopPanel1;
     private gui.SkillPanel skillPanel1;
+    private gui.StoryPanel storyPanel1;
 
     private Panel aktPanel;
 
     public GamePanel getGamePanel1() {
         return gamePanel1;
+    }
+
+    public StoryPanel getStoryPanel1() {
+        return storyPanel1;
     }
 
     public ShopPanel getShopPanel1() {
@@ -89,19 +94,21 @@ public class MainGUI extends WindowProperties {
         //a. jeweils nach cutscenes
         //b. nach beendigung eines levels
         //feuern lassen.
-        aktPanel = gamePanel1;
+        aktPanel = storyPanel1;
     }
 
     private void createCards(Container pane) {
         gamePanel1 = new gui.GamePanel();
         shopPanel1 = new gui.ShopPanel();
         skillPanel1 = new gui.SkillPanel();
+        storyPanel1 = new gui.StoryPanel();
 
         gamecards = new JPanel(new CardLayout());
 
         gamecards.add(gamePanel1, "game card");
         gamecards.add(shopPanel1, "shop card");
         gamecards.add(skillPanel1, "skill card");
+        gamecards.add(storyPanel1, "story card");
         //gamecards.add(cutsceneCard, "c card");
 
         //Pane wird der Methode übergeben (oben in den Klammern)
@@ -142,6 +149,9 @@ public class MainGUI extends WindowProperties {
             case "skill card":
                 aktPanel = skillPanel1;
                 break;
+            case "story card":
+                aktPanel = storyPanel1;
+                break;
         }
         aktPanel.switchTo();
 
@@ -159,7 +169,7 @@ public class MainGUI extends WindowProperties {
         System.out.println("zu  " + name + "  gewechselt");
     }
 
-    public void addTextToTextArea(JTextArea ta,int maxSigns, String text) {
+    public void addTextToTextArea(JTextArea ta, int maxSigns, String text) {
         //int maxSigns = 30; for gamePanel
         int lastSpace = 0;
         while (text.length() > maxSigns) {
@@ -177,7 +187,7 @@ public class MainGUI extends WindowProperties {
         }
         ta.setText(GamePanel.getjTextAreaGame().getText() + "  " + text + "\n");
     }
-    
+
     public JPanel getGamecards() {
         return gamecards;
     }
@@ -190,6 +200,7 @@ public class MainGUI extends WindowProperties {
         gamePanel1.disableButtons();
         shopPanel1.disableButtons();
         skillPanel1.disableButtons();
+        storyPanel1.disableButtons();
     }
 
 }
