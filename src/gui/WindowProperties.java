@@ -20,6 +20,8 @@ import javax.swing.JLabel;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.JPanel;
@@ -196,7 +198,11 @@ public abstract class WindowProperties {
         button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
         button.getActionMap().put("x", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                MainGUI.getAktMainGUI().changeCard(card);
+                try {
+                    MainGUI.getAktMainGUI().changeCard(card);
+                } catch (IOException ex) {
+                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

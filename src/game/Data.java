@@ -78,7 +78,7 @@ public class Data {
         return aktLevel;
     }
 
-    public int getSkillUnlocked(int i) {
+    public int getSkillStufe(int i) {
         return skillsStufen[i];
     }
 

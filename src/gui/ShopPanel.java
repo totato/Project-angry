@@ -428,11 +428,19 @@ private void shortKeys(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
- MainGUI.getAktMainGUI().changeCard("game card");        
+        try {        
+            MainGUI.getAktMainGUI().changeCard("game card");
+        } catch (IOException ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bToGameShopActionPerformed
 
     private void bToSkillShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillShopActionPerformed
- MainGUI.getAktMainGUI().changeCard("skill card");      
+        try {      
+            MainGUI.getAktMainGUI().changeCard("skill card");
+        } catch (IOException ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bToSkillShopActionPerformed
 
     private void bToLauncherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToLauncherActionPerformed

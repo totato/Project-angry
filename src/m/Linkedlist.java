@@ -18,6 +18,7 @@ public class Linkedlist {
     public Linkedlist(){
         liedliste.add("Fear Of The Dark - Iron Maiden - https://www.youtube.com/watch?v=Nba3Tr_GLZU - http://www.e-chords.com/chords/iron-maiden/fear-of-the-dark");
         liedliste.add("AIDS - ??? - https://www.youtube.com/watch?v=4xkEcas8geM - http://tabs.ultimate-guitar.com/m/misc_unsigned_bands/tv_total_-_aids_crd.htm");
+        liedliste.add("Sexueller-Belästigungs-Panda - South Park - https://www.youtube.com/watch?v=3RuUWa80DRQ");
     }
     
 }

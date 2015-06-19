@@ -165,7 +165,7 @@ public class SkillHandler {
 
     public String buySkill(int skillnr) throws IOException {
         List<String> skillTXT = skillTXTs.get(skillnr);
-        int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1)  + "-");
+        int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillStufe(skillnr) + 1)  + "-");
         if(startPos == -1){
             return "Bisheriges Maximallevel für diesen Skill erreicht";
         }
@@ -179,7 +179,7 @@ public class SkillHandler {
 
     public String unlockSkill(int skillnr) throws IOException {
         List<String> skillTXT = skillTXTs.get(skillnr);
-        int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1) + "-");
+        int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillStufe(skillnr) + 1) + "-");
         if(startPos == -1){
             return "Bisheriges Maximallevel für diesen Skill erreicht";
         }
@@ -191,12 +191,23 @@ public class SkillHandler {
         return "Nicht genug Erfahrung für diesen Skill.";
     }
     
+    public static int getMaxSkillLevel(int skillnr){
+        
+        List<String> skillTXT = skillTXTs.get(skillnr);
+        
+        for(int s = 1; true; s++){
+            if(skillTXT.indexOf("-START" + s + "-") == -1){
+                return s-1;
+            }
+        }
+        
+    }
+    
     
 
     public void upgradeSkill(int skillnr) throws IOException {
         
-        Game.getAktGame().getData().setSkillUnlocked(skillnr, Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1);
-        recalculateSkills();
+        Game.getAktGame().getData().setSkillUnlocked(skillnr, Game.getAktGame().getData().getSkillStufe(skillnr) + 1);
 
     }
 

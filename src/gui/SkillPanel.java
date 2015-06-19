@@ -526,17 +526,25 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameSkillActionPerformed
-        MainGUI.getAktMainGUI().changeCard("game card");
+        try {
+            MainGUI.getAktMainGUI().changeCard("game card");
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bToGameSkillActionPerformed
 
     private void bToShopSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopSkillActionPerformed
-        MainGUI.getAktMainGUI().changeCard("shop card");
+        try {
+            MainGUI.getAktMainGUI().changeCard("shop card");
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bToShopSkillActionPerformed
 
     
     private void tbSkill0ActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(0, Game.getAktGame().getData().getSkillUnlocked(0) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(0, Game.getAktGame().getData().getSkillStufe(0) + 1));
             Game.getAktGame().getSkills().setSkillSelected(0);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -545,7 +553,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     
     private void tbSkill1ActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(1, Game.getAktGame().getData().getSkillUnlocked(1) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(1, Game.getAktGame().getData().getSkillStufe(1) + 1));
             Game.getAktGame().getSkills().setSkillSelected(1);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -554,7 +562,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     
     private void tbSkill3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill3ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(3, Game.getAktGame().getData().getSkillUnlocked(3) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(3, Game.getAktGame().getData().getSkillStufe(3) + 1));
             Game.getAktGame().getSkills().setSkillSelected(3);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -563,7 +571,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill2ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(2, Game.getAktGame().getData().getSkillUnlocked(2) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(2, Game.getAktGame().getData().getSkillStufe(2) + 1));
             Game.getAktGame().getSkills().setSkillSelected(2);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -574,7 +582,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     
     private void tbSkill5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill5ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(5, Game.getAktGame().getData().getSkillUnlocked(5) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(5, Game.getAktGame().getData().getSkillStufe(5) + 1));
             Game.getAktGame().getSkills().setSkillSelected(5);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -583,7 +591,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill4ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(4, Game.getAktGame().getData().getSkillUnlocked(4) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(4, Game.getAktGame().getData().getSkillStufe(4) + 1));
             Game.getAktGame().getSkills().setSkillSelected(4);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -592,7 +600,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill6ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(6, Game.getAktGame().getData().getSkillUnlocked(6) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(6, Game.getAktGame().getData().getSkillStufe(6) + 1));
             Game.getAktGame().getSkills().setSkillSelected(6);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -601,7 +609,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill8ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(8, Game.getAktGame().getData().getSkillUnlocked(8) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(8, Game.getAktGame().getData().getSkillStufe(8) + 1));
             Game.getAktGame().getSkills().setSkillSelected(8);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -610,7 +618,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill7ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(7, Game.getAktGame().getData().getSkillUnlocked(7) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(7, Game.getAktGame().getData().getSkillStufe(7) + 1));
             Game.getAktGame().getSkills().setSkillSelected(7);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -619,7 +627,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill9ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(9, Game.getAktGame().getData().getSkillUnlocked(9) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(9, Game.getAktGame().getData().getSkillStufe(9) + 1));
             Game.getAktGame().getSkills().setSkillSelected(9);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -628,7 +636,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill10ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(10, Game.getAktGame().getData().getSkillUnlocked(10) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(10, Game.getAktGame().getData().getSkillStufe(10) + 1));
             Game.getAktGame().getSkills().setSkillSelected(10);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -637,7 +645,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill11ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(11, Game.getAktGame().getData().getSkillUnlocked(11) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(11, Game.getAktGame().getData().getSkillStufe(11) + 1));
             Game.getAktGame().getSkills().setSkillSelected(11);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -646,7 +654,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill12ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(12, Game.getAktGame().getData().getSkillUnlocked(12) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(12, Game.getAktGame().getData().getSkillStufe(12) + 1));
             Game.getAktGame().getSkills().setSkillSelected(12);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -655,7 +663,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill13ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(13, Game.getAktGame().getData().getSkillUnlocked(13) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(13, Game.getAktGame().getData().getSkillStufe(13) + 1));
             Game.getAktGame().getSkills().setSkillSelected(13);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -664,7 +672,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill14ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(14, Game.getAktGame().getData().getSkillUnlocked(14) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(14, Game.getAktGame().getData().getSkillStufe(14) + 1));
             Game.getAktGame().getSkills().setSkillSelected(14);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -673,7 +681,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill15ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(15, Game.getAktGame().getData().getSkillUnlocked(15) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(15, Game.getAktGame().getData().getSkillStufe(15) + 1));
             Game.getAktGame().getSkills().setSkillSelected(15);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -682,7 +690,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill16ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(16, Game.getAktGame().getData().getSkillUnlocked(16) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(16, Game.getAktGame().getData().getSkillStufe(16) + 1));
             Game.getAktGame().getSkills().setSkillSelected(16);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -691,7 +699,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill17ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(17, Game.getAktGame().getData().getSkillUnlocked(17) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(17, Game.getAktGame().getData().getSkillStufe(17) + 1));
             Game.getAktGame().getSkills().setSkillSelected(17);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -700,7 +708,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill18ActionPerformed
        try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(18, Game.getAktGame().getData().getSkillUnlocked(18) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(18, Game.getAktGame().getData().getSkillStufe(18) + 1));
             Game.getAktGame().getSkills().setSkillSelected(18);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -709,7 +717,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill19ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(19, Game.getAktGame().getData().getSkillUnlocked(19) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(19, Game.getAktGame().getData().getSkillStufe(19) + 1));
             Game.getAktGame().getSkills().setSkillSelected(19);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -718,7 +726,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkil20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkil20ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(20, Game.getAktGame().getData().getSkillUnlocked(20) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(20, Game.getAktGame().getData().getSkillStufe(20) + 1));
             Game.getAktGame().getSkills().setSkillSelected(20);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -727,7 +735,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill21ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(21, Game.getAktGame().getData().getSkillUnlocked(21) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(21, Game.getAktGame().getData().getSkillStufe(21) + 1));
             Game.getAktGame().getSkills().setSkillSelected(21);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -736,7 +744,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill22ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(22, Game.getAktGame().getData().getSkillUnlocked(22) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(22, Game.getAktGame().getData().getSkillStufe(22) + 1));
             Game.getAktGame().getSkills().setSkillSelected(22);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -745,7 +753,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill23ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(23, Game.getAktGame().getData().getSkillUnlocked(23) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(23, Game.getAktGame().getData().getSkillStufe(23) + 1));
             Game.getAktGame().getSkills().setSkillSelected(23);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -754,7 +762,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill24ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(24, Game.getAktGame().getData().getSkillUnlocked(24) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(24, Game.getAktGame().getData().getSkillStufe(24) + 1));
             Game.getAktGame().getSkills().setSkillSelected(24);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -763,7 +771,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill25ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(25, Game.getAktGame().getData().getSkillUnlocked(25) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(25, Game.getAktGame().getData().getSkillStufe(25) + 1));
             Game.getAktGame().getSkills().setSkillSelected(25);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -772,7 +780,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill26ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(26, Game.getAktGame().getData().getSkillUnlocked(26) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(26, Game.getAktGame().getData().getSkillStufe(26) + 1));
             Game.getAktGame().getSkills().setSkillSelected(26);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -781,7 +789,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill27ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(27, Game.getAktGame().getData().getSkillUnlocked(27) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(27, Game.getAktGame().getData().getSkillStufe(27) + 1));
             Game.getAktGame().getSkills().setSkillSelected(27);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -790,7 +798,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill28ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(28, Game.getAktGame().getData().getSkillUnlocked(28) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(28, Game.getAktGame().getData().getSkillStufe(28) + 1));
             Game.getAktGame().getSkills().setSkillSelected(28);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -799,7 +807,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill29ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(29, Game.getAktGame().getData().getSkillUnlocked(29) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(29, Game.getAktGame().getData().getSkillStufe(29) + 1));
             Game.getAktGame().getSkills().setSkillSelected(29);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -808,7 +816,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill30ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(30, Game.getAktGame().getData().getSkillUnlocked(30) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(30, Game.getAktGame().getData().getSkillStufe(30) + 1));
             Game.getAktGame().getSkills().setSkillSelected(30);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -817,7 +825,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill31ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(31, Game.getAktGame().getData().getSkillUnlocked(31) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(31, Game.getAktGame().getData().getSkillStufe(31) + 1));
             Game.getAktGame().getSkills().setSkillSelected(31);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -826,7 +834,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill32ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(32, Game.getAktGame().getData().getSkillUnlocked(32) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(32, Game.getAktGame().getData().getSkillStufe(32) + 1));
             Game.getAktGame().getSkills().setSkillSelected(32);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -835,7 +843,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill33ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(33, Game.getAktGame().getData().getSkillUnlocked(33) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(33, Game.getAktGame().getData().getSkillStufe(33) + 1));
             Game.getAktGame().getSkills().setSkillSelected(33);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -844,7 +852,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     private void tbSkill34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill34ActionPerformed
         try {
-            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(34, Game.getAktGame().getData().getSkillUnlocked(34) + 1));
+            jTextAreaSkill.setText(SkillHandler.skillBeschreibung(34, Game.getAktGame().getData().getSkillStufe(34) + 1));
             Game.getAktGame().getSkills().setSkillSelected(34);
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -935,7 +943,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     @Override
     public void disableButtons() {
-        //tbSkill1.setEnabled(Game.getAktGame().getSkills());
+        tbSkill0.setEnabled(Game.getAktGame().getData().getSkillStufe(0) < SkillHandler.getMaxSkillLevel(0));
     }
 
     @Override

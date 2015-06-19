@@ -7,6 +7,9 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -299,12 +302,20 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
 
     private void bToShopGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopGameActionPerformed
 
-        MainGUI.getAktMainGUI().changeCard("shop card");
-        // TODO add your handling code here:
+        try {
+            MainGUI.getAktMainGUI().changeCard("shop card");
+            // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bToShopGameActionPerformed
 
     private void bToSkillGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillGameActionPerformed
-        MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
+        try {
+            MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bToSkillGameActionPerformed
 
     private void tbAttack0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack0ActionPerformed

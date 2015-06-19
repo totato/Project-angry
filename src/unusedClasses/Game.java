@@ -80,7 +80,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         gamescreen.pack();
         gamescreen.setVisible(true);
 
-        levelPruefer();//TODO: An bessere position verlegen und 
+        //levelPruefer();//TODO: An bessere position verlegen und 
         //a. jeweils nach cutscenes
         //b. nach beendigung eines levels
         //feuern lassen.
@@ -113,13 +113,13 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
 
         buttonToMenu.getActionMap().put("menu", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                changeCard("m card");
+                //changeCard("m card");
             }
         });
 
         buttonToMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                changeCard("m card");
+                //changeCard("m card");
             }
         });
 
@@ -206,13 +206,13 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
 
         buttonToGame.getActionMap().put("game", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                changeCard("g card");
+                //changeCard("g card");
             }
         });
 
         buttonToGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                changeCard("g card");
+                //changeCard("g card");
             }
         });
 
@@ -236,7 +236,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         buttonBackToGame = new JButton(getWords(9));
         buttonBackToGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                changeCard("g card");
+                //changeCard("g card");
             }
         });
         cutsceneCard.add(buttonBackToGame, BorderLayout.SOUTH);
@@ -337,7 +337,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
             buttonUpdate();
             System.out.println("kill wird ausgeführt." + brillen + ";"
                     + getoeteteStreber + ";" + lebendeStreber);
-            levelPruefer();
+            //levelPruefer();
         } else {
             System.out.println("Nicht sehr effetktiv...");
             //TODO: Output an Spieler
@@ -364,7 +364,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
             item1--;
             buttonUpdate();
             System.out.println("specialKill wird ausgeführt.");
-            levelPruefer();
+            //levelPruefer();
         } else {
             System.out.println("Zu wenig Brillen.");
             //TODO: Errornachricht an Spieler ausgeben
@@ -445,7 +445,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
      beginnt anschließend as nächste level.
      */
 
-    private void levelPruefer() {
+    /*private void levelPruefer() {
         if (lebendeStreber <= 0) {
             if (beendeteLevel == 0) {
                 //TODO: Erste cutscene wird abgespielt
@@ -469,7 +469,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
             }
             beendeteLevel++;
         }
-    }
+    }*/
 
     /*
      Lädt das Spiel und ändert die Parameter entsprechend.
