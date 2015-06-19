@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.io.IOException;
+
 /**
  *
  * @author Toast
@@ -12,5 +14,5 @@ package gui;
 public interface Panel {
     public void disableButtons();
     public void switchTo();
-    public void switchFrom();
+    public void switchFrom() throws IOException;
 }

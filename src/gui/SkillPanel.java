@@ -935,7 +935,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
 
     @Override
     public void disableButtons() {
-        
+        //tbSkill1.setEnabled(Game.getAktGame().getSkills());
     }
 
     @Override
@@ -944,7 +944,7 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     }
 
     @Override
-    public void switchFrom() {
-        
+    public void switchFrom() throws IOException {
+        Game.getAktGame().getSkills().recalculateSkills();
     }
 }
