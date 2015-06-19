@@ -87,7 +87,7 @@ public class SkillHandler {
             return false;
         }
 
-        faggots.get("befehl").mach(wert);
+        faggots.get(befehl).mach(wert);
         return true;
     }
 

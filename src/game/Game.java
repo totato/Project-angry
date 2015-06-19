@@ -207,6 +207,7 @@ public class Game implements Runnable {
     public void run() {
 
         int i = 0;
+        int j = -500;
 
         while (active) {
 
@@ -230,9 +231,11 @@ public class Game implements Runnable {
             }
 
             i++;
+            j++;
 
-            if (i >= 500 / frameTime) {
+            if (j >= 500 / frameTime) {
                 data.killStreber(skills.getAutoDamage());
+                j = -500;
             }
 
             if (i >= 1000 / frameTime) {
