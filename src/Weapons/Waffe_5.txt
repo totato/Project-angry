@@ -6,7 +6,7 @@ Pass auf, sonst stirbt es .
 2
 -END1-
 -START2-
-Taschenmonster02
+Baby Yoshi
 
 10
 0
@@ -49,14 +49,14 @@ Sanic
 -END7-
 -START8-
 Sonichu.
-
+Do not fear, world, for I am a new pokemon. And my name is....Sonichu!
 50
 0
 2
 -END8-
 -START9-
-Taschenmonster09
-
+Coldsteel the Hedgeheg
+psssh...nothin personnel...kid...
 55
 0
 2
