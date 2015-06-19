@@ -22,7 +22,7 @@ import javax.swing.Timer;
  *
  * Jajaaa. Natürlich. Nur du. Ich schreib Wir hin, aber du.... WIE DU WILLST!
  */
-public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde dafür.
+public class Game {//Hier ev. noh private einfügen. binzu müde dafür.
 
     private JFrame gamescreen;      //TODO: Modifizieren sobald GUI fertig ist!
     private JPanel gameCard;
@@ -63,9 +63,9 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
      */
 
     public void Game() {
-        setLanguage(language);
+    //    setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
-        gamescreen = new JFrame(getWords(18));
+        //gamescreen = new JFrame(getWords(18));
         // Erzeugt die Karten für das Fenster
         createCards(gamescreen.getContentPane());
 
@@ -74,7 +74,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         gamescreen.setDefaultCloseOperation(3);
         gamescreen.setLocationRelativeTo(null);
 
-        setIconPicture(gamescreen, "GameIcon.png");     //TODO: Muss gemacht 
+        //setIconPicture(gamescreen, "GameIcon.png");     //TODO: Muss gemacht 
         //und eingefügt werden
         //backgroundMusic("rewind.wav");TODO: Muss gemacht und eingefügt werden
         gamescreen.pack();
@@ -108,7 +108,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
 
         JPanel p2 = new JPanel();
         p2.setLayout(new FlowLayout());
-        buttonToMenu = new JButton(getWords(19));
+     //   buttonToMenu = new JButton(getWords(19));
         buttonToMenu.getInputMap(buttonToMenu.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_M, 0), "menu");
 
         buttonToMenu.getActionMap().put("menu", new AbstractAction() {
@@ -125,23 +125,23 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
 
         //Alles hier drunter ist das Spiel an sich, und kann daher u.a. 
         //von levelReset angerührt werden.
-        p2.add(new JLabel(getWords(20)));
+       // p2.add(new JLabel(getWords(20)));
 
-        attack1 = new JButton(getWords(21));
+       // attack1 = new JButton(getWords(21));
         attack1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 kill(1);
             }
         });
 
-        attack2 = new JButton(getWords(22));
+      //  attack2 = new JButton(getWords(22));
         attack2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 kill(10);
             }
         });
 
-        buy1 = new JButton(getWords(23));//TODO: Lesen aus Sprachdatei
+      //  buy1 = new JButton(getWords(23));//TODO: Lesen aus Sprachdatei
         buy1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 specialKill(200, 100, 0);
@@ -159,9 +159,9 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
 
         JPanel p3 = new JPanel();
 
-        lebendeZeiger = new JLabel(getWords(24) + lebendeStreber);
-        toteZeiger = new JLabel(getWords(25) + getoeteteStreber);
-        brillenZeiger = new JLabel(getWords(26) + brillen);
+        //lebendeZeiger = new JLabel(getWords(24) + lebendeStreber);
+       // toteZeiger = new JLabel(getWords(25) + getoeteteStreber);
+       // brillenZeiger = new JLabel(getWords(26) + brillen);
         //TODO: Variablen nach Sprache einfügen.
         p3.setLayout(new GridLayout(5, 1));
         p3.add(lebendeZeiger);
@@ -198,7 +198,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         backgroundMenu = new JLabel();
         menuCard.setLayout(new BorderLayout());
         menuCard.add(backgroundMenu, BorderLayout.CENTER);
-        setBackgrPicture(backgroundMenu, "ScreenLaun/MenuBG.jpg");
+       // setBackgrPicture(backgroundMenu, "ScreenLaun/MenuBG.jpg");
         buttonToGame = new JButton("");
         //setButtonBackground(buttonToGame, "ButtonIcon1.png");
 
@@ -233,7 +233,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
         cutscenePicture = new JLabel();
         cutsceneCard.add(cutscenePicture, BorderLayout.NORTH);
 
-        buttonBackToGame = new JButton(getWords(9));
+       // buttonBackToGame = new JButton(getWords(9));
         buttonBackToGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //changeCard("g card");
@@ -432,8 +432,8 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
 
     private void buttonEndlessUpdate() {
         lebendeZeiger.setText("?");
-        toteZeiger.setText(getWords(25) + getoeteteStreber);
-        brillenZeiger.setText(getWords(26) + brillen);
+       // toteZeiger.setText(getWords(25) + getoeteteStreber);
+       // brillenZeiger.setText(getWords(26) + brillen);
 
         brillenZeiger.repaint();
         lebendeZeiger.repaint();
@@ -477,11 +477,11 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
      TODO: verschieben?
      */
     private void loadGame() {
-        ladeSpiel();
-        beendeteLevel = Integer.parseInt(getSave(1));
-        brillen = Integer.parseInt(getSave(2));
-        lebendeStreber = Integer.parseInt(getSave(3));
-        getoeteteStreber = Integer.parseInt(getSave(4));
+       // ladeSpiel();
+       // beendeteLevel = Integer.parseInt(getSave(1));
+        //brillen = Integer.parseInt(getSave(2));
+       // lebendeStreber = Integer.parseInt(getSave(3));
+       // getoeteteStreber = Integer.parseInt(getSave(4));
         //TODO: Weitere zu ladende Werte einfügen, auch bei ladeSpiel
         if (beendeteLevel <= 10) {//Prueft ob wir im Endlosspiel sind TODO!
             buttonUpdate();
@@ -498,7 +498,7 @@ public class Game extends MainGUI {//Hier ev. noh private einfügen. binzu müde
      */
 
     private void backToLauncher() {
-        speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
+       // speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
         Launcher l = new Launcher();
         //l.Launcher();
         //TODO: Musik vom Spiel beenden.

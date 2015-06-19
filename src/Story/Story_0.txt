@@ -1,8 +1,8 @@
 -START0-
 I have been fighting this battle since it first started. I don’t know how many I killed. They just keep coming. We have been hiding, and they found us. Now we are attacking. 
-Grafiken/StoryBG_0.png
+/Grafiken/StoryBG_00.png
 -END0-
 -START1-
 Now they  have to hide. And we won’t rest until this second war is over.
-Grafiken/BG.png
+/Grafiken/BG.png
 -END1-

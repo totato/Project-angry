@@ -69,7 +69,7 @@ public class MainGUI extends WindowProperties {
         MainGUI.aktMainGUI = aktMainGUI;
     }
 
-    public MainGUI() {
+    public MainGUI() throws IOException {
 
         MainGUI.setAktMainGUI(this);
 
@@ -98,7 +98,7 @@ public class MainGUI extends WindowProperties {
         aktPanel = storyPanel1;
     }
 
-    private void createCards(Container pane) {
+    private void createCards(Container pane) throws IOException {
         gamePanel1 = new gui.GamePanel();
         shopPanel1 = new gui.ShopPanel();
         skillPanel1 = new gui.SkillPanel();
@@ -110,8 +110,8 @@ public class MainGUI extends WindowProperties {
         gamecards.add(shopPanel1, "shop card");
         gamecards.add(skillPanel1, "skill card");
         gamecards.add(storyPanel1, "story card");
-        //gamecards.add(cutsceneCard, "c card");
 
+        //gamecards.add(cutsceneCard, "c card");
         //Pane wird der Methode übergeben (oben in den Klammern)
         // in unserem Fall werden die Karten zum ContentPane des Launchers
         // hinzu gefügt

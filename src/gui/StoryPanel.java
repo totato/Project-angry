@@ -5,6 +5,15 @@
  */
 package gui;
 
+import game.Game;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author Vika
@@ -14,9 +23,42 @@ public class StoryPanel extends javax.swing.JPanel implements Panel {
     /**
      * Creates new form StoryPanel
      */
-    public StoryPanel() {
+    public StoryPanel() throws IOException {
         initComponents();
+        jTextAreaStory.setLineWrap(true);
+        jTextAreaStory.setWrapStyleWord(true);
+        setScene(0, 0);
+
     }
+
+    public String loadStoryText(int storynr, int storypart) throws IOException {
+        String text = "";
+        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
+        int startPos = zeilen.indexOf("-START" + storypart + "-");
+        if (startPos > -1) {
+            text = zeilen.get(startPos + 1);
+        }
+        return text;
+    }
+
+    public ImageIcon loadStoryPicture(int storynr, int storypart) throws IOException {
+
+        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
+        int startPos = zeilen.indexOf("-START" + storypart + "-");
+        if (startPos > -1) {
+            System.out.println((zeilen.get(startPos + 2)));
+            ImageIcon icon = new ImageIcon(getClass().getResource((zeilen.get(startPos + 2))));
+
+            return icon;
+        }
+        return null;
+    }
+
+    private void setScene(int storynr, int storypart) throws IOException {
+        jTextAreaStory.setText(loadStoryText(storynr, storypart));
+        jLabelStory.setIcon(loadStoryPicture(storynr, storypart));
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +94,11 @@ public class StoryPanel extends javax.swing.JPanel implements Panel {
         jLabelLvlStory.setText("Kapitel: 1");
 
         jButton2.setText("Skip");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,6 +140,14 @@ public class StoryPanel extends javax.swing.JPanel implements Panel {
                 .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            MainGUI.getAktMainGUI().changeCard("game card");
+        } catch (IOException ex) {
+            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
