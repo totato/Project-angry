@@ -8,6 +8,9 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -221,7 +224,11 @@ public class Game {//Hier ev. noh private einfügen. binzu müde dafür.
 
         buttonAbortGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                backToLauncher();
+                try {
+                    backToLauncher();
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         menuCard.add(buttonToGame, BorderLayout.SOUTH);
@@ -497,7 +504,7 @@ public class Game {//Hier ev. noh private einfügen. binzu müde dafür.
      neu.    
      */
 
-    private void backToLauncher() {
+    private void backToLauncher() throws LineUnavailableException {
        // speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
         Launcher l = new Launcher();
         //l.Launcher();

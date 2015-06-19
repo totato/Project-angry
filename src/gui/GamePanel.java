@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -307,6 +308,8 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
             // TODO add your handling code here:
         } catch (IOException ex) {
             Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bToShopGameActionPerformed
 
@@ -314,6 +317,8 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
         try {
             MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
         } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bToSkillGameActionPerformed
@@ -441,13 +446,15 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
     }
 
     @Override
-    public void switchTo() {
+    public void switchTo() throws LineUnavailableException {
         Game.getAktGame().resume();
+        WindowProperties.backgroundMusic("exSound/rewind.wav");
     }
 
     @Override
-    public void switchFrom() {
+    public void switchFrom() throws LineUnavailableException {
         Game.getAktGame().pause();
+        WindowProperties.stopBgMusic();
     }
 
 }

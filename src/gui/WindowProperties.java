@@ -33,7 +33,7 @@ import javax.swing.KeyStroke;
  */
 public abstract class WindowProperties {
 
-    public Clip clip;
+    private static Clip clip;
     public String[] words;
     public String[] saveData;
     public static String language = "EN";
@@ -43,14 +43,15 @@ public abstract class WindowProperties {
      "proj_1/ScreenLaun/" zu finden sin. Der Name des Lieds wird, mit 
      Dateianhang, in die Methode mit eingegeben.   
      */
-    public void backgroundMusic(String dateipfad) {
+    public static void backgroundMusic(String dateipfad) throws LineUnavailableException {
         //TODO: Catch wenn Soundausgabe fehlt
         System.out.println("*Musik spielt*");
         String pfadsoundlaun = dateipfad;
+        
+        clip = AudioSystem.getClip();
 
         try {
-            AudioInputStream audio = AudioSystem.getAudioInputStream(this.getClass().getClassLoader().getResource(pfadsoundlaun));
-            clip = AudioSystem.getClip();
+            AudioInputStream audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource(pfadsoundlaun));
             clip.open(audio);
             clip.start();
             clip.loop(50);
@@ -68,7 +69,7 @@ public abstract class WindowProperties {
     /*
      Beendet die gerade spielende Hintergrundmusik.
      */
-    public void stopBgMusic() {
+    public static void stopBgMusic() throws LineUnavailableException {
         try {
         clip.stop();
         }catch (NullPointerException npe) {
@@ -201,6 +202,8 @@ public abstract class WindowProperties {
                 try {
                     MainGUI.getAktMainGUI().changeCard(card);
                 } catch (IOException ex) {
+                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
                     Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

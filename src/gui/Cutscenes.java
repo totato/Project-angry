@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -23,7 +24,7 @@ public class Cutscenes extends WindowProperties {
      (3. Parameter)angezeigt werden. 
      */
     public void playCutscene(int cutsceneNumber, JPanel cutsceneFrame,
-            JLabel cutsceneLabel) {
+            JLabel cutsceneLabel) throws LineUnavailableException {
         stopBgMusic();
 
         if (cutsceneNumber == 1) {

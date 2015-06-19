@@ -5,6 +5,7 @@ import game.Game;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 
 /**
  *
@@ -432,6 +433,8 @@ private void shortKeys(){
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
             Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bToGameShopActionPerformed
 
@@ -440,12 +443,18 @@ private void shortKeys(){
             MainGUI.getAktMainGUI().changeCard("skill card");
         } catch (IOException ex) {
             Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bToSkillShopActionPerformed
 
     private void bToLauncherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToLauncherActionPerformed
-              //speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
-        Launcher l = new Launcher();
+        try {
+            //speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
+            Launcher l = new Launcher();
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //l.Launcher();
         //TODO: Musik vom Spiel beenden.
         MainGUI.getAktMainGUI().getGamescreen().setVisible(false);

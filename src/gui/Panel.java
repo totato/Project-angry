@@ -13,6 +13,6 @@ import java.io.IOException;
  */
 public interface Panel {
     public void disableButtons();
-    public void switchTo();
-    public void switchFrom() throws IOException;
+    public void switchTo() throws Exception;
+    public void switchFrom() throws Exception;
 }

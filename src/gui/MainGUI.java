@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -122,7 +123,7 @@ public class MainGUI extends WindowProperties {
 
     }
 
-    private void backToLauncher() {
+    private void backToLauncher() throws LineUnavailableException {
         Launcher l = new Launcher();
         //l.Launcher();
         //TODO: Musik vom Spiel beenden.
@@ -137,7 +138,7 @@ public class MainGUI extends WindowProperties {
      Wechselt die gezeigte Karte. Die neue Karte ist die, deren
      Namen angegeben wurde
      */
-    public void changeCard(String name) throws IOException {
+    public void changeCard(String name) throws IOException, Exception {
 
         aktPanel.switchFrom();
         switch (name) {

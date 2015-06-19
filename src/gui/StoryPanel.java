@@ -146,6 +146,8 @@ public class StoryPanel extends javax.swing.JPanel implements Panel {
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
             Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

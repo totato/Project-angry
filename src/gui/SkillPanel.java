@@ -530,6 +530,8 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bToGameSkillActionPerformed
 
@@ -537,6 +539,8 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         try {
             MainGUI.getAktMainGUI().changeCard("shop card");
         } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bToShopSkillActionPerformed

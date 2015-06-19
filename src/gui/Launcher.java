@@ -14,6 +14,7 @@ import java.awt.BorderLayout;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 
 /**
  *
@@ -36,7 +37,7 @@ public class Launcher extends Cutscenes {
      */
     //Ein Konstruktor gibt kein void zurück
     //Habe das geändert und auch an anderen Stellen im Programm das angepasst, allerdings das alte immer nur auskommentiert
-    public Launcher() {
+    public Launcher() throws LineUnavailableException {
         setLanguage(language);
         launcher = new JFrame(getWords(1));
         MenueLeiste();
@@ -56,7 +57,7 @@ public class Launcher extends Cutscenes {
         launcher.setVisible(true);
     }
     
-    private void beginnen() throws IOException {
+    private void beginnen() throws IOException, LineUnavailableException, Exception {
 
         
 
@@ -66,7 +67,7 @@ public class Launcher extends Cutscenes {
          mainGUI = new MainGUI();
          }
          });*/
-        stopBgMusic();
+        WindowProperties.stopBgMusic();
         launcher.setVisible(false);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                 + "(dispose)");
@@ -106,6 +107,10 @@ public class Launcher extends Cutscenes {
                 try {
                     beginnen();
                 } catch (IOException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
                     Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -147,7 +152,11 @@ public class Launcher extends Cutscenes {
         JMenuItem languageGer = new JMenuItem("Deutsch");//TODO: Sprache einfügen
         languageGer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                sprachReset("DE");
+                try {
+                    sprachReset("DE");
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         sprachenMenu.add(languageGer);
@@ -155,7 +164,11 @@ public class Launcher extends Cutscenes {
         JMenuItem languageEng = new JMenuItem("Englisch");//TODO: Sprache einfügen
         languageEng.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                sprachReset("EN");
+                try {
+                    sprachReset("EN");
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         sprachenMenu.add(languageEng);
@@ -178,7 +191,11 @@ public class Launcher extends Cutscenes {
         cutscenekey = new JTextField(getWords(8));
         cutscenekey.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                cutsceneZeigen();
+                try {
+                    cutsceneZeigen();
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         //Die Objekte werden der launcherCard hinzugefügt
@@ -218,7 +235,7 @@ public class Launcher extends Cutscenes {
      * beginnt die passende Cutscene.
      *
      */
-    private void cutsceneZeigen() {
+    private void cutsceneZeigen() throws LineUnavailableException {
         String pfad = "" + (getClass().getClassLoader());
         if (cutscenekey.getText().equals("Cutscene1")) {
             System.out.println("Spiele Cutscene 1 ab");
@@ -274,7 +291,7 @@ public class Launcher extends Cutscenes {
      Wählt die Sprache aus und startet dann den Launcher neu. Die mitgegebene 
      String ist der Name der Sprache.
      */
-    private void sprachReset(String sprache) {
+    private void sprachReset(String sprache) throws LineUnavailableException {
         language = sprache;
         launcher.setVisible(false);
         stopBgMusic();
