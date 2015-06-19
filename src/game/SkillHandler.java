@@ -5,6 +5,7 @@
  */
 package game;
 
+import static game.Data.ANZAHL_SKILLS;
 import gui.WindowProperties;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,11 +25,14 @@ public class SkillHandler {
     private double brillenWK;
     private double expWK;
     private double kritChance;
+    
 
     //Skilltree-Infos
     private int skillSelected;
+    
+    private static List<List<String>> skillTXTs;
 
-    public SkillHandler() {
+    public SkillHandler() throws IOException {
         faggots = new HashMap();
         autoDamage = 0;
         spawnrateReduktion = 0.0;
@@ -78,6 +82,12 @@ public class SkillHandler {
                 Game.getAktGame().upgradeWeapon(Integer.parseInt(s));
             }
         });
+        
+        SkillHandler.skillTXTs = new ArrayList();
+        
+        for(int skillnr = 0; skillnr < Data.ANZAHL_SKILLS; skillnr++){
+            SkillHandler.skillTXTs.add(WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt"));
+        }
 
     }
 
@@ -124,7 +134,7 @@ public class SkillHandler {
         //int befehlPos;
 
         for (int skillnr = 0; skillnr < skillStufen.length; skillnr++) {
-            skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+            skillTXT = skillTXTs.get(skillnr);
             for (int subskillnr = 1; subskillnr <= skillStufen[skillnr]; subskillnr++) {
 
                 startPos = skillTXT.indexOf("-START" + subskillnr + "-");
@@ -139,7 +149,7 @@ public class SkillHandler {
 
     public static String skillBeschreibung(int skillnr, int upgradeStufe) throws IOException {
 
-        List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+        List<String> skillTXT = skillTXTs.get(skillnr);
         int startPos = skillTXT.indexOf("-START" + upgradeStufe + "-");
         return skillTXT.get(startPos + 2) + "\n" + skillTXT.get(startPos + 3) + "\nKosten in XP: " + skillTXT.get(startPos + 5) + "\nKosten in Brillen: " + skillTXT.get(startPos + 4);
 
@@ -154,7 +164,7 @@ public class SkillHandler {
     }
 
     public String buySkill(int skillnr) throws IOException {
-        List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+        List<String> skillTXT = skillTXTs.get(skillnr);
         int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1)  + "-");
         if(startPos == -1){
             return "Bisheriges Maximallevel für diesen Skill erreicht";
@@ -168,8 +178,11 @@ public class SkillHandler {
     }
 
     public String unlockSkill(int skillnr) throws IOException {
-        List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+        List<String> skillTXT = skillTXTs.get(skillnr);
         int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1) + "-");
+        if(startPos == -1){
+            return "Bisheriges Maximallevel für diesen Skill erreicht";
+        }
         if (Game.getAktGame().getData().getExp() >= Integer.parseInt(skillTXT.get(startPos + 5))) {
             upgradeSkill(skillnr);
             Game.getAktGame().getData().setExp(Game.getAktGame().getData().getExp()- Integer.parseInt(skillTXT.get(startPos + 5)));
@@ -177,6 +190,8 @@ public class SkillHandler {
         }
         return "Nicht genug Erfahrung für diesen Skill.";
     }
+    
+    
 
     public void upgradeSkill(int skillnr) throws IOException {
         

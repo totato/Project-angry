@@ -6,9 +6,9 @@ package game;
  */
 public class Data {
 
-    private static final int ANZAHL_SKILLS = 35;
+    public static final int ANZAHL_SKILLS = 4;
     public static final int ANZAHL_WAFFEN = 7;
-    private static final int ANZAHL_AUSRÜSTUNG = 3;
+    public static final int ANZAHL_AUSRÜSTUNG = 3;
 
     private int brillen;//Eine Brille entspricht einem toten Streber entsrpicht einem Kill
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!

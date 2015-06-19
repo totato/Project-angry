@@ -54,7 +54,7 @@ public class Game implements Runnable {
     long startTime;
     long aktDelay;
 
-    public Game() {
+    public Game() throws IOException {
 
         Game.setAktGame(this);
 
