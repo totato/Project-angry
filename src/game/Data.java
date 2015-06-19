@@ -24,8 +24,8 @@ public class Data {
     private int aktWaffe;
 
     public Data() {
-        brillen = 0;
-        exp = 0;
+        brillen = 10000;
+        exp = 10000;
 
         getoeteteStreber = 0;
         aktLevel = 1;
@@ -171,4 +171,7 @@ public class Data {
         this.exp = exp;
     }
 
+    public int[] getSkillsStufen() {
+        return skillsStufen;
+    }
 }

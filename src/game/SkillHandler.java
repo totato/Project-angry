@@ -24,10 +24,9 @@ public class SkillHandler {
     private double brillenWK;
     private double expWK;
     private double kritChance;
-    
+
     //Skilltree-Infos
     private int skillSelected;
-    
 
     public SkillHandler() {
         faggots = new HashMap();
@@ -83,11 +82,11 @@ public class SkillHandler {
     }
 
     public boolean befehlAusführen(String befehl, String wert) throws IOException {
-        if (faggots.containsKey(befehl)) {
+        if (!faggots.containsKey(befehl)) {
             System.out.println("Befehl nicht gefunden");
             return false;
         }
-        
+
         faggots.get("befehl").mach(wert);
         return true;
     }
@@ -115,33 +114,35 @@ public class SkillHandler {
     public double getKritChance() {
         return kritChance;
     }
-    
-    public void recalculateSkills(int[] skillStufen) throws IOException{
-        
+
+    public void recalculateSkills() throws IOException {
+
         List<String> skillTXT;
         int startPos = 0;
         int endPos = 0;
+        int[] skillStufen = Game.getAktGame().getData().getSkillsStufen();
         //int befehlPos;
-        
-        for(int skillnr = 0; skillnr < skillStufen.length; skillnr++){
+
+        for (int skillnr = 0; skillnr < skillStufen.length; skillnr++) {
             skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
-            for(int subskillnr = 1; startPos >= 0; subskillnr++){
-                
+            for (int subskillnr = 1; subskillnr <= skillStufen[skillnr]; subskillnr++) {
+
                 startPos = skillTXT.indexOf("-START" + subskillnr + "-");
-                for(int befehlPos = startPos +6; befehlPos < endPos; befehlPos = befehlPos + 2){
-                    this.befehlAusführen(skillTXT.get(befehlPos), skillTXT.get(befehlPos+1));
+                endPos = skillTXT.indexOf("-END" + subskillnr + "-");
+                for (int befehlPos = startPos + 6; befehlPos < endPos; befehlPos = befehlPos + 2) {
+                    this.befehlAusführen(skillTXT.get(befehlPos), skillTXT.get(befehlPos + 1));
                 }
             }
-            
+
         }
     }
-    
-    public static String skillBeschreibung(int skillnr, int upgradeStufe) throws IOException{
-        
+
+    public static String skillBeschreibung(int skillnr, int upgradeStufe) throws IOException {
+
         List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
         int startPos = skillTXT.indexOf("-START" + upgradeStufe + "-");
-        return skillTXT.get(startPos + 3) + "\n" + skillTXT.get(startPos + 4);
-        
+        return skillTXT.get(startPos + 2) + "\n" + skillTXT.get(startPos + 3) + "\nKosten in XP: " + skillTXT.get(startPos + 5) + "\nKosten in Brillen: " + skillTXT.get(startPos + 4);
+
     }
 
     public void setSkillSelected(int skillSelected) {
@@ -151,17 +152,37 @@ public class SkillHandler {
     public int getSkillSelected() {
         return skillSelected;
     }
-    
-    public int buySkill(int skillnr){
-        return 0;
+
+    public String buySkill(int skillnr) throws IOException {
+        List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+        int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1)  + "-");
+        if(startPos == -1){
+            return "Bisheriges Maximallevel für diesen Skill erreicht";
+        }
+        if (Game.getAktGame().getData().getBrillen() >= Integer.parseInt(skillTXT.get(startPos + 4))) {
+            upgradeSkill(skillnr);
+            Game.getAktGame().getData().setBrillen(Game.getAktGame().getData().getBrillen()- Integer.parseInt(skillTXT.get(startPos + 4)));
+            return "Skill " + skillTXT.get(startPos + 2) + " gekauft.";
+        }
+        return "Nicht genug Brillen für diesen Skill.";
     }
-    
-    public int unlockSkill(int skillnr){
-        return 0;
+
+    public String unlockSkill(int skillnr) throws IOException {
+        List<String> skillTXT = WindowProperties.ladeTXT("Skills/Skill_" + skillnr + ".txt");
+        int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1) + "-");
+        if (Game.getAktGame().getData().getExp() >= Integer.parseInt(skillTXT.get(startPos + 5))) {
+            upgradeSkill(skillnr);
+            Game.getAktGame().getData().setExp(Game.getAktGame().getData().getExp()- Integer.parseInt(skillTXT.get(startPos + 5)));
+            return "Skill " + skillTXT.get(startPos + 2) + " erlernt.";
+        }
+        return "Nicht genug Erfahrung für diesen Skill.";
     }
-    
-    public void upgradeSkill(int skillnr){
+
+    public void upgradeSkill(int skillnr) throws IOException {
         
+        Game.getAktGame().getData().setSkillUnlocked(skillnr, Game.getAktGame().getData().getSkillUnlocked(skillnr) + 1);
+        recalculateSkills();
+
     }
 
 }
