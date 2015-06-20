@@ -11,7 +11,7 @@ import javax.sound.sampled.LineUnavailableException;
  *
  * @author Vika
  */
-public class ShopPanel extends javax.swing.JPanel implements Panel {
+public class ShopPanel extends Panel {
 
     /**
      * Creates new form ShopPanel
@@ -21,6 +21,7 @@ public class ShopPanel extends javax.swing.JPanel implements Panel {
          jTextAreaShop.setLineWrap(true);
          jTextAreaShop.setWrapStyleWord(true);
         shortKeys();
+        super.setBgMusic("exSound/rewind.wav");
         
     }
 private void shortKeys(){
@@ -622,12 +623,14 @@ private void shortKeys(){
     }
 
     @Override
-    public void switchTo() {
+    public void switchTo() throws Exception {
+        super.switchTo();
        aktualisierBrillen();
     }
 
     @Override
-    public void switchFrom() {
+    public void switchFrom() throws Exception {
+        super.switchFrom();
 
     }
 }

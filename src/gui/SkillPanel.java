@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author Vika
  */
-public class SkillPanel extends javax.swing.JPanel implements Panel {
+public class SkillPanel extends Panel {
 
     /**
      * Creates new form SkillPanel
@@ -28,6 +28,8 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
         
         jTextAreaSkill.setLineWrap(true);
         jTextAreaSkill.setWrapStyleWord(true);
+        
+        super.setBgMusic("exSound/Mars.wav");
     }
 
     private void shortKeys() {
@@ -951,12 +953,14 @@ public class SkillPanel extends javax.swing.JPanel implements Panel {
     }
 
     @Override
-    public void switchTo() {
+    public void switchTo() throws Exception {
+        super.switchTo();
        MainGUI.getAktMainGUI().getSkillPanel1().setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
     }
 
     @Override
-    public void switchFrom() throws IOException {
+    public void switchFrom() throws Exception {
+        super.switchFrom();
         Game.getAktGame().getSkills().recalculateSkills();
     }
 }

@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
  *
  * @author Vika
  */
-public class StoryPanel extends javax.swing.JPanel implements Panel {
+public class StoryPanel extends Panel {
 
     /**
      * Creates new form StoryPanel
@@ -28,6 +28,7 @@ public class StoryPanel extends javax.swing.JPanel implements Panel {
         jTextAreaStory.setLineWrap(true);
         jTextAreaStory.setWrapStyleWord(true);
         setScene(0, 0);
+        super.setBgMusic("exSound/rewind.wav");
 
     }
 
@@ -167,12 +168,12 @@ public class StoryPanel extends javax.swing.JPanel implements Panel {
     }
 
     @Override
-    public void switchTo() {
-       
+    public void switchTo() throws Exception {
+       super.switchTo();
     }
 
     @Override
-    public void switchFrom() {
-       
+    public void switchFrom() throws Exception {
+       super.switchFrom();
     }
 }

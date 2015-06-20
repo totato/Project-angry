@@ -47,7 +47,7 @@ public abstract class WindowProperties {
         //TODO: Catch wenn Soundausgabe fehlt
         System.out.println("*Musik spielt*");
         String pfadsoundlaun = dateipfad;
-        
+
         clip = AudioSystem.getClip();
 
         try {
@@ -61,7 +61,7 @@ public abstract class WindowProperties {
             System.out.println(ioe);
         } catch (LineUnavailableException lua) {
             System.out.println(lua);
-        } catch (IllegalArgumentException iae){
+        } catch (IllegalArgumentException iae) {
             System.out.println(iae);
         }
     }
@@ -71,10 +71,10 @@ public abstract class WindowProperties {
      */
     public static void stopBgMusic() throws LineUnavailableException {
         try {
-        clip.stop();
-        }catch (NullPointerException npe) {
-                 System.out.println(npe);
-                 }
+            clip.stop();
+        } catch (NullPointerException npe) {
+            System.out.println(npe);
+        }
     }
 
     /*
@@ -116,11 +116,11 @@ public abstract class WindowProperties {
      in dem die Datei gespeichert wurde werden zusammen mitgegeben.
      */
     /*public void setButtonBackground(JButton button, String pfad) {
-        ImageIcon background = getImageIcon(pfad);
-        button.setContentAreaFilled(true);
-        button.setIcon(background);
-        System.out.println("Button hat Hintergrund");
-    }*/
+     ImageIcon background = getImageIcon(pfad);
+     button.setContentAreaFilled(true);
+     button.setIcon(background);
+     System.out.println("Button hat Hintergrund");
+     }*/
 
     /*
      Klärt, aus welchem Dokument die getWords Methode Zeilen entnimmt.
@@ -209,7 +209,7 @@ public abstract class WindowProperties {
             }
         });
     }
-    
+
     public static BufferedImage ladeBild(String quelle) {
         try {
             return ImageIO.read(WindowProperties.class.getClassLoader().getResourceAsStream(quelle));
@@ -218,9 +218,9 @@ public abstract class WindowProperties {
         }
         return null;
     }
-    
+
     public static ArrayList<String> ladeTXT(String quelle) throws IOException {
-        
+
         BufferedReader stdin;
         try {
             System.out.println(WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6));
@@ -230,15 +230,14 @@ public abstract class WindowProperties {
                 dokument.add(stdin.readLine());
             }
             return dokument;
-            
-        } catch (FileNotFoundException  ex) {
+
+        } catch (FileNotFoundException ex) {
             System.err.print("Textdatei nicht gefunden");
-        } catch(NullPointerException ex){
+        } catch (NullPointerException ex) {
             System.err.print("Textdatei nicht gefunden");
         }
         return null;
-        
+
     }
 
-    
 }

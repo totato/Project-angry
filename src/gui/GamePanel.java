@@ -22,7 +22,7 @@ import javax.swing.KeyStroke;
  *
  * @author Vika
  */
-public class GamePanel extends javax.swing.JPanel implements Panel {
+public class GamePanel extends Panel {
 // Bilder werden geladen
     private ImageIcon grAttack0B = new ImageIcon(getClass().getResource("/Grafiken/weapon0B.png"));
     private ImageIcon grAttack0 = new ImageIcon(getClass().getResource("/Grafiken/weapon0.png"));
@@ -45,6 +45,7 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
         shortKeys();
         tbAttack0.setSelected(true);
         changeTBPicture(tbAttack0);
+        super.setBgMusic("exSound/rewind.wav");
 
     }
 
@@ -446,15 +447,15 @@ public class GamePanel extends javax.swing.JPanel implements Panel {
     }
 
     @Override
-    public void switchTo() throws LineUnavailableException {
+    public void switchTo() throws LineUnavailableException, Exception {
+        super.switchTo();
         Game.getAktGame().resume();
-        WindowProperties.backgroundMusic("exSound/rewind.wav");
     }
 
     @Override
-    public void switchFrom() throws LineUnavailableException {
+    public void switchFrom() throws LineUnavailableException, Exception {
+        super.switchFrom();
         Game.getAktGame().pause();
-        WindowProperties.stopBgMusic();
     }
 
 }
