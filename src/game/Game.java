@@ -50,6 +50,7 @@ public class Game implements Runnable {
     private boolean upgradeSelected;
 
     private SkillHandler skills;
+    private StoryHandler story;
 
     long startTime;
     long aktDelay;
@@ -62,44 +63,43 @@ public class Game implements Runnable {
         waffen = new Waffe[Data.ANZAHL_WAFFEN];
         active = true;
         skills = new SkillHandler();
+        story = new StoryHandler();
 
     }
 
-        public String loadStoryText(int storynr, int storypart) throws IOException {
+    public String loadStoryText(int storynr, int storypart) throws IOException {
         String text = "";
-        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_"+storynr+".txt");
+        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
         int startPos = zeilen.indexOf("-START" + storypart + "-");
         if (startPos > -1) {
-           text =zeilen.get(startPos + 1);
+            text = zeilen.get(startPos + 1);
         }
         return text;
     }
-    
-        public void loadStoryPicture(JLabel label,int storynr, int storypart) throws IOException {
 
-        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_"+storynr+".txt");
+    public void loadStoryPicture(JLabel label, int storynr, int storypart) throws IOException {
+
+        List<String> zeilen = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
         int startPos = zeilen.indexOf("-START" + storypart + "-");
         if (startPos > -1) {
            //label.setIcon(WindowProperties.getImageIcon(zeilen.get(startPos + 2))); 
 
-
         }
 
     }
 
-    
     public void setShopInfo(int waffennummer, boolean upgradeSelected) {
         this.selectedWeapon = waffennummer;
         this.upgradeSelected = upgradeSelected;
     }
 
-    public void loadGame() throws IOException {
+    public void loadGame() throws IOException, Exception {
         data = new Data();
         loadLevel(1, true);
         loadGame(data);
     }
 
-    public void loadGame(Data data) throws IOException {
+    public void loadGame(Data data) throws IOException, Exception {
         this.data = data;
         loadLevel(data.getAktLevel(), false);
         waffen = Game.loadWeapons(data.getWaffenStufen());
@@ -110,12 +110,18 @@ public class Game implements Runnable {
     }
 
     //Rückgabewert gibt Erfolg an
-    public boolean loadLevel(int levelnr, boolean neu) throws IOException {
+    public boolean loadLevel(int levelnr, boolean neu) throws IOException, Exception {
 
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
         List<String> zeilen = WindowProperties.ladeTXT("Levels/Levels.txt");
         int startPos = zeilen.indexOf("-START" + levelnr + "-");
+
         if (startPos > -1) {
+
+            story.setStory(Integer.parseInt(zeilen.get(startPos + 5)));
+            story.nextPart();
+            MainGUI.getAktMainGUI().changeCard("story card");
+
             if (neu) {
                 data.setAktLevel(levelnr);
                 data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
@@ -243,6 +249,8 @@ public class Game implements Runnable {
                     weiter = data.getAktLevel() == maxLevel();
                 } catch (IOException ex) {
                     Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
@@ -331,6 +339,22 @@ public class Game implements Runnable {
 
     public SkillHandler getSkills() {
         return skills;
+    }
+
+    public StoryHandler getStory() {
+        return story;
+    }
+
+    public static int getMaxStoryPart(int storynr) throws IOException {
+
+        List<String> storyTXT = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
+
+        for (int s = 1; true; s++) {
+            if (storyTXT.indexOf("-START" + s + "-") == -1) {
+                return s - 1;
+            }
+        }
+
     }
 
 }

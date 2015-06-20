@@ -85,7 +85,7 @@ public class Launcher extends Cutscenes {
         
         //Thread gameThread = new Thread(game);
         //gameThread.start();
-        MainGUI.getAktMainGUI().changeCard("story card");
+        //MainGUI.getAktMainGUI().changeCard("story card");
     }
 
     /**

@@ -205,8 +205,10 @@ public class SkillHandler {
     
     public static boolean skillUnlocked(int skillnr){
         List<String> skillTXT = skillTXTs.get(skillnr);
-        int startPos = skillTXT.indexOf("-START" + Game.getAktGame().getData().getSkillStufe(skillnr) + "-");
-        return (Game.getAktGame().getData().getSkillStufe(Integer.parseInt(skillTXT.get(startPos + 1))) > 0) || (Integer.parseInt(skillTXT.get(startPos + 1)) == -1);
+        int startPos = skillTXT.indexOf("-START" + ( Game.getAktGame().getData().getSkillStufe(skillnr) + 1) + "-");
+        if(startPos < 0)
+            return false;
+        return (Integer.parseInt(skillTXT.get(startPos + 1)) == -1) || (Game.getAktGame().getData().getSkillStufe(Integer.parseInt(skillTXT.get(startPos + 1))) > 0) ;
     }
     
     public void upgradeSkill(int skillnr) throws IOException {

@@ -1,0 +1,8 @@
+-START1-
+We always thought that our downfall would be a mistake. We always thought that it would come creeping, slowly, and that no one would realise it until it was too late. We were right. Now we stand at the edge of destruction, on the brink to our own extinction, and it all could have been avoided. 
+/Grafiken/StoryBG_00.png
+-END1-
+-START2-
+I have been fighting this battle since it first started. I don’t know how many I killed. They just keep coming. We have been hiding, and they found us. Now we are attacking. 
+/Grafiken/StoryBG_00.png
+-END2-

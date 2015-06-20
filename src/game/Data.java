@@ -6,7 +6,7 @@ package game;
  */
 public class Data {
 
-    public static final int ANZAHL_SKILLS = 4;
+    public static final int ANZAHL_SKILLS = 35;
     public static final int ANZAHL_WAFFEN = 7;
     public static final int ANZAHL_AUSRÜSTUNG = 3;
 

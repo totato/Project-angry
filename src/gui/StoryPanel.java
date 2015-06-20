@@ -19,6 +19,8 @@ import javax.swing.JTextArea;
  * @author Vika
  */
 public class StoryPanel extends Panel {
+    
+    
 
     /**
      * Creates new form StoryPanel
@@ -27,10 +29,11 @@ public class StoryPanel extends Panel {
         initComponents();
         jTextAreaStory.setLineWrap(true);
         jTextAreaStory.setWrapStyleWord(true);
-        setScene(0, 0);
         super.setBgMusic("exSound/rewind.wav");
 
     }
+    
+    
 
     public String loadStoryText(int storynr, int storypart) throws IOException {
         String text = "";
@@ -55,9 +58,13 @@ public class StoryPanel extends Panel {
         return null;
     }
 
-    private void setScene(int storynr, int storypart) throws IOException {
+    public void setScene(int storynr, int storypart) throws IOException {
         jTextAreaStory.setText(loadStoryText(storynr, storypart));
         jLabelStory.setIcon(loadStoryPicture(storynr, storypart));
+    }
+    
+    public void setChapterNumber(int storynr){
+        jLabelLvlStory.setText("Kapitel: " + storynr);
     }
 
 
@@ -72,10 +79,10 @@ public class StoryPanel extends Panel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaStory = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        weiterButton1 = new javax.swing.JButton();
         jLabelStory = new javax.swing.JLabel();
         jLabelLvlStory = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        skipButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
@@ -85,8 +92,13 @@ public class StoryPanel extends Panel {
         jTextAreaStory.setRows(5);
         jScrollPane1.setViewportView(jTextAreaStory);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("Weiter");
+        weiterButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        weiterButton1.setText("Weiter");
+        weiterButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                weiterButton1ActionPerformed(evt);
+            }
+        });
 
         jLabelStory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/StoryBG_00.png"))); // NOI18N
         jLabelStory.setText("jLabel1");
@@ -94,10 +106,10 @@ public class StoryPanel extends Panel {
         jLabelLvlStory.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelLvlStory.setText("Kapitel: 1");
 
-        jButton2.setText("Skip");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        skipButton.setText("Skip");
+        skipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                skipButtonActionPerformed(evt);
             }
         });
 
@@ -113,9 +125,9 @@ public class StoryPanel extends Panel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(weiterButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(130, 130, 130)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(skipButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
@@ -136,13 +148,13 @@ public class StoryPanel extends Panel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                    .addComponent(skipButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(weiterButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
         try {
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
@@ -150,16 +162,24 @@ public class StoryPanel extends Panel {
         } catch (Exception ex) {
             Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_skipButtonActionPerformed
+
+    private void weiterButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButton1ActionPerformed
+        try {
+            Game.getAktGame().getStory().nextPart();
+        } catch (IOException ex) {
+            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_weiterButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabelLvlStory;
     private javax.swing.JLabel jLabelStory;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaStory;
+    private javax.swing.JButton skipButton;
+    private javax.swing.JButton weiterButton1;
     // End of variables declaration//GEN-END:variables
 
     @Override
