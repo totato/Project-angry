@@ -185,6 +185,7 @@ public class Game implements Runnable {
 
         List<String> waffenTXT;
         int startPos;
+        int endPos;
 
         Waffe waffe = null;
 
@@ -192,14 +193,19 @@ public class Game implements Runnable {
             waffenTXT = WindowProperties.ladeTXT("Weapons/Waffe_" + waffennummer + ".txt");
             if (!waffenTXT.isEmpty()) {
                 startPos = waffenTXT.indexOf("-START" + waffenstufe + "-");
-                if (startPos > -1) {
-                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)));
+                endPos = waffenTXT.indexOf("-END" + waffenstufe + "-");
+                if (startPos > -1 && endPos > -1) {
+                    for (int i = startPos + 6; i == endPos ; i++) {
+
+                        
+                    }
+                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), null,0);
                 } else {
-                    waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0);
+                    waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0, null,0);
                 }
             }
         } else {
-            waffe = new Waffe("MIN", "Diese Waffe gibt es nicht", 0, 0, 0);
+            waffe = new Waffe("MIN", "Diese Waffe gibt es nicht", 0, 0, 0, null,0);
         }
 
         return waffe;

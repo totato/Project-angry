@@ -5,6 +5,8 @@
  */
 package game;
 
+import java.util.List;
+
 /**
  *
  * @author Toast
@@ -14,17 +16,29 @@ public class Waffe extends Item {
     
     private int damage;
     private int reloadTime;
+    private List<String> spruch;
+    private int spruchWk;
     
 
-    public Waffe(String name, String beschreibung, int damage, int reloadTime, int kosten) {
+    public Waffe(String name, String beschreibung, int damage, int reloadTime, int kosten, List<String> spruch, int spruchWk) {
         
         super(name, beschreibung, kosten);
         
+        this.spruchWk = spruchWk;
+        this.spruch = spruch;
         this.damage = damage;
         this.reloadTime = reloadTime;
     }
 
+    
+    public int getSpruchWk() {
+        return spruchWk;
+    }
 
+    
+    public List<String> getSpruch() {
+        return spruch;
+    }
 
     public int getDamage() {
         return damage;
