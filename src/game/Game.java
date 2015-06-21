@@ -150,6 +150,10 @@ public class Game implements Runnable {
 
     //Rückgabewert entspricht dem im Shop angezeigten Text
     public String buyUpgrade(int waffennummer) throws IOException {
+        
+        if(waffennummer < 0)
+            return "Keine Waffe ausgewählt!";
+        
         if (data.getBrillen() < waffenUpgrades[waffennummer].getKosten()) {
             return "Nicht genug Brillen";
         }
@@ -163,6 +167,9 @@ public class Game implements Runnable {
     }
 
     public String upgradeWeapon(int waffennummer) throws IOException {
+        
+        if(waffennummer < 0)
+            return "Keine Waffe ausgewählt!";
 
         String ausgabe = "";
 

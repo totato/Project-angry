@@ -539,10 +539,13 @@ public class ShopPanel extends Panel {
             //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
             MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
+        
+        Game.getAktGame().setShopInfo(-1, false);
 
         disableButtons();
-        MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
+        
         aktualisierBrillen();
+        
     }//GEN-LAST:event_bBuyShopActionPerformed
 
     private void tbShopC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC2ActionPerformed
@@ -623,6 +626,7 @@ public class ShopPanel extends Panel {
         tbShopA1.setEnabled(false);
         tbShopA2.setEnabled(false);
         tbShopA3.setEnabled(false);
+        tbShopD1.setEnabled(false);
 
         tbInventoryB0.setEnabled(Game.getAktGame().getData().getWaffenStufe(1) > 0);
         tbInventoryB1.setEnabled(Game.getAktGame().getData().getWaffenStufe(2) > 0);
@@ -637,6 +641,8 @@ public class ShopPanel extends Panel {
         tbShopB3.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
         tbShopB4.setEnabled(!Game.getAktGame().getWaffe(5, true).getName().equals("MAX"));
         tbShopC1.setEnabled(!Game.getAktGame().getWaffe(6, true).getName().equals("MAX"));
+        
+        
         tbShopGroup.clearSelection();
     }
 
@@ -653,6 +659,6 @@ public class ShopPanel extends Panel {
     @Override
     public void switchFrom() throws Exception {
         super.switchFrom();
-
+        MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
     }
 }
