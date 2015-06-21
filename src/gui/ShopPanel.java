@@ -2,7 +2,10 @@ package gui;
 
 import java.awt.event.KeyEvent;
 import game.Game;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.CodeSource;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.LineUnavailableException;
@@ -18,17 +21,19 @@ public class ShopPanel extends Panel {
      */
     public ShopPanel() {
         initComponents();
-         jTextAreaShop.setLineWrap(true);
-         jTextAreaShop.setWrapStyleWord(true);
+        jTextAreaShop.setLineWrap(true);
+        jTextAreaShop.setWrapStyleWord(true);
         shortKeys();
         super.setBgMusic("exSound/rewind.wav");
-        
+
     }
-private void shortKeys(){
-    
-    WindowProperties.setShortKeys(bToGameShop,"game card", KeyEvent.VK_B );
-    WindowProperties.setShortKeys(bToSkillShop,"skill card", KeyEvent.VK_M );
-}
+
+    private void shortKeys() {
+
+        WindowProperties.setShortKeys(bToGameShop, "game card", KeyEvent.VK_B);
+        WindowProperties.setShortKeys(bToSkillShop, "skill card", KeyEvent.VK_M);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -286,6 +291,11 @@ private void shortKeys(){
         bSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         bSave.setForeground(new java.awt.Color(255, 255, 255));
         bSave.setText("Speichern");
+        bSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSaveActionPerformed(evt);
+            }
+        });
         add(bSave);
         bSave.setBounds(10, 660, 140, 80);
 
@@ -430,7 +440,7 @@ private void shortKeys(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
-        try {        
+        try {
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
             Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -440,7 +450,7 @@ private void shortKeys(){
     }//GEN-LAST:event_bToGameShopActionPerformed
 
     private void bToSkillShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillShopActionPerformed
-        try {      
+        try {
             MainGUI.getAktMainGUI().changeCard("skill card");
         } catch (IOException ex) {
             Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -466,7 +476,7 @@ private void shortKeys(){
     }//GEN-LAST:event_bToLauncherActionPerformed
 
     private void tbShopA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopA1ActionPerformed
-        
+
     }//GEN-LAST:event_tbShopA1ActionPerformed
 
     private void tbShopB0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopB0ActionPerformed
@@ -518,18 +528,18 @@ private void shortKeys(){
     }//GEN-LAST:event_tbInventoryC1ActionPerformed
 
     private void bBuyShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyShopActionPerformed
-        if(Game.getAktGame().upgradeSelected()){
+        if (Game.getAktGame().upgradeSelected()) {
             try {
                 jTextAreaShop.setText(Game.getAktGame().buyUpgrade(Game.getAktGame().getSelectedWeapon()));
             } catch (IOException ex) {
                 Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         } else {
             //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
             MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
-        
+
         disableButtons();
         MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
         aktualisierBrillen();
@@ -538,6 +548,18 @@ private void shortKeys(){
     private void tbShopC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbShopC2ActionPerformed
+
+    private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
+        try {
+            Game.getAktGame().saveData(Game.getAktGame().getSavedatei());
+        } catch (IOException ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        jTextAreaShop.setText("Speichern erfolgreich");
+    }//GEN-LAST:event_bSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -581,19 +603,18 @@ private void shortKeys(){
     private javax.swing.ButtonGroup tbShopGroup;
     // End of variables declaration//GEN-END:variables
 
- 
-    
-    public void selectWaffe(int i, boolean upgrade){
+    public void selectWaffe(int i, boolean upgrade) {
         Game.getAktGame().setShopInfo(i, upgrade);
         //MainGUI.getAktMainGUI().setTextToTextArea(jTextAreaShop, 50,Game.getAktGame().getWaffe(i, upgrade).getDescription());
         jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
         this.disableButtons();
     }
-        public void setGlasses(int br){
-         jLabelGlassesShop.setText("Brillen: " + br);
+
+    public void setGlasses(int br) {
+        jLabelGlassesShop.setText("Brillen: " + br);
     }
-        
-        @Override
+
+    @Override
     public void disableButtons() {
         bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());
         tbInventoryA1.setEnabled(false); //vorläufig
@@ -602,30 +623,31 @@ private void shortKeys(){
         tbShopA1.setEnabled(false);
         tbShopA2.setEnabled(false);
         tbShopA3.setEnabled(false);
-        
+
         tbInventoryB0.setEnabled(Game.getAktGame().getData().getWaffenStufe(1) > 0);
         tbInventoryB1.setEnabled(Game.getAktGame().getData().getWaffenStufe(2) > 0);
         tbInventoryB2.setEnabled(Game.getAktGame().getData().getWaffenStufe(3) > 0);
         tbInventoryB3.setEnabled(Game.getAktGame().getData().getWaffenStufe(4) > 0);
         tbInventoryB4.setEnabled(Game.getAktGame().getData().getWaffenStufe(5) > 0);
         tbInventoryC1.setEnabled(Game.getAktGame().getData().getWaffenStufe(6) > 0);
-        
+
         tbShopB0.setEnabled(!Game.getAktGame().getWaffe(1, true).getName().equals("MAX"));
         tbShopB1.setEnabled(!Game.getAktGame().getWaffe(2, true).getName().equals("MAX"));
         tbShopB2.setEnabled(!Game.getAktGame().getWaffe(3, true).getName().equals("MAX"));
         tbShopB3.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
         tbShopB4.setEnabled(!Game.getAktGame().getWaffe(5, true).getName().equals("MAX"));
         tbShopC1.setEnabled(!Game.getAktGame().getWaffe(6, true).getName().equals("MAX"));
+        tbShopGroup.clearSelection();
     }
-    
-    public void aktualisierBrillen(){
+
+    public void aktualisierBrillen() {
         MainGUI.getAktMainGUI().getShopPanel1().setGlasses(Game.getAktGame().getData().getBrillen());
     }
 
     @Override
     public void switchTo() throws Exception {
         super.switchTo();
-       aktualisierBrillen();
+        aktualisierBrillen();
     }
 
     @Override

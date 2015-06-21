@@ -12,9 +12,15 @@ import gui.WindowProperties;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.URISyntaxException;
+import java.security.CodeSource;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -52,12 +58,16 @@ public class Game implements Runnable {
     private SkillHandler skills;
     private StoryHandler story;
 
-    long startTime;
-    long aktDelay;
+    private long startTime;
+    private long aktDelay;
 
-    public Game() throws IOException {
+    private String savedatei;
+
+    public Game(String savedatei) throws IOException {
 
         Game.setAktGame(this);
+
+        this.savedatei = savedatei;
 
         scr = MainGUI.getAktMainGUI().getGamePanel1().getScreen();
         waffen = new Waffe[Data.ANZAHL_WAFFEN];
@@ -82,7 +92,7 @@ public class Game implements Runnable {
         List<String> zeilen = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
         int startPos = zeilen.indexOf("-START" + storypart + "-");
         if (startPos > -1) {
-           //label.setIcon(WindowProperties.getImageIcon(zeilen.get(startPos + 2))); 
+            //label.setIcon(WindowProperties.getImageIcon(zeilen.get(startPos + 2))); 
 
         }
 
@@ -94,8 +104,10 @@ public class Game implements Runnable {
     }
 
     public void loadGame() throws IOException, Exception {
+        if(!this.loadData(savedatei)){
         data = new Data();
         loadLevel(1, true);
+        }
         loadGame(data);
     }
 
@@ -135,6 +147,26 @@ public class Game implements Runnable {
 
         return false;
 
+    }
+    
+    public void saveData(String dateiname) throws IOException, URISyntaxException {
+
+        String pfad = System.getenv("HOMEPATH") + "\\" + dateiname;
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(pfad));
+        oos.writeObject(data);
+        oos.close();
+    }
+
+    public boolean loadData(String dateiname) throws IOException, ClassNotFoundException {
+        String pfad = System.getenv("HOMEPATH") + "\\" + dateiname;
+        File f = new File(pfad);
+        if (f.exists()) {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pfad));
+            data = (Data) ois.readObject();
+            return true;
+        }
+        
+        return false;
     }
 
     //Rückgabewert entspricht dem im Shop angezeigten Text
@@ -195,17 +227,16 @@ public class Game implements Runnable {
                 startPos = waffenTXT.indexOf("-START" + waffenstufe + "-");
                 endPos = waffenTXT.indexOf("-END" + waffenstufe + "-");
                 if (startPos > -1 && endPos > -1) {
-                    for (int i = startPos + 6; i == endPos ; i++) {
+                    for (int i = startPos + 6; i == endPos; i++) {
 
-                        
                     }
-                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), null,0);
+                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), null, 0);
                 } else {
-                    waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0, null,0);
+                    waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0, null, 0);
                 }
             }
         } else {
-            waffe = new Waffe("MIN", "Diese Waffe gibt es nicht", 0, 0, 0, null,0);
+            waffe = new Waffe("MIN", "Diese Waffe gibt es nicht", 0, 0, 0, null, 0);
         }
 
         return waffe;
@@ -361,6 +392,12 @@ public class Game implements Runnable {
             }
         }
 
+    }
+
+    
+
+    public String getSavedatei() {
+        return savedatei;
     }
 
 }

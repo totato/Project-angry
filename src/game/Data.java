@@ -1,10 +1,12 @@
 package game;
 
+import java.io.Serializable;
+
 /**
  *
  * @author nicht tseidelm
  */
-public class Data {
+public class Data implements Serializable{
 
     public static final int ANZAHL_SKILLS = 35;
     public static final int ANZAHL_WAFFEN = 7;
@@ -49,6 +51,8 @@ public class Data {
         aktWaffe = 0;
 
     }
+    
+    
 
     public int getGranaten() {
         return granaten;
@@ -174,4 +178,6 @@ public class Data {
     public int[] getSkillsStufen() {
         return skillsStufen;
     }
+    
+    
 }

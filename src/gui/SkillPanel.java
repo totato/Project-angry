@@ -10,14 +10,20 @@ import game.SkillHandler;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractButton;
+import javax.swing.JToggleButton;
 
 /**
  *
  * @author Vika
  */
 public class SkillPanel extends Panel {
+    
+    private List<JToggleButton> notlösung;
 
     /**
      * Creates new form SkillPanel
@@ -28,6 +34,43 @@ public class SkillPanel extends Panel {
         
         jTextAreaSkill.setLineWrap(true);
         jTextAreaSkill.setWrapStyleWord(true);
+        
+        notlösung = new ArrayList();
+        notlösung.add(tbSkill0);
+        notlösung.add(tbSkill1);
+        notlösung.add(tbSkill2);
+        notlösung.add(tbSkill3);
+        notlösung.add(tbSkill4);
+        notlösung.add(tbSkill5);
+        notlösung.add(tbSkill6);
+        notlösung.add(tbSkill7);
+        notlösung.add(tbSkill8);
+        notlösung.add(tbSkill9);
+        notlösung.add(tbSkill10);
+        notlösung.add(tbSkill11);
+        notlösung.add(tbSkill12);
+        notlösung.add(tbSkill13);
+        notlösung.add(tbSkill14);
+        notlösung.add(tbSkill15);
+        notlösung.add(tbSkill16);
+        notlösung.add(tbSkill17);
+        notlösung.add(tbSkill18);
+        notlösung.add(tbSkill19);
+        notlösung.add(tbSkill20);
+        notlösung.add(tbSkill21);
+        notlösung.add(tbSkill22);
+        notlösung.add(tbSkill23);
+        notlösung.add(tbSkill24);
+        notlösung.add(tbSkill25);
+        notlösung.add(tbSkill26);
+        notlösung.add(tbSkill27);
+        notlösung.add(tbSkill28);
+        notlösung.add(tbSkill29);
+        notlösung.add(tbSkill30);
+        notlösung.add(tbSkill31);
+        notlösung.add(tbSkill32);
+        notlösung.add(tbSkill33);
+        notlösung.add(tbSkill34);
         
         super.setBgMusic("exSound/Mars.wav");
     }
@@ -872,6 +915,7 @@ public class SkillPanel extends Panel {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
+        disableButtons();
     }//GEN-LAST:event_bBuyEXPSkillActionPerformed
 
     private void bBuyGlassesSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyGlassesSkillActionPerformed
@@ -881,6 +925,7 @@ public class SkillPanel extends Panel {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
+        disableButtons();
     }//GEN-LAST:event_bBuyGlassesSkillActionPerformed
 
     
@@ -949,41 +994,15 @@ public class SkillPanel extends Panel {
 
     @Override
     public void disableButtons() {
-        tbSkill0.setEnabled(Game.getAktGame().getData().getSkillStufe(0) < SkillHandler.getMaxSkillLevel(0) && SkillHandler.skillUnlocked(0));
-        tbSkill1.setEnabled(Game.getAktGame().getData().getSkillStufe(1) < SkillHandler.getMaxSkillLevel(1) && SkillHandler.skillUnlocked(0));
-        tbSkill2.setEnabled(Game.getAktGame().getData().getSkillStufe(2) < SkillHandler.getMaxSkillLevel(2) && SkillHandler.skillUnlocked(0));
-        tbSkill3.setEnabled(Game.getAktGame().getData().getSkillStufe(3) < SkillHandler.getMaxSkillLevel(3) && SkillHandler.skillUnlocked(0));
-        tbSkill4.setEnabled(Game.getAktGame().getData().getSkillStufe(4) < SkillHandler.getMaxSkillLevel(4) && SkillHandler.skillUnlocked(0));
-        tbSkill5.setEnabled(Game.getAktGame().getData().getSkillStufe(5) < SkillHandler.getMaxSkillLevel(5) && SkillHandler.skillUnlocked(0));
-        tbSkill6.setEnabled(Game.getAktGame().getData().getSkillStufe(6) < SkillHandler.getMaxSkillLevel(6) && SkillHandler.skillUnlocked(0));
-        tbSkill7.setEnabled(Game.getAktGame().getData().getSkillStufe(7) < SkillHandler.getMaxSkillLevel(7) && SkillHandler.skillUnlocked(0));
-        tbSkill8.setEnabled(Game.getAktGame().getData().getSkillStufe(8) < SkillHandler.getMaxSkillLevel(8) && SkillHandler.skillUnlocked(0));
-        tbSkill9.setEnabled(Game.getAktGame().getData().getSkillStufe(9) < SkillHandler.getMaxSkillLevel(9) && SkillHandler.skillUnlocked(0));
-        tbSkill10.setEnabled(Game.getAktGame().getData().getSkillStufe(10) < SkillHandler.getMaxSkillLevel(10) && SkillHandler.skillUnlocked(0));
-        tbSkill11.setEnabled(Game.getAktGame().getData().getSkillStufe(11) < SkillHandler.getMaxSkillLevel(11) && SkillHandler.skillUnlocked(0));
-        tbSkill12.setEnabled(Game.getAktGame().getData().getSkillStufe(12) < SkillHandler.getMaxSkillLevel(12) && SkillHandler.skillUnlocked(0));
-        tbSkill13.setEnabled(Game.getAktGame().getData().getSkillStufe(13) < SkillHandler.getMaxSkillLevel(13) && SkillHandler.skillUnlocked(0));
-        tbSkill14.setEnabled(Game.getAktGame().getData().getSkillStufe(14) < SkillHandler.getMaxSkillLevel(14) && SkillHandler.skillUnlocked(0));
-        tbSkill15.setEnabled(Game.getAktGame().getData().getSkillStufe(15) < SkillHandler.getMaxSkillLevel(15) && SkillHandler.skillUnlocked(0));
-        tbSkill16.setEnabled(Game.getAktGame().getData().getSkillStufe(16) < SkillHandler.getMaxSkillLevel(16) && SkillHandler.skillUnlocked(0));
-        tbSkill17.setEnabled(Game.getAktGame().getData().getSkillStufe(17) < SkillHandler.getMaxSkillLevel(17) && SkillHandler.skillUnlocked(0));
-        tbSkill18.setEnabled(Game.getAktGame().getData().getSkillStufe(18) < SkillHandler.getMaxSkillLevel(18) && SkillHandler.skillUnlocked(0));
-        tbSkill19.setEnabled(Game.getAktGame().getData().getSkillStufe(19) < SkillHandler.getMaxSkillLevel(19) && SkillHandler.skillUnlocked(0));
-        tbSkill20.setEnabled(Game.getAktGame().getData().getSkillStufe(20) < SkillHandler.getMaxSkillLevel(20) && SkillHandler.skillUnlocked(0));
-        tbSkill21.setEnabled(Game.getAktGame().getData().getSkillStufe(21) < SkillHandler.getMaxSkillLevel(21) && SkillHandler.skillUnlocked(0));
-        tbSkill22.setEnabled(Game.getAktGame().getData().getSkillStufe(22) < SkillHandler.getMaxSkillLevel(22) && SkillHandler.skillUnlocked(0));
-        tbSkill23.setEnabled(Game.getAktGame().getData().getSkillStufe(23) < SkillHandler.getMaxSkillLevel(23) && SkillHandler.skillUnlocked(0));
-        tbSkill24.setEnabled(Game.getAktGame().getData().getSkillStufe(24) < SkillHandler.getMaxSkillLevel(24) && SkillHandler.skillUnlocked(0));
-        tbSkill25.setEnabled(Game.getAktGame().getData().getSkillStufe(25) < SkillHandler.getMaxSkillLevel(25) && SkillHandler.skillUnlocked(0));
-        tbSkill26.setEnabled(Game.getAktGame().getData().getSkillStufe(26) < SkillHandler.getMaxSkillLevel(26) && SkillHandler.skillUnlocked(0));
-        tbSkill27.setEnabled(Game.getAktGame().getData().getSkillStufe(27) < SkillHandler.getMaxSkillLevel(27) && SkillHandler.skillUnlocked(0));
-        tbSkill28.setEnabled(Game.getAktGame().getData().getSkillStufe(28) < SkillHandler.getMaxSkillLevel(28) && SkillHandler.skillUnlocked(0));
-        tbSkill29.setEnabled(Game.getAktGame().getData().getSkillStufe(29) < SkillHandler.getMaxSkillLevel(29) && SkillHandler.skillUnlocked(0));
-        tbSkill30.setEnabled(Game.getAktGame().getData().getSkillStufe(30) < SkillHandler.getMaxSkillLevel(30) && SkillHandler.skillUnlocked(0));
-        tbSkill31.setEnabled(Game.getAktGame().getData().getSkillStufe(31) < SkillHandler.getMaxSkillLevel(31) && SkillHandler.skillUnlocked(0));
-        tbSkill32.setEnabled(Game.getAktGame().getData().getSkillStufe(32) < SkillHandler.getMaxSkillLevel(32) && SkillHandler.skillUnlocked(0));
-        tbSkill33.setEnabled(Game.getAktGame().getData().getSkillStufe(33) < SkillHandler.getMaxSkillLevel(33) && SkillHandler.skillUnlocked(0));
-        tbSkill34.setEnabled(Game.getAktGame().getData().getSkillStufe(34) < SkillHandler.getMaxSkillLevel(34) && SkillHandler.skillUnlocked(0));
+        
+        JToggleButton b;
+        
+        for(int i = 0; i < buttonGroup1.getButtonCount(); i++){
+            b = notlösung.get(i);
+            b.setEnabled(!SkillHandler.skillUnlocked(i));
+        }
+        
+        buttonGroup1.clearSelection();
            
     }
 

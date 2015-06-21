@@ -20,10 +20,10 @@ import javax.sound.sampled.LineUnavailableException;
  *
  * @author Wir
  */
-public class Launcher extends Cutscenes {
+public class Launcher extends WindowProperties{
 
     private JFrame launcher;
-    private JTextField cutscenekey;
+    private JTextField savefilezeile;
     private JLabel background;
     private JLabel bild;
     private JButton backButton;
@@ -77,8 +77,7 @@ public class Launcher extends Cutscenes {
         MainGUI mainGUI = new MainGUI();
         
         
-        Game game = new Game();
-        
+        Game game = new Game(savefilezeile.getText());
         
         game.loadGame();
         mainGUI.disableButtons();
@@ -188,19 +187,11 @@ public class Launcher extends Cutscenes {
         launcherCard.setLayout(new BorderLayout());
         //die Objekte
         background = new JLabel();
-        cutscenekey = new JTextField(getWords(8));
-        cutscenekey.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    cutsceneZeigen();
-                } catch (LineUnavailableException ex) {
-                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
+        savefilezeile = new JTextField("save");
+        
         //Die Objekte werden der launcherCard hinzugefügt
         launcherCard.add(background, BorderLayout.CENTER);
-        launcherCard.add(cutscenekey, BorderLayout.SOUTH);
+        launcherCard.add(savefilezeile, BorderLayout.SOUTH);
         setBackgrPicture(background, "ExLauncher/BackScreen.png");
 
         //Das gleiche nun mit den Cutscenes
@@ -235,7 +226,7 @@ public class Launcher extends Cutscenes {
      * beginnt die passende Cutscene.
      *
      */
-    private void cutsceneZeigen() throws LineUnavailableException {
+    /*private void cutsceneZeigen() throws LineUnavailableException {
         String pfad = "" + (getClass().getClassLoader());
         if (cutscenekey.getText().equals("Cutscene1")) {
             System.out.println("Spiele Cutscene 1 ab");
@@ -258,7 +249,7 @@ public class Launcher extends Cutscenes {
 
         }
 
-    }
+    }*/
 
     private void toLauncher(ActionEvent e) {
         if (e.getSource() == backButton) {
