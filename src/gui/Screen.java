@@ -19,7 +19,6 @@ public class Screen extends JLabel{
     
     private BufferedImage background = new BufferedImage(1,2,3);
     private BufferedImage aktStreber = new BufferedImage(1,2,3);
-    private String aktStreberAnzahl;
     
     private boolean inScreen;
     
@@ -60,13 +59,6 @@ public class Screen extends JLabel{
         this.background = bg;
     }
 
-    public void setAktStreber(BufferedImage aktStreber) {
-        this.aktStreber = aktStreber;
-    }
-
-    public void setAktStreberAnzahl(String aktStreberAnzahl) {
-        this.aktStreberAnzahl = aktStreberAnzahl;
-    }
     
     @Override
     public void paintComponent(Graphics g){
