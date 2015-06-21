@@ -9,26 +9,18 @@ import gui.GamePanel;
 import gui.MainGUI;
 import gui.Screen;
 import gui.WindowProperties;
-import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URISyntaxException;
-import java.security.CodeSource;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.JLabel;
 
 /**
  *
@@ -37,7 +29,7 @@ import javax.swing.JLabel;
 public class Game implements Runnable {
 
     private static final long frameTime = 10;
-    
+
     private static final int GRENADE_KOSTEN = 100;
 
     private static Game aktGame;
@@ -85,9 +77,9 @@ public class Game implements Runnable {
     }
 
     public void loadGame() throws IOException, Exception {
-        if(!this.loadData(savedatei)){
-        data = new Data();
-        loadLevel(1, true);
+        if (!this.loadData(savedatei)) {
+            data = new Data();
+            loadLevel(1, true);
         }
         loadGame(data);
     }
@@ -129,7 +121,7 @@ public class Game implements Runnable {
         return false;
 
     }
-    
+
     public void saveData(String dateiname) throws IOException, URISyntaxException {
 
         String pfad = System.getenv("HOMEPATH") + "\\" + dateiname;
@@ -146,16 +138,17 @@ public class Game implements Runnable {
             data = (Data) ois.readObject();
             return true;
         }
-        
+
         return false;
     }
 
     //Rückgabewert entspricht dem im Shop angezeigten Text
     public String buyUpgrade(int waffennummer) throws IOException {
-        
-        if(waffennummer < 0)
+
+        if (waffennummer < 0) {
             return "Keine Waffe ausgewählt!";
-        
+        }
+
         if (data.getBrillen() < waffenUpgrades[waffennummer].getKosten()) {
             return "Nicht genug Brillen";
         }
@@ -167,20 +160,21 @@ public class Game implements Runnable {
         return upgradeWeapon(waffennummer);
 
     }
-    
-    public void buyGrenade(int anzahl){
+
+    public void buyGrenade(int anzahl) {
         data.setGranaten(data.getGranaten() + anzahl);
         data.setBrillen(data.getBrillen() - getGrenadeCost());
     }
-    
-    public int getGrenadeCost(){
+
+    public int getGrenadeCost() {
         return waffen[6].getDamage() * 50;
     }
 
     public String upgradeWeapon(int waffennummer) throws IOException {
-        
-        if(waffennummer < 0)
+
+        if (waffennummer < 0) {
             return "Keine Waffe ausgewählt!";
+        }
 
         String ausgabe = "";
 
@@ -213,8 +207,10 @@ public class Game implements Runnable {
     public static Waffe loadWeapon(int waffennummer, int waffenstufe) throws IOException {
 
         List<String> waffenTXT;
+        List<String> sprüche;
         int startPos;
         int endPos;
+        sprüche = new ArrayList();
 
         Waffe waffe = null;
 
@@ -224,10 +220,11 @@ public class Game implements Runnable {
                 startPos = waffenTXT.indexOf("-START" + waffenstufe + "-");
                 endPos = waffenTXT.indexOf("-END" + waffenstufe + "-");
                 if (startPos > -1 && endPos > -1) {
-                    for (int i = startPos + 6; i == endPos; i++) {
 
+                    for (int i = startPos + 7; i < endPos; i++) {
+                        sprüche.add(waffenTXT.get(startPos + i));
                     }
-                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), null, 0);
+                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), sprüche, Double.parseDouble(waffenTXT.get(startPos + 6)));
                 } else {
                     waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0, null, 0);
                 }
@@ -257,6 +254,10 @@ public class Game implements Runnable {
                 data.killStreber(waffen[nummer].getDamage());
             }
             aktDelay = waffen[nummer].getReloadTime();
+            if (Math.random() + waffen[nummer].getSpruchWk() >= 1.0 && !(waffen[nummer].getSpruch().isEmpty())) {
+                GamePanel.getjTextAreaGame().append(waffen[nummer].getSpruch().get(new Random().nextInt(waffen[nummer].getSpruch().size())) + "\n");
+            }
+
         }
     }
 
@@ -378,10 +379,6 @@ public class Game implements Runnable {
     public StoryHandler getStory() {
         return story;
     }
-
-    
-
-    
 
     public String getSavedatei() {
         return savedatei;

@@ -4,6 +4,7 @@ Großer Stein
 1
 0
 2
+1
 -END1-
 -START2-
 Kartoffelstampfer
@@ -11,6 +12,7 @@ Kartoffelstampfer
 10
 0
 2
+1
 -END2-
 -START3-
 Windeln
@@ -18,6 +20,7 @@ Windeln
 15
 0
 2
+1
 -END3-
 -START4-
 Babyfotos
@@ -25,6 +28,7 @@ Babyfotos
 30
 0
 2
+1
 -END4-
 -START5-
 M61 Splitterhandgranate
@@ -32,6 +36,7 @@ M61 Splitterhandgranate
 35
 0
 2
+1
 -END5-
 -START6-
 Atomgranate
@@ -39,6 +44,7 @@ Atomgranate
 40
 0
 2
+1
 -END6-
 -START7-
 Pokeball
@@ -46,6 +52,7 @@ Pokeball
 45
 0
 2
+1
 -END7-
 -START8-
 M830/M830A1 
@@ -53,6 +60,7 @@ M830/M830A1
 50
 0
 2
+1
 -END8-
 -START9-
 Protonengranate
@@ -60,6 +68,7 @@ Protonengranate
 55
 0
 2
+1
 -END9-
 -START10-
 improvisierter Zielpunkt: Pzhbz. 2000
@@ -67,6 +76,7 @@ improvisierter Zielpunkt: Pzhbz. 2000
 60
 0
 2
+1
 -END10-
 -START11-
 Improvisierter chemischer Kampfstoff
@@ -74,6 +84,7 @@ Improvisierter chemischer Kampfstoff
 65
 0
 2
+1
 -END11-
 -START12-
 Nuklearschlag
@@ -81,6 +92,7 @@ Nuklearschlag
 70
 0
 2
+1
 -END12-
 -START13-
 Orbitalschlag
@@ -88,6 +100,7 @@ Orbitalschlag
 75
 0
 2
+1
 -END13-
 -START14-
 Umgeleiteter Meteor
@@ -95,6 +108,7 @@ Umgeleiteter Meteor
 80
 0
 2
+1
 -END14-
 -START15-
 Poopoo-Bag
@@ -102,6 +116,7 @@ Poopoo-Bag
 85
 0
 2
+1
 -END15-
 -START16-
 Interplanetares Bombardemant
@@ -109,6 +124,7 @@ Interplanetares Bombardemant
 90
 0
 2
+1
 -END16-
 -START17-
 KmfPz/MBT TRP “Saharet”
@@ -116,6 +132,7 @@ KmfPz/MBT TRP “Saharet”
 95
 0
 2
+1
 -END17-
 -START18-
 Umgeleiteter Planet
@@ -123,6 +140,7 @@ Umgeleiteter Planet
 100
 0
 2
+1
 -END18-
 -START19-
 Deine Mama
@@ -130,6 +148,7 @@ Deine Mama
 105
 0
 2
+1
 -END19-
 -START20-
 Nokia
@@ -137,4 +156,5 @@ Nokia
 110
 0
 2
+1
 -END20-

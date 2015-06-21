@@ -4,6 +4,7 @@ Nun kannst du rote Ballons mit Geschenken abschießen.
 5
 0
 2
+0.5
 -END1-
 -START2-
 Armbrust.
@@ -11,6 +12,7 @@ Du hast nun eine richtige Waffe!
 10
 0
 2
+0.5
 -END2-
 -START3-
 Maschinen-Armbrust
@@ -18,4 +20,5 @@ Frag Antonio was das ist.
 15
 0
 2
+0.5
 -END3-

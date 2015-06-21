@@ -4,6 +4,7 @@ Pass auf, sonst stirbt es .
 1
 0
 2
+0.5
 -END1-
 -START2-
 Baby Yoshi
@@ -11,6 +12,7 @@ Baby Yoshi
 10
 0
 2
+0.5
 -END2-
 -START3-
 Taschenmonster03
@@ -18,6 +20,7 @@ Taschenmonster03
 15
 0
 2
+0.5
 -END3-
 -START4-
 Taschenmonster04
@@ -25,6 +28,7 @@ Taschenmonster04
 30
 0
 2
+0.5
 -END4-
 -START5-
 Taschenmonster05
@@ -32,6 +36,7 @@ Taschenmonster05
 35
 0
 2
+0.5
 -END5-
 -START6-
 Taschenmonster06
@@ -39,6 +44,7 @@ Taschenmonster06
 40
 0
 2
+0.5
 -END6-
 -START7-
 Sanic
@@ -46,6 +52,7 @@ Sanic
 45
 0
 2
+0.5
 -END7-
 -START8-
 Sonichu.
@@ -53,6 +60,7 @@ Do not fear, world, for I am a new pokemon. And my name is....Sonichu!
 50
 0
 2
+0.5
 -END8-
 -START9-
 Coldsteel the Hedgeheg
@@ -60,6 +68,7 @@ psssh...nothin personnel...kid...
 55
 0
 2
+0.5
 -END9-
 -START10-
 Taschenmonster10
@@ -67,6 +76,7 @@ Taschenmonster10
 60
 0
 2
+0.5
 -END10-
 -START11-
 Yuno
@@ -74,4 +84,5 @@ Nun bist du stärker als die Sonne.
 10000
 0
 2
+0.5
 -START11-

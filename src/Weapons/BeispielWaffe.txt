@@ -4,4 +4,8 @@ Beschreibung
 Schaden/getötete Streber pro Klick
 reload time (in Millisekunden)
 Kosten
+spruchWk
+spruch
+spruch
+...
 -END(Zahl)-

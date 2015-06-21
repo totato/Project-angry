@@ -17,10 +17,10 @@ public class Waffe extends Item {
     private int damage;
     private int reloadTime;
     private List<String> spruch;
-    private int spruchWk;
+    private double spruchWk;
     
 
-    public Waffe(String name, String beschreibung, int damage, int reloadTime, int kosten, List<String> spruch, int spruchWk) {
+    public Waffe(String name, String beschreibung, int damage, int reloadTime, int kosten, List<String> spruch, double spruchWk) {
         
         super(name, beschreibung, kosten);
         
@@ -31,7 +31,7 @@ public class Waffe extends Item {
     }
 
     
-    public int getSpruchWk() {
+    public double getSpruchWk() {
         return spruchWk;
     }
 

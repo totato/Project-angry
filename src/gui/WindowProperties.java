@@ -223,7 +223,6 @@ public abstract class WindowProperties {
 
         BufferedReader stdin;
         try {
-            System.out.println(WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6));
             stdin = new BufferedReader(new FileReader(WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6)));
             ArrayList<String> dokument = new ArrayList();
             while (stdin.ready()) {

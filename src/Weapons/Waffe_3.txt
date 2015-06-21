@@ -4,6 +4,7 @@ Den hast du in eineim epischen Zweikampf einenem Streber abgenommen.
 5
 0
 2
+0.5
 -END1-
 -START2-
 Schlagstock
@@ -11,4 +12,5 @@ Nun stellst du zumindestens ein wenig eine Gefahr da.
 10
 0
 2
+0.5
 -END2-
