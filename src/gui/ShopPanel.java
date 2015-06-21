@@ -30,8 +30,8 @@ public class ShopPanel extends Panel {
 
     private void shortKeys() {
 
-        WindowProperties.setShortKeys(bToGameShop, "game card", KeyEvent.VK_B);
-        WindowProperties.setShortKeys(bToSkillShop, "skill card", KeyEvent.VK_M);
+        //WindowProperties.setShortKeys(bToGameShop, "game card", KeyEvent.VK_B);
+        //WindowProperties.setShortKeys(bToSkillShop, "skill card", KeyEvent.VK_M);
     }
 
     /**

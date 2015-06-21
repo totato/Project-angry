@@ -77,8 +77,8 @@ public class SkillPanel extends Panel {
 
     private void shortKeys() {
 
-        WindowProperties.setShortKeys(bToShopSkill, "shop card", KeyEvent.VK_N);
-        WindowProperties.setShortKeys(bToGameSkill, "game card", KeyEvent.VK_B);
+       // WindowProperties.setShortKeys(bToShopSkill, "shop card", KeyEvent.VK_N);
+        //WindowProperties.setShortKeys(bToGameSkill, "game card", KeyEvent.VK_B);
     }
 
     /**
@@ -136,6 +136,7 @@ public class SkillPanel extends Panel {
         bToShopSkill = new javax.swing.JButton();
         bToGameSkill = new javax.swing.JButton();
         bBuyEXPSkill = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
@@ -568,6 +569,11 @@ public class SkillPanel extends Panel {
         });
         add(bBuyEXPSkill);
         bBuyEXPSkill.setBounds(10, 340, 100, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/skill_BG.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, -60, 670, 870);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameSkillActionPerformed
@@ -936,6 +942,7 @@ public class SkillPanel extends Panel {
     private javax.swing.JButton bToGameSkill;
     private javax.swing.JButton bToShopSkill;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelEXPSkill;
     private javax.swing.JLabel jLabelGlassesSkill;
     private javax.swing.JLabel jLabelSensei;

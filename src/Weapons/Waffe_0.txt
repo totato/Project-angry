@@ -1,21 +1,21 @@
 -START1-
 Fäuste
 Du realisierst das du deine Hand zu einer Faust machen kannst.
-5
+1
 0
 2
 -END1-
 -START2-
 Präzision
 Du triffst nun manchmal einige Gegner.
-10
+2
 0
 2
 -END2-
 -START3-
 Technik
 Der Daumen gehört nicht in die Faust!
-15
+5
 0
 2
 -END3-

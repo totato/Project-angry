@@ -91,11 +91,13 @@ public class StoryPanel extends Panel {
         setPreferredSize(new java.awt.Dimension(650, 750));
         setLayout(null);
 
+        jTextAreaStory.setEditable(false);
         jTextAreaStory.setBackground(new java.awt.Color(0, 0, 0));
         jTextAreaStory.setColumns(20);
         jTextAreaStory.setFont(new java.awt.Font("Monospaced", 0, 24)); // NOI18N
         jTextAreaStory.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaStory.setRows(5);
+        jTextAreaStory.setFocusable(false);
         jScrollPane1.setViewportView(jTextAreaStory);
 
         add(jScrollPane1);

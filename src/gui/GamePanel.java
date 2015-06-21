@@ -51,8 +51,8 @@ public class GamePanel extends Panel {
 
     private void shortKeys() {
 
-        WindowProperties.setShortKeys(bToShopGame, "shop card", KeyEvent.VK_N);
-        WindowProperties.setShortKeys(bToSkillGame, "skill card", KeyEvent.VK_M);
+        WindowProperties.setShortKeys(jLabelToShopGame, "shop card", KeyEvent.VK_N);
+        WindowProperties.setShortKeys(jLabelToSkill, "skill card", KeyEvent.VK_M);
     }
 
     public static JTextArea getjTextAreaGame() {
@@ -103,6 +103,8 @@ public class GamePanel extends Panel {
 
         tbAttackGroup = new javax.swing.ButtonGroup();
         jSeparator = new javax.swing.JSeparator();
+        jLabelToShopGame = new javax.swing.JLabel();
+        jLabelToSkill = new javax.swing.JLabel();
         tbAttack2 = new javax.swing.JToggleButton();
         tbAttack3 = new javax.swing.JToggleButton();
         tbAttack4 = new javax.swing.JToggleButton();
@@ -117,8 +119,6 @@ public class GamePanel extends Panel {
         jLabelLVL = new javax.swing.JLabel();
         jScrollPaneGame = new javax.swing.JScrollPane();
         jTextAreaGame = new javax.swing.JTextArea();
-        bToSkillGame = new javax.swing.JButton();
-        bToShopGame = new javax.swing.JButton();
         bEvent = new javax.swing.JButton();
         bAttack7 = new javax.swing.JButton();
         mainScreen = new gui.Screen();
@@ -131,6 +131,40 @@ public class GamePanel extends Panel {
         setLayout(null);
         add(jSeparator);
         jSeparator.setBounds(440, 90, 200, 10);
+
+        jLabelToShopGame.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelToShopGame.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelToShopGame.setText("    Shop");
+        jLabelToShopGame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelToShopGameMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelToShopGameMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelToShopGameMouseExited(evt);
+            }
+        });
+        add(jLabelToShopGame);
+        jLabelToShopGame.setBounds(510, 620, 120, 50);
+
+        jLabelToSkill.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelToSkill.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelToSkill.setText("    Skills");
+        jLabelToSkill.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelToSkillMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelToSkillMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelToSkillMouseExited(evt);
+            }
+        });
+        add(jLabelToSkill);
+        jLabelToSkill.setBounds(510, 680, 120, 50);
 
         tbAttackGroup.add(tbAttack2);
         tbAttack2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon2.png"))); // NOI18N
@@ -201,6 +235,7 @@ public class GamePanel extends Panel {
         tbAttack1.setBounds(90, 630, 60, 100);
 
         lebendeStreberAnzeiger.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lebendeStreberAnzeiger.setForeground(new java.awt.Color(255, 255, 255));
         lebendeStreberAnzeiger.setText("Lebende Streber : 0");
         add(lebendeStreberAnzeiger);
         lebendeStreberAnzeiger.setBounds(440, 20, 200, 17);
@@ -208,11 +243,13 @@ public class GamePanel extends Panel {
         lebendeStreberAnzeiger.getAccessibleContext().setAccessibleDescription("");
 
         toteStreberAnzeiger.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        toteStreberAnzeiger.setForeground(new java.awt.Color(255, 255, 255));
         toteStreberAnzeiger.setText("Getötete Streber : 0");
         add(toteStreberAnzeiger);
         toteStreberAnzeiger.setBounds(440, 40, 200, 17);
         toteStreberAnzeiger.getAccessibleContext().setAccessibleName("toteStreberAnzeiger");
 
+        jProgressBar.setFocusable(false);
         add(jProgressBar);
         jProgressBar.setBounds(440, 70, 200, 14);
 
@@ -238,36 +275,13 @@ public class GamePanel extends Panel {
 
         jTextAreaGame.setEditable(false);
         jTextAreaGame.setColumns(20);
+        jTextAreaGame.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jTextAreaGame.setRows(5);
+        jTextAreaGame.setFocusable(false);
         jScrollPaneGame.setViewportView(jTextAreaGame);
 
         add(jScrollPaneGame);
         jScrollPaneGame.setBounds(440, 170, 200, 380);
-
-        bToSkillGame.setBackground(new java.awt.Color(0, 0, 0));
-        bToSkillGame.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bToSkillGame.setForeground(new java.awt.Color(255, 255, 255));
-        bToSkillGame.setText("Skillbaum");
-        bToSkillGame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bToSkillGameActionPerformed(evt);
-            }
-        });
-        add(bToSkillGame);
-        bToSkillGame.setBounds(510, 680, 130, 60);
-
-        bToShopGame.setBackground(new java.awt.Color(0, 0, 0));
-        bToShopGame.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bToShopGame.setForeground(new java.awt.Color(255, 255, 255));
-        bToShopGame.setText("Shop");
-        bToShopGame.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bToShopGame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bToShopGameActionPerformed(evt);
-            }
-        });
-        add(bToShopGame);
-        bToShopGame.setBounds(510, 620, 130, 60);
 
         bEvent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/weapon7.png"))); // NOI18N
         bEvent.setText("jButton7");
@@ -293,7 +307,7 @@ public class GamePanel extends Panel {
         add(mainScreen);
         mainScreen.setBounds(20, 20, 410, 580);
 
-        jLabelBackgroundGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ScreenLaun/gamePanelBG.jpg"))); // NOI18N
+        jLabelBackgroundGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/game_BG.png"))); // NOI18N
         jLabelBackgroundGame.setText("jLabel2");
         jLabelBackgroundGame.setMaximumSize(new java.awt.Dimension(650, 750));
         jLabelBackgroundGame.setMinimumSize(new java.awt.Dimension(650, 750));
@@ -301,28 +315,6 @@ public class GamePanel extends Panel {
         add(jLabelBackgroundGame);
         jLabelBackgroundGame.setBounds(0, 0, 650, 750);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bToShopGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopGameActionPerformed
-
-        try {
-            MainGUI.getAktMainGUI().changeCard("shop card");
-            // TODO add your handling code here:
-        } catch (IOException ex) {
-            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_bToShopGameActionPerformed
-
-    private void bToSkillGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToSkillGameActionPerformed
-        try {
-            MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
-        } catch (IOException ex) {
-            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_bToSkillGameActionPerformed
 
     private void tbAttack0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbAttack0ActionPerformed
         Game.getAktGame().changeWeapon(0);
@@ -363,16 +355,53 @@ public class GamePanel extends Panel {
         // TODO add your handling code here:
     }//GEN-LAST:event_bEventActionPerformed
 
+    private void jLabelToShopGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopGameMouseClicked
+                try {
+            MainGUI.getAktMainGUI().changeCard("shop card");
+            // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabelToShopGameMouseClicked
+
+    private void jLabelToSkillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToSkillMouseClicked
+              try {
+            MainGUI.getAktMainGUI().changeCard("skill card");        // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabelToSkillMouseClicked
+
+    private void jLabelToShopGameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopGameMouseEntered
+        jLabelToShopGame.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelToShopGameMouseEntered
+
+    private void jLabelToShopGameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopGameMouseExited
+        jLabelToShopGame.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelToShopGameMouseExited
+
+    private void jLabelToSkillMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToSkillMouseEntered
+        jLabelToSkill.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelToSkillMouseEntered
+
+    private void jLabelToSkillMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToSkillMouseExited
+        jLabelToSkill.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelToSkillMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAttack7;
     private javax.swing.JButton bEvent;
-    private javax.swing.JButton bToShopGame;
-    private javax.swing.JButton bToSkillGame;
     private javax.swing.JLabel jLabelBackgroundGame;
     private javax.swing.JLabel jLabelEXPGame;
     private javax.swing.JLabel jLabelGlassesGame;
     private javax.swing.JLabel jLabelLVL;
+    private javax.swing.JLabel jLabelToShopGame;
+    private javax.swing.JLabel jLabelToSkill;
     private javax.swing.JProgressBar jProgressBar;
     private javax.swing.JScrollPane jScrollPaneGame;
     private javax.swing.JSeparator jSeparator;

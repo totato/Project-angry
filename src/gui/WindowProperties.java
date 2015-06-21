@@ -195,9 +195,9 @@ public abstract class WindowProperties {
         }
     }
 
-    public static void setShortKeys(JButton button, final String card, int sign) {
-        button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
-        button.getActionMap().put("x", new AbstractAction() {
+    public static void setShortKeys(JLabel label, final String card, int sign) {
+        label.getInputMap(label.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
+        label.getActionMap().put("x", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
                 try {
                     MainGUI.getAktMainGUI().changeCard(card);

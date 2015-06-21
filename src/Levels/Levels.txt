@@ -1,7 +1,7 @@
 -START1-
 211
 1
-Grafiken/Level_1_BG.png
+Grafiken/game_BG.png
 Grafiken/Level_1_Streber.png
 1
 -END1-

@@ -71,7 +71,7 @@ public class Screen extends JLabel{
     @Override
     public void paintComponent(Graphics g){
         super.repaint();
-        g.drawImage(background, 0, 0, null);
+        //g.drawImage(background, 0, 0, null);
         g.drawImage(aktStreber, XSIZE/2-aktStreber.getWidth()/2, YSIZE/2 - aktStreber.getHeight()/2, null);
     }
 }
