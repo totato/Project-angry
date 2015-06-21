@@ -207,7 +207,7 @@ public class ShopPanel extends Panel {
         tbShopC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC1);
         tbShopC1.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopC1.setText("Granate");
+        tbShopC1.setText("Granatenstufe");
         tbShopC1.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC1.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopC1.setPreferredSize(new java.awt.Dimension(105, 23));
@@ -222,7 +222,8 @@ public class ShopPanel extends Panel {
         tbShopC2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC2);
         tbShopC2.setForeground(new java.awt.Color(255, 255, 255));
-        tbShopC2.setText("Munition");
+        tbShopC2.setText("Granaten");
+        tbShopC2.setActionCommand("Granaten");
         tbShopC2.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setPreferredSize(new java.awt.Dimension(105, 23));
@@ -393,7 +394,7 @@ public class ShopPanel extends Panel {
         tbInventoryC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryC1);
         tbInventoryC1.setForeground(new java.awt.Color(255, 255, 255));
-        tbInventoryC1.setText("Granate");
+        tbInventoryC1.setText("Granatenstufe");
         tbInventoryC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbInventoryC1ActionPerformed(evt);
@@ -529,27 +530,36 @@ public class ShopPanel extends Panel {
 
     private void bBuyShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyShopActionPerformed
         if (Game.getAktGame().upgradeSelected()) {
-            try {
-                jTextAreaShop.setText(Game.getAktGame().buyUpgrade(Game.getAktGame().getSelectedWeapon()));
-            } catch (IOException ex) {
-                Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (Game.getAktGame().getSelectedWeapon() == Integer.MAX_VALUE) {
+                Game.getAktGame().buyGrenade(1);
+                jTextAreaShop.setText("Granate gekauft");
+            } else {
+
+                try {
+                    jTextAreaShop.setText(Game.getAktGame().buyUpgrade(Game.getAktGame().getSelectedWeapon()));
+                } catch (IOException ex) {
+                    Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
 
         } else {
             //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
             MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
-        
+
         Game.getAktGame().setShopInfo(-1, false);
 
         disableButtons();
-        
+
         aktualisierBrillen();
-        
+
     }//GEN-LAST:event_bBuyShopActionPerformed
 
     private void tbShopC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbShopC2ActionPerformed
-        // TODO add your handling code here:
+        jTextAreaShop.setText("Aktuelle Granaten: " + Game.getAktGame().getData().getGranaten());
+        Game.getAktGame().setShopInfo(Integer.MAX_VALUE, true);
+        this.disableBuyButton();
     }//GEN-LAST:event_tbShopC2ActionPerformed
 
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
@@ -560,7 +570,7 @@ public class ShopPanel extends Panel {
         } catch (URISyntaxException ex) {
             Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         jTextAreaShop.setText("Speichern erfolgreich");
     }//GEN-LAST:event_bSaveActionPerformed
 
@@ -610,16 +620,20 @@ public class ShopPanel extends Panel {
         Game.getAktGame().setShopInfo(i, upgrade);
         //MainGUI.getAktMainGUI().setTextToTextArea(jTextAreaShop, 50,Game.getAktGame().getWaffe(i, upgrade).getDescription());
         jTextAreaShop.setText(Game.getAktGame().getWaffe(i, upgrade).getDescription());
-        this.disableButtons();
+        this.disableBuyButton();
     }
 
     public void setGlasses(int br) {
         jLabelGlassesShop.setText("Brillen: " + br);
     }
 
+    public void disableBuyButton(){
+        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());
+    }
+    
     @Override
     public void disableButtons() {
-        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());
+        disableBuyButton();
         tbInventoryA1.setEnabled(false); //vorläufig
         tbInventoryA2.setEnabled(false);
         tbInventoryA3.setEnabled(false);
@@ -641,8 +655,7 @@ public class ShopPanel extends Panel {
         tbShopB3.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
         tbShopB4.setEnabled(!Game.getAktGame().getWaffe(5, true).getName().equals("MAX"));
         tbShopC1.setEnabled(!Game.getAktGame().getWaffe(6, true).getName().equals("MAX"));
-        
-        
+
         tbShopGroup.clearSelection();
     }
 

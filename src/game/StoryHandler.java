@@ -24,7 +24,7 @@ public class StoryHandler {
         
         aktStory = storynr;
         aktStorypart = 0;
-        maxStorypart = Game.getMaxStoryPart(storynr);
+        maxStorypart = StoryHandler.getMaxStoryPart(storynr);
         MainGUI.getAktMainGUI().getStoryPanel1().setChapterNumber(storynr);
     }
     
@@ -36,4 +36,14 @@ public class StoryHandler {
         return false;
     }
     
+    public static int getMaxStoryPart(int storynr) throws IOException {
+
+        List<String> storyTXT = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
+
+        for (int s = 1; true; s++) {
+            if (storyTXT.indexOf("-START" + s + "-") == -1) {
+                return s - 1;
+            }
+        }
+    }
 }

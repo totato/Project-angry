@@ -37,6 +37,8 @@ import javax.swing.JLabel;
 public class Game implements Runnable {
 
     private static final long frameTime = 10;
+    
+    private static final int GRENADE_KOSTEN = 100;
 
     private static Game aktGame;
 
@@ -164,6 +166,15 @@ public class Game implements Runnable {
         data.setBrillen(data.getBrillen() - waffenUpgrades[waffennummer].getKosten());
         return upgradeWeapon(waffennummer);
 
+    }
+    
+    public void buyGrenade(int anzahl){
+        data.setGranaten(data.getGranaten() + anzahl);
+        data.setBrillen(data.getBrillen() - getGrenadeCost());
+    }
+    
+    public int getGrenadeCost(){
+        return waffen[6].getDamage() * 50;
     }
 
     public String upgradeWeapon(int waffennummer) throws IOException {
@@ -368,17 +379,7 @@ public class Game implements Runnable {
         return story;
     }
 
-    public static int getMaxStoryPart(int storynr) throws IOException {
-
-        List<String> storyTXT = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
-
-        for (int s = 1; true; s++) {
-            if (storyTXT.indexOf("-START" + s + "-") == -1) {
-                return s - 1;
-            }
-        }
-
-    }
+    
 
     
 
