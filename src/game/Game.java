@@ -255,7 +255,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
 
-        GamePanel.getjTextAreaGame().append("Zur Waffe " + waffennummer + " gewechselt" + "\n");
+         GamePanel.getjTextAreaGame().append("Zur Waffe " + waffen[waffennummer].getName() + " gewechselt" + "\n");
 
     }
 

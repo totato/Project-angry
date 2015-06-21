@@ -7,6 +7,7 @@ package gui;
 
 import game.Game;
 import game.SkillHandler;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -96,7 +97,6 @@ public class SkillPanel extends Panel {
         jLabelSensei = new javax.swing.JLabel();
         jLabelEXPSkill = new javax.swing.JLabel();
         jLabelGlassesSkill = new javax.swing.JLabel();
-        bBuyGlassesSkill = new javax.swing.JButton();
         jLabelSkilltree = new javax.swing.JLabel();
         tbSkill25 = new javax.swing.JToggleButton();
         tbSkill3 = new javax.swing.JToggleButton();
@@ -133,9 +133,11 @@ public class SkillPanel extends Panel {
         tbSkill31 = new javax.swing.JToggleButton();
         tbSkill33 = new javax.swing.JToggleButton();
         tbSkill0 = new javax.swing.JToggleButton();
-        bToShopSkill = new javax.swing.JButton();
-        bToGameSkill = new javax.swing.JButton();
-        bBuyEXPSkill = new javax.swing.JButton();
+        jLabelToGame = new javax.swing.JLabel();
+        jLabelBuyGlasses = new javax.swing.JLabel();
+        jLabelToShop = new javax.swing.JLabel();
+        jLabelBuyExp = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
@@ -158,26 +160,16 @@ public class SkillPanel extends Panel {
         jLabelSensei.setBounds(10, 10, 220, 300);
 
         jLabelEXPSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelEXPSkill.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEXPSkill.setText("Exp: 0");
         add(jLabelEXPSkill);
         jLabelEXPSkill.setBounds(10, 314, 100, 20);
 
         jLabelGlassesSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelGlassesSkill.setForeground(new java.awt.Color(255, 255, 255));
         jLabelGlassesSkill.setText("Brillen: 0");
         add(jLabelGlassesSkill);
-        jLabelGlassesSkill.setBounds(130, 314, 100, 20);
-
-        bBuyGlassesSkill.setBackground(new java.awt.Color(0, 0, 0));
-        bBuyGlassesSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bBuyGlassesSkill.setForeground(new java.awt.Color(255, 255, 255));
-        bBuyGlassesSkill.setText("Kaufen");
-        bBuyGlassesSkill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBuyGlassesSkillActionPerformed(evt);
-            }
-        });
-        add(bBuyGlassesSkill);
-        bBuyGlassesSkill.setBounds(130, 340, 100, 50);
+        jLabelGlassesSkill.setBounds(140, 310, 110, 20);
 
         jLabelSkilltree.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelSkilltree.setText("             Skillbaum");
@@ -534,67 +526,81 @@ public class SkillPanel extends Panel {
         add(tbSkill0);
         tbSkill0.setBounds(380, 60, 120, 40);
 
-        bToShopSkill.setBackground(new java.awt.Color(0, 0, 0));
-        bToShopSkill.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bToShopSkill.setForeground(new java.awt.Color(255, 255, 255));
-        bToShopSkill.setText("Shop");
-        bToShopSkill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bToShopSkillActionPerformed(evt);
+        jLabelToGame.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelToGame.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelToGame.setText("Zurück");
+        jLabelToGame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelToGameMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelToGameMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelToGameMouseExited(evt);
             }
         });
-        add(bToShopSkill);
-        bToShopSkill.setBounds(240, 690, 120, 50);
+        add(jLabelToGame);
+        jLabelToGame.setBounds(540, 690, 90, 40);
 
-        bToGameSkill.setBackground(new java.awt.Color(0, 0, 0));
-        bToGameSkill.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bToGameSkill.setForeground(new java.awt.Color(255, 255, 255));
-        bToGameSkill.setText("Zurück");
-        bToGameSkill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bToGameSkillActionPerformed(evt);
+        jLabelBuyGlasses.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelBuyGlasses.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuyGlasses.setText("Kaufen");
+        jLabelBuyGlasses.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBuyGlassesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelBuyGlassesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelBuyGlassesMouseExited(evt);
             }
         });
-        add(bToGameSkill);
-        bToGameSkill.setBounds(520, 690, 120, 50);
+        add(jLabelBuyGlasses);
+        jLabelBuyGlasses.setBounds(140, 340, 70, 50);
 
-        bBuyEXPSkill.setBackground(new java.awt.Color(0, 0, 0));
-        bBuyEXPSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bBuyEXPSkill.setForeground(new java.awt.Color(255, 255, 255));
-        bBuyEXPSkill.setText("Kaufen");
-        bBuyEXPSkill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBuyEXPSkillActionPerformed(evt);
+        jLabelToShop.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelToShop.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelToShop.setText("Shop");
+        jLabelToShop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelToShopMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelToShopMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelToShopMouseExited(evt);
             }
         });
-        add(bBuyEXPSkill);
-        bBuyEXPSkill.setBounds(10, 340, 100, 50);
+        add(jLabelToShop);
+        jLabelToShop.setBounds(260, 690, 110, 40);
+
+        jLabelBuyExp.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelBuyExp.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuyExp.setText("Kaufen");
+        jLabelBuyExp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBuyExpMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelBuyExpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelBuyExpMouseExited(evt);
+            }
+        });
+        add(jLabelBuyExp);
+        jLabelBuyExp.setBounds(10, 340, 100, 50);
+        add(jSeparator1);
+        jSeparator1.setBounds(10, 340, 220, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/skill_BG.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1);
         jLabel1.setBounds(0, -60, 670, 870);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bToGameSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameSkillActionPerformed
-        try {
-            MainGUI.getAktMainGUI().changeCard("game card");
-        } catch (IOException ex) {
-            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_bToGameSkillActionPerformed
-
-    private void bToShopSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToShopSkillActionPerformed
-        try {
-            MainGUI.getAktMainGUI().changeCard("shop card");
-        } catch (IOException ex) {
-            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_bToShopSkillActionPerformed
 
     
     private void tbSkill0ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -914,40 +920,93 @@ public class SkillPanel extends Panel {
         }
     }//GEN-LAST:event_tbSkill34ActionPerformed
 
-    private void bBuyEXPSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyEXPSkillActionPerformed
-        try {
+    private void jLabelToShopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopMouseClicked
+                try {
+            MainGUI.getAktMainGUI().changeCard("shop card");
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabelToShopMouseClicked
+
+    private void jLabelToShopMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopMouseEntered
+       jLabelToShop.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelToShopMouseEntered
+
+    private void jLabelToShopMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopMouseExited
+        jLabelToShop.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelToShopMouseExited
+
+    private void jLabelToGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToGameMouseClicked
+                try {
+            MainGUI.getAktMainGUI().changeCard("game card");
+        } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabelToGameMouseClicked
+
+    private void jLabelToGameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToGameMouseEntered
+        jLabelToGame.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelToGameMouseEntered
+
+    private void jLabelToGameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToGameMouseExited
+        jLabelToGame.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelToGameMouseExited
+
+    private void jLabelBuyExpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyExpMouseClicked
+               try {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().unlockSkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
         disableButtons();
-    }//GEN-LAST:event_bBuyEXPSkillActionPerformed
+    }//GEN-LAST:event_jLabelBuyExpMouseClicked
 
-    private void bBuyGlassesSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuyGlassesSkillActionPerformed
-        try {
+    private void jLabelBuyGlassesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyGlassesMouseClicked
+                try {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().buySkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
         disableButtons();
-    }//GEN-LAST:event_bBuyGlassesSkillActionPerformed
+    }//GEN-LAST:event_jLabelBuyGlassesMouseClicked
+
+    private void jLabelBuyExpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyExpMouseEntered
+      jLabelBuyExp.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelBuyExpMouseEntered
+
+    private void jLabelBuyExpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyExpMouseExited
+        jLabelBuyExp.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelBuyExpMouseExited
+
+    private void jLabelBuyGlassesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyGlassesMouseEntered
+        jLabelBuyGlasses.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelBuyGlassesMouseEntered
+
+    private void jLabelBuyGlassesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyGlassesMouseExited
+        jLabelBuyGlasses.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelBuyGlassesMouseExited
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bBuyEXPSkill;
-    private javax.swing.JButton bBuyGlassesSkill;
-    private javax.swing.JButton bToGameSkill;
-    private javax.swing.JButton bToShopSkill;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelBuyExp;
+    private javax.swing.JLabel jLabelBuyGlasses;
     private javax.swing.JLabel jLabelEXPSkill;
     private javax.swing.JLabel jLabelGlassesSkill;
     private javax.swing.JLabel jLabelSensei;
     private javax.swing.JLabel jLabelSkilltree;
+    private javax.swing.JLabel jLabelToGame;
+    private javax.swing.JLabel jLabelToShop;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextAreaSkill;
     private javax.swing.JToggleButton tbSkill0;
     private javax.swing.JToggleButton tbSkill1;
