@@ -1,8 +1,8 @@
 - Weiter Button StoryPanel       x
 - Sensei + Shopkeeper Sprüche
-- Zu Waffe 0 gewechselt im GamePanel ändern
+- Zu Waffe 0 gewechselt im GamePanel ändern     x
 - Panel wechsel per Tastendruck
-- Streber wechseln
+- Streber wechseln          x
 - recalculate Skills funktioniert nicht richtig
 - tButtonfarbe im SkillPanel und ShopPanel ändern, je nach gekauft , kaufbar, freigeschaltet
 - Zeug rund um die Granate ( keine munition kaufen wenn noch keine granate gekauft)
