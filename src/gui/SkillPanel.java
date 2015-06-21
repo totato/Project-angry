@@ -1006,7 +1006,7 @@ public class SkillPanel extends Panel {
         
         for(int i = 0; i < buttonGroup1.getButtonCount(); i++){
             b = notlösung.get(i);
-            b.setEnabled(!SkillHandler.skillUnlocked(i));
+            b.setEnabled(SkillHandler.skillUnlocked(i));
         }
         
         buttonGroup1.clearSelection();
