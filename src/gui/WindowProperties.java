@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -34,6 +35,8 @@ import javax.swing.KeyStroke;
 public abstract class WindowProperties {
 
     private static Clip clip;
+
+    
     public String[] words;
     public String[] saveData;
     public static String language = "EN";
@@ -75,6 +78,16 @@ public abstract class WindowProperties {
         } catch (NullPointerException npe) {
             System.out.println(npe);
         }
+    }
+    
+    public static List<BufferedImage> ladeBildliste(String pfad) throws IOException {
+       List<String> bilderTXT = WindowProperties.ladeTXT(pfad);
+       List<BufferedImage> bilder = new ArrayList();
+       for(String bildPfad: bilderTXT){
+           bilder.add(WindowProperties.ladeBild(bildPfad));
+       }
+       
+       return bilder;
     }
 
     /*

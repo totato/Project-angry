@@ -9,6 +9,7 @@ import gui.GamePanel;
 import gui.MainGUI;
 import gui.Screen;
 import gui.WindowProperties;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,8 +31,6 @@ public class Game implements Runnable {
 
     private static final long frameTime = 10;
 
-    private static final int GRENADE_KOSTEN = 100;
-
     private static Game aktGame;
 
     private Data data;
@@ -52,6 +51,8 @@ public class Game implements Runnable {
     private SkillHandler skills;
     private StoryHandler story;
 
+    private List<BufferedImage> aktStreberImages;
+
     private long startTime;
     private long aktDelay;
 
@@ -68,6 +69,7 @@ public class Game implements Runnable {
         active = true;
         skills = new SkillHandler();
         story = new StoryHandler();
+        aktStreberImages = new ArrayList();
 
     }
 
@@ -100,6 +102,7 @@ public class Game implements Runnable {
         //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
         List<String> zeilen = WindowProperties.ladeTXT("Levels/Levels.txt");
         int startPos = zeilen.indexOf("-START" + levelnr + "-");
+        String temp;
 
         if (startPos > -1) {
 
@@ -113,7 +116,17 @@ public class Game implements Runnable {
             }
             respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
             scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
-            scr.setAktStreber(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
+
+            temp = zeilen.get(startPos + 4);
+
+            if (temp.substring(temp.length() - 3, temp.length()).equals("txt")) {
+                aktStreberImages = WindowProperties.ladeBildliste(zeilen.get(startPos + 4));
+            } else {
+                aktStreberImages.add(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
+            }
+            
+            randomizeStreber();
+
 
             return true;
         }
@@ -242,7 +255,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
 
-        GamePanel.getjTextAreaGame().append("Zur Waffe " + waffennummer + " gewechselt"+ "\n");
+        GamePanel.getjTextAreaGame().append("Zur Waffe " + waffennummer + " gewechselt" + "\n");
 
     }
 
@@ -257,7 +270,7 @@ public class Game implements Runnable {
             if (Math.random() + waffen[nummer].getSpruchWk() >= 1.0 && !(waffen[nummer].getSpruch().isEmpty())) {
                 GamePanel.getjTextAreaGame().append(waffen[nummer].getSpruch().get(new Random().nextInt(waffen[nummer].getSpruch().size())) + "\n");
             }
-
+            randomizeStreber();
         }
     }
 
@@ -266,6 +279,15 @@ public class Game implements Runnable {
             useWeapon(6);
         }
         data.setGranaten((data.getGranaten() - 1));
+        if (Math.random() + waffen[6].getSpruchWk() >= 1.0 && !(waffen[6].getSpruch().isEmpty())) {
+            GamePanel.getjTextAreaGame().append(waffen[6].getSpruch().get(new Random().nextInt(waffen[6].getSpruch().size())) + "\n");
+        }
+        randomizeStreber();
+    }
+
+    public void randomizeStreber() {
+        Random b = new Random();
+        scr.setAktStreber(aktStreberImages.get(b.nextInt(aktStreberImages.size())));
     }
 
     @Override
