@@ -1,0 +1,7 @@
+- Weiter Button StoryPanel
+- Sensei + Shopkeeper Sprüche
+- Zu Waffe 0 gewechselt im GamePanel ändern
+- Panel wechsel per Tastendruck
+- Streber wechseln
+- recalculate Skills funktioniert nicht richtig
+- tButtonfarbe im SkillPanel und ShopPanel ändern, je nach gekauft , kaufbar, freigeschaltet

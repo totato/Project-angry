@@ -170,7 +170,7 @@ public class MainGUI extends WindowProperties {
          timer.start();*/
         System.out.println("zu  " + name + "  gewechselt");
     }
-
+// wird nicht mehr gebraucht :(
     public void addTextToTextArea(JTextArea ta, int maxSigns, String text) {
         //int maxSigns = 30; for gamePanel
         int lastSpace = 0;
