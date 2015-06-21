@@ -6,6 +6,7 @@
 package gui;
 
 import game.Game;
+import java.awt.Color;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -79,82 +80,82 @@ public class StoryPanel extends Panel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaStory = new javax.swing.JTextArea();
-        weiterButton1 = new javax.swing.JButton();
         jLabelStory = new javax.swing.JLabel();
         jLabelLvlStory = new javax.swing.JLabel();
-        skipButton = new javax.swing.JButton();
+        jLabelWeiter = new javax.swing.JLabel();
+        jLabelSkip = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 0, 0));
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
         setPreferredSize(new java.awt.Dimension(650, 750));
+        setLayout(null);
 
+        jTextAreaStory.setBackground(new java.awt.Color(0, 0, 0));
         jTextAreaStory.setColumns(20);
+        jTextAreaStory.setFont(new java.awt.Font("Monospaced", 0, 24)); // NOI18N
+        jTextAreaStory.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaStory.setRows(5);
         jScrollPane1.setViewportView(jTextAreaStory);
 
-        weiterButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        weiterButton1.setText("Weiter");
-        weiterButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                weiterButton1ActionPerformed(evt);
-            }
-        });
+        add(jScrollPane1);
+        jScrollPane1.setBounds(30, 470, 596, 203);
 
         jLabelStory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/StoryBG_00.png"))); // NOI18N
         jLabelStory.setText("jLabel1");
+        add(jLabelStory);
+        jLabelStory.setBounds(30, 50, 596, 403);
 
         jLabelLvlStory.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelLvlStory.setForeground(new java.awt.Color(255, 255, 255));
         jLabelLvlStory.setText("Kapitel: 1");
+        add(jLabelLvlStory);
+        jLabelLvlStory.setBounds(280, 10, 115, 30);
 
-        skipButton.setText("Skip");
-        skipButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                skipButtonActionPerformed(evt);
+        jLabelWeiter.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelWeiter.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelWeiter.setText("Weiter");
+        jLabelWeiter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelWeiterMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelWeiterMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelWeiterMouseExited(evt);
             }
         });
+        add(jLabelWeiter);
+        jLabelWeiter.setBounds(290, 680, 90, 42);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(265, 265, 265)
-                        .addComponent(jLabelLvlStory))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(weiterButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(130, 130, 130)
-                            .addComponent(skipButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabelStory, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelLvlStory, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelStory, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(skipButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(weiterButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
-                .addGap(19, 19, 19))
-        );
+        jLabelSkip.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelSkip.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelSkip.setText("Skip");
+        jLabelSkip.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelSkipMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelSkipMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelSkipMouseExited(evt);
+            }
+        });
+        add(jLabelSkip);
+        jLabelSkip.setBounds(590, 670, 40, 28);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
+    private void jLabelWeiterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWeiterMouseClicked
+        try {
+            Game.getAktGame().getStory().nextPart();
+        } catch (IOException ex) {
+            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabelWeiterMouseClicked
+
+    private void jLabelSkipMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipMouseClicked
         try {
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
@@ -162,24 +163,32 @@ public class StoryPanel extends Panel {
         } catch (Exception ex) {
             Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_skipButtonActionPerformed
+    }//GEN-LAST:event_jLabelSkipMouseClicked
 
-    private void weiterButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButton1ActionPerformed
-        try {
-            Game.getAktGame().getStory().nextPart();
-        } catch (IOException ex) {
-            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_weiterButton1ActionPerformed
+    private void jLabelWeiterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWeiterMouseEntered
+        jLabelWeiter.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelWeiterMouseEntered
+
+    private void jLabelWeiterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWeiterMouseExited
+        jLabelWeiter.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelWeiterMouseExited
+
+    private void jLabelSkipMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipMouseEntered
+        jLabelSkip.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jLabelSkipMouseEntered
+
+    private void jLabelSkipMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipMouseExited
+        jLabelSkip.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jLabelSkipMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelLvlStory;
+    private javax.swing.JLabel jLabelSkip;
     private javax.swing.JLabel jLabelStory;
+    private javax.swing.JLabel jLabelWeiter;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaStory;
-    private javax.swing.JButton skipButton;
-    private javax.swing.JButton weiterButton1;
     // End of variables declaration//GEN-END:variables
 
     @Override

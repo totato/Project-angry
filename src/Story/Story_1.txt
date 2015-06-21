@@ -1,8 +1,8 @@
 -START1-
-I have been fighting this battle since it first started. I don’t know how many I killed. They just keep coming. We have been hiding, and they found us. Now we are attacking. 
-/Grafiken/StoryBG_00.png
+Wir dachten immer, dass unser Untergang ein Fehler wäre. Wir dachten immer, es würde schleichend und langsam kommen, ohne das es jemand merken würde, bis es zu spät war.
+/Grafiken/Story_0_BG_1.png
 -END1-
 -START2-
-Now they  have to hide. And we won’t rest until this second war is over.
-/Grafiken/BG.jpg
+Nun stehen wir am Rande der Zerstörung, an der Schwelle zu unserer eigenen Auslöschung, und alles hätte vermieden werden können.
+/Grafiken/Story_0_BG_2.png
 -END2-
