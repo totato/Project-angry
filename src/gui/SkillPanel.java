@@ -1094,7 +1094,8 @@ public class SkillPanel extends Panel {
     @Override
     public void switchFrom() throws Exception {
         super.switchFrom();
-        MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
         Game.getAktGame().getSkills().recalculateSkills();
+        MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
+        
     }
 }

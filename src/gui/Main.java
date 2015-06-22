@@ -15,7 +15,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        Launcher l = new Launcher();
+        new Launcher();
         //l.Launcher();
     }
 

@@ -759,6 +759,8 @@ public class ShopPanel extends Panel {
         tbShopB3.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
         tbShopB4.setEnabled(!Game.getAktGame().getWaffe(5, true).getName().equals("MAX"));
         tbShopC1.setEnabled(!Game.getAktGame().getWaffe(6, true).getName().equals("MAX"));
+        
+        tbShopC2.setEnabled(Game.getAktGame().getData().getWaffenStufe(6) > 0);
 
         tbShopGroup.clearSelection();
         setButtonColor();

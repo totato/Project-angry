@@ -124,9 +124,8 @@ public class Game implements Runnable {
             } else {
                 aktStreberImages.add(WindowProperties.ladeBild(zeilen.get(startPos + 4)));
             }
-            
-            randomizeStreber();
 
+            randomizeStreber();
 
             return true;
         }
@@ -174,9 +173,16 @@ public class Game implements Runnable {
 
     }
 
-    public void buyGrenade(int anzahl) {
-        data.setGranaten(data.getGranaten() + anzahl);
-        data.setBrillen(data.getBrillen() - getGrenadeCost());
+    public String buyGrenade(int anzahl) {
+        if (data.getBrillen() >= getGrenadeCost() * anzahl) {
+            data.setGranaten(data.getGranaten() + anzahl);
+            data.setBrillen(data.getBrillen() - getGrenadeCost());
+            
+            return "Granate gekauft";
+        }
+        
+        return "Nicht genug Brillen";
+        
     }
 
     public int getGrenadeCost() {
@@ -255,7 +261,7 @@ public class Game implements Runnable {
             data.setAktWaffe(waffennummer);
         }
 
-         GamePanel.getjTextAreaGame().append("Zur Waffe " + waffen[waffennummer].getName() + " gewechselt" + "\n");
+        GamePanel.getjTextAreaGame().append("Zur Waffe " + waffen[waffennummer].getName() + " gewechselt" + "\n");
 
     }
 
