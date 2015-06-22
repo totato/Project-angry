@@ -59,6 +59,12 @@ public class Screen extends JLabel{
         this.background = bg;
     }
 
+    public void setAktStreber(BufferedImage aktStreber) {
+        this.aktStreber = aktStreber;
+    }
+    
+    
+
     
     @Override
     public void paintComponent(Graphics g){

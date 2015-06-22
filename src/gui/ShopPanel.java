@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.event.KeyEvent;
 import game.Game;
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -30,8 +31,8 @@ public class ShopPanel extends Panel {
 
     private void shortKeys() {
 
-        //WindowProperties.setShortKeys(bToGameShop, "game card", KeyEvent.VK_B);
-        //WindowProperties.setShortKeys(bToSkillShop, "skill card", KeyEvent.VK_M);
+        WindowProperties.setShortKeys(null, bToGameShop, "game card", KeyEvent.VK_B);
+        WindowProperties.setShortKeys(null, bToSkillShop, "skill card", KeyEvent.VK_M);
     }
 
     /**
@@ -623,14 +624,48 @@ public class ShopPanel extends Panel {
         this.disableBuyButton();
     }
 
+    private void setButtonColor() {
+        int brillen = Game.getAktGame().getData().getBrillen();
+        if (brillen >= Game.getAktGame().getWaffe(1, true).getKosten() ) {
+            tbShopB0.setBackground(Color.GREEN);
+        } else {
+            tbShopB0.setBackground(Color.BLACK);
+        }
+        if (brillen >= Game.getAktGame().getWaffe(2, true).getKosten()) {
+            tbShopB1.setBackground(Color.GREEN);
+        } else {
+            tbShopB1.setBackground(Color.BLACK);
+        }
+        if (brillen >= Game.getAktGame().getWaffe(3, true).getKosten()) {
+            tbShopB2.setBackground(Color.GREEN);
+        } else {
+            tbShopB2.setBackground(Color.BLACK);
+        }
+        if (brillen >= Game.getAktGame().getWaffe(4, true).getKosten()) {
+            tbShopB3.setBackground(Color.GREEN);
+        } else {
+            tbShopB3.setBackground(Color.BLACK);
+        }
+        if (brillen >= Game.getAktGame().getWaffe(5, true).getKosten()) {
+            tbShopB4.setBackground(Color.GREEN);
+        } else {
+            tbShopB4.setBackground(Color.BLACK);
+        }
+        if (brillen >= Game.getAktGame().getWaffe(6, true).getKosten()) {
+            tbShopC1.setBackground(Color.GREEN);
+        } else {
+            tbShopC1.setBackground(Color.BLACK);
+        }
+    }
+
     public void setGlasses(int br) {
         jLabelGlassesShop.setText("Brillen: " + br);
     }
 
-    public void disableBuyButton(){
-        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());
+    public void disableBuyButton() {
+        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());      
     }
-    
+
     @Override
     public void disableButtons() {
         disableBuyButton();
@@ -657,6 +692,7 @@ public class ShopPanel extends Panel {
         tbShopC1.setEnabled(!Game.getAktGame().getWaffe(6, true).getName().equals("MAX"));
 
         tbShopGroup.clearSelection();
+        setButtonColor();
     }
 
     public void aktualisierBrillen() {
@@ -667,6 +703,7 @@ public class ShopPanel extends Panel {
     public void switchTo() throws Exception {
         super.switchTo();
         aktualisierBrillen();
+        setButtonColor();
     }
 
     @Override

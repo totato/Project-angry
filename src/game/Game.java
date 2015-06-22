@@ -287,6 +287,7 @@ public class Game implements Runnable {
 
     public void randomizeStreber() {
         Random b = new Random();
+        scr.setAktStreber(aktStreberImages.get(b.nextInt(aktStreberImages.size())));
     }
 
     @Override

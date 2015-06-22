@@ -23,7 +23,7 @@ import javax.swing.JToggleButton;
  * @author Vika
  */
 public class SkillPanel extends Panel {
-    
+
     private List<JToggleButton> notlösung;
 
     /**
@@ -32,10 +32,10 @@ public class SkillPanel extends Panel {
     public SkillPanel() {
         initComponents();
         shortKeys();
-        
+
         jTextAreaSkill.setLineWrap(true);
         jTextAreaSkill.setWrapStyleWord(true);
-        
+
         notlösung = new ArrayList();
         notlösung.add(tbSkill0);
         notlösung.add(tbSkill1);
@@ -72,14 +72,14 @@ public class SkillPanel extends Panel {
         notlösung.add(tbSkill32);
         notlösung.add(tbSkill33);
         notlösung.add(tbSkill34);
-        
+
         super.setBgMusic("exSound/Mars.wav");
     }
 
     private void shortKeys() {
 
-       // WindowProperties.setShortKeys(bToShopSkill, "shop card", KeyEvent.VK_N);
-        //WindowProperties.setShortKeys(bToGameSkill, "game card", KeyEvent.VK_B);
+        WindowProperties.setShortKeys(jLabelToShop, null, "shop card", KeyEvent.VK_N);
+        WindowProperties.setShortKeys(jLabelToGame, null, "game card", KeyEvent.VK_B);
     }
 
     /**
@@ -602,7 +602,6 @@ public class SkillPanel extends Panel {
         jLabel1.setBounds(0, -60, 670, 870);
     }// </editor-fold>//GEN-END:initComponents
 
-    
     private void tbSkill0ActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             jTextAreaSkill.setText(SkillHandler.skillBeschreibung(0, Game.getAktGame().getData().getSkillStufe(0) + 1));
@@ -611,7 +610,7 @@ public class SkillPanel extends Panel {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void tbSkill1ActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             jTextAreaSkill.setText(SkillHandler.skillBeschreibung(1, Game.getAktGame().getData().getSkillStufe(1) + 1));
@@ -620,7 +619,7 @@ public class SkillPanel extends Panel {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void tbSkill3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill3ActionPerformed
         try {
             jTextAreaSkill.setText(SkillHandler.skillBeschreibung(3, Game.getAktGame().getData().getSkillStufe(3) + 1));
@@ -639,8 +638,7 @@ public class SkillPanel extends Panel {
         }
     }//GEN-LAST:event_tbSkill2ActionPerformed
 
-    
-    
+
     private void tbSkill5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill5ActionPerformed
         try {
             jTextAreaSkill.setText(SkillHandler.skillBeschreibung(5, Game.getAktGame().getData().getSkillStufe(5) + 1));
@@ -768,7 +766,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_tbSkill17ActionPerformed
 
     private void tbSkill18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSkill18ActionPerformed
-       try {
+        try {
             jTextAreaSkill.setText(SkillHandler.skillBeschreibung(18, Game.getAktGame().getData().getSkillStufe(18) + 1));
             Game.getAktGame().getSkills().setSkillSelected(18);
         } catch (IOException ex) {
@@ -921,7 +919,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_tbSkill34ActionPerformed
 
     private void jLabelToShopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopMouseClicked
-                try {
+        try {
             MainGUI.getAktMainGUI().changeCard("shop card");
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -931,7 +929,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_jLabelToShopMouseClicked
 
     private void jLabelToShopMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopMouseEntered
-       jLabelToShop.setForeground(Color.GRAY);
+        jLabelToShop.setForeground(Color.GRAY);
     }//GEN-LAST:event_jLabelToShopMouseEntered
 
     private void jLabelToShopMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToShopMouseExited
@@ -939,7 +937,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_jLabelToShopMouseExited
 
     private void jLabelToGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToGameMouseClicked
-                try {
+        try {
             MainGUI.getAktMainGUI().changeCard("game card");
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -957,7 +955,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_jLabelToGameMouseExited
 
     private void jLabelBuyExpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyExpMouseClicked
-               try {
+        try {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().unlockSkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -967,7 +965,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_jLabelBuyExpMouseClicked
 
     private void jLabelBuyGlassesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyGlassesMouseClicked
-                try {
+        try {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().buySkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -977,7 +975,7 @@ public class SkillPanel extends Panel {
     }//GEN-LAST:event_jLabelBuyGlassesMouseClicked
 
     private void jLabelBuyExpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyExpMouseEntered
-      jLabelBuyExp.setForeground(Color.GRAY);
+        jLabelBuyExp.setForeground(Color.GRAY);
     }//GEN-LAST:event_jLabelBuyExpMouseEntered
 
     private void jLabelBuyExpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuyExpMouseExited
@@ -992,7 +990,6 @@ public class SkillPanel extends Panel {
         jLabelBuyGlasses.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabelBuyGlassesMouseExited
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1058,24 +1055,40 @@ public class SkillPanel extends Panel {
         setEXP(exp);
     }
 
+    private void setButtonColor() {
+        /*int brillen = Game.getAktGame().getData().getBrillen();
+
+        for (int i = 0; i < notlösung.size(); i++) {
+            if (brillen >= Game.getAktGame().getSkills().) {
+                notlösung.get(i).setBackground(Color.LIGHT_GRAY);
+
+            } else {
+                notlösung.get(i).setBackground(Color.BLACK);
+            }
+
+        }
+*/
+    }
+
     @Override
     public void disableButtons() {
-        
+
         JToggleButton b;
-        
-        for(int i = 0; i < buttonGroup1.getButtonCount(); i++){
+
+        for (int i = 0; i < buttonGroup1.getButtonCount(); i++) {
             b = notlösung.get(i);
             b.setEnabled(SkillHandler.skillUnlocked(i));
         }
-        
+
         buttonGroup1.clearSelection();
-           
+
     }
 
     @Override
     public void switchTo() throws Exception {
         super.switchTo();
-       MainGUI.getAktMainGUI().getSkillPanel1().setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
+        MainGUI.getAktMainGUI().getSkillPanel1().setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
+        setButtonColor();
     }
 
     @Override

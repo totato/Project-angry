@@ -26,8 +26,8 @@ public class Data implements Serializable{
     private int aktWaffe;
 
     public Data() {
-        brillen = 10000;
-        exp = 10000;
+        brillen = 0;
+        exp = 0;
 
         getoeteteStreber = 0;
         aktLevel = 1;

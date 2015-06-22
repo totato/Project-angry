@@ -207,7 +207,8 @@ public abstract class WindowProperties {
         }
     }
 
-    public static void setShortKeys(JLabel label, final String card, int sign) {
+    public static void setShortKeys(JLabel label, JButton button, final String card, int sign) {
+        if(button == null){
         label.getInputMap(label.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
         label.getActionMap().put("x", new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
@@ -220,6 +221,21 @@ public abstract class WindowProperties {
                 }
             }
         });
+        }
+               else if(label == null){
+        button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
+        button.getActionMap().put("x", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    MainGUI.getAktMainGUI().changeCard(card);
+                } catch (IOException ex) {
+                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        }
     }
 
     public static BufferedImage ladeBild(String quelle) {
