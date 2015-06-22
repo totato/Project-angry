@@ -1,7 +1,9 @@
 -START1-
 -1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+Hand
+Du hast es in der Hand.
+0
+0
+WAFFEN-UPDATE
+0
 -END1-

@@ -2,7 +2,7 @@
 Schlag
 Du realisierst, das du deine Hände zum Schlagen nutzen kannst!
 1
-1000
+0
 2
 0.5
 Streber stirbt an Lachkrampf.
@@ -11,7 +11,7 @@ Du fällst hin und nimmst einen Streber mit.
 -START2-
 Selbstkontrolle
 Wenn du schlägst und stehenbleibst kannst du nochmal schlagen!
-1
+10000
 600
 2
 0.5

@@ -11,6 +11,7 @@ public class Data implements Serializable{
     public static final int ANZAHL_SKILLS = 35;
     public static final int ANZAHL_WAFFEN = 7;
     public static final int ANZAHL_AUSRÜSTUNG = 3;
+    
 
     private int brillen;//Eine Brille entspricht einem toten Streber entsrpicht einem Kill
     private int lebendeStreber;//Noch lebende Streber, wenn da 0 erreicht nächstes level!
@@ -26,8 +27,8 @@ public class Data implements Serializable{
     private int aktWaffe;
 
     public Data() {
-        brillen = 0;
-        exp = 0;
+        brillen = 10000;
+        exp = 10000;
 
         getoeteteStreber = 0;
         aktLevel = 1;
@@ -41,7 +42,6 @@ public class Data implements Serializable{
         for (int i : waffenStufen) {
             i = 0;
         }
-        waffenStufen[0] = 1;
 
         ausrüstungStufen = new int[ANZAHL_AUSRÜSTUNG];
         for (int i : ausrüstungStufen) {

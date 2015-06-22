@@ -82,10 +82,10 @@ public class SkillHandler {
 
             @Override
             public void mach(String s) throws IOException {
-                if (Game.getAktGame().getData().getWaffenStufe(Integer.parseInt(s)) < upgradeAkt[Integer.parseInt(s)]) {
+                if (Game.getAktGame().getData().getWaffenStufe(Integer.parseInt(s)) <= upgradeAkt[Integer.parseInt(s)]) {
                     Game.getAktGame().upgradeWeapon(Integer.parseInt(s));
-                    upgradeAkt[Integer.parseInt(s)]++;
                 }
+                upgradeAkt[Integer.parseInt(s)]++;
             }
         });
 

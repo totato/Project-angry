@@ -457,6 +457,9 @@ public class GamePanel extends Panel {
 
     @Override
     public void disableButtons() {
+        
+        bEvent.setEnabled(false); //vorläufig
+        
         tbAttack0.setEnabled(Game.getAktGame().getData().getWaffenStufe(0) > 0);
         tbAttack1.setEnabled(Game.getAktGame().getData().getWaffenStufe(1) > 0);
         tbAttack2.setEnabled(Game.getAktGame().getData().getWaffenStufe(2) > 0);

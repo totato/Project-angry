@@ -300,10 +300,10 @@ public class Game implements Runnable {
 
             startTime = System.currentTimeMillis();
 
-            if (data.getLebendeStreber() == 0 && weiter) {
+            if (weiter && data.getLebendeStreber() == 0) {
                 try {
                     this.loadLevel(data.getAktLevel() + 1, true);
-                    weiter = data.getAktLevel() == maxLevel();
+                    weiter = data.getAktLevel() != maxLevel();
                 } catch (IOException ex) {
                     Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (Exception ex) {
