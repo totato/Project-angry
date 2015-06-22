@@ -5,20 +5,196 @@ Nun kannst du rote Ballons mit Geschenken abschießen.
 0
 2
 0.5
+Der Stein fliegt weiter als je zuvor!
+Der Stein verschwindet hinter dem Horizont.
 -END1-
 -START2-
-Armbrust.
-Du hast nun eine richtige Waffe!
+Javelin
+Ein Wurf, ein Treff... Versuch. Ein Versuch.
 10
 0
 2
 0.5
+Du triffst etwas. Nicht dein Ziel, aber etwas.
+Der Speer fliegt falschrum aus deiner Hand!
 -END2-
 -START3-
-Maschinen-Armbrust
-Frag Antonio was das ist.
+Schießbarer Stock
+Du kombinierst zwei Stöcker und ein Seil und erhälst einen schießbaren Stock!
 15
 0
 2
 0.5
+Der Stock fliegt über das Ziel hinaus.
+Du verfehlst knapp, triffst aber etwas hinter deinem Ziel.
 -END3-
+-START4-
+Pfeil und Bogen
+Du spitzt den zweiten Stock an und erhälst einen effektiveren schießbaren Stock!
+5
+0
+2
+0.5
+Wush!
+Du triffst den Streber ins Knie. Er wird nie mehr Abenteuer erleben können.
+-END4-
+-START5-
+Englischer Langbogen
+Du triffst eh nichts, da bringt dir etwas extra Reichweite mehr Kills!
+5
+0
+2
+0.5
+Houston meldet: Ein Pfeil im Orbit.
+Die Streber sehen ein Omen im Himmel. Sie fliehen!
+-END5-
+-START6-
+Halbautomatische Armbrust
+Du verbesserst deinen Bogen indem du ihn mit Mechaniken ergänzt und im Vakuum feuerst.
+5
+0
+2
+0.5
+Die vor dir stehenden Streber werden durchbohrt.
+EIn neuer Bolzen? Schon bereit!
+-END6-
+-START7-
+Steinschlossgewehr
+Evolution heißt Feuer. Feuer heißt Bumm. Ritsch. Tssss. BUM!
+5
+0
+2
+0.5
+Ritsch. Tsssss. BUM!
+Schuss! Treffer! Auf zum Nachladen
+-END7-
+-START8-
+K98
+Deutscher Repetierkarabiner. Keine Ahnung was das ist? Egal. Es tötet.
+5
+0
+2
+0.5
+Bumm. Klick.
+Hitler wäre stolz auf dich.
+-END8-
+-START9-
+M1
+Ein Flug nach Amerika ist alles, was du für dieses Upgrade brauchst.
+5
+0
+2
+0.5
+BAMBAMBAM
+*pling*
+-END9-
+-START10-
+KettGef MG42 V. II Aut.Lau-W
+Was auch immer es ist, es scheint ein Upgrade darzustellen. Gekauft!
+5
+0
+2
+0.5
+Drrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+Brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+-END10-
+-START11-
+Dt. GMG (HK.TM)
+Gewehrgranaten? Super. Vollautomatische Gewehrgranaten? Noch besser.
+5
+0
+2
+0.5
+Fünf Explosionen in zwei Sekunden.
+Du hörst wegen der Explosionen nichts mehr.
+-END11-
+-START12-
+Dt. GMG (HK.TM) V.II (NAP)
+Vollautomatische Gewehrgranaten? Super. Vollautomatische Napalm-Gewehrgranaten? SWEET!
+5
+0
+2
+0.5
+I love the smell of napalm in the morning!
+Ein Flammenmeer baut sich vor dir auf.
+-END12-
+-START13-
+Flammenwerfer
+Wenn Feuer gut ist... Was ist dann mehr Feuer?
+5
+0
+2
+0.5
+Wush!
+Smells like... victory!
+-END13-
+-START14-
+Plasmakanone
+Falls du deinen Flammenwerfer zum überhitzen bringen könntest wäre er nch stärker...
+5
+0
+2
+0.5
+...ein Feuer in deiner Seele und auf ihren Körpern!
+Smells like... BBQ!
+-END14-
+-START15-
+Gatlingcutter
+Neun Läufe pure Energie. Bratzt alles weg was lebt oder tot ist.
+5
+0
+2
+0.5
+Dzzzzzzzzzzzzzz!
+Drrrrrrrrrrrrrr!
+-END15-
+-START16-
+Gatexcutter
+Gatlingcutter mit neu eingesetzten Linsen. Nicht der doppelte Durchschlag, aber doch ein Schritt vorwärts.
+5
+0
+2
+0.5
+Zzzzzzzzzzzzzzz!
+Frrrrrrrrrrrrrr!
+-END16-
+-START17-
+ExLG MK.I (V. EX)
+Eine futuristische Waffe die niemand wirklich mehr versteht. Sie scheint aber zu funktionieren.
+5
+0
+2
+0.5
+Der Streber hat nichtmal Zeit um nach Hilfe zu schreien!
+Der Streber deformiert sich um seine Schusswunde herum.
+-END17-
+-START18-
+ExLGFrEx MK.IV (V. EX/FF)
+Ein Geschenk des Himmels! Oder besser, das eines überaus tallentiertem Waffenschmiedes.
+5
+0
+2
+0.5
+Bis zum Horizont fallen die Streber!
+Eine Schneise des Todes öffnet sich vor dir!
+-END18-
+-START19-
+ExLGFrEx MK.IV (V. BAT)
+Ein einfaches Batterieupgrade könnte diese Waffe noch effektiver machen.
+5
+0
+2
+0.5
+So muss die Apokalypse aussehen...
+Wie ein Sonnenstrum im Weltall.
+-END19-
+-START20-
+ExSRPL/RG V. II Mk.XIV
+Ein Schuss mit dieser Waffe setzt mehr Energie frei als die Sonne! Hoffentlich bleibt das Sonnensystem stabil...
+5
+0
+2
+0.5
+Du verbrennst alle Streber in Sichtweite und blendest den Rest!
+Die Sonne selbst scheint zu pulsieren...
+-END20-

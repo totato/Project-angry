@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import game.Game;
@@ -300,10 +295,6 @@ public class Launcher extends WindowProperties{
     private void beenden() {
         System.exit(0);
     }
-
-    /*
-     Versteckt den Launcher. Soll Später das Spiel beginnen.
-     */
     
 
 }
