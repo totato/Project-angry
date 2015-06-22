@@ -1,167 +1,199 @@
 -START1-
-Fäuste
-Du realisierst das du deine Hand zu einer Faust machen kannst.
-5
-0
+Schlag
+Du realisierst, das du deine Hände zum Schlagen nutzen kannst!
+1
+1000
 2
 0.5
-Streber lacht dich aus
-Deine Faust tut weh
+Streber stirbt an Lachkrampf.
+Du fällst hin und nimmst einen Streber mit.
 -END1-
 -START2-
-Präzision
-Du triffst nun manchmal einige Gegner.
-10
-0
+Selbstkontrolle
+Wenn du schlägst und stehenbleibst kannst du nochmal schlagen!
+1
+600
 2
 0.5
-Deine Faust tut weh
-Getroffen!
+ein Streber stirbt an einem Lachkrampf.
+Du behälst die Balance!
 -END2-
 -START3-
-Technik
-Der Daumen gehört nicht in die Faust!
-15
-0
+Revolutionäre Erkentniss
+Wenn du schlägst UND triffst wirst du effektiver!
+3
+650
 2
 0.5
-Streber fällt zu Boden.
-Getroffen!
+Du brichst dir die Finger.
+Du triffst!
 -END3-
 -START4-
-Neue Technik
-Fäuste? Pff. Handkantenschlag 4 EVA!
-20
-0
+Technische Revolution
+Wenn du eine eine Faust formst brichst du dir nicht die Finger!
+5
+500
 2
 0.5
+Deine Hand tut weh.
+Du brichst dir den Daumen
 -END4-
 -START5-
-Hand5
-
-35
-0
+Technikevolution
+Wenn du den Daumen aus der Faust nimmst brichst du ihn dir nichtmehr.
+7
+500
 2
 0.5
+Deine Hand tut weh.
+Du triffst den Streber!
 -END5-
 -START6-
-Hand6
-
-40
-0
+Technikrevolution
+Wenn du statt mit der Faust mit der Handkante schlagen würdest...
+10
+450
 2
 0.5
+Norris!
+Chuck!
 -END6-
 -START7-
 Hand7
-
-45
-0
+Zielvorgang
+Vielleicht solltest du anfangen nicht auf die Hände der Streber zu zielen?
+20
+500
 2
 0.5
+Du triffst!
+Headshot! Voll ins Knie!
 -END7-
 -START8-
-Faust8
-
-50
-0
+Verbesserter Zielvorgang
+Du realisierst, das der Kopf ein besseres Ziel ist als das Knie.
+25
+450
 2
+Headshot!
+Genickbruch!
 -END8-
 -START9-
-Faust9
-
-55
-0
+Extrem verbesserter Zielvorgang
+Du lernst, dorthin zu schlagen wo's richtig wehtut...
+30
+300
 2
 0.5
+Dir tut schon das zusehen weh.
+Der Streber jault auf und wälzt sich in schmerzen auf dem Boden.
 -END9-
 -START10-
-Faust10
-
-60
-0
+Interne Verbesserung MK. I
+lange Fingernägel könnten den Strebern vielleicht mehr wehtun als kurze?
+36
+350
 2
 0.5
+Blut spritzt aus den... Aua.
+Mit jedem Schlag stirbt ein Teil von dir.
 -END10-
 -START11-
-Faust11
-
-65
-0
+Interne Verbesserung MK. II
+Das ständige Schlagen hat zu Hornhautbildung geführt. Du schlägst schneller!
+37
+200
 2
 0.5
+Du fühlst nichts, er aber schon!
+Er leidet, du spürst keinen Schmerz.
 -END11-
 -START12-
-Faust12
-
-70
-0
+Psychologische Abhärtung
+Du zielst nichtmehr in die MAgengrube, wo es wirklcih wehtut, sondern gehst tiefer, wo es wirklich wirklich wehtut.
+50
+245
 2
 0.5
+Du siehst einen Fandungszettel gegen dich, wegen Kriegsverbrechen.
+Du fühlst dich wie ein Sadist. Zu recht.
 -END12-
 -START13-
-Faust13
-
-75
-0
+Externe Verbesserung MK. I
+Anstatt auf Natürliche Hornhaut zu setzen setzt du auf Technik und hast dir externe Implantate besorgt.
+50
+199
 2
 0.5
+Der Streber zerkratzt deinen (Nagel)Lack! Du bleibst hart.
+Mamor, Stein und Eisen bricht, aber deine Stahlhaut nicht!
 -END13-
 -START14-
-Faust14
-
-80
-0
+Externe Verbesserung MK. II
+Ein kleines Jettriebwerk gibt deinen Schlägen das nötige UMPF!
+70
+99
 2
 0.5
+Wush!
+Ein Schlag, ein Loch im Oberkörper.
 -END14-
 -START15-
-Faust15
-
+Externe Verbesserung MK. II V. I
+Du baust kleine Lenkraketen an das Jettriebwerk und kannst deine Schlagrichtung wieder steuern.
 85
-0
+88
 2
 0.5
+Wush!
+Ein Hals ohne Kopf, ein Blutspringbrunnen, Ein Haiku. Oder so.
 -END15-
 -START16-
-Faust16
-
-90
-0
+Feuerschutzanzug MK. VII V. IX
+Die Triebwerke verbrannten deine Haut. Nicht mehr!
+85
+50
 2
 0.5
+Der Feuerstrahl prallt von dir ab.
+Der Feuerstrahl nimmt einen Streber hinter dir mit!
 -END16-
 -START17-
-Faust17
-
-95
-0
+Ersatzteile MK. I
+Deine verbrannten Hände müssen ersetzt werden. Stahlfäuste FTW!
+90
+40
 2
 0.5
+Clank!
+Wush!
 -END17-
 -START18-
-Faust18
-
+Ersatzteile MK. II
+Du hast den Schutzanzug zu spät angezogen. Dein ganzer verbrannter Körper muss ersetzt werden. Cyborg FTW!
+90
+30
+2
+0.5
+Clink!
+Clonk!
+-END18-
+-START19-
+Externe Verbesserungen MK. V
+Du montierst einen externen Benzintank auf deinem Rücken. Kein direkter Vorteil, aber bald...
+90
+30
+2
+0.5
+Wush!
+Ein Körperteil weniger zum drum kümmern...
+-END19-
+-START20-
+Du installierst neue Triebwerke und fliegst, Handkante vorraus, durch die Streber.
 100
 0
 2
 0.5
--END18-
--START19-
-Faust19
-
-105
-0
-2
-0.5
--END19-
--START20-
-Faust20
-
-110
-0
-2
-0.5
-Beschreibung
-Beschreibung
+Du fliegst durch die Horden von Strebern!
+Du triffst einhundert Streber auf einmal!
 -END20-

@@ -44,7 +44,6 @@ public abstract class WindowProperties {
      Dateianhang, in die Methode mit eingegeben.   
      */
     public static void backgroundMusic(String dateipfad) throws LineUnavailableException {
-        //TODO: Catch wenn Soundausgabe fehlt
         System.out.println("*Musik spielt*");
         String pfadsoundlaun = dateipfad;
 
