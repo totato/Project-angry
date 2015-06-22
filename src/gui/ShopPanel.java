@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.CodeSource;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.LineUnavailableException;
@@ -35,8 +36,8 @@ public class ShopPanel extends Panel {
 
     private void shortKeys() {
 
-        WindowProperties.setShortKeys(null, bToGameShop, "game card", KeyEvent.VK_B);
-        WindowProperties.setShortKeys(null, bToSkillShop, "skill card", KeyEvent.VK_M);
+        WindowProperties.setShortKeys(null, bToGameShop, "game card", KeyEvent.VK_1);
+        WindowProperties.setShortKeys(null, bToSkillShop, "skill card", KeyEvent.VK_3);
 
         jTextField1.getInputMap(jTextField1.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "x");
         jTextField1.getActionMap().put("x", new AbstractAction() {
@@ -669,23 +670,31 @@ public class ShopPanel extends Panel {
         this.disableBuyButton();
     }
 
-    private void cheaten() {
-        System.out.println(jTextField1.getText());
+    private void cheaten() throws Exception {
+
         if (jTextField1.getText().equals("Thorsten")) {
             Game.getAktGame().getData().setExp(0);
             Game.getAktGame().getData().setBrillen(0);
+            jTextAreaShop.setText("Hat wieder mal alles falsch gemacht.");
         }
-        if (jTextField1.getText().equals("Antonio")) {
-            Game.getAktGame().getData().setBrillen((5 + Game.getAktGame().getData().getBrillen()) * 3);
+        if (jTextField1.getText().equals("Antonio") && Game.getAktGame().getData().getBrillen() < Integer.MAX_VALUE) {
+            Game.getAktGame().getData().setBrillen((5 + Game.getAktGame().getData().getBrillen()) * 2);
+            jTextAreaShop.setText("Du hast ein paar Brillen gefunden.");
             if (Game.getAktGame().getData().getBrillen() < 0) {
-                Game.getAktGame().getData().setBrillen(2147483647);
+                Game.getAktGame().getData().setBrillen(Integer.MAX_VALUE);
+                jTextAreaShop.setText("Der Integer ist nicht groß genug.");
             }
         }
-        if (jTextField1.getText().equals("Viktoria")) {
+        if (jTextField1.getText().equals("Viktoria") && Game.getAktGame().getData().getExp() < Integer.MAX_VALUE) {
             Game.getAktGame().getData().setExp((5 + Game.getAktGame().getData().getExp()) * 2);
+            jTextAreaShop.setText("Du wurdest erleuchtet."); // TODO hier evtl. Teile aus dem ersten Buch des Antonio
             if (Game.getAktGame().getData().getExp() < 0) {
-                Game.getAktGame().getData().setExp(2147483647);
+                Game.getAktGame().getData().setExp(Integer.MAX_VALUE);
+                jTextAreaShop.setText("Der Integer ist nicht groß genug.");
             }
+        }
+        if(jTextField1.getText().equals("Plume")){
+            Game.getAktGame().loadLevel(211, true);
         }
 
         aktualisierBrillen();
@@ -694,33 +703,35 @@ public class ShopPanel extends Panel {
 
     private void setButtonColor() {
         int brillen = Game.getAktGame().getData().getBrillen();
+         Color schöneresBlau = Color.decode("0x1D1957");
+         
         if (brillen >= Game.getAktGame().getWaffe(1, true).getKosten()) {
-            tbShopB0.setBackground(Color.GREEN);
+            tbShopB0.setBackground(schöneresBlau);
         } else {
             tbShopB0.setBackground(Color.BLACK);
         }
         if (brillen >= Game.getAktGame().getWaffe(2, true).getKosten()) {
-            tbShopB1.setBackground(Color.GREEN);
+            tbShopB1.setBackground(schöneresBlau);
         } else {
             tbShopB1.setBackground(Color.BLACK);
         }
         if (brillen >= Game.getAktGame().getWaffe(3, true).getKosten()) {
-            tbShopB2.setBackground(Color.GREEN);
+            tbShopB2.setBackground(schöneresBlau);
         } else {
             tbShopB2.setBackground(Color.BLACK);
         }
         if (brillen >= Game.getAktGame().getWaffe(4, true).getKosten()) {
-            tbShopB3.setBackground(Color.GREEN);
+            tbShopB3.setBackground(schöneresBlau);
         } else {
             tbShopB3.setBackground(Color.BLACK);
         }
         if (brillen >= Game.getAktGame().getWaffe(5, true).getKosten()) {
-            tbShopB4.setBackground(Color.GREEN);
+            tbShopB4.setBackground(schöneresBlau);
         } else {
             tbShopB4.setBackground(Color.BLACK);
         }
         if (brillen >= Game.getAktGame().getWaffe(6, true).getKosten()) {
-            tbShopC1.setBackground(Color.GREEN);
+            tbShopC1.setBackground(schöneresBlau);
         } else {
             tbShopC1.setBackground(Color.BLACK);
         }
@@ -771,9 +782,11 @@ public class ShopPanel extends Panel {
 
     @Override
     public void switchTo() throws Exception {
+        Random b = new Random();
         super.switchTo();
         aktualisierBrillen();
         setButtonColor();
+        jTextAreaShop.setText(Game.getAktGame().getShopkeeperSpruche().get(b.nextInt(Game.getAktGame().getShopkeeperSpruche().size())));
     }
 
     @Override

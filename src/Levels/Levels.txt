@@ -12,3 +12,10 @@ Grafiken/Level_1_BG.png
 Grafiklisten/Level_2_Streberliste.txt
 2
 -END2-
+-START211-
+65000
+100
+Grafiken/Level_1_BG.png
+Grafiklisten/Level_211_Streberliste.txt
+211
+-END211-

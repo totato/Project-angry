@@ -58,6 +58,9 @@ public class Game implements Runnable {
 
     private String savedatei;
 
+    private ArrayList<String> senseiSpruche;
+    private ArrayList<String> shopkeeperSpruche;
+
     public Game(String savedatei) throws IOException {
 
         Game.setAktGame(this);
@@ -70,6 +73,8 @@ public class Game implements Runnable {
         skills = new SkillHandler();
         story = new StoryHandler();
         aktStreberImages = new ArrayList();
+        senseiSpruche = loadSpruche("sensei");
+        shopkeeperSpruche = loadSpruche("shopkeeper");
 
     }
 
@@ -177,12 +182,12 @@ public class Game implements Runnable {
         if (data.getBrillen() >= getGrenadeCost() * anzahl) {
             data.setGranaten(data.getGranaten() + anzahl);
             data.setBrillen(data.getBrillen() - getGrenadeCost());
-            
+
             return "Granate gekauft";
         }
-        
+
         return "Nicht genug Brillen";
-        
+
     }
 
     public int getGrenadeCost() {
@@ -226,10 +231,10 @@ public class Game implements Runnable {
     public static Waffe loadWeapon(int waffennummer, int waffenstufe) throws IOException {
 
         List<String> waffenTXT;
-        List<String> sprüche;
+        List<String> spruche;
         int startPos;
         int endPos;
-        sprüche = new ArrayList();
+        spruche = new ArrayList();
 
         Waffe waffe = null;
 
@@ -241,9 +246,9 @@ public class Game implements Runnable {
                 if (startPos > -1 && endPos > -1) {
 
                     for (int i = startPos + 7; i < endPos; i++) {
-                        sprüche.add(waffenTXT.get(startPos + i));
+                        spruche.add(waffenTXT.get(i));
                     }
-                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), sprüche, Double.parseDouble(waffenTXT.get(startPos + 6)));
+                    waffe = new Waffe(waffenTXT.get(startPos + 1), waffenTXT.get(startPos + 2), Integer.parseInt(waffenTXT.get(startPos + 3)), Integer.parseInt(waffenTXT.get(startPos + 4)), Integer.parseInt(waffenTXT.get(startPos + 5)), spruche, Double.parseDouble(waffenTXT.get(startPos + 6)));
                 } else {
                     waffe = new Waffe("MAX", "Wie hast du es geschafft an diese Waffe zu kommen", 0, 0, 0, null, 0);
                 }
@@ -288,13 +293,39 @@ public class Game implements Runnable {
         if (Math.random() + waffen[6].getSpruchWk() >= 1.0 && !(waffen[6].getSpruch().isEmpty())) {
             GamePanel.getjTextAreaGame().append(waffen[6].getSpruch().get(new Random().nextInt(waffen[6].getSpruch().size())) + "\n");
         }
-        
+
         randomizeStreber();
     }
 
     public void randomizeStreber() {
         Random b = new Random();
         scr.setAktStreber(aktStreberImages.get(b.nextInt(aktStreberImages.size())));
+    }
+
+    private ArrayList<String> loadSpruche(String person) throws IOException {
+        List<String> sprucheTXT;
+        ArrayList<String> spruche;
+        int startPos;
+        int endPos;
+
+        spruche = new ArrayList();
+
+        sprucheTXT = WindowProperties.ladeTXT("Story/Sensei_Shopkeeper_Spruche.txt");
+        if (!sprucheTXT.isEmpty()) {
+            startPos = sprucheTXT.indexOf("-START" + person + "-");
+            endPos = sprucheTXT.indexOf("-END" + person + "-");
+            if (startPos > -1 && endPos > -1) {
+
+                for (int i = startPos + 1; i < endPos; i++) {
+                    spruche.add(sprucheTXT.get(i));
+                }
+
+            } else {
+                spruche.add("Dieser Text exestiert nicht.");
+            }
+            return spruche;
+        }
+        return spruche;
     }
 
     @Override
@@ -399,6 +430,14 @@ public class Game implements Runnable {
         active = true;
         Thread gameThread = new Thread(this);
         gameThread.start();
+    }
+
+    public ArrayList<String> getSenseiSpruche() {
+        return senseiSpruche;
+    }
+
+    public ArrayList<String> getShopkeeperSpruche() {
+        return shopkeeperSpruche;
     }
 
     public SkillHandler getSkills() {

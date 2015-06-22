@@ -1,0 +1,10 @@
+-STARTshopkeeper-
+"Wenn sie mal wieder auf der Suche nach einem.... ähm.... legal anfechtbaren Geschäft sind, denken sie an mich."
+"Heute auf alles FSK 12."
+"Versuche nicht mal was zu stehlen.... denn es ist noch nicht implementiert."
+-ENDshopkeeper-
+-STARTsensei-
+"Du musst noch viel lernen mein Schüler."
+"Es gibt nichts umsonst."
+"Die Waffe bringt nichts wenn sie nicht trifft!"
+-ENDsensei-

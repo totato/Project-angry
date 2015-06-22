@@ -1,0 +1,8 @@
+-START1-
+Die Streber probierten jedoch nicht nur direkt die Menschheit auszulöschen: Sie korrumpierten auch die einst wundeschöne Natur unserer Mutter Erde.
+/Grafiken/StoryBG_00.png
+-END1-
+-START2-
+Ohne eine Heimat kann niemand leben, und als die Streber alles schöne und gute genommen hatten, als sie jede Blume zur Plume korrumpiert hatten, sah sich 1€ mit der Frage konfrontiert: Diese neue, aber doch heimische Flora töten, oder sie leben lassen, und als neues Ökosysten akzeptieren?Er entschied sich für das, was er am besten konnte.
+/Grafiken/StoryBG_00.png
+-END2-

@@ -51,8 +51,8 @@ public class GamePanel extends Panel {
 
     private void shortKeys() {
 
-        WindowProperties.setShortKeys(jLabelToShopGame,null, "shop card", KeyEvent.VK_N);
-        WindowProperties.setShortKeys(jLabelToSkill,null, "skill card", KeyEvent.VK_M);
+        WindowProperties.setShortKeys(jLabelToShopGame,null, "shop card", KeyEvent.VK_2);
+        WindowProperties.setShortKeys(jLabelToSkill,null, "skill card", KeyEvent.VK_3);
     }
 
     public static JTextArea getjTextAreaGame() {

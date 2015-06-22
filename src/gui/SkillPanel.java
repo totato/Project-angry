@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractButton;
@@ -78,8 +79,8 @@ public class SkillPanel extends Panel {
 
     private void shortKeys() {
 
-        WindowProperties.setShortKeys(jLabelToShop, null, "shop card", KeyEvent.VK_N);
-        WindowProperties.setShortKeys(jLabelToGame, null, "game card", KeyEvent.VK_B);
+        WindowProperties.setShortKeys(jLabelToShop, null, "shop card", KeyEvent.VK_2);
+        WindowProperties.setShortKeys(jLabelToGame, null, "game card", KeyEvent.VK_1);
     }
 
     /**
@@ -94,9 +95,9 @@ public class SkillPanel extends Panel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaSkill = new javax.swing.JTextArea();
+        jLabelGlassesSkill = new javax.swing.JLabel();
         jLabelSensei = new javax.swing.JLabel();
         jLabelEXPSkill = new javax.swing.JLabel();
-        jLabelGlassesSkill = new javax.swing.JLabel();
         jLabelSkilltree = new javax.swing.JLabel();
         tbSkill25 = new javax.swing.JToggleButton();
         tbSkill3 = new javax.swing.JToggleButton();
@@ -114,6 +115,7 @@ public class SkillPanel extends Panel {
         tbSkill12 = new javax.swing.JToggleButton();
         tbSkill17 = new javax.swing.JToggleButton();
         tbSkill16 = new javax.swing.JToggleButton();
+        jLabelBuyGlasses = new javax.swing.JLabel();
         tbSkill21 = new javax.swing.JToggleButton();
         tbSkill20 = new javax.swing.JToggleButton();
         tbSkill15 = new javax.swing.JToggleButton();
@@ -134,7 +136,6 @@ public class SkillPanel extends Panel {
         tbSkill33 = new javax.swing.JToggleButton();
         tbSkill0 = new javax.swing.JToggleButton();
         jLabelToGame = new javax.swing.JLabel();
-        jLabelBuyGlasses = new javax.swing.JLabel();
         jLabelToShop = new javax.swing.JLabel();
         jLabelBuyExp = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -154,22 +155,22 @@ public class SkillPanel extends Panel {
         add(jScrollPane1);
         jScrollPane1.setBounds(10, 400, 220, 340);
 
+        jLabelGlassesSkill.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelGlassesSkill.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelGlassesSkill.setText("Brillen: 0");
+        add(jLabelGlassesSkill);
+        jLabelGlassesSkill.setBounds(130, 320, 130, 20);
+
         jLabelSensei.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/sensei01.png"))); // NOI18N
         jLabelSensei.setText("jLabel1");
         add(jLabelSensei);
         jLabelSensei.setBounds(10, 10, 220, 300);
 
-        jLabelEXPSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelEXPSkill.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEXPSkill.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEXPSkill.setText("Exp: 0");
         add(jLabelEXPSkill);
-        jLabelEXPSkill.setBounds(10, 314, 100, 20);
-
-        jLabelGlassesSkill.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelGlassesSkill.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelGlassesSkill.setText("Brillen: 0");
-        add(jLabelGlassesSkill);
-        jLabelGlassesSkill.setBounds(140, 310, 110, 20);
+        jLabelEXPSkill.setBounds(10, 320, 120, 20);
 
         jLabelSkilltree.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelSkilltree.setText("             Skillbaum");
@@ -335,6 +336,23 @@ public class SkillPanel extends Panel {
         });
         add(tbSkill16);
         tbSkill16.setBounds(260, 310, 60, 23);
+
+        jLabelBuyGlasses.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelBuyGlasses.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuyGlasses.setText("Kaufen");
+        jLabelBuyGlasses.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBuyGlassesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelBuyGlassesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelBuyGlassesMouseExited(evt);
+            }
+        });
+        add(jLabelBuyGlasses);
+        jLabelBuyGlasses.setBounds(140, 340, 70, 50);
 
         buttonGroup1.add(tbSkill21);
         tbSkill21.setText("jToggleButton2");
@@ -542,23 +560,6 @@ public class SkillPanel extends Panel {
         });
         add(jLabelToGame);
         jLabelToGame.setBounds(540, 690, 90, 40);
-
-        jLabelBuyGlasses.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelBuyGlasses.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelBuyGlasses.setText("Kaufen");
-        jLabelBuyGlasses.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelBuyGlassesMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabelBuyGlassesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabelBuyGlassesMouseExited(evt);
-            }
-        });
-        add(jLabelBuyGlasses);
-        jLabelBuyGlasses.setBounds(140, 340, 70, 50);
 
         jLabelToShop.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelToShop.setForeground(new java.awt.Color(255, 255, 255));
@@ -1087,8 +1088,10 @@ public class SkillPanel extends Panel {
     @Override
     public void switchTo() throws Exception {
         super.switchTo();
+        Random b = new Random();
         MainGUI.getAktMainGUI().getSkillPanel1().setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
         setButtonColor();
+        jTextAreaSkill.setText(Game.getAktGame().getSenseiSpruche().get(b.nextInt(Game.getAktGame().getSenseiSpruche().size())));
     }
 
     @Override

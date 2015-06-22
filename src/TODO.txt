@@ -1,5 +1,5 @@
 x Weiter Button StoryPanel       
-- Sensei + Shopkeeper Sprüche
+x Sensei + Shopkeeper Sprüche
 x Zu Waffe 0 gewechselt im GamePanel ändern     
 x Panel wechsel per Tastendruck        
 x Streber wechseln          
@@ -9,3 +9,6 @@ x Zeug rund um die Granate ( keine munition kaufen wenn noch keine granate gekau
 x CHEATS !!!
 - Mit 0 Brillen starten
 - fehlermeldung wenn unten im Launchertextfeld nichts steht
+- Mehr Cheats !!!
+- Wenn man zu schnell die Panels wechselt bugt die Musik
+- Mehr Sprüche für Sensei / Shopkeeper

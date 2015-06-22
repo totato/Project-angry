@@ -1,0 +1,3 @@
+Grafiken/Streber_Plume.gif
+Grafiken/Streber_PlumeB.gif
+Grafiken/Streber_PlumeC.gif

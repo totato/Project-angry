@@ -118,7 +118,7 @@ public class StoryPanel extends Panel {
         jLabelLvlStory.setForeground(new java.awt.Color(255, 255, 255));
         jLabelLvlStory.setText("Kapitel: 1");
         add(jLabelLvlStory);
-        jLabelLvlStory.setBounds(280, 10, 115, 30);
+        jLabelLvlStory.setBounds(280, 10, 200, 30);
 
         jLabelWeiter.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelWeiter.setForeground(new java.awt.Color(153, 153, 153));
