@@ -465,8 +465,6 @@ public class ShopPanel extends Panel {
         });
         add(tbShopB1);
         tbShopB1.setBounds(10, 290, 140, 30);
-
-        jTextField1.setText("jTextField1");
         add(jTextField1);
         jTextField1.setBounds(500, 570, 140, 70);
     }// </editor-fold>//GEN-END:initComponents
@@ -674,15 +672,25 @@ public class ShopPanel extends Panel {
 
     private void cheaten() {
         System.out.println(jTextField1.getText());
-        if (jTextField1.getText() == "Thorsten") {
-
+        if (jTextField1.getText().equals("Thorsten")) {
+            Game.getAktGame().getData().setExp(0);
+            Game.getAktGame().getData().setBrillen(0);
         }
         if (jTextField1.getText().equals("Antonio")) {
-            Game.getAktGame().getData().setExp((5 + Game.getAktGame().getData().getBrillen()) * 3);
+            Game.getAktGame().getData().setBrillen((5 + Game.getAktGame().getData().getBrillen()) * 3);
+            if (Game.getAktGame().getData().getBrillen() < 0) {
+                Game.getAktGame().getData().setBrillen(2147483647);
+            }
         }
-        if (jTextField1.getText() == "Viktoria") {
+        if (jTextField1.getText().equals("Viktoria")) {
             Game.getAktGame().getData().setExp((5 + Game.getAktGame().getData().getExp()) * 2);
+            if (Game.getAktGame().getData().getExp() < 0) {
+                Game.getAktGame().getData().setExp(2147483647);
+            }
         }
+
+        aktualisierBrillen();
+        disableButtons();
     }
 
     private void setButtonColor() {
