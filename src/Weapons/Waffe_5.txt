@@ -5,6 +5,12 @@ Pass auf, sonst stirbt es .
 0
 2
 0.5
+Dein Tamagotchi hat einen Haufen auf den Boden gemacht
+Dein Tamagotchi ist krank
+Dein Tamagotchi will Spielen
+Dein Tamagotchi will einen Snack
+Dein Tamagotchi wird zu einem fetten Teenager, weil du ihm zu viele Snacks gegeben hast
+Dein Tamagotchi STIRBT. Toll gemacht!
 -END1-
 -START2-
 Baby Yoshi
@@ -15,20 +21,27 @@ Baby Yoshi
 0.5
 -END2-
 -START3-
-Taschenmonster03
-
+Gelbes Chinesisches Kartennmonster
+Ling-Ling Hitler Bin Laden Küblböck
 15
 0
 2
 0.5
+Los Pikachu! Donnerschock Attacke!
+Ling-Ling hat sein Gesicht verloren...
+Es will den Donnerstein nicht benutzen...
 -END3-
 -START4-
-Taschenmonster04
-
+Sonichu.
+Yellow electric hedgehog Pokemon. The original and one-and-only, he runs faster than the speed of sound. When danger is near, he will slice and zap it up.
 30
 0
 2
 0.5
+Do not fear, world, for I am a new pokemon. And my name is....Sonichu!
+Sonichu is Copyrighted and Mine Alone. Do Not Steal.
+I am not gay
+Los Sonichu! Autismus-Attacke!
 -END4-
 -START5-
 Taschenmonster05
@@ -55,12 +68,13 @@ Sanic
 0.5
 -END7-
 -START8-
-Sonichu.
-Do not fear, world, for I am a new pokemon. And my name is....Sonichu!
+
+
 50
 0
 2
 0.5
+
 -END8-
 -START9-
 Coldsteel the Hedgeheg
