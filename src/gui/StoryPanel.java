@@ -6,6 +6,7 @@
 package gui;
 
 import game.Game;
+import game.StoryHandler;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.List;
@@ -20,8 +21,6 @@ import javax.swing.JTextArea;
  * @author Vika
  */
 public class StoryPanel extends Panel {
-    
-    
 
     /**
      * Creates new form StoryPanel
@@ -33,8 +32,6 @@ public class StoryPanel extends Panel {
         super.setBgMusic("exSound/rewind.wav");
 
     }
-    
-    
 
     public String loadStoryText(int storynr, int storypart) throws IOException {
         String text = "";
@@ -63,11 +60,20 @@ public class StoryPanel extends Panel {
         jTextAreaStory.setText(loadStoryText(storynr, storypart));
         jLabelStory.setIcon(loadStoryPicture(storynr, storypart));
     }
-    
-    public void setChapterNumber(int storynr){
+
+    public void setChapterNumber(int storynr) {
         jLabelLvlStory.setText("Kapitel: " + storynr);
     }
 
+    private void skipStory() {
+        try {
+            MainGUI.getAktMainGUI().changeCard("game card");
+        } catch (IOException ex) {
+            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -151,20 +157,23 @@ public class StoryPanel extends Panel {
 
     private void jLabelWeiterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWeiterMouseClicked
         try {
-            Game.getAktGame().getStory().nextPart();
+            if (Game.getAktGame().getStory().getAktStorypart()   == StoryHandler.getMaxStoryPart(Game.getAktGame().getStory().getAktStory())) {
+                skipStory();
+            }
+            else{
+                try {
+                    Game.getAktGame().getStory().nextPart();
+                } catch (IOException ex) {
+                    Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         } catch (IOException ex) {
             Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabelWeiterMouseClicked
 
     private void jLabelSkipMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipMouseClicked
-        try {
-            MainGUI.getAktMainGUI().changeCard("game card");
-        } catch (IOException ex) {
-            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(StoryPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        skipStory();
     }//GEN-LAST:event_jLabelSkipMouseClicked
 
     private void jLabelWeiterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWeiterMouseEntered
@@ -195,16 +204,16 @@ public class StoryPanel extends Panel {
 
     @Override
     public void disableButtons() {
-       
+
     }
 
     @Override
     public void switchTo() throws Exception {
-       super.switchTo();
+        super.switchTo();
     }
 
     @Override
     public void switchFrom() throws Exception {
-       super.switchFrom();
+        super.switchFrom();
     }
 }

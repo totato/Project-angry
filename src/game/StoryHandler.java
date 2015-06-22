@@ -27,6 +27,14 @@ public class StoryHandler {
         maxStorypart = StoryHandler.getMaxStoryPart(storynr);
         MainGUI.getAktMainGUI().getStoryPanel1().setChapterNumber(storynr);
     }
+
+    public int getAktStorypart() {
+        return aktStorypart;
+    }
+
+    public int getAktStory() {
+        return aktStory;
+    }
     
     public boolean nextPart() throws IOException{
         if(aktStorypart < maxStorypart){
