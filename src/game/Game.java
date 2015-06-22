@@ -288,6 +288,7 @@ public class Game implements Runnable {
         if (Math.random() + waffen[6].getSpruchWk() >= 1.0 && !(waffen[6].getSpruch().isEmpty())) {
             GamePanel.getjTextAreaGame().append(waffen[6].getSpruch().get(new Random().nextInt(waffen[6].getSpruch().size())) + "\n");
         }
+        
         randomizeStreber();
     }
 

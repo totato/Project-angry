@@ -561,8 +561,7 @@ public class ShopPanel extends Panel {
         if (Game.getAktGame().upgradeSelected()) {
 
             if (Game.getAktGame().getSelectedWeapon() == Integer.MAX_VALUE) {
-                Game.getAktGame().buyGrenade(1);
-                jTextAreaShop.setText("Granate gekauft");
+                jTextAreaShop.setText(Game.getAktGame().buyGrenade(1));
             } else {
 
                 try {

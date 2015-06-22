@@ -351,6 +351,7 @@ public class GamePanel extends Panel {
 
     private void bAttack7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAttack7ActionPerformed
         Game.getAktGame().useGrenade();
+        disableGrenButton();
     }//GEN-LAST:event_bAttack7ActionPerformed
 
     private void bEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEventActionPerformed
