@@ -1056,18 +1056,18 @@ public class SkillPanel extends Panel {
     }
 
     private void setButtonColor() {
-        /*int brillen = Game.getAktGame().getData().getBrillen();
+      /*  int brillen = Game.getAktGame().getData().getBrillen();
 
         for (int i = 0; i < notlösung.size(); i++) {
-            if (brillen >= Game.getAktGame().getSkills().) {
+            if (brillen >= ) {
                 notlösung.get(i).setBackground(Color.LIGHT_GRAY);
 
             } else {
                 notlösung.get(i).setBackground(Color.BLACK);
             }
 
-        }
-*/
+        }*/
+
     }
 
     @Override
@@ -1094,6 +1094,7 @@ public class SkillPanel extends Panel {
     @Override
     public void switchFrom() throws Exception {
         super.switchFrom();
+        MainGUI.getAktMainGUI().getGamePanel1().disableButtons();
         Game.getAktGame().getSkills().recalculateSkills();
     }
 }

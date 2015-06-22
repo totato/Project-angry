@@ -1,8 +1,10 @@
 package gui;
 
+import game.Data;
 import java.awt.event.KeyEvent;
 import game.Game;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -10,6 +12,8 @@ import java.security.CodeSource;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.LineUnavailableException;
+import javax.swing.AbstractAction;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -26,13 +30,24 @@ public class ShopPanel extends Panel {
         jTextAreaShop.setWrapStyleWord(true);
         shortKeys();
         super.setBgMusic("exSound/rewind.wav");
-
+        jTextField1.setVisible(false);
     }
 
     private void shortKeys() {
 
         WindowProperties.setShortKeys(null, bToGameShop, "game card", KeyEvent.VK_B);
         WindowProperties.setShortKeys(null, bToSkillShop, "skill card", KeyEvent.VK_M);
+
+        jTextField1.getInputMap(jTextField1.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "x");
+        jTextField1.getActionMap().put("x", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    cheaten();
+                } catch (Exception ex) {
+                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
     }
 
     /**
@@ -68,6 +83,7 @@ public class ShopPanel extends Panel {
         bSave = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabelCHEATER = new javax.swing.JLabel();
         tbInventoryA1 = new javax.swing.JToggleButton();
         tbInventoryA2 = new javax.swing.JToggleButton();
         tbInventoryA3 = new javax.swing.JToggleButton();
@@ -79,9 +95,9 @@ public class ShopPanel extends Panel {
         tbInventoryC1 = new javax.swing.JToggleButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        hierWarPlatzÜbrig = new javax.swing.JLabel();
         tbShopA3 = new javax.swing.JToggleButton();
         tbShopB1 = new javax.swing.JToggleButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
@@ -224,7 +240,6 @@ public class ShopPanel extends Panel {
         tbShopGroup.add(tbShopC2);
         tbShopC2.setForeground(new java.awt.Color(255, 255, 255));
         tbShopC2.setText("Granaten");
-        tbShopC2.setActionCommand("Granaten");
         tbShopC2.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setMinimumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setPreferredSize(new java.awt.Dimension(105, 23));
@@ -310,6 +325,21 @@ public class ShopPanel extends Panel {
         jLabel9.setText("Waffen");
         add(jLabel9);
         jLabel9.setBounds(10, 230, 120, 17);
+
+        jLabelCHEATER.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        jLabelCHEATER.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelCHEATERMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelCHEATERMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelCHEATERMouseExited(evt);
+            }
+        });
+        add(jLabelCHEATER);
+        jLabelCHEATER.setBounds(590, 540, 50, 20);
 
         tbInventoryA1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA1);
@@ -414,10 +444,6 @@ public class ShopPanel extends Panel {
         add(jLabel11);
         jLabel11.setBounds(500, 230, 120, 17);
 
-        hierWarPlatzÜbrig.setText("jLabel5");
-        add(hierWarPlatzÜbrig);
-        hierWarPlatzÜbrig.setBounds(500, 550, 150, 90);
-
         tbShopA3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA3);
         tbShopA3.setForeground(new java.awt.Color(255, 255, 255));
@@ -439,6 +465,10 @@ public class ShopPanel extends Panel {
         });
         add(tbShopB1);
         tbShopB1.setBounds(10, 290, 140, 30);
+
+        jTextField1.setText("jTextField1");
+        add(jTextField1);
+        jTextField1.setBounds(500, 570, 140, 70);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
@@ -575,6 +605,23 @@ public class ShopPanel extends Panel {
         jTextAreaShop.setText("Speichern erfolgreich");
     }//GEN-LAST:event_bSaveActionPerformed
 
+    private void jLabelCHEATERMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCHEATERMouseEntered
+        jLabelCHEATER.setText("Cheats");
+    }//GEN-LAST:event_jLabelCHEATERMouseEntered
+
+    private void jLabelCHEATERMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCHEATERMouseExited
+        jLabelCHEATER.setText("");
+    }//GEN-LAST:event_jLabelCHEATERMouseExited
+
+    private void jLabelCHEATERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCHEATERMouseClicked
+        if (jTextField1.isVisible()) {
+            jTextField1.setVisible(false);
+        } else {
+            jTextField1.setVisible(true);
+        }
+
+    }//GEN-LAST:event_jLabelCHEATERMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuyShop;
@@ -582,18 +629,19 @@ public class ShopPanel extends Panel {
     private javax.swing.JButton bToGameShop;
     private javax.swing.JButton bToLauncher;
     private javax.swing.JButton bToSkillShop;
-    private javax.swing.JLabel hierWarPlatzÜbrig;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelCHEATER;
     private javax.swing.JLabel jLabelGlassesShop;
     private javax.swing.JLabel jLabelInventory;
     private javax.swing.JLabel jLabelShop;
     private javax.swing.JLabel jLabelShopkeeper;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaShop;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton tbInventoryA1;
     private javax.swing.JToggleButton tbInventoryA2;
     private javax.swing.JToggleButton tbInventoryA3;
@@ -624,9 +672,22 @@ public class ShopPanel extends Panel {
         this.disableBuyButton();
     }
 
+    private void cheaten() {
+        System.out.println(jTextField1.getText());
+        if (jTextField1.getText() == "Thorsten") {
+
+        }
+        if (jTextField1.getText().equals("Antonio")) {
+            Game.getAktGame().getData().setExp((5 + Game.getAktGame().getData().getBrillen()) * 3);
+        }
+        if (jTextField1.getText() == "Viktoria") {
+            Game.getAktGame().getData().setExp((5 + Game.getAktGame().getData().getExp()) * 2);
+        }
+    }
+
     private void setButtonColor() {
         int brillen = Game.getAktGame().getData().getBrillen();
-        if (brillen >= Game.getAktGame().getWaffe(1, true).getKosten() ) {
+        if (brillen >= Game.getAktGame().getWaffe(1, true).getKosten()) {
             tbShopB0.setBackground(Color.GREEN);
         } else {
             tbShopB0.setBackground(Color.BLACK);
@@ -663,7 +724,7 @@ public class ShopPanel extends Panel {
     }
 
     public void disableBuyButton() {
-        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());      
+        bBuyShop.setEnabled(Game.getAktGame().upgradeSelected());
     }
 
     @Override
