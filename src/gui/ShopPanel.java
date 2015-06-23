@@ -100,6 +100,7 @@ public class ShopPanel extends Panel {
         tbShopA3 = new javax.swing.JToggleButton();
         tbShopB1 = new javax.swing.JToggleButton();
         jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(650, 750));
         setMinimumSize(new java.awt.Dimension(650, 750));
@@ -117,6 +118,7 @@ public class ShopPanel extends Panel {
         jTextAreaShop.setEditable(false);
         jTextAreaShop.setColumns(20);
         jTextAreaShop.setRows(5);
+        jTextAreaShop.setFocusable(false);
         jScrollPane1.setViewportView(jTextAreaShop);
 
         add(jScrollPane1);
@@ -469,6 +471,11 @@ public class ShopPanel extends Panel {
         tbShopB1.setBounds(10, 290, 140, 30);
         add(jTextField1);
         jTextField1.setBounds(500, 570, 140, 70);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/shop_BG.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, -10, 680, 770);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bToGameShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToGameShopActionPerformed
@@ -628,6 +635,7 @@ public class ShopPanel extends Panel {
     private javax.swing.JButton bToGameShop;
     private javax.swing.JButton bToLauncher;
     private javax.swing.JButton bToSkillShop;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel7;

@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
 5
+Können
+Du schaltest deine Gegner nun so aus das weniger ihrer Brillen zerstört werden.
+5000
+3500
+BRILLEN-WK
+0.211
 -END1-

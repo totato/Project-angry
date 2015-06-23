@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+2
+Erleuchtung
+Du verstehst nun.
+4800
+2300
+EXP-WK
+0.1
 -END1-

@@ -1,29 +1,9 @@
 -START1-
 0
-Treten
-Deine Beine sind selbständig geworden, und treten wärend du kämpst automatisch umher.
-50
-10
-AUTO-DAMAGE
-1
+Beobachtung
+Du studierst genaustens die Bewegungen deiner Gegner und dieses Wissen nutzt du dann gegen sie.
+1000
+500
+EXP-WK
+0.1
 -END1-
--START2-
--1
-Gleichgewicht
-Du fällst nun nicht mehr so oft hin.
-150
-20
-AUTO-DAMAGE
-2
-KRIT-CHANCE
-0.05
--END2-
--START3-
--1
-Präzision
-Du triffst sogar manchmal jemand anderen als dich. 
-300
-40
-AUTO-DAMAGE
-3
--END3-

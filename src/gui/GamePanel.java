@@ -276,7 +276,7 @@ public class GamePanel extends Panel {
 
         jTextAreaGame.setEditable(false);
         jTextAreaGame.setColumns(20);
-        jTextAreaGame.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jTextAreaGame.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextAreaGame.setLineWrap(true);
         jTextAreaGame.setRows(5);
         jTextAreaGame.setWrapStyleWord(true);

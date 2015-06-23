@@ -155,6 +155,7 @@ public class SkillPanel extends Panel {
         jTextAreaSkill.setEditable(false);
         jTextAreaSkill.setColumns(20);
         jTextAreaSkill.setRows(5);
+        jTextAreaSkill.setFocusable(false);
         jScrollPane1.setViewportView(jTextAreaSkill);
 
         add(jScrollPane1);
