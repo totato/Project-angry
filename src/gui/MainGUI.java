@@ -88,7 +88,8 @@ public class MainGUI extends WindowProperties {
         gamescreen.setLocationRelativeTo(null);
 
         setIconPicture(gamescreen, "ScreenLaun/GameIcon.png");     //TODO: Muss gemacht 
-        //und eingefügt werden
+gamescreen.setTitle("This game will make you angry.");
+//und eingefügt werden
         //backgroundMusic("rewind.wav");TODO: Muss gemacht und eingefügt werden
         gamescreen.pack();
         gamescreen.setVisible(true);

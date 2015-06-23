@@ -1,7 +1,27 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+10
+Zielvorgang
+Vielleicht solltest du anfangen nicht auf die Hände der Streber zu zielen?
+50
+10
+WAFFEN-UPDATE
+0
 -END1-
+-START2-
+-1
+Verbesserter Zielvorgang
+Du realisierst, das der Kopf ein besseres Ziel ist als das Knie.
+50
+10
+WAFFEN-UPDATE
+0
+-END2-
+-START3-
+-1
+Extrem verbesserter Zielvorgang
+Du lernst, dorthin zu schlagen wo's richtig wehtut...
+50
+10
+WAFFEN-UPDATE
+0
+-END3-

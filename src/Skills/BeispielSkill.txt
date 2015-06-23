@@ -2,19 +2,6 @@
 bedingung für Skill (Nummer des anderen Skills, -1 wenn es auch so geht)
 Name
 Beschreibung
-Autoschaden
-Spawnrate Streber
-Wk auf Brillen
-Wk auf EXP
-Kritische Treffer
-Kosten Brillen
-Kosten Exp
--END(Skill Stufe)-
-
--START(Skill Stufe)-
-bedingung für Skill (Nummer des anderen Skills, -1 wenn es auch so geht)
-Name
-Beschreibung
 Kosten Brillen
 Kosten Exp
 Befehle: (Diese Zeile nicht schreiben)
@@ -31,3 +18,17 @@ KRIT-CHANCE
 WAFFEN-UPDATE
 (Waffennummer)
 -END(Skill Stufe)-
+---------------------veraltet--------------------
+-START(Skill Stufe)-
+bedingung für Skill (Nummer des anderen Skills, -1 wenn es auch so geht)
+Name
+Beschreibung
+Autoschaden
+Spawnrate Streber
+Wk auf Brillen
+Wk auf EXP
+Kritische Treffer
+Kosten Brillen
+Kosten Exp
+-END(Skill Stufe)-
+
