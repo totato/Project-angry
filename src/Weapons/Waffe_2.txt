@@ -1,15 +1,16 @@
 -START1-
-Antonios nerviges Gerede
+Dein nerviges Gerede
 Das ist erst der Anfang
 5
 0
 2
 0.5
+...rein theoretisch, in Anbetracht der Tatsache dass wir, von einem gewissen Standpunkt aus gesehen, im Rahmen der relativen und Subjektiven Wahrnehmung zu der wir als...
 Ein Streber bekommt Kopfschmerzen.
 Dein Gegner hält sich die Ohren zu.
 -END1-
 -START2-
-Antonios Pseudophilosophie
+Pseudophilosophie
 Wenn Hitler die Frage ist, wie kann Liebe nicht die Antwort sein?
 10
 1000
@@ -20,76 +21,100 @@ Dein Gegner hält sich die Ohren zu.
 Du verbreitest Verwirrung.
 -END2-
 -START3-
-Antonios ungewollte Anmachsprüche
+Ungewollte Anmachsprüche
 Du bist die Schwuchtel in unserer Beziehung!
 10
 0
 2
 0.5
+Ein paar Streber bekommen Angst vor deiner homoerotischen Ausstrahlung
+Ein Streber fällt vor dir in Ohnmacht!
 -END3-
 -START4-
-Schrei4
-Fäuste? Pff. Handkantenschlag 4 EVA!
+Talentierter Gesang
+..keine Geigen mehr, wenn wir uns Küssen, ich hab es einfach nicht gewusst. Ich Hoff' meine Worte machen es nicht...
 20
 0
 2
 0.5
+Mehrere Streber bekommen Ohrenbluten.
+Ein Streber fällt vor dir in Ohnmacht!
 -END4-
 -START5-
-Schrei5
+Alliterationen
 
 35
 0
 2
 0.5
+Esel essen eventuell ekelige Eber.
+Ein Streber bittet dich darum, doch endlich aufzuhören!
 -END5-
 -START6-
-Schrei6
-
+Putin-Schreie
+Putin! Putin! Putin!
 40
 0
 2
 0.5
+Putin!
+PUTIN!
+PUUTIIIN!!
 -END6-
 -START7-
-Schrei7
-
+Pseudoliberale Philosophie
+Freiheit und so. Ausserdem: Hitler.
 45
 0
 2
 0.5
+FREEEEDOOOOOM!
+Die Streber ersticken anihren eigenen Lachern.
+Ein paar der Streber nicken, die anderen kümmern sich um diese Partisanen.
 -END7-
 -START8-
-Schrei8
-
+Internetsprache
+Pwnd U FTW!
 50
 0
 2
 0.5
+Die Streber schauen sich aneinenader verwirrt an.
+Ein Streber möchte nicht auf einem Planeten mit dir wohnen und begeht Suizid.
+OMG YUNO 360NOSCOPE?!
+I H8 U LMAO LOL XD
 -END8-
 -START9-
-Schrei9
-
+Schulspanisch
+Einer deiner Freunde hat es dir gezeigt, du glaubst es heißt "Ich liebe dich."
 55
 0
 2
 0.5
+Te voy a matar Y después voy a tomar tu sangre.
+Quince peso? Con quince peso me hago alto giso!
 -END9-
 -START10-
-Blick10
-
+Gewollte Anmachsprüche
+Nichts ist peinlicher
 60
 0
 2
 0.5
+Stop, drop and roll, baby. You are on Fire.
+Your daddy must have been a baker, cuz you've got a nice set of buns.
+I have a genital rash. Will you rub this ointment on me?
+Nice shoes. Wanna fuck?
 -END10-
 -START11-
-Schrei11
-
+Pseudophilosophie in Alliterationen
+Was könnte schlimmer sein?
 65
 0
 2
 0.5
+Können koptische Kleptomanen keine kommunistische Kuchen konsumieren?
+Ein Streber fällt vor dir auf seine Knie, und bettelt dich darum aufzuhören.
 -END11-
 -START12-
 Schrei12

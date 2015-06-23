@@ -490,6 +490,7 @@ public class GamePanel extends Panel {
 
     @Override
     public void switchFrom() throws LineUnavailableException, Exception {
+        jTextAreaGame.setText("");
         super.switchFrom();
         Game.getAktGame().pause();
     }
