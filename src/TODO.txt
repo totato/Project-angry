@@ -7,8 +7,15 @@ x recalculate Skills funktioniert nicht richtig
 - tButtonfarbe im SkillPanel und ShopPanel ändern, je nach gekauft , kaufbar, freigeschaltet
 x Zeug rund um die Granate ( keine munition kaufen wenn noch keine granate gekauft)
 x CHEATS !!!
-- Mit 0 Brillen starten
 - fehlermeldung wenn unten im Launchertextfeld nichts steht
 - Mehr Cheats !!!
 - Wenn man zu schnell die Panels wechselt bugt die Musik
 - Mehr Sprüche für Sensei / Shopkeeper
+- Antonio Streber ist zu klein
+
+
+------------------------ Für die Präsentation -------------------------------
+- Sprache raus nehmen.
+- Mit 0 Brillen starten
+- Info Fenster im Launcher mit informationen füllen
+- Unnütze Klassen löschen

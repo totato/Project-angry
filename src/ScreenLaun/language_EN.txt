@@ -10,7 +10,7 @@ Enter Story-Code;
 Back;
 A  Y U NO WORK!-Studios production. Pre-Alpha 0.00090;
 Version;
-Click Get angry! to start the game. Defend the world against the cruel swots!;
+Click Get angry! to start the game. Defend the world against the cruel swots!Upgrade your weapons and Skills. Controls B Game, N Shop, M Skilltree;
 Help for dummies;
 Language;
 Deutsch;

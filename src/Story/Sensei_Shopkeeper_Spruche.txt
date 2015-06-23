@@ -2,6 +2,7 @@
 "Wenn sie mal wieder auf der Suche nach einem.... ähm.... legal anfechtbaren Geschäft sind, denken sie an mich."
 "Heute auf alles FSK 12."
 "Versuche nicht mal was zu stehlen.... denn es ist noch nicht implementiert."
+"Ich war auch ein mal ein Abenteurer, so wie du, nur dann bekahm ich einen Zirkel ins Knie."
 -ENDshopkeeper-
 -STARTsensei-
 "Du musst noch viel lernen mein Schüler."

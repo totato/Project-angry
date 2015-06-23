@@ -10,7 +10,7 @@ Story-Code eingeben;
 Zurück;
 Eine Y U NO WORK!-Studios Produktion. Pre-Alpha 0.00102;
 Version;
-Klicke auf Get angry! Um zum Spiel zu gelangen. Verteidige dort die Welt gegen die grausamen Streber!;
+Klicke auf Get angry! Um zum Spiel zu gelangen. Verteidige dort die Welt gegen die grausamen Streber! Verbessere deine Waffen und Fähigkeiten um weiter zu kommen. Steuerung: B Spiel, N Shop, M Skillabum;
 Hilfe für Dummies;
 Sprache;
 Deutsch;
