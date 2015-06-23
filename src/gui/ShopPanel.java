@@ -116,6 +116,7 @@ public class ShopPanel extends Panel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jTextAreaShop.setEditable(false);
+        jTextAreaShop.setBackground(new java.awt.Color(240, 240, 240));
         jTextAreaShop.setColumns(20);
         jTextAreaShop.setRows(5);
         jTextAreaShop.setFocusable(false);
@@ -124,9 +125,7 @@ public class ShopPanel extends Panel {
         add(jScrollPane1);
         jScrollPane1.setBounds(170, 490, 310, 160);
 
-        bBuyShop.setBackground(new java.awt.Color(51, 51, 51));
         bBuyShop.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        bBuyShop.setForeground(new java.awt.Color(255, 255, 255));
         bBuyShop.setText("Kaufen");
         bBuyShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,10 +145,11 @@ public class ShopPanel extends Panel {
         add(jLabelShop);
         jLabelShop.setBounds(10, 10, 150, 40);
 
-        tbShopA1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA1);
-        tbShopA1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
         tbShopA1.setText("Helm");
+        tbShopA1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
+        tbShopA1.setFocusable(false);
         tbShopA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbShopA1ActionPerformed(evt);
@@ -158,16 +158,15 @@ public class ShopPanel extends Panel {
         add(tbShopA1);
         tbShopA1.setBounds(10, 90, 140, 30);
 
-        tbShopA2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA2);
-        tbShopA2.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
         tbShopA2.setText("Weste");
+        tbShopA2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
+        tbShopA2.setFocusable(false);
         add(tbShopA2);
         tbShopA2.setBounds(10, 130, 140, 30);
 
-        tbShopB0.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB0);
-        tbShopB0.setForeground(new java.awt.Color(255, 255, 255));
         tbShopB0.setText("Auge");
         tbShopB0.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB0.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -180,9 +179,7 @@ public class ShopPanel extends Panel {
         add(tbShopB0);
         tbShopB0.setBounds(10, 250, 140, 30);
 
-        tbShopB2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB2);
-        tbShopB2.setForeground(new java.awt.Color(255, 255, 255));
         tbShopB2.setText("Nahkampfwaffe");
         tbShopB2.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB2.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -195,9 +192,7 @@ public class ShopPanel extends Panel {
         add(tbShopB2);
         tbShopB2.setBounds(10, 330, 140, 30);
 
-        tbShopB3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB3);
-        tbShopB3.setForeground(new java.awt.Color(255, 255, 255));
         tbShopB3.setText("Fernkampf");
         tbShopB3.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB3.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -210,9 +205,7 @@ public class ShopPanel extends Panel {
         add(tbShopB3);
         tbShopB3.setBounds(10, 370, 140, 30);
 
-        tbShopB4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB4);
-        tbShopB4.setForeground(new java.awt.Color(255, 255, 255));
         tbShopB4.setText("Taschenmonster");
         tbShopB4.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB4.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -225,9 +218,7 @@ public class ShopPanel extends Panel {
         add(tbShopB4);
         tbShopB4.setBounds(10, 410, 140, 30);
 
-        tbShopC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC1);
-        tbShopC1.setForeground(new java.awt.Color(255, 255, 255));
         tbShopC1.setText("Granatenstufe");
         tbShopC1.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC1.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -240,9 +231,7 @@ public class ShopPanel extends Panel {
         add(tbShopC1);
         tbShopC1.setBounds(10, 460, 140, 30);
 
-        tbShopC2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopC2);
-        tbShopC2.setForeground(new java.awt.Color(255, 255, 255));
         tbShopC2.setText("Granaten");
         tbShopC2.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopC2.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -255,10 +244,10 @@ public class ShopPanel extends Panel {
         add(tbShopC2);
         tbShopC2.setBounds(10, 500, 140, 30);
 
-        tbShopD1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopD1);
-        tbShopD1.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopD1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
         tbShopD1.setText("Kung Fury");
+        tbShopD1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
         add(tbShopD1);
         tbShopD1.setBounds(10, 580, 140, 30);
 
@@ -284,9 +273,7 @@ public class ShopPanel extends Panel {
         add(jLabel7);
         jLabel7.setBounds(10, 560, 120, 17);
 
-        bToSkillShop.setBackground(new java.awt.Color(0, 0, 0));
         bToSkillShop.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bToSkillShop.setForeground(new java.awt.Color(255, 255, 255));
         bToSkillShop.setText("Skillbaum");
         bToSkillShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,9 +283,7 @@ public class ShopPanel extends Panel {
         add(bToSkillShop);
         bToSkillShop.setBounds(500, 700, 140, 40);
 
-        bToGameShop.setBackground(new java.awt.Color(0, 0, 0));
         bToGameShop.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bToGameShop.setForeground(new java.awt.Color(255, 255, 255));
         bToGameShop.setText("Zurück");
         bToGameShop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,9 +293,7 @@ public class ShopPanel extends Panel {
         add(bToGameShop);
         bToGameShop.setBounds(500, 650, 140, 40);
 
-        bSave.setBackground(new java.awt.Color(0, 0, 0));
         bSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bSave.setForeground(new java.awt.Color(255, 255, 255));
         bSave.setText("Speichern");
         bSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,30 +328,22 @@ public class ShopPanel extends Panel {
         add(jLabelCHEATER);
         jLabelCHEATER.setBounds(590, 540, 50, 20);
 
-        tbInventoryA1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA1);
-        tbInventoryA1.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryA1.setText("Helm");
         add(tbInventoryA1);
         tbInventoryA1.setBounds(500, 90, 140, 30);
 
-        tbInventoryA2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA2);
-        tbInventoryA2.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryA2.setText("Weste");
         add(tbInventoryA2);
         tbInventoryA2.setBounds(500, 130, 140, 30);
 
-        tbInventoryA3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryA3);
-        tbInventoryA3.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryA3.setText("Schuhe");
         add(tbInventoryA3);
         tbInventoryA3.setBounds(500, 170, 140, 30);
 
-        tbInventoryB0.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB0);
-        tbInventoryB0.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB0.setText("Auge");
         tbInventoryB0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -378,9 +353,7 @@ public class ShopPanel extends Panel {
         add(tbInventoryB0);
         tbInventoryB0.setBounds(500, 250, 140, 30);
 
-        tbInventoryB1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB1);
-        tbInventoryB1.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB1.setText("Schrei");
         tbInventoryB1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,9 +363,7 @@ public class ShopPanel extends Panel {
         add(tbInventoryB1);
         tbInventoryB1.setBounds(500, 290, 140, 30);
 
-        tbInventoryB2.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB2);
-        tbInventoryB2.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB2.setText("Nahkampfwaffe");
         tbInventoryB2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -402,9 +373,7 @@ public class ShopPanel extends Panel {
         add(tbInventoryB2);
         tbInventoryB2.setBounds(500, 330, 140, 30);
 
-        tbInventoryB3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB3);
-        tbInventoryB3.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB3.setText("Fernkampf");
         tbInventoryB3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,9 +383,7 @@ public class ShopPanel extends Panel {
         add(tbInventoryB3);
         tbInventoryB3.setBounds(500, 370, 140, 30);
 
-        tbInventoryB4.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryB4);
-        tbInventoryB4.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryB4.setText("Taschenmonster");
         tbInventoryB4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,9 +393,7 @@ public class ShopPanel extends Panel {
         add(tbInventoryB4);
         tbInventoryB4.setBounds(500, 410, 140, 30);
 
-        tbInventoryC1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbInventoryC1);
-        tbInventoryC1.setForeground(new java.awt.Color(255, 255, 255));
         tbInventoryC1.setText("Granatenstufe");
         tbInventoryC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,20 +409,20 @@ public class ShopPanel extends Panel {
         jLabel10.setBounds(500, 70, 120, 17);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Waffen");
         add(jLabel11);
         jLabel11.setBounds(500, 230, 120, 17);
 
-        tbShopA3.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopA3);
-        tbShopA3.setForeground(new java.awt.Color(255, 255, 255));
+        tbShopA3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
         tbShopA3.setText("Schuhe");
+        tbShopA3.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/DLC .gif"))); // NOI18N
+        tbShopA3.setFocusable(false);
         add(tbShopA3);
         tbShopA3.setBounds(10, 170, 140, 30);
 
-        tbShopB1.setBackground(new java.awt.Color(0, 0, 0));
         tbShopGroup.add(tbShopB1);
-        tbShopB1.setForeground(new java.awt.Color(255, 255, 255));
         tbShopB1.setText("Schrei");
         tbShopB1.setMaximumSize(new java.awt.Dimension(105, 23));
         tbShopB1.setMinimumSize(new java.awt.Dimension(105, 23));
@@ -712,7 +677,7 @@ public class ShopPanel extends Panel {
 
     private void setButtonColor() {
         int brillen = Game.getAktGame().getData().getBrillen();
-         Color schöneresBlau = Color.decode("0x1D1957");
+         Color schöneresBlau = Color.decode("0xaed9dd");
          
         if (brillen >= Game.getAktGame().getWaffe(1, true).getKosten()) {
             tbShopB0.setBackground(schöneresBlau);
