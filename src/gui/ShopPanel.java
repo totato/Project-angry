@@ -3,6 +3,7 @@ package gui;
 import game.Data;
 import java.awt.event.KeyEvent;
 import game.Game;
+import static gui.WindowProperties.clipShop;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -30,7 +31,7 @@ public class ShopPanel extends Panel {
         jTextAreaShop.setLineWrap(true);
         jTextAreaShop.setWrapStyleWord(true);
         shortKeys();
-        super.setBgMusic("exSound/rewind.wav");
+        super.setBgMusic(clipShop);
         jTextField1.setVisible(false);
     }
 

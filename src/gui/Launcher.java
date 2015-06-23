@@ -46,7 +46,8 @@ public class Launcher extends WindowProperties{
         launcher.setLocationRelativeTo(null);
 
         setIconPicture(launcher, "ScreenLaun/20941.png");
-        backgroundMusic("exSound/titleSong.wav");
+        loadMusic();
+        backgroundMusic(clipLaun);
 
         launcher.pack();
         launcher.setVisible(true);
@@ -62,7 +63,7 @@ public class Launcher extends WindowProperties{
          mainGUI = new MainGUI();
          }
          });*/
-        WindowProperties.stopBgMusic();
+        //WindowProperties.stopBgMusic(clipLaun);
         launcher.setVisible(false);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                 + "(dispose)");
@@ -280,7 +281,7 @@ public class Launcher extends WindowProperties{
     private void sprachReset(String sprache) throws LineUnavailableException {
         language = sprache;
         launcher.setVisible(false);
-        stopBgMusic();
+        //stopBgMusic(clipLaun);
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                 + "(dispose). Neuer Launcher wird gestartet.");
         launcher.dispose();

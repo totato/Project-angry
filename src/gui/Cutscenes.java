@@ -28,7 +28,7 @@ public class Cutscenes extends WindowProperties {
         stopBgMusic();
 
         if (cutsceneNumber == 1) {
-            backgroundMusic("rewind.wav");
+            backgroundMusic(clipLaun);
             setBackgrPicture(cutsceneLabel, "ScreenLaun/ButtonIcon1.png");
 
             cutsceneFrame.add(cutsceneLabel, BorderLayout.CENTER);
@@ -44,7 +44,7 @@ public class Cutscenes extends WindowProperties {
                 }
             });
 
-            backgroundMusic("titleSong.wav");
+            //backgroundMusic("titleSong.wav");
             setCutscenePicture(cutsceneLabel, "Testvid01.gif");
             cutsceneFrame.add(cutsceneLabel, BorderLayout.CENTER);
             cutsceneTimer.start();
@@ -54,7 +54,7 @@ public class Cutscenes extends WindowProperties {
                 public void actionPerformed(ActionEvent e) {
                 }
             });
-            backgroundMusic("titleSong.wav");
+            //backgroundMusic("titleSong.wav");
             setCutscenePicture(cutsceneLabel, "Testvid01.gif");
             cutsceneFrame.add(cutsceneLabel, BorderLayout.CENTER);
             cutsceneTimer.start();
@@ -63,7 +63,7 @@ public class Cutscenes extends WindowProperties {
                 public void actionPerformed(ActionEvent e) {
                 }
             });
-            backgroundMusic("titleSong.wav");
+            //backgroundMusic("titleSong.wav");
             setCutscenePicture(cutsceneLabel, "Testvid01.gif");
             cutsceneFrame.add(cutsceneLabel, BorderLayout.CENTER);
             cutsceneTimer.start();
@@ -72,7 +72,7 @@ public class Cutscenes extends WindowProperties {
                 public void actionPerformed(ActionEvent e) {
                 }
             });
-            backgroundMusic("titleSong.wav");
+            //backgroundMusic("titleSong.wav");
             setCutscenePicture(cutsceneLabel, "Testvid01.gif");
             cutsceneFrame.add(cutsceneLabel, BorderLayout.CENTER);
             cutsceneTimer.start();

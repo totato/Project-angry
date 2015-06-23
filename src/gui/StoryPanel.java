@@ -7,6 +7,7 @@ package gui;
 
 import game.Game;
 import game.StoryHandler;
+import static gui.WindowProperties.clipLaun;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.List;
@@ -29,7 +30,7 @@ public class StoryPanel extends Panel {
         initComponents();
         jTextAreaStory.setLineWrap(true);
         jTextAreaStory.setWrapStyleWord(true);
-        super.setBgMusic("exSound/rewind.wav");
+        super.setBgMusic(clipLaun);
 
     }
 

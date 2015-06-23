@@ -3,6 +3,7 @@ package gui;
 
 import game.Game;
 import gui.WindowProperties;
+import static gui.WindowProperties.clipGame;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,7 +46,7 @@ public class GamePanel extends Panel {
         shortKeys();
         tbAttack0.setSelected(true);
         changeTBPicture(tbAttack0);
-        super.setBgMusic("exSound/rewind.wav");
+        super.setBgMusic(clipGame);
 
     }
 

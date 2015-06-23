@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
@@ -35,35 +36,43 @@ import javax.swing.KeyStroke;
 public abstract class WindowProperties {
 
     private static Clip clip;
-    private static Clip clipLaun;
-    private static Clip clipGame;
-    private static Clip clipMed;
-    private static Clip clipBuy;
+    public static Clip clipLaun;
+    public static Clip clipGame;
+    public static Clip clipSkill;
+    public static Clip clipShop;
 
-    
     public String[] words;
     public String[] saveData;
     public static String language = "EN";
 
     /*
      Fügt Hintergrundmusik ein. Das abgespielte Lied muss unter dem Pfad 
-     "proj_1/ScreenLaun/" zu finden sin. Der Name des Lieds wird, mit 
+     "proj_1/exSound/" zu finden sin. Der Name des Lieds wird, mit 
      Dateianhang, in die Methode mit eingegeben.   
      */
-    public static void loadMusic ()throws LineUnavailableException {
-        
-    }
-    public static void backgroundMusic(String dateipfad) throws LineUnavailableException {
-        System.out.println("*Musik spielt*");
-        String pfadsoundlaun = dateipfad;
-
-        clip = AudioSystem.getClip();
-
+    public static void loadMusic() throws LineUnavailableException {
+        clipLaun = AudioSystem.getClip();
+        clipGame = AudioSystem.getClip();
+        clipSkill = AudioSystem.getClip();
+        clipShop = AudioSystem.getClip();
         try {
-            AudioInputStream audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource(pfadsoundlaun));
-            clip.open(audio);
-            clip.start();
-            clip.loop(50);
+            AudioInputStream audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/titleSong.wav"));
+            System.out.println("*Musik-Laun geladen*");
+            clipLaun.open(audio);
+
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/Mars.wav"));
+            System.out.println("*Musik-Skill geladen*");
+            clipSkill.open(audio);
+
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/moritz.wav")); //TODO: Richtige Datei einsetzen
+            System.out.println("*Musik-Shop geladen*");
+            clipShop.open(audio);
+
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/moritz.wav")); //TODO: Richtige Datei einsetzen
+            System.out.println("*Musik-Spiel geladen*");
+            clipGame.open(audio);
+            //    clipLaun.start();
+            //    clip.loop(50);
         } catch (UnsupportedAudioFileException uae) {
             System.out.println(uae);
         } catch (IOException ioe) {
@@ -73,6 +82,14 @@ public abstract class WindowProperties {
         } catch (IllegalArgumentException iae) {
             System.out.println(iae);
         }
+        System.out.println("Alle Musikdateien geladen.");
+    }
+
+    public static void backgroundMusic(Clip clipActual) throws LineUnavailableException {
+        clip = clipActual;
+        System.out.println("*Musik spielt*");
+        clip.start();
+        clip.loop(50);
     }
 
     /*
@@ -85,15 +102,15 @@ public abstract class WindowProperties {
             System.out.println(npe);
         }
     }
-    
+
     public static List<BufferedImage> ladeBildliste(String pfad) throws IOException {
-       List<String> bilderTXT = WindowProperties.ladeTXT(pfad);
-       List<BufferedImage> bilder = new ArrayList();
-       for(String bildPfad: bilderTXT){
-           bilder.add(WindowProperties.ladeBild(bildPfad));
-       }
-       
-       return bilder;
+        List<String> bilderTXT = WindowProperties.ladeTXT(pfad);
+        List<BufferedImage> bilder = new ArrayList();
+        for (String bildPfad : bilderTXT) {
+            bilder.add(WindowProperties.ladeBild(bildPfad));
+        }
+
+        return bilder;
     }
 
     /*
@@ -215,33 +232,32 @@ public abstract class WindowProperties {
     }
 
     public static void setShortKeys(JLabel label, JButton button, final String card, int sign) {
-        if(button == null){
-        label.getInputMap(label.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
-        label.getActionMap().put("x", new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    MainGUI.getAktMainGUI().changeCard(card);
-                } catch (IOException ex) {
-                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (Exception ex) {
-                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+        if (button == null) {
+            label.getInputMap(label.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
+            label.getActionMap().put("x", new AbstractAction() {
+                public void actionPerformed(ActionEvent e) {
+                    try {
+                        MainGUI.getAktMainGUI().changeCard(card);
+                    } catch (IOException ex) {
+                        Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (Exception ex) {
+                        Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-            }
-        });
-        }
-               else if(label == null){
-        button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
-        button.getActionMap().put("x", new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    MainGUI.getAktMainGUI().changeCard(card);
-                } catch (IOException ex) {
-                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (Exception ex) {
-                    Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+            });
+        } else if (label == null) {
+            button.getInputMap(button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(sign, 0), "x");
+            button.getActionMap().put("x", new AbstractAction() {
+                public void actionPerformed(ActionEvent e) {
+                    try {
+                        MainGUI.getAktMainGUI().changeCard(card);
+                    } catch (IOException ex) {
+                        Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (Exception ex) {
+                        Logger.getLogger(WindowProperties.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-            }
-        });
+            });
         }
     }
 

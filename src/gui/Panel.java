@@ -1,6 +1,7 @@
 package gui;
 
 import java.io.IOException;
+import javax.sound.sampled.Clip;
 import javax.swing.JPanel;
 
 /**
@@ -9,7 +10,7 @@ import javax.swing.JPanel;
  */
 public abstract class Panel extends JPanel{
     
-    private String bgMusic;
+    private Clip bgMusic;
     
     public abstract void disableButtons();
     public void switchTo() throws Exception{
@@ -20,11 +21,11 @@ public abstract class Panel extends JPanel{
         WindowProperties.stopBgMusic();
     };
 
-    public String getBgMusic() {
+    public Clip getBgMusic() {
         return bgMusic;
     }
 
-    public void setBgMusic(String bgMusic) {
+    public void setBgMusic(Clip bgMusic) {
         this.bgMusic = bgMusic;
     }
 }

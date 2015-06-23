@@ -9,7 +9,7 @@ x Zeug rund um die Granate ( keine munition kaufen wenn noch keine granate gekau
 x CHEATS !!!
 - fehlermeldung wenn unten im Launchertextfeld nichts steht
 - Mehr Cheats !!!
-- Wenn man zu schnell die Panels wechselt bugt die Musik
+x Wenn man zu schnell die Panels wechselt bugt die Musik
 - Mehr Sprüche für Sensei / Shopkeeper
 - Antonio Streber ist zu klein
 

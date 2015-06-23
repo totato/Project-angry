@@ -7,6 +7,7 @@ package gui;
 
 import game.Game;
 import game.SkillHandler;
+import static gui.WindowProperties.clipSkill;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -74,7 +75,7 @@ public class SkillPanel extends Panel {
         notlösung.add(tbSkill33);
         notlösung.add(tbSkill34);
 
-        super.setBgMusic("exSound/Mars.wav");
+        super.setBgMusic(clipSkill);
     }
 
     private void shortKeys() {
