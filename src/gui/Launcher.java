@@ -15,7 +15,7 @@ import javax.sound.sampled.LineUnavailableException;
  *
  * @author Wir
  */
-public class Launcher extends WindowProperties{
+public class Launcher extends WindowProperties {
 
     private JFrame launcher;
     private JTextField savefilezeile;
@@ -52,32 +52,31 @@ public class Launcher extends WindowProperties{
         launcher.pack();
         launcher.setVisible(true);
     }
-    
+
     private void beginnen() throws IOException, LineUnavailableException, Exception {
+        if (savefilezeile.getText().equals("") || savefilezeile.getText().isEmpty()) {
+            savefilezeile.setText("Deine Speicherdatei hat keinen Namen! "
+                    + "Du könntest nicht laden!");
+        } else {
+            /*java.awt.EventQueue.invokeLater(new Runnable() {
+             MainGUI mainGUI;
+             public void run() {
+             mainGUI = new MainGUI();
+             }
+             });*/
+            //WindowProperties.stopBgMusic();
+            launcher.setVisible(false);
+            System.out.println("Launcher wird unsichtbar und anschließend zerstört"
+                    + "(dispose)");
+            launcher.dispose();
 
-        
+            MainGUI mainGUI = new MainGUI();
 
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
-         MainGUI mainGUI;
-         public void run() {
-         mainGUI = new MainGUI();
-         }
-         });*/
-        //WindowProperties.stopBgMusic(clipLaun);
-        launcher.setVisible(false);
-        System.out.println("Launcher wird unsichtbar und anschließend zerstört"
-                + "(dispose)");
-        launcher.dispose();
-        
+            Game game = new Game(savefilezeile.getText());
 
-        MainGUI mainGUI = new MainGUI();
-        
-        
-        Game game = new Game(savefilezeile.getText());
-        
-        game.loadGame();
-        mainGUI.disableButtons();
-        
+            game.loadGame();
+            mainGUI.disableButtons();
+        }
         //Thread gameThread = new Thread(game);
         //gameThread.start();
         //MainGUI.getAktMainGUI().changeCard("story card");
@@ -184,7 +183,7 @@ public class Launcher extends WindowProperties{
         //die Objekte
         background = new JLabel();
         savefilezeile = new JTextField("save");
-        
+
         //Die Objekte werden der launcherCard hinzugefügt
         launcherCard.add(background, BorderLayout.CENTER);
         launcherCard.add(savefilezeile, BorderLayout.SOUTH);
@@ -223,30 +222,29 @@ public class Launcher extends WindowProperties{
      *
      */
     /*private void cutsceneZeigen() throws LineUnavailableException {
-        String pfad = "" + (getClass().getClassLoader());
-        if (cutscenekey.getText().equals("Cutscene1")) {
-            System.out.println("Spiele Cutscene 1 ab");
-            cl.show(cards, "Cs card1");//Erstes Bild der Cutscene
-            playCutscene(1, cutsceneCard, bild);
-            stopBgMusic();
-            backgroundMusic("titleSong.wav");
+     String pfad = "" + (getClass().getClassLoader());
+     if (cutscenekey.getText().equals("Cutscene1")) {
+     System.out.println("Spiele Cutscene 1 ab");
+     cl.show(cards, "Cs card1");//Erstes Bild der Cutscene
+     playCutscene(1, cutsceneCard, bild);
+     stopBgMusic();
+     backgroundMusic("titleSong.wav");
 
-        } else if (cutscenekey.getText().equals("Cutscene2")) {
-            System.out.println("Spiele Cutscene 2 ab");
-            cl.show(cards, "Cs card1");
-            playCutscene(2, cutsceneCard, bild);
-        } else if (cutscenekey.getText().equals("Cutscene3")) {
-            System.out.println("Spiele Cutscene 3 ab");
-            cl.show(cards, "Cs card1");
-            playCutscene(3, cutsceneCard, bild);
-        } else {
-            System.out.println("Spiele keine Cutscene ab.");
-            cutscenekey.setText("Kein Cutsceneschlüssel!");
+     } else if (cutscenekey.getText().equals("Cutscene2")) {
+     System.out.println("Spiele Cutscene 2 ab");
+     cl.show(cards, "Cs card1");
+     playCutscene(2, cutsceneCard, bild);
+     } else if (cutscenekey.getText().equals("Cutscene3")) {
+     System.out.println("Spiele Cutscene 3 ab");
+     cl.show(cards, "Cs card1");
+     playCutscene(3, cutsceneCard, bild);
+     } else {
+     System.out.println("Spiele keine Cutscene ab.");
+     cutscenekey.setText("Kein Cutsceneschlüssel!");
 
-        }
+     }
 
-    }*/
-
+     }*/
     private void toLauncher(ActionEvent e) {
         if (e.getSource() == backButton) {
             System.out.println("Zurück zum Launcher");
@@ -296,6 +294,5 @@ public class Launcher extends WindowProperties{
     private void beenden() {
         System.exit(0);
     }
-    
 
 }
