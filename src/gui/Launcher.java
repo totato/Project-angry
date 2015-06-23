@@ -55,8 +55,8 @@ public class Launcher extends WindowProperties {
 
     private void beginnen() throws IOException, LineUnavailableException, Exception {
         if (savefilezeile.getText().equals("") || savefilezeile.getText().isEmpty()) {
-            savefilezeile.setText("Deine Speicherdatei hat keinen Namen! "
-                    + "Du könntest nicht laden!");
+            JOptionPane.showMessageDialog(launcher, "Deine Speicherdatei hat keinen Namen!\n"
+                    + "Du könntest nichts laden!", "Freundlicher Hinweis", 3);
         } else {
             /*java.awt.EventQueue.invokeLater(new Runnable() {
              MainGUI mainGUI;
@@ -182,7 +182,7 @@ public class Launcher extends WindowProperties {
         launcherCard.setLayout(new BorderLayout());
         //die Objekte
         background = new JLabel();
-        savefilezeile = new JTextField("save");
+        savefilezeile = new JTextField("Name deiner Datei");
 
         //Die Objekte werden der launcherCard hinzugefügt
         launcherCard.add(background, BorderLayout.CENTER);
