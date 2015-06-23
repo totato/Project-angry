@@ -247,6 +247,7 @@ public class Launcher extends WindowProperties {
      }*/
     private void toLauncher(ActionEvent e) {
         if (e.getSource() == backButton) {
+            resetClip(clipLaun);
             System.out.println("Zurück zum Launcher");
             cl.show(cards, "L card");
         }
@@ -279,7 +280,7 @@ public class Launcher extends WindowProperties {
     private void sprachReset(String sprache) throws LineUnavailableException {
         language = sprache;
         launcher.setVisible(false);
-        //stopBgMusic(clipLaun);
+        stopBgMusic();
         System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                 + "(dispose). Neuer Launcher wird gestartet.");
         launcher.dispose();

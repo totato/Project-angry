@@ -89,7 +89,7 @@ public abstract class WindowProperties {
         clip = clipActual;
         System.out.println("*Musik spielt*");
         clip.start();
-        clip.loop(50);
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     /*
@@ -102,6 +102,19 @@ public abstract class WindowProperties {
             System.out.println(npe);
         }
     }
+    
+    public static void resetClip(Clip clipRes) throws LineUnavailableException {
+    try {
+        clipRes.flush();
+    clip.drain();
+    clip.flush();
+    clip.drain();
+    } catch(NullPointerException npe) {
+            System.out.println(npe);
+        } catch (LineUnavailableException lua) {
+            System.out.println(lua);
+        }
+}
 
     public static List<BufferedImage> ladeBildliste(String pfad) throws IOException {
         List<String> bilderTXT = WindowProperties.ladeTXT(pfad);
