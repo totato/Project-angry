@@ -183,6 +183,7 @@ public class SkillPanel extends Panel {
         jLabelSkilltree.setBounds(290, 10, 300, 40);
 
         buttonGroup1.add(tbSkill25);
+        tbSkill25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2.gif"))); // NOI18N
         tbSkill25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill25ActionPerformed(evt);
@@ -192,6 +193,7 @@ public class SkillPanel extends Panel {
         tbSkill25.setBounds(490, 390, 120, 40);
 
         buttonGroup1.add(tbSkill3);
+        tbSkill3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill3ActionPerformed(evt);
@@ -201,6 +203,7 @@ public class SkillPanel extends Panel {
         tbSkill3.setBounds(510, 110, 80, 30);
 
         buttonGroup1.add(tbSkill2);
+        tbSkill2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill4M.gif"))); // NOI18N
         tbSkill2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill2ActionPerformed(evt);
@@ -240,6 +243,7 @@ public class SkillPanel extends Panel {
         tbSkill8.setBounds(290, 190, 80, 30);
 
         buttonGroup1.add(tbSkill5);
+        tbSkill5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill4M.gif"))); // NOI18N
         tbSkill5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill5ActionPerformed(evt);
@@ -249,6 +253,7 @@ public class SkillPanel extends Panel {
         tbSkill5.setBounds(400, 150, 80, 30);
 
         buttonGroup1.add(tbSkill7);
+        tbSkill7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill4M.gif"))); // NOI18N
         tbSkill7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill7ActionPerformed(evt);
@@ -258,6 +263,7 @@ public class SkillPanel extends Panel {
         tbSkill7.setBounds(400, 190, 80, 30);
 
         buttonGroup1.add(tbSkill6);
+        tbSkill6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill6ActionPerformed(evt);
@@ -267,6 +273,7 @@ public class SkillPanel extends Panel {
         tbSkill6.setBounds(510, 150, 80, 30);
 
         buttonGroup1.add(tbSkill9);
+        tbSkill9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill9ActionPerformed(evt);
@@ -276,6 +283,7 @@ public class SkillPanel extends Panel {
         tbSkill9.setBounds(510, 190, 80, 30);
 
         buttonGroup1.add(tbSkill11);
+        tbSkill11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill11ActionPerformed(evt);
@@ -295,6 +303,7 @@ public class SkillPanel extends Panel {
         tbSkill10.setBounds(290, 230, 80, 30);
 
         buttonGroup1.add(tbSkill13);
+        tbSkill13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill5S.gif"))); // NOI18N
         tbSkill13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill13ActionPerformed(evt);
@@ -314,6 +323,7 @@ public class SkillPanel extends Panel {
         tbSkill12.setBounds(260, 280, 60, 25);
 
         buttonGroup1.add(tbSkill17);
+        tbSkill17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill5S.gif"))); // NOI18N
         tbSkill17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill17ActionPerformed(evt);
@@ -350,6 +360,7 @@ public class SkillPanel extends Panel {
         jLabelBuyGlasses.setBounds(140, 340, 70, 50);
 
         buttonGroup1.add(tbSkill21);
+        tbSkill21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill5S.gif"))); // NOI18N
         tbSkill21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill21ActionPerformed(evt);
@@ -369,6 +380,7 @@ public class SkillPanel extends Panel {
         tbSkill20.setBounds(260, 340, 60, 25);
 
         buttonGroup1.add(tbSkill15);
+        tbSkill15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2S.gif"))); // NOI18N
         tbSkill15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill15ActionPerformed(evt);
@@ -378,6 +390,7 @@ public class SkillPanel extends Panel {
         tbSkill15.setBounds(560, 280, 60, 25);
 
         buttonGroup1.add(tbSkill14);
+        tbSkill14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill3S.gif"))); // NOI18N
         tbSkill14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill14ActionPerformed(evt);
@@ -387,6 +400,7 @@ public class SkillPanel extends Panel {
         tbSkill14.setBounds(480, 280, 60, 25);
 
         buttonGroup1.add(tbSkill19);
+        tbSkill19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2S.gif"))); // NOI18N
         tbSkill19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill19ActionPerformed(evt);
@@ -396,6 +410,7 @@ public class SkillPanel extends Panel {
         tbSkill19.setBounds(560, 310, 60, 25);
 
         buttonGroup1.add(tbSkill18);
+        tbSkill18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill3S.gif"))); // NOI18N
         tbSkill18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill18ActionPerformed(evt);
@@ -405,6 +420,7 @@ public class SkillPanel extends Panel {
         tbSkill18.setBounds(480, 310, 60, 25);
 
         buttonGroup1.add(tbSkill23);
+        tbSkill23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2S.gif"))); // NOI18N
         tbSkill23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill23ActionPerformed(evt);
@@ -414,6 +430,7 @@ public class SkillPanel extends Panel {
         tbSkill23.setBounds(560, 340, 60, 25);
 
         buttonGroup1.add(tbSkill22);
+        tbSkill22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill3S.gif"))); // NOI18N
         tbSkill22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill22ActionPerformed(evt);
@@ -423,6 +440,7 @@ public class SkillPanel extends Panel {
         tbSkill22.setBounds(480, 340, 60, 25);
 
         buttonGroup1.add(tbSkill34);
+        tbSkill34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill.gif"))); // NOI18N
         tbSkill34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill34ActionPerformed(evt);
@@ -482,6 +500,7 @@ public class SkillPanel extends Panel {
         tbSkill32.setBounds(290, 570, 80, 30);
 
         buttonGroup1.add(tbSkill27);
+        tbSkill27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill27ActionPerformed(evt);
@@ -491,6 +510,7 @@ public class SkillPanel extends Panel {
         tbSkill27.setBounds(510, 450, 80, 30);
 
         buttonGroup1.add(tbSkill29);
+        tbSkill29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill29ActionPerformed(evt);
@@ -500,6 +520,7 @@ public class SkillPanel extends Panel {
         tbSkill29.setBounds(510, 490, 80, 30);
 
         buttonGroup1.add(tbSkill31);
+        tbSkill31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill31ActionPerformed(evt);
@@ -509,6 +530,7 @@ public class SkillPanel extends Panel {
         tbSkill31.setBounds(510, 530, 80, 30);
 
         buttonGroup1.add(tbSkill33);
+        tbSkill33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafiken/ButtonSkill2M.gif"))); // NOI18N
         tbSkill33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbSkill33ActionPerformed(evt);
