@@ -1,7 +1,7 @@
 -START1-
 0
-Treten
-Deine Beine sind selbständig geworden, und treten wärend du kämpst automatisch umher.
+Heiße Hitze
+Die ständigen Nächte am Feuer, noch vor deiner Zeit als Streber-Killer, haben dich heiß gemacht. Sehr heiß. Einige der Streber die dich erblicken fallen in Ohnmacht.
 50
 10
 AUTO-DAMAGE

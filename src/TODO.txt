@@ -7,7 +7,7 @@ x recalculate Skills funktioniert nicht richtig
 - tButtonfarbe im SkillPanel und ShopPanel ändern, je nach gekauft , kaufbar, freigeschaltet
 x Zeug rund um die Granate ( keine munition kaufen wenn noch keine granate gekauft)
 x CHEATS !!!
-- fehlermeldung wenn unten im Launchertextfeld nichts steht
+x fehlermeldung wenn unten im Launchertextfeld nichts steht
 - Mehr Cheats !!!
 x Wenn man zu schnell die Panels wechselt bugt die Musik
 - Mehr Sprüche für Sensei / Shopkeeper

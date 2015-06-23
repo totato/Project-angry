@@ -1,9 +1,9 @@
--START3-
+-START1-
 6
-Präzision
-Du triffst sogar manchmal jemand anderen als dich. 
+Gefallene Gegner
+Die ganzen toten Streber in deinem Umfeld verderben langsam aber sicher. Nur die mit besonders schwachen Nasen kommen noch zu dir durch.
 300
 40
 AUTO-DAMAGE
-3
--END3-
+5
+-END1-

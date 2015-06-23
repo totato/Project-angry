@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
+11
+Irische Irrsinnigkeiten
+Schneller, höher, besser! Paralell zu deinem im 9/8-Schlag getanzten Tanz versuchen einige deiner Fans Irische Volksweisen zu singen. Dabei ersticken sie! 
 100
 5
+AUTO-DAMAGE
+10
 -END1-

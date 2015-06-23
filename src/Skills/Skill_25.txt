@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
+23
+Amerikanische Angehörige
+Wo jemand gegen Minderheiten, oder Iren, vorgeht, sind die Amerikaner nicht weit. Die am besten bewaffneten Streber sehen sich als deren kulturelle Nachfolger und kämpfen auf einmal mit!
 100
 5
+AUTO-DAMAGE
+149
 -END1-

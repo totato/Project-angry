@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
+29
+Spanische Seemänner
+Im Namen ihrer Majestät, gegen die zunehmende Piraterie auf der Route nach Amerika, kommen spanische Piratenjäger in den Blutdurchströmten Pub. Die Folge ist mehr Blut.
 100
 5
+AUTO-DAMAGE
+500
 -END1-

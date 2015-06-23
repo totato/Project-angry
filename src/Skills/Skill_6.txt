@@ -1,11 +1,9 @@
 -START1-
 3
-Gleichgewicht
-Du fällst nun nicht mehr so oft hin.
+Ständiges Schwitzen
+Deine Hitze und die Nähe zu den Strebern hat dazu geführt, dass du ein bisschen... riechst. Streber die zu nah an dich herankommen fallen in Ohnmacht!
 150
 20
 AUTO-DAMAGE
 2
-KRIT-CHANCE
-0.05
 -END1-
