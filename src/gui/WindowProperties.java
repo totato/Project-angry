@@ -35,6 +35,10 @@ import javax.swing.KeyStroke;
 public abstract class WindowProperties {
 
     private static Clip clip;
+    private static Clip clipLaun;
+    private static Clip clipGame;
+    private static Clip clipMed;
+    private static Clip clipBuy;
 
     
     public String[] words;
@@ -46,6 +50,9 @@ public abstract class WindowProperties {
      "proj_1/ScreenLaun/" zu finden sin. Der Name des Lieds wird, mit 
      Dateianhang, in die Methode mit eingegeben.   
      */
+    public static void loadMusic ()throws LineUnavailableException {
+        
+    }
     public static void backgroundMusic(String dateipfad) throws LineUnavailableException {
         System.out.println("*Musik spielt*");
         String pfadsoundlaun = dateipfad;

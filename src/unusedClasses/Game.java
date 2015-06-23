@@ -269,7 +269,7 @@ public class Game {//Hier ev. noh private einfügen. binzu müde dafür.
     /*Wechselt die gezeigte Karte. Die neue Karte ist die, deren
      Namen angegeben wurde
      */
-   /* private void changeCard(String name) {
+  private void changeCard(String name) {
 
         //Cutscenes.playcutscene(1, pfad);
         clgame.show(gamecards, name);
@@ -283,7 +283,7 @@ public class Game {//Hier ev. noh private einfügen. binzu müde dafür.
         });
         timer.start();
         System.out.println("Menu gewechselt");
-    }*/
+    }
 
     /*
      Wird aufgerufen um Upgrades zu kaufen.
