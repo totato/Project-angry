@@ -1,7 +1,11 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+14
+Mundgeruch
+Nie mehr wieder Zähne putzen!
+150
+20
+SPAWNRATE-REDUKTION
+0.03
+KRIT-CHANCE
+0.05
 -END1-

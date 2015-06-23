@@ -74,6 +74,7 @@ public class MainGUI extends WindowProperties {
 
         MainGUI.setAktMainGUI(this);
 
+        
         setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
         gamescreen = new JFrame(getWords(18));
@@ -88,7 +89,8 @@ public class MainGUI extends WindowProperties {
         gamescreen.setLocationRelativeTo(null);
 
         setIconPicture(gamescreen, "ScreenLaun/GameIcon.png");     //TODO: Muss gemacht 
-        //und eingefügt werden
+        gamescreen.setTitle("This game will make you angry.");
+//und eingefügt werden
         //backgroundMusic("rewind.wav");TODO: Muss gemacht und eingefügt werden
         gamescreen.pack();
         gamescreen.setVisible(true);
@@ -171,6 +173,7 @@ public class MainGUI extends WindowProperties {
         System.out.println("zu  " + name + "  gewechselt");
     }
 // wird nicht mehr gebraucht :(
+
     public void addTextToTextArea(JTextArea ta, int maxSigns, String text) {
         //int maxSigns = 30; for gamePanel
         int lastSpace = 0;

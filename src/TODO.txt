@@ -11,7 +11,9 @@ x CHEATS !!!
 - Mehr Cheats !!!
 x Wenn man zu schnell die Panels wechselt bugt die Musik
 - Mehr Sprüche für Sensei / Shopkeeper
-- Antonio Streber ist zu klein
+x Antonio Streber ist zu klein
+- Streber wechseln auch wenn keine Waffe ausgewählt ist (ganz am Anfang)
+- Bei Waffe 0 darf im skillbaum nur weiter geupgradet werden wenn alle stufen des vorgängers freigeschaltet sind
 
 
 ------------------------ Für die Präsentation -------------------------------

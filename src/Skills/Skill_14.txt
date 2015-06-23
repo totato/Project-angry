@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+11
+Husten
+Das Querklangprojekt ist eine moderne Methode zum Husten training. Die Streber wollen sich nicht erkälten und rennen weg um ihre Schutzmasken zu holen.
+50
+10
+SPAWNRATE-REDUKTION
+0.01
 -END1-

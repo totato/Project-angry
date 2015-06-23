@@ -1,7 +1,27 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+24
+Externe Verbesserung MK. I
+Anstatt auf Natürliche Hornhaut zu setzen setzt du auf Technik und hast dir externe Implantate besorgt.
+50
+10
+WAFFEN-UPDATE
+0
 -END1-
+-START2-
+-1
+Externe Verbesserung MK. II
+Ein kleines Jettriebwerk gibt deinen Schlägen das nötige UMPF!
+50
+10
+WAFFEN-UPDATE
+0
+-END2-
+-START3-
+-1
+Externe Verbesserung MK. II V. I
+Du baust kleine Lenkraketen an das Jettriebwerk und kannst deine Schlagrichtung wieder steuern.
+50
+10
+WAFFEN-UPDATE
+0
+-END3-

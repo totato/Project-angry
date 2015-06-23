@@ -1,7 +1,29 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+30
+Ersatzteile MK. II
+Du hast den Schutzanzug zu spät angezogen. Dein ganzer verbrannter Körper muss ersetzt werden. Cyborg FTW!
+50
+10
+WAFFEN-UPDATE
+0
 -END1-
+-START2-
+-1
+Externe Verbesserungen MK. V
+Du montierst einen externen Benzintank auf deinem Rücken. Kein direkter Vorteil, aber bald...
+150
+20
+KRIT-CHANCE
+0.05
+WAFFEN-UPDATE
+0
+-END2-
+-START3-
+-1
+Externe Verbesserungen MK. VI
+Du installierst neue Triebwerke und fliegst, Handkante vorraus, durch die Streber.
+300
+40
+WAFFEN-UPDATE
+0
+-END3-

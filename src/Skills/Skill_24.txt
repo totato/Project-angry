@@ -1,7 +1,9 @@
 -START1-
--1
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+20
+Psychologische Abhärtung
+Du zielst nichtmehr in die MAgengrube, wo es wirklcih wehtut, sondern gehst tiefer, wo es wirklich wirklich wehtut.
+50
+10
+WAFFEN-UPDATE
+0
 -END1-

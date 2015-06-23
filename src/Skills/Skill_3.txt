@@ -1,29 +1,9 @@
 -START1-
 0
-Husten
-Das Querklangprojekt ist eine moderne Methode zum Husten training. Die Streber wollen sich nicht erkälten und rennen weg um ihre Schutzmasken zu holen.
+Treten
+Deine Beine sind selbständig geworden, und treten wärend du kämpst automatisch umher.
 50
 10
-SPAWNRATE-REDUKTION
-0.01
+AUTO-DAMAGE
+1
 -END1-
--START2-
--1
-Mundgeruch
-Nie mehr wieder Zähne putzen!
-150
-20
-SPAWNRATE-REDUKTION
-0.03
-KRIT-CHANCE
-0.05
--END2-
--START3-
--1
-Spucken
-Du hast weiter an deinem Husten trainiert, so das viele kleine ätzende Speicheltropfen deine Gegner einätzen. 
-300
-40
-SPAWNRATE-REDUKTION
-0.06
--END3-

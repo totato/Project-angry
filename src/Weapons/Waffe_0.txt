@@ -59,7 +59,6 @@ Norris!
 Chuck!
 -END6-
 -START7-
-Hand7
 Zielvorgang
 Vielleicht solltest du anfangen nicht auf die Hände der Streber zu zielen?
 20
@@ -189,6 +188,7 @@ Wush!
 Ein Körperteil weniger zum drum kümmern...
 -END19-
 -START20-
+Externe Verbesserungen MK. VI
 Du installierst neue Triebwerke und fliegst, Handkante vorraus, durch die Streber.
 100
 0

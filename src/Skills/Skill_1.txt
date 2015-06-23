@@ -1,7 +1,7 @@
 -START1-
 0
-Fäuste
-Du realisierst das du deine Hand zu einer Faust machen kannst.
+Schlag
+Du realisierst, das du deine Hände zum Schlagen nutzen kannst!
 50
 10
 WAFFEN-UPDATE
@@ -9,8 +9,8 @@ WAFFEN-UPDATE
 -END1-
 -START2-
 -1
-Präzision
-Du triffst nun manchmal einige Gegner.
+Selbstkontrolle
+Wenn du schlägst und stehenbleibst kannst du nochmal schlagen!
 150
 20
 KRIT-CHANCE
@@ -20,8 +20,8 @@ WAFFEN-UPDATE
 -END2-
 -START3-
 -1
-Technik
-Der Daumen gehört nicht in die Faust!
+Revolutionäre Erkentniss
+Wenn du schlägst UND triffst wirst du effektiver!
 300
 40
 WAFFEN-UPDATE
