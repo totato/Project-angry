@@ -111,8 +111,6 @@ public abstract class WindowProperties {
     clip.drain();
     } catch(NullPointerException npe) {
             System.out.println(npe);
-        } catch (LineUnavailableException lua) {
-            System.out.println(lua);
         }
 }
 

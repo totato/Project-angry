@@ -246,8 +246,7 @@ public class Launcher extends WindowProperties {
 
      }*/
     private void toLauncher(ActionEvent e) {
-        if (e.getSource() == backButton) {
-            resetClip(clipLaun);
+        if (e.getSource() == backButton) { 
             System.out.println("Zurück zum Launcher");
             cl.show(cards, "L card");
         }
