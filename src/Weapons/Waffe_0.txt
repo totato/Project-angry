@@ -74,6 +74,7 @@ Du realisierst, das der Kopf ein besseres Ziel ist als das Knie.
 25
 450
 2
+0.5
 Headshot!
 Genickbruch!
 -END8-
