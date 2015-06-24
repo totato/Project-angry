@@ -5,5 +5,5 @@ Du triffst nun dort wo es wirklich richtig weh tut.
 10000
 8600
 KRIT-CHANCE
-(Zahl)
+0.2
 -END1-
