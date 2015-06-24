@@ -18,6 +18,7 @@ import javax.sound.sampled.LineUnavailableException;
  */
 public class Launcher extends WindowProperties {
 
+    private static Launcher aktLauncher;
     private JFrame launcher;
     private JTextField savefilezeile;
     private JLabel background;
@@ -26,6 +27,7 @@ public class Launcher extends WindowProperties {
     private CardLayout cl;
     private JPanel cards;
     private JPanel cutsceneCard;
+    private JPanel launcherCard;
     private JPanel tutorialPanel;
     private JMenuBar menuezeile;
 
@@ -35,6 +37,7 @@ public class Launcher extends WindowProperties {
     //Ein Konstruktor gibt kein void zurück
     //Habe das geändert und auch an anderen Stellen im Programm das angepasst, allerdings das alte immer nur auskommentiert
     public Launcher() throws LineUnavailableException {
+        Launcher.setAktLauncher(this);
         setLanguage(language);
         launcher = new JFrame(getWords(1));
         MenueLeiste();
@@ -178,7 +181,7 @@ public class Launcher extends WindowProperties {
 
     private void createCards(Container pane) {
         // Die Launcher Karte wird erzeugt
-        JPanel launcherCard = new JPanel();
+        launcherCard = new JPanel();
         // Es soll schließlich schön aussehen, also bekommt 
         //es ein Layout zugewiesen
         launcherCard.setLayout(new BorderLayout());
@@ -208,7 +211,6 @@ public class Launcher extends WindowProperties {
         });
         cutsceneCard.add(backButton, BorderLayout.SOUTH);
 
-        
         tutorialPanel = new gui.TutorialPanel();
         // Alle Karten werden zusammengefasst in einer art Kartenstapel
         cards = new JPanel(new CardLayout());
@@ -261,6 +263,12 @@ public class Launcher extends WindowProperties {
             cl.show(cards, "L card");
         }
     }
+
+    public void toMainLauncher() throws LineUnavailableException {
+        cl.show(cards, "L card");
+        //launcherCard.setVisible(true);
+
+    }
     /*
      Öffnet ein Fenster von "Launcher" aus, das Standartinformationen über das 
      Spiel zeigt
@@ -278,12 +286,8 @@ public class Launcher extends WindowProperties {
      Spiel zeigt
      */
     private void zeigeHilfe() {
-        
+
         cl.show(cards, "Tut card");
-        
-        JOptionPane.showMessageDialog(launcher, getWords(10),
-                getWords(11),
-                JOptionPane.INFORMATION_MESSAGE);
     }
 
     /*
@@ -300,20 +304,21 @@ public class Launcher extends WindowProperties {
         Launcher l = new Launcher();
         //l.Launcher();
     }
-    
-    public void launcherReset() throws LineUnavailableException{
-            launcher.setVisible(false);
-    stopBgMusic();
-        System.out.println("Launcher wird unsichtbar und anschließend zerstört"
-                + "(dispose). Neuer Launcher wird gestartet.");
-        launcher.dispose();
-        Launcher l = new Launcher();
-    }
+
+
     /*
      Beendet das Programm
      */
     private void beenden() {
         System.exit(0);
+    }
+
+    public static Launcher getAktLauncher() {
+        return aktLauncher;
+    }
+
+    public static void setAktLauncher(Launcher aktLauncher) {
+        Launcher.aktLauncher = aktLauncher;
     }
 
 }

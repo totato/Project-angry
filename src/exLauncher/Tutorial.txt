@@ -1,24 +1,32 @@
 -START1-
-Herzlich Willkommen bei "This Game will make you Angry!". Dieses Tutorial wurde erschaffen, \n um dir den Einstieg in dieses hochkomplexe Spiel zu ermöglichen.
-/ScreenLaun/GameIcon.PNG
+Herzlich Willkommen bei "This Game will make you Angry!". Dieses Tutorial wurde erschaffen, um dir den Einstieg in dieses hochkomplexe Spiel zu ermöglichen. Da wir alle wissen wie schwer es ist sich bei einer Textmauer zu konzentrieren haben wir passende Bilder hinzugefügt. Wenn du zum nächsten Kapitel willst klick einfach auf "OK". Falls einige der Abbildungen nicht mit deinem Spiel übereinstimmen denk dran: Alle Screenshots wurden mit der "Luxus-"- Version gemacht, die alle extra Enginefeatures, aber nicht alle DLCs verfügbar hatte.
+/exTutorial/Launcher_0.png
 -END1-
 -START2-
-ZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeite \n ZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeite
-/ScreenLaun/Unbenannt.png
+Das erste was du dir angucken solltest ist der Launcher. Wer kennt es nicht, wenn kleine oder große Geschwister deine hart erarbeiteten Speicherateien zerstören? Deswegen haben wir von PET-Interactive dir eine Möglichkeit gegeben, alle deine Speicherdateien zu schützen. Unten im Launcher siehst du eine kleine Textzeile. Wenn du dort eine Folge von Buchstaben eingibst wird ein neuer Spielstand erstellt, der nur durch die eingabe dieser exakten Kombination wieder geladen werden kann! Falls du einen Code eingibst, den es schon gibt, wird beim Spielstart diese Datei geladen. Denk also dran: Gib die Namen deiner Datei niemals an Dritte weiter!
+/exTutorial/Launch_Save.png
 -END2-
 -START3-
-DreiSeiteDreiSeiteDreiSeiteDreiSeiteDreiSeiteDreiSeite
-/ScreenLaun/Unbenannt.png
+Wir haben unsere Speicherdatei "SecretSave1" genannt. Das sollte unsere Geschwister davon abhalten unseren Fortschritt zu zerstören. Auf zum Spiel! Oben links siehst du eine Schaltfläche. Bei dir sollte diese "Weiter" heissen. Wenn du auf "Weiter" klickst und die erste Option auswählst (Get Angry) kannst du beginnen zu spielen. "Don't get Angry" ist der Button den du niemals brauchen wirst, den er beendet das Spiel. Jetzt wo wir die Grundlagen vom Launcher verstanden haben: Auf in die Schlacht!
+/exTutorial/Launch_Start.png
 -END3-
 -START4-
-4seeit4seeit4seeit4seeit4seeit
-/ScreenLaun/GameIcon.PNG
+Nach einer kurzen Cutscene wirst du einen diesem Bildschirm ähnlichen Bildschirm sehen. Oben Rechts siehst du die noch lebenden und getöteten Streber. Wenn du es schaffst, dass in deinem GEbiet keine Streber mehr sind kannst du in das nöchste Areal vorrücken. Darunter siehst du ein großes, weißes Fenster. Das würd sich im Laufe deines Spiels langsam mit mehr und mehr Berichten aus dem Grenzland füllen. Hier siehst du alles was passiert. Der zweite Rote Kreis zeigt deine aktuelle Brillen und Erfahrung. Beides brauchst du um neue Skills und Waffen zu kaufen. Im moment hast du ncoh keine Kampffähigkeiten und kannst deswegen keine Streber töten. Gehe also zu "Skills" und erlerne deine erste Fähigkeit!
+/exTutorial/Game_1.png
 -END4-
 -START5-
-5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit
-/ScreenLaun/GameIcon.PNG
+Willkommen im Skillbaum! Hier wirst du mit der Zeit mehr und mehr Skills freischalten und so mächtiger und mächtiger werden. Klicke zuerst auf den vom rechten Kreis markierten Button. WIe du siehst kostet er weder Brillen noch erfahrung, du kannst ihn also sofort Kaufen! Die danach auftauchenden Skills aber leider nicht, weil du weder genug Brillen, ncoh genug Erfahrung hast (Zweiter Roter Kreis). Kehre nun zurück auf ds Schlachtfeld!
+/exTutorial/Game_2.png
 -END5-
 -START6-
-6seit6seit6seit6seit6seit6seit6seit6seit6seit6seit6seit
-/ScreenLaun/Unbenannt.png
+Wie du siehst ist einer der Buttons inder unteren Zeile auswählbar geworden. Wähle ihn aus und klicke dann auf den Streber! Wie du siehst fangen die Streber an zu Sterben. Aber die Streber steigen auch langsam weiter an! Was tun? Nachdem du ein paar Streber erledigst hast gehe in den "Shop", um dir eine neue Waffe zu kaufen.
+/ExTutorial/Game_3.png
 -END6-
+-START7-
+Hier siehst du erst links die Waffen die du Kaufen kannst und rechts die Waffen die du schon gekauft hast. Merk dir das: Links ist die nächste Waffe zu sehen, rechts die Aktuelle. Wenn du links eine Waffe auswählst und auf "Kaufen" gehst siehst du im Spiel eine neue Freigeschaltete Waffe. Generell gilt: Desto tuerer die Waffe, desto besser ist die auch! Manchmal kann es sich in einem neuen Level so anfühlen als ob die Streber dich überrennen, aber dann musst du nur auf ein paar bessere Waffen sparen. Achte auf ein Vielseitiges Arsenal!
+/ExTutorial/Game_4.png
+-END7-
+-START8-
+Unten links siehst du eine besondere Waffe: Granaten. Diese musst du vor jeder Benutzung kaufen, sie sind aber auch stärker als normale Waffen. Sie können genauso geupgradet werden wie normale Waffen auch. Falls du von hier direkt einen Skill hohlen willst geht das, indem du auf "Skillbaum" klickst. Alternativ kannst du auch die Zahlen (1,2 und 3) nutzen, um zwischen den einzelnen Orten zu wechseln. Nach diesem Geheimtipp noch viel Spaß beim Spielen! Und vergiss nicht regelmäßig zu speichern!
+/ExTutorial/Game_5.png
+-END8-
