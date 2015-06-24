@@ -67,11 +67,13 @@ Dis war!
 -END6-
 -START7-
 Sanic
-
+Ein Test zuviel?
 320
 5000
 3200
 0.5
+Schneller als du diesen sehr kurzen Satz lesen kannst!
+Immer an dir vorbei!
 -END7-
 -START8-
 Creeper
@@ -90,6 +92,8 @@ psssh...nothin personnel...kid...
 5000
 8000
 0.5
+Nothin left to fear, boy
+Just keep going...
 -END9-
 -START10-
 Resetti
@@ -98,6 +102,8 @@ Die schlimmste Strafe fürs beenden ohne zu Speichern
 5000
 9000
 0.5
+Du? Schon wieder?
+Im echten Leben kannst du das auch nicht!
 -END10-
 -START11-
 Yuno
@@ -106,4 +112,6 @@ Nun bist du stärker als die Sonne.
 5000
 100000
 0.5
+Du bekommst Hunger.
+Ein fantastischer Endkampf! Wieder!
 -END11-
