@@ -2,8 +2,8 @@
 30
 Ersatzteile MK. II
 Du hast den Schutzanzug zu spät angezogen. Dein ganzer verbrannter Körper muss ersetzt werden. Cyborg FTW!
-50
-10
+11000
+5500
 WAFFEN-UPDATE
 0
 -END1-
@@ -11,8 +11,8 @@ WAFFEN-UPDATE
 -1
 Externe Verbesserungen MK. V
 Du montierst einen externen Benzintank auf deinem Rücken. Kein direkter Vorteil, aber bald...
-150
-20
+15000
+7000
 KRIT-CHANCE
 0.05
 WAFFEN-UPDATE
@@ -22,8 +22,8 @@ WAFFEN-UPDATE
 -1
 Externe Verbesserungen MK. VI
 Du installierst neue Triebwerke und fliegst, Handkante vorraus, durch die Streber.
-300
-40
+20000
+10000
 WAFFEN-UPDATE
 0
 -END3-

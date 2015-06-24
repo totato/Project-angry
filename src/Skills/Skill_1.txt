@@ -2,8 +2,8 @@
 0
 Schlag
 Du realisierst, das du deine Hände zum Schlagen nutzen kannst!
-50
-10
+24
+12
 WAFFEN-UPDATE
 0
 -END1-
@@ -11,8 +11,8 @@ WAFFEN-UPDATE
 -1
 Selbstkontrolle
 Wenn du schlägst und stehenbleibst kannst du nochmal schlagen!
-150
-20
+50
+26
 KRIT-CHANCE
 0.05
 WAFFEN-UPDATE
@@ -22,7 +22,7 @@ WAFFEN-UPDATE
 -1
 Revolutionäre Erkentniss
 Wenn du schlägst UND triffst wirst du effektiver!
-300
+100
 40
 WAFFEN-UPDATE
 0

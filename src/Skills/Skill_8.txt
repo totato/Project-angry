@@ -2,8 +2,8 @@
 4
 Technikevolution
 Wenn du den Daumen aus der Faust nimmst brichst du ihn dir nichtmehr.
-50
-10
+170
+100
 WAFFEN-UPDATE
 0
 -END1-

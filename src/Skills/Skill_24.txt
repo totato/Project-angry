@@ -2,8 +2,8 @@
 20
 Psychologische Abhärtung
 Du zielst nichtmehr in die MAgengrube, wo es wirklcih wehtut, sondern gehst tiefer, wo es wirklich wirklich wehtut.
-50
-10
+3600
+1500
 WAFFEN-UPDATE
 0
 -END1-

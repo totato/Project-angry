@@ -3,7 +3,7 @@ Schlag
 Du realisierst, das du deine Hände zum Schlagen nutzen kannst!
 1
 0
-2
+0
 0.2
 Streber stirbt an Lachkrampf.
 Du fällst hin und nimmst einen Streber mit.

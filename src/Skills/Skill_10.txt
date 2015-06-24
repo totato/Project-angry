@@ -2,8 +2,8 @@
 8
 Technikrevolution
 Wenn du statt mit der Faust mit der Handkante schlagen würdest...
-50
-10
+500
+360
 WAFFEN-UPDATE
 0
 -END1-
