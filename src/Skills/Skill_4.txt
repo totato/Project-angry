@@ -2,8 +2,8 @@
 1
 Technische Revolution
 Wenn du eine eine Faust formst brichst du dir nicht die Finger!
-50
-10
+150
+76
 WAFFEN-UPDATE
 0
 -END1-

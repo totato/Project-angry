@@ -2,8 +2,8 @@
 27
 Polternde Piraten
 Die Vagabunden unter den Strebern haben von deiner Performance (und dem Alkohol) gehört und vordern dich dazu auf, ihnen beides zu geben. Du tanzt nur allzugerne, aber den Alkohlol hoohlen sie sich selber.
-100
-5
+13000
+6500
 AUTO-DAMAGE
-300
+5
 -END1-

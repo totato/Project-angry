@@ -1,7 +1,6 @@
 package gui;
 
 import game.Game;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -35,7 +34,12 @@ public class Screen extends JLabel{
 
             @Override
             public void mousePressed(MouseEvent e) {
+                if(Game.getAktGame().getData().getAktWaffe() >= -0){
                 Game.getAktGame().useWeapon(Game.getAktGame().getData().getAktWaffe());
+                }
+                else{
+                    MainGUI.getAktMainGUI().getGamePanel1().getjTextAreaGame().setText("Du weißt nicht wie man kämpft.\n");
+                }
             }
 
             @Override

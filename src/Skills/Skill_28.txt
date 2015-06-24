@@ -2,8 +2,8 @@
 26
 Feuerschutzanzug MK. VII V. IX
 Die Triebwerke verbrannten deine Haut. Nicht mehr!
-50
-10
+5400
+2700
 WAFFEN-UPDATE
 0
 -END1-

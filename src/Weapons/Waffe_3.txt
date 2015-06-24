@@ -1,16 +1,101 @@
 -START1-
-Spitzer Bleistift
-Den hast du in eineim epischen Zweikampf einenem Streber abgenommen.
-5
-0
-2
-0.5
+Ungespitzer Bleistift
+Lag irgendwo rum. Besser als garnichts?
+3
+500
+20
+0.2
+Du gehst auf einen Streber los! Der Stift prallt ab.
+Du versuchst, von hinten ienen Streber zu erwischen. Du scheiterst!
 -END1-
 -START2-
-Schlagstock
-Nun stellst du zumindestens ein wenig eine Gefahr da.
+Angespitzter Bleistift
+Nicht sehr spitz, aber ein Schritt in die richtige Richtung.
 10
-0
-2
-0.5
+500
+40
+0.2
+Du stichst los. Die Mine bricht!
+Du verfehlst den Streber und triffst dich selbst.
 -END2-
+-START3-
+Zirkel
+Du fühlst dich fast schon gefährlich.
+30
+500
+60
+0.2
+Du hälst den Zirkel falschrum Er bohrt sich in deine Hand!
+Du versuchst den Streber m Körper zu treffen, aber die Spitze ist zu kurz.
+-END3-
+-START4-
+Schlagstock
+Wo Präzision nicht hilft muss Power her! Du hast dir ein Lineal zum schlagen besorgt.
+70
+500
+70
+0.2
+Du schwingst zu weit. Der Streber weicht aus.
+Du triffst den Nachbarn deines Ziels!
+-END4-
+-START5-
+Schild und Degen
+Ein Geodreieck in der einen, einen Zeigestock in der anderen Hand, bist du gerüstet für Drachen und Klassenkameraden! 
+100
+500
+100
+0.2
+Du täuschst links an, vergisst aber rechts nachzulegen.
+Du blockst einen feindlichen Stoß. Der Streber fällt hin!
+-END5-
+-START6-
+Rammbock
+Ein Schild in jeder Hand, und nach vorne!
+130
+500
+500
+0.2
+Du überrennst einen kleineren Streber.
+Du wirst von einem größeren Streber gestoppt.
+-END6-
+-START7-
+Testudo
+Ein Schild in jede Richtung, das wussten schon die Rönmer, ist das praktischste was es gibt.
+160
+500
+900
+0.2
+Du sprintest in eine beliebige Richtung!
+Du rollst davon!
+-END7-
+-START8-
+Elektrisierte Schilde
+Altes und neues, Verbunden in einem, zusammen auf immer dazu da zu töten.
+200
+500
+1000
+0.2
+Ein Streber schaut dich wie elektrisiert an.
+Ein Streber zuckt unkontrolliert.
+-END8-
+-START9-
+Vibrierendes Schild
+Warum manuell mit Schildern gegen Köpfe schlagen wenn es auvh automatisiert geht?
+230
+500
+1800
+0.2
+Du triffst den selben Kopf nochmal.
+Du verlierst die Kontrolle über deine Schilde. Sie ziehen dich mit!
+-END9-
+-START10-
+Verbesserte Motorik
+Du investierst in bessere Motorik, und kannst nun deine Schilde kontrollieren!
+300
+500
+3000
+0.2
+DU triffst einen Streber ins Gesicht!
+Du schlägst nichtmehr zufällig um dich herum!
+-END10-
+

@@ -1,9 +1,9 @@
 -START1-
 Tamagotchi
 Pass auf, sonst stirbt es .
-1
-0
-2
+5
+5000
+50
 0.5
 Dein Tamagotchi hat einen Haufen auf den Boden gemacht
 Dein Tamagotchi ist krank
@@ -16,16 +16,16 @@ Dein Tamagotchi STIRBT. Toll gemacht!
 Baby Yoshi
 
 10
-0
-2
+5000
+100
 0.5
 -END2-
 -START3-
 Gelbes Chinesisches Kartennmonster
 Ling-Ling Hitler Bin Laden Küblböck
-15
-0
-2
+20
+5000
+200
 0.5
 Los Pikachu! Donnerschock Attacke!
 Ling-Ling hat sein Gesicht verloren...
@@ -34,9 +34,9 @@ Es will den Donnerstein nicht benutzen...
 -START4-
 Sonichu.
 Yellow electric hedgehog Pokemon. The original and one-and-only, he runs faster than the speed of sound. When danger is near, he will slice and zap it up.
-30
-0
-2
+40
+5000
+400
 0.5
 Do not fear, world, for I am a new pokemon. And my name is....Sonichu!
 Sonichu is Copyrighted and Mine Alone. Do Not Steal.
@@ -44,59 +44,74 @@ I am not gay
 Los Sonichu! Autismus-Attacke!
 -END4-
 -START5-
-Taschenmonster05
-
-35
-0
-2
+Alice Liddell
+Vertraue niemals deinem Therapeuten
+80
+5000
+800
 0.5
+Wo ist der Hase?
+Verderben!
 -END5-
 -START6-
-Taschenmonster06
-
-40
-0
-2
+Dorbfewohner
+Arbeiten gerne für dich.
+160
+5000
+1600
 0.5
+Ja!
+Holza!
+Das ich soll!
+Dis war!
 -END6-
 -START7-
 Sanic
-
-45
-0
-2
+Ein Test zuviel?
+320
+5000
+3200
 0.5
+Schneller als du diesen sehr kurzen Satz lesen kannst!
+Immer an dir vorbei!
 -END7-
 -START8-
-
-
-50
-0
-2
+Creeper
+Grün, erschrekt dich gerne und jagt dein hab und gut in dir Luft.
+640
+5000
+6400
 0.5
-
+SSSSSSSS
+SSSSSS - BOOM
 -END8-
 -START9-
 Coldsteel the Hedgeheg
 psssh...nothin personnel...kid...
-55
-0
-2
+800
+5000
+8000
 0.5
+Nothin left to fear, boy
+Just keep going...
 -END9-
 -START10-
-Taschenmonster10
-
-60
-0
-2
+Resetti
+Die schlimmste Strafe fürs beenden ohne zu Speichern
+1000
+5000
+9000
 0.5
+Du? Schon wieder?
+Im echten Leben kannst du das auch nicht!
 -END10-
 -START11-
 Yuno
 Nun bist du stärker als die Sonne.
 10000
-0
-2
+5000
+100000
 0.5
--START11-
+Du bekommst Hunger.
+Ein fantastischer Endkampf! Wieder!
+-END11-

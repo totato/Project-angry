@@ -1,23 +1,17 @@
-
 package gui;
 
 import game.Game;
-import gui.WindowProperties;
 import static gui.WindowProperties.clipGame;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.LineUnavailableException;
-import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JToggleButton;
-import javax.swing.KeyStroke;
 
 /**
  *
@@ -25,18 +19,18 @@ import javax.swing.KeyStroke;
  */
 public class GamePanel extends Panel {
 // Bilder werden geladen
-    private ImageIcon grAttack0B = new ImageIcon(getClass().getResource("/Grafiken/weapon0B.png"));
-    private ImageIcon grAttack0 = new ImageIcon(getClass().getResource("/Grafiken/weapon0.png"));
-    private ImageIcon grAttack1B = new ImageIcon(getClass().getResource("/Grafiken/weapon1B.png"));
-    private ImageIcon grAttack1 = new ImageIcon(getClass().getResource("/Grafiken/weapon1.png"));
-    private ImageIcon grAttack2B = new ImageIcon(getClass().getResource("/Grafiken/weapon2B.png"));
-    private ImageIcon grAttack2 = new ImageIcon(getClass().getResource("/Grafiken/weapon2.png"));
-    private ImageIcon grAttack3B = new ImageIcon(getClass().getResource("/Grafiken/weapon3B.png"));
-    private ImageIcon grAttack3 = new ImageIcon(getClass().getResource("/Grafiken/weapon3.png"));
-    private ImageIcon grAttack4B = new ImageIcon(getClass().getResource("/Grafiken/weapon4B.png"));
-    private ImageIcon grAttack4 = new ImageIcon(getClass().getResource("/Grafiken/weapon4.png"));
-    private ImageIcon grAttack5B = new ImageIcon(getClass().getResource("/Grafiken/weapon5B.png"));
-    private ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/weapon5.png"));
+    private final ImageIcon grAttack0B = new ImageIcon(getClass().getResource("/Grafiken/weapon0B.png"));
+    private final ImageIcon grAttack0 = new ImageIcon(getClass().getResource("/Grafiken/weapon0.png"));
+    private final ImageIcon grAttack1B = new ImageIcon(getClass().getResource("/Grafiken/weapon1B.png"));
+    private final ImageIcon grAttack1 = new ImageIcon(getClass().getResource("/Grafiken/weapon1.png"));
+    private final ImageIcon grAttack2B = new ImageIcon(getClass().getResource("/Grafiken/weapon2B.png"));
+    private final ImageIcon grAttack2 = new ImageIcon(getClass().getResource("/Grafiken/weapon2.png"));
+    private final ImageIcon grAttack3B = new ImageIcon(getClass().getResource("/Grafiken/weapon3B.png"));
+    private final ImageIcon grAttack3 = new ImageIcon(getClass().getResource("/Grafiken/weapon3.png"));
+    private final ImageIcon grAttack4B = new ImageIcon(getClass().getResource("/Grafiken/weapon4B.png"));
+    private final ImageIcon grAttack4 = new ImageIcon(getClass().getResource("/Grafiken/weapon4.png"));
+    private final ImageIcon grAttack5B = new ImageIcon(getClass().getResource("/Grafiken/weapon5B.png"));
+    private final ImageIcon grAttack5 = new ImageIcon(getClass().getResource("/Grafiken/weapon5.png"));
 
     /**
      * Creates new form gamePanel
@@ -426,6 +420,12 @@ public class GamePanel extends Panel {
         return mainScreen;
     }
 
+    public JLabel getjLabelBackgroundGame() {
+        return jLabelBackgroundGame;
+    }
+
+    
+    
     //Diese Reihenfolge: Lebende Streber,vorherLebendeStreber, Tote Streber, Brillen Erfahrung
     public void setAnzeiger(int ls, int vls, int ts, int br, int exp) {
         setLebendeStreber(ls, vls);

@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package game;
 
 import static game.Data.ANZAHL_SKILLS;
-import static game.Data.ANZAHL_WAFFEN;
+import static game.Game.getAktGame;
 import gui.WindowProperties;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -172,34 +167,49 @@ public class SkillHandler {
         return skillSelected;
     }
 
-    public String buySkill(int skillnr) throws IOException {
+    public String buySkill(int skillnr) throws IOException, Exception {
         List<String> skillTXT = skillTXTs.get(skillnr);
         int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillStufe(skillnr) + 1) + "-");
         if (startPos == -1) {
             return "Bisheriges Maximallevel für diesen Skill erreicht";
         }
         if (Game.getAktGame().getData().getBrillen() >= Integer.parseInt(skillTXT.get(startPos + 4))) {
-            upgradeSkill(skillnr);
-            Game.getAktGame().getData().setBrillen(Game.getAktGame().getData().getBrillen() - Integer.parseInt(skillTXT.get(startPos + 4)));
-            return "Skill " + skillTXT.get(startPos + 2) + " gekauft.";
+            if (getSkillSelected() == 34) {
+                Game.getAktGame().getData().setExp(0);
+                Game.getAktGame().getData().setBrillen(0);
+                Game.getAktGame().loadLevel(1, true);
+            } else {
+                upgradeSkill(skillnr);
+                Game.getAktGame().getData().setBrillen(Game.getAktGame().getData().getBrillen() - Integer.parseInt(skillTXT.get(startPos + 4)));
+                return "Skill " + skillTXT.get(startPos + 2) + " gekauft.";
+            }
         }
         return "Nicht genug Brillen für diesen Skill.";
     }
 
-    public String unlockSkill(int skillnr) throws IOException {
+    public String unlockSkill(int skillnr) throws IOException, Exception {
         List<String> skillTXT = skillTXTs.get(skillnr);
         int startPos = skillTXT.indexOf("-START" + (Game.getAktGame().getData().getSkillStufe(skillnr) + 1) + "-");
         if (startPos == -1) {
             return "Bisheriges Maximallevel für diesen Skill erreicht";
         }
         if (Game.getAktGame().getData().getExp() >= Integer.parseInt(skillTXT.get(startPos + 5))) {
-            upgradeSkill(skillnr);
-            Game.getAktGame().getData().setExp(Game.getAktGame().getData().getExp() - Integer.parseInt(skillTXT.get(startPos + 5)));
-            return "Skill " + skillTXT.get(startPos + 2) + " erlernt.";
+            if (getSkillSelected() == 34) {
+                Game.getAktGame().getData().setExp(0);
+                Game.getAktGame().getData().setBrillen(0);
+                Game.getAktGame().loadLevel(1, true);
+            } else {
+                upgradeSkill(skillnr);
+                Game.getAktGame().getData().setExp(Game.getAktGame().getData().getExp() - Integer.parseInt(skillTXT.get(startPos + 5)));
+                return "Skill " + skillTXT.get(startPos + 2) + " erlernt.";
+            }
         }
         return "Nicht genug Erfahrung für diesen Skill.";
     }
 
+        
+
+    
     public static int getMaxSkillLevel(int skillnr) {
 
         List<String> skillTXT = skillTXTs.get(skillnr);

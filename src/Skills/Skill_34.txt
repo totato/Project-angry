@@ -1,7 +1,7 @@
 -START1-
 33
-Meditation
-Die Zeit verlangsamt sich wärend du dich Unterrichten lässt, so das du genug Zeit hast um deine Fähigkeiten zu perfektionieren.
-100
-5
+Ende des Kreises
+Du lässt alles gelernte hinter dir um die Welt mit neuen Augen erblicken zu können
+100000
+100000
 -END1-

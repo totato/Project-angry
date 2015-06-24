@@ -2,8 +2,8 @@
 16
 Interne Verbesserung MK. II
 Das ständige Schlagen hat zu Hornhautbildung geführt. Du schlägst schneller!
-50
-10
+3500
+1500
 WAFFEN-UPDATE
 0
 -END1-

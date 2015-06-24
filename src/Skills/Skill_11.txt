@@ -2,8 +2,8 @@
 9
 Beste Balance
 Jeder deiner Schläge hat eine gewisse... Grazie. Ein paar Streber haben einen Fanclub gegründet und feuern dich an anstatt dich zu bekämpfen.
-100
-5
+3000
+1000
 AUTO-DAMAGE
-10
+5
 -END1-

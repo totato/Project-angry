@@ -2,8 +2,8 @@
 29
 Spanische Seemänner
 Im Namen ihrer Majestät, gegen die zunehmende Piraterie auf der Route nach Amerika, kommen spanische Piratenjäger in den Blutdurchströmten Pub. Die Folge ist mehr Blut.
-100
-5
+15000
+8000
 AUTO-DAMAGE
-500
+5
 -END1-

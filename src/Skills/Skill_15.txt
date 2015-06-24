@@ -2,8 +2,8 @@
 11
 Irische Irrsinnigkeiten
 Schneller, höher, besser! Paralell zu deinem im 9/8-Schlag getanzten Tanz versuchen einige deiner Fans Irische Volksweisen zu singen. Dabei ersticken sie! 
-100
-5
+3000
+1900
 AUTO-DAMAGE
-10
+5
 -END1-

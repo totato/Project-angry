@@ -1,26 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import game.Game;
-import gui.WindowProperties;
 import static gui.WindowProperties.language;
 import java.awt.CardLayout;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.util.logging.Logger;
 import javax.sound.sampled.LineUnavailableException;
-import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.KeyStroke;
 import javax.swing.Timer;
 
 /**

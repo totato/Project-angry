@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package game;
 
 import gui.GamePanel;
@@ -120,7 +115,8 @@ public class Game implements Runnable {
                 data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
             }
             respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
-            scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
+           // scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
+            MainGUI.getAktMainGUI().getGamePanel1().getjLabelBackgroundGame().setIcon(new javax.swing.ImageIcon(getClass().getResource("/"+zeilen.get(startPos + 3))));
 
             temp = zeilen.get(startPos + 4);
 
@@ -131,7 +127,7 @@ public class Game implements Runnable {
             }
 
             randomizeStreber();
-
+            
             return true;
         }
 
@@ -281,7 +277,9 @@ public class Game implements Runnable {
             if (Math.random() + waffen[nummer].getSpruchWk() >= 1.0 && !(waffen[nummer].getSpruch().isEmpty())) {
                 GamePanel.getjTextAreaGame().append(waffen[nummer].getSpruch().get(new Random().nextInt(waffen[nummer].getSpruch().size())) + "\n");
             }
+            if(Math.random()  >= 0.7 && getAktGame().data.getAktWaffe() != -1 ){
             randomizeStreber();
+            }
         }
     }
 

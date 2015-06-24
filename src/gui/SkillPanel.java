@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import game.Game;
 import game.SkillHandler;
 import static gui.WindowProperties.clipSkill;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,7 +11,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.AbstractButton;
 import javax.swing.JToggleButton;
 
 /**
@@ -965,6 +958,8 @@ public class SkillPanel extends Panel {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().unlockSkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
         disableButtons();
@@ -974,6 +969,8 @@ public class SkillPanel extends Panel {
         try {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().buySkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
