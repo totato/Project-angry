@@ -2,8 +2,8 @@
 25
 Kommunistische Kellermänner
 IIIIHH! Amerikaner! Mit diesem  Kampfschrei gehen die Ärmsten unter den Strebern, die Kommunisten, auf die Amerikaner los.
-100
-5
+9000
+4000
 AUTO-DAMAGE
-171
+5
 -END1-

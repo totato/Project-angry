@@ -2,8 +2,8 @@
 15
 Polternde Pubkämpfe
 Wo es Irische Volksweisen gibt, gibt es Irischen Whiskey, und den gibt es nur im Pub. Und, da es in jedem Pub Pubschlägereien gibt, gehen einige deiner Fans aufeinander los.
-100
-5
+4000
+2600
 AUTO-DAMAGE
-80
+5
 -END1-

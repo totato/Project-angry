@@ -958,6 +958,8 @@ public class SkillPanel extends Panel {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().unlockSkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());
         disableButtons();
@@ -967,6 +969,8 @@ public class SkillPanel extends Panel {
         try {
             jTextAreaSkill.setText(Game.getAktGame().getSkills().buySkill(Game.getAktGame().getSkills().getSkillSelected()));
         } catch (IOException ex) {
+            Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(SkillPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         setLabels(Game.getAktGame().getData().getBrillen(), Game.getAktGame().getData().getExp());

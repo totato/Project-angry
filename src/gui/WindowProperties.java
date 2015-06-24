@@ -170,6 +170,7 @@ public abstract class WindowProperties {
      Klärt, aus welchem Dokument die getWords Methode Zeilen entnimmt.
      Wird ganz am Anfang, vor öffnen des Launchers, aufgerufen.
      */
+    // wird nicht verwendet
     public void setLanguage(String lg) {
         words = new String[50]; // TODO: die Zahl ist zu Ändern 
         try {
@@ -189,9 +190,9 @@ public abstract class WindowProperties {
     /*
      Sucht die String aus der angegebenen Zeile heraus und gibt sie zurück.
      */
-
+// wird nicht verwendet
     public String getWords(int line) {
-        return words[line];
+       return words[line];
     }
 
     public void ladeSpiel() {

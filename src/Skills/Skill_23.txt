@@ -2,8 +2,8 @@
 19
 Englische Eroberer
 Wo es Iren gibt gibt es Engländer, die diese Erobern wollen. Die Strebergeneräle, mit ihren vorbildlichen Manieren, sehen sich als Engländer und versuchen den Pub wieder unter Kontrolle zu bringen.
-100
-5
+6000
+2000
 AUTO-DAMAGE
-100
+5
 -END1-

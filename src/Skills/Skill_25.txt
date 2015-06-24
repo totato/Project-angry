@@ -2,8 +2,8 @@
 23
 Amerikanische Angehörige
 Wo jemand gegen Minderheiten, oder Iren, vorgeht, sind die Amerikaner nicht weit. Die am besten bewaffneten Streber sehen sich als deren kulturelle Nachfolger und kämpfen auf einmal mit!
-100
-5
+5000
+3000
 AUTO-DAMAGE
-149
+5
 -END1-

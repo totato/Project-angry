@@ -51,8 +51,7 @@ public class Data implements Serializable{
         aktWaffe = -1;
 
     }
-    
-    
+
 
     public int getGranaten() {
         return granaten;
