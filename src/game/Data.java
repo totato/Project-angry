@@ -48,7 +48,7 @@ public class Data implements Serializable{
             i = 0;
         }
 
-        aktWaffe = 0;
+        aktWaffe = -1;
 
     }
     

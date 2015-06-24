@@ -1,0 +1,9 @@
+-START1-
+Sie sagten mir, dass es Hoffnungslos war. Niemand könnte sie aufhalten, es gäbe zu viele. Niemand könnte sie alle töten.
+/Grafiken/Story_3_BG_1.png
+-END1-
+-START2-
+Niemand ausser mir.
+/Grafiken/Story_3_BG_2.png
+-END2-
+

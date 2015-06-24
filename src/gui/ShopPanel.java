@@ -1,15 +1,12 @@
 package gui;
 
-import game.Data;
 import java.awt.event.KeyEvent;
 import game.Game;
 import static gui.WindowProperties.clipShop;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.security.CodeSource;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;

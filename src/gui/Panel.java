@@ -1,7 +1,6 @@
 package gui;
 
 import static gui.WindowProperties.clipLaun;
-import java.io.IOException;
 import javax.sound.sampled.Clip;
 import javax.swing.JPanel;
 
