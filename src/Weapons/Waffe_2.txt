@@ -1,8 +1,8 @@
 -START1-
 Dein nerviges Gerede
 Das ist erst der Anfang
-5
-0
+20
+2000
 2
 0.5
 ...rein theoretisch, in Anbetracht der Tatsache dass wir, von einem gewissen Standpunkt aus gesehen, im Rahmen der relativen und Subjektiven Wahrnehmung zu der wir als...
@@ -12,8 +12,8 @@ Dein Gegner hält sich die Ohren zu.
 -START2-
 Pseudophilosophie
 Wenn Hitler die Frage ist, wie kann Liebe nicht die Antwort sein?
-10
-1000
+40
+2000
 2
 0.5
 Ein Streber versucht dich zu verstehen und bekommt Kopfschmerzen.
@@ -23,8 +23,8 @@ Du verbreitest Verwirrung.
 -START3-
 Ungewollte Anmachsprüche
 Du bist die Schwuchtel in unserer Beziehung!
-10
-0
+60
+2000
 2
 0.5
 Ein paar Streber bekommen Angst vor deiner homoerotischen Ausstrahlung
@@ -33,8 +33,8 @@ Ein Streber fällt vor dir in Ohnmacht!
 -START4-
 Talentierter Gesang
 ..keine Geigen mehr, wenn wir uns Küssen, ich hab es einfach nicht gewusst. Ich Hoff' meine Worte machen es nicht...
-20
-0
+80
+2000
 2
 0.5
 Mehrere Streber bekommen Ohrenbluten.
@@ -43,8 +43,8 @@ Ein Streber fällt vor dir in Ohnmacht!
 -START5-
 Alliterationen
 Keiner Kann Küssen können... Du gehst damit allen auf die neuronalen Nerven.
-35
-0
+100
+2000
 2
 0.5
 Esel essen eventuell ekelige Eber.
@@ -53,8 +53,8 @@ Ein Streber bittet dich darum, doch endlich aufzuhören!
 -START6-
 Putin-Schreie
 Putin! Putin! Putin!
-40
-0
+120
+2000
 2
 0.5
 Putin!
@@ -64,8 +64,8 @@ PUUTIIIN!!
 -START7-
 Pseudoliberale Philosophie
 Freiheit und so. Ausserdem: Hitler.
-45
-0
+160
+2000
 2
 0.5
 FREEEEDOOOOOM!
@@ -75,8 +75,8 @@ Ein paar der Streber nicken, die anderen kümmern sich um diese Partisanen.
 -START8-
 Internetsprache
 Pwnd U FTW!
-50
-0
+180
+2000
 2
 0.5
 Die Streber schauen sich aneinenader verwirrt an.
@@ -87,8 +87,8 @@ I H8 U LMAO LOL XD
 -START9-
 Schulspanisch
 Einer deiner Freunde hat es dir gezeigt, du glaubst es heißt "Ich liebe dich."
-55
-0
+200
+2000
 2
 0.5
 Te voy a matar Y después voy a tomar tu sangre.
@@ -97,8 +97,8 @@ Quince peso? Con quince peso me hago alto giso!
 -START10-
 Gewollte Anmachsprüche
 Nichts ist peinlicher
-60
-0
+220
+2000
 2
 0.5
 Stop, drop and roll, baby. You are on Fire.
@@ -109,8 +109,8 @@ Nice shoes. Wanna fuck?
 -START11-
 Pseudophilosophie in Alliterationen
 Was könnte schlimmer sein?
-65
-0
+240
+2000
 2
 0.5
 Können koptische Kleptomanen keine kommunistische Kuchen konsumieren?
@@ -119,74 +119,74 @@ Ein Streber fällt vor dir auf seine Knie, und bettelt dich darum aufzuhören.
 -START12-
 Ausversehen romantische Weisheiten
 Du versuchst weiterhin, dein Wissen zu verbreiten. Leider kommen deine Informationen nicht so durch, wie du es dir wünschst.
-70
-0
+270
+2000
 2
 0.5
 Es ist weniger wenn ich reingehe als wenn ich rauskomme.
 Die Streber sind vollkommen verwirrt und weinen in Verzweiflung.
 -END12-
 -START13-
-Schrei13
-
-75
-0
+HODOR
+HODOR HODOR HODOR
+300
+2000
 2
 0.5
 -END13-
 -START14-
-Schrei14
-
-80
+Senpai noticed me
+Du rennst Senpai noticed me auf die Streber los, welche sich darauf hin aus Instinkt wegrennen und nicht mehr wieder kommen.
+340
 0
 2
 0.5
 -END14-
 -START15-
-Schrei15
-
-85
-0
+THIS IS SPARTA
+Du schubst deine gegner gerne in Löcher.
+380
+2000
 2
 0.5
 -END15-
 -START16-
-Schrei16
-
-90
-0
+Miau
+Deine gegner halten dich für eine Katze und bringen es nicht übers Herz dich zu verletzen.
+400
+2000
 2
 0.5
 -END16-
 -START17-
-Schrei17
-
+Vodka Vodka 
+Du schreist das mit schlechtem russischen Akzent auf deine Gegner, diese bekommen angst das du sie ebenfalls Annektierst.
 95
-0
+2000
 2
 0.5
 -END17-
 -START18-
 Schrei18
 
-100
-0
+420
+2000
 2
 0.5
 -END18-
 -START19-
 Schrei19
 
-105
-0
+450
+2000
 2
 0.5
 -END19-
 -START20-
 FUS RO DAH!
 Du bist ein Dovahkiin.
-110
-0
+500
+2000
 2
 0.5
 Alle Streber im umkreis eines Kilometers fliegen weg.
