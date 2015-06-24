@@ -103,10 +103,9 @@ public abstract class WindowProperties {
     
     public static void resetClip(Clip clipRes) throws LineUnavailableException {
     try {
-        clipRes.flush();
-    clip.drain();
-    clip.flush();
-    clip.drain();
+        
+    clip.setMicrosecondPosition(0);
+    clipRes.setMicrosecondPosition(0);
     } catch(NullPointerException npe) {
             System.out.println(npe);
         }
