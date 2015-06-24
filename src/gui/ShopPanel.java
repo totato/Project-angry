@@ -653,18 +653,18 @@ public class ShopPanel extends Panel {
         }
         if (jTextField1.getText().equals("Antonio") && Game.getAktGame().getData().getBrillen() < Integer.MAX_VALUE) {
             Game.getAktGame().getData().setBrillen((5 + Game.getAktGame().getData().getBrillen()) * 2);
-            jTextAreaShop.setText("Du hast ein paar Brillen gefunden.");
+            jTextAreaShop.setText("Du siehst ein paar Brillen im Sand");
             if (Game.getAktGame().getData().getBrillen() < 0) {
                 Game.getAktGame().getData().setBrillen(Integer.MAX_VALUE);
-                jTextAreaShop.setText("Der Integer ist nicht groß genug.");
+                jTextAreaShop.setText("Die Götter scheinen dich nicht erhört zu haben...");
             }
         }
         if (jTextField1.getText().equals("Viktoria") && Game.getAktGame().getData().getExp() < Integer.MAX_VALUE) {
             Game.getAktGame().getData().setExp((5 + Game.getAktGame().getData().getExp()) * 2);
-            jTextAreaShop.setText("Du wurdest erleuchtet."); // TODO hier evtl. Teile aus dem ersten Buch des Antonio
+            jTextAreaShop.setText("Du spürst... Erleuchtung");
             if (Game.getAktGame().getData().getExp() < 0) {
                 Game.getAktGame().getData().setExp(Integer.MAX_VALUE);
-                jTextAreaShop.setText("Der Integer ist nicht groß genug.");
+                jTextAreaShop.setText("Die Götter scheinen dich nicht erhört zu haben...");
             }
         }
         if(jTextField1.getText().equals("Plume")){

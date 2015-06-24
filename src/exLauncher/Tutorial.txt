@@ -1,0 +1,24 @@
+-START1-
+Herzlich Willkommen bei "This Game will make you Angry!". Dieses Tutorial wurde erschaffen, \n um dir den Einstieg in dieses hochkomplexe Spiel zu ermöglichen.
+/ScreenLaun/GameIcon.PNG
+-END1-
+-START2-
+ZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeite \n ZweiteSeiteZweiteSeiteZweiteSeiteZweiteSeite
+/ScreenLaun/Unbenannt.png
+-END2-
+-START3-
+DreiSeiteDreiSeiteDreiSeiteDreiSeiteDreiSeiteDreiSeite
+/ScreenLaun/Unbenannt.png
+-END3-
+-START4-
+4seeit4seeit4seeit4seeit4seeit
+/ScreenLaun/GameIcon.PNG
+-END4-
+-START5-
+5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit5seit
+/ScreenLaun/GameIcon.PNG
+-END5-
+-START6-
+6seit6seit6seit6seit6seit6seit6seit6seit6seit6seit6seit
+/ScreenLaun/Unbenannt.png
+-END6-

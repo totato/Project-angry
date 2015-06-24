@@ -2,6 +2,7 @@ package gui;
 
 import game.Game;
 import static gui.WindowProperties.language;
+import static gui.WindowProperties.stopBgMusic;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -25,6 +26,7 @@ public class Launcher extends WindowProperties {
     private CardLayout cl;
     private JPanel cards;
     private JPanel cutsceneCard;
+    private JPanel tutorialPanel;
     private JMenuBar menuezeile;
 
     /**
@@ -45,7 +47,7 @@ public class Launcher extends WindowProperties {
         launcher.setDefaultCloseOperation(3);
         launcher.setLocationRelativeTo(null);
 
-        setIconPicture(launcher, "ScreenLaun/20941.png");//TODO
+        setIconPicture(launcher, "ScreenLaun/GameIcon.png");
         loadMusic();
         backgroundMusic(clipLaun);
 
@@ -123,7 +125,7 @@ public class Launcher extends WindowProperties {
         JMenu hilfeMenue = new JMenu(getWords(5));
         menuezeile.add(hilfeMenue);
 
-        JMenuItem infoEintrag = new JMenuItem(getWords(7));
+        JMenuItem infoEintrag = new JMenuItem("Informationen");
         infoEintrag.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 zeigeInfo();
@@ -131,7 +133,7 @@ public class Launcher extends WindowProperties {
         });
         hilfeMenue.add(infoEintrag);
 
-        JMenuItem Spielhilfe = new JMenuItem(getWords(6));
+        JMenuItem Spielhilfe = new JMenuItem("Tutorial");
         Spielhilfe.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 zeigeHilfe();
@@ -197,15 +199,22 @@ public class Launcher extends WindowProperties {
         backButton = new JButton(getWords(9));
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                toLauncher(e);
+                try {
+                    toLauncher(e);
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         cutsceneCard.add(backButton, BorderLayout.SOUTH);
 
+        
+        tutorialPanel = new gui.TutorialPanel();
         // Alle Karten werden zusammengefasst in einer art Kartenstapel
         cards = new JPanel(new CardLayout());
         cards.add(launcherCard, "L card");  //Die Karten bekommen einen Namen
         cards.add(cutsceneCard, "Cs card1");// den Braucht man später zum aufrufen
+        cards.add(tutorialPanel, "Tut card");
 
         //Pane wird der Methode übergeben (oben in den Klammern)
         // in unserem Fall werden die Karten zum ContentPane des Launchers
@@ -245,8 +254,9 @@ public class Launcher extends WindowProperties {
      }
 
      }*/
-    private void toLauncher(ActionEvent e) {
-        if (e.getSource() == backButton) { 
+    private void toLauncher(ActionEvent e) throws LineUnavailableException {
+        if (e.getSource() == backButton) {
+            resetClip(clipLaun);
             System.out.println("Zurück zum Launcher");
             cl.show(cards, "L card");
         }
@@ -257,8 +267,9 @@ public class Launcher extends WindowProperties {
      */
 
     private void zeigeInfo() {
-        JOptionPane.showMessageDialog(launcher, getWords(12),
-                getWords(13),
+        JOptionPane.showMessageDialog(launcher, "Eine 'Positive Energy Theorem Interactive' Produktion.\n"
+                + "Version 1.0",
+                "Informationen",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -267,6 +278,9 @@ public class Launcher extends WindowProperties {
      Spiel zeigt
      */
     private void zeigeHilfe() {
+        
+        cl.show(cards, "Tut card");
+        
         JOptionPane.showMessageDialog(launcher, getWords(10),
                 getWords(11),
                 JOptionPane.INFORMATION_MESSAGE);
@@ -285,13 +299,21 @@ public class Launcher extends WindowProperties {
         launcher.dispose();
         Launcher l = new Launcher();
         //l.Launcher();
-
     }
-
+    
+    public void launcherReset() throws LineUnavailableException{
+            launcher.setVisible(false);
+    stopBgMusic();
+        System.out.println("Launcher wird unsichtbar und anschließend zerstört"
+                + "(dispose). Neuer Launcher wird gestartet.");
+        launcher.dispose();
+        Launcher l = new Launcher();
+    }
     /*
      Beendet das Programm
      */
     private void beenden() {
         System.exit(0);
     }
+
 }
