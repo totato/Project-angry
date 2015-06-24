@@ -11,7 +11,7 @@ Du fällst hin und nimmst einen Streber mit.
 -START2-
 Selbstkontrolle
 Wenn du schlägst und stehenbleibst kannst du nochmal schlagen!
-10000
+2
 0
 12
 0.2

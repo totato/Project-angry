@@ -1,14 +1,12 @@
 package gui;
 
 import game.Game;
-import static gui.WindowProperties.language;
 import java.awt.CardLayout;
 import java.awt.Container;
 import java.io.IOException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 /**
@@ -74,7 +72,7 @@ public class MainGUI extends WindowProperties {
         gamescreen.setDefaultCloseOperation(3);
         gamescreen.setLocationRelativeTo(null);
 
-        setIconPicture(gamescreen, "ScreenLaun/GameIcon.png");    
+        setIconPicture(gamescreen, "exLauncher/GameIcon.png");    
         gamescreen.setTitle("This game will make you angry.");
         gamescreen.pack();
         gamescreen.setVisible(true);

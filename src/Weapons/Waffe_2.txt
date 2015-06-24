@@ -134,11 +134,11 @@ HODOR HODOR HODOR
 2
 0.5
 HODOR
-HODOR
+HODOR HODOR
 -END13-
 -START14-
-Senpai noticed me
-Du rennst Senpai noticed me auf die Streber los, welche sich darauf hin aus Instinkt wegrennen und nicht mehr wieder kommen.
+Senpai noticed me!
+Du rennst "Senpai noticed me" auf die Streber los, welche daraufhin in Panik vor dir wegrennen
 340
 2000
 1900
@@ -148,47 +148,58 @@ Senpai pls
 -END14-
 -START15-
 THIS IS SPARTA
-Du schubst deine gegner gerne in Löcher.
+Du schubst deine Gegner gerne in Löcher.
 380
 2000
 2000
 0.5
+THIS
+IS
+SPARTA
 -END15-
 -START16-
-Miau
-Deine gegner halten dich für eine Katze und bringen es nicht übers Herz dich zu verletzen.
+Untertauchen
+Deine Gegner halten dich für eine Katze und bringen es nicht übers Herz dich zu verletzen.
 400
 2000
 2700
 0.5
 Schnurr
 Miau
+Maunz?
 -END16-
 -START17-
-Vodka Vodka 
-Du schreist das mit schlechtem russischen Akzent auf deine Gegner, diese bekommen angst das du sie ebenfalls Annektierst.
+Russisches Gegröle
+Du schreist mit schlechtem russischen Akzent herum. Deine Gegner bekommen Angst, dass du sie ebenfalls annektierst.
 95
 2000
 3600
 0.5
-Vodka
-Voodka
+Vodka!
+Babushka!
+Dmitri!
 -END17-
 -START18-
-Schrei18
-
+Stabwand
+Du siehst einen feurigen Streber. Er darf hier nicht vorbeikommen!
 420
 2000
 5500
 0.5
+Du
+kommst hier nicht
+vorbei
 -END18-
 -START19-
-Schrei19
-
+Assimilation
+Ein Führer der Streber bekommt einen Tobsuchtanfall. Du ahmst in nach, und alle Streber bis auf drei verlassen den Raum.
 450
 2000
 7000
 0.5
+NEINNEINNEINNEINNEIN!
+BIN BETROGEN WORDEN!
+ALLES VERRÄTER!
 -END19-
 -START20-
 FUS RO DAH!
@@ -197,6 +208,7 @@ Du bist ein Dovahkiin.
 2000
 10000
 0.5
-Alle Streber im umkreis eines Kilometers fliegen weg.
+Alle vor dir stehenden Streber scheinen von einem Hurrikan erfasst worden zu sein.
+Vor dir baut sich eine Schneise der Verwüstung auf.
 Beschreibung
 -END20-

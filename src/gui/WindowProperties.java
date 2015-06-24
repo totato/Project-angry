@@ -16,15 +16,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
-import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
 /**
@@ -62,15 +59,13 @@ public abstract class WindowProperties {
             System.out.println("*Musik-Skill geladen*");
             clipSkill.open(audio);
 
-            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/moritz.wav")); //TODO: Richtige Datei einsetzen
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/Desertroad.wav")); //TODO: Richtige Datei einsetzen
             System.out.println("*Musik-Shop geladen*");
             clipShop.open(audio);
 
-            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/moritz.wav")); //TODO: Richtige Datei einsetzen
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/dont_look_back.wav")); //TODO: Richtige Datei einsetzen
             System.out.println("*Musik-Spiel geladen*");
             clipGame.open(audio);
-            //    clipLaun.start();
-            //    clip.loop(50);
         } catch (UnsupportedAudioFileException uae) {
             System.out.println(uae);
         } catch (IOException ioe) {

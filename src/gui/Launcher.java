@@ -1,8 +1,6 @@
 package gui;
 
 import game.Game;
-import static gui.WindowProperties.language;
-import static gui.WindowProperties.stopBgMusic;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -49,7 +47,7 @@ public class Launcher extends WindowProperties {
         launcher.setDefaultCloseOperation(3);
         launcher.setLocationRelativeTo(null);
 
-        setIconPicture(launcher, "ScreenLaun/GameIcon.png");
+        setIconPicture(launcher, "exLauncher/GameIcon.png");
         loadMusic();
         backgroundMusic(clipLaun);
 

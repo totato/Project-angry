@@ -19,7 +19,6 @@ Ein Streber geht langsam zurück.
 Dein Gegner wird Rot.
 -END2-
 -START3-
-Blick3
 Starrkampf
 Anstatt vielsagend zu blinzeln beginnst du, die Streber anzustarren.
 15

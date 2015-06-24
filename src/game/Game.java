@@ -114,8 +114,8 @@ public class Game implements Runnable {
                 data.setLebendeStreber(Integer.parseInt(zeilen.get(startPos + 1)));
             }
             respawnRate = Integer.parseInt(zeilen.get(startPos + 2));
-           // scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
-            MainGUI.getAktMainGUI().getGamePanel1().getjLabelBackgroundGame().setIcon(new javax.swing.ImageIcon(getClass().getResource("/"+zeilen.get(startPos + 3))));
+            // scr.setBG(WindowProperties.ladeBild(zeilen.get(startPos + 3)));
+            MainGUI.getAktMainGUI().getGamePanel1().getjLabelBackgroundGame().setIcon(new javax.swing.ImageIcon(getClass().getResource("/" + zeilen.get(startPos + 3))));
 
             temp = zeilen.get(startPos + 4);
 
@@ -126,7 +126,7 @@ public class Game implements Runnable {
             }
 
             randomizeStreber();
-            
+
             return true;
         }
 
@@ -136,14 +136,15 @@ public class Game implements Runnable {
 
     public void saveData(String dateiname) throws IOException, URISyntaxException {
 
-        String pfad = System.getenv("HOMEPATH") + "\\" + dateiname;
+        String pfad = "C:\\" + System.getenv("HOMEPATH") + "\\"+ dateiname;
+        
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(pfad));
         oos.writeObject(data);
         oos.close();
     }
 
     public boolean loadData(String dateiname) throws IOException, ClassNotFoundException {
-        String pfad = System.getenv("HOMEPATH") + "\\" + dateiname;
+        String pfad = "C:\\" +System.getenv("HOMEPATH") + "\\" + dateiname;
         File f = new File(pfad);
         if (f.exists()) {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pfad));
@@ -186,7 +187,7 @@ public class Game implements Runnable {
     }
 
     public int getGrenadeCost() {
-        return waffen[6].getDamage() * 50;
+        return waffen[6].getDamage() * 10;
     }
 
     public String upgradeWeapon(int waffennummer) throws IOException {
@@ -276,8 +277,8 @@ public class Game implements Runnable {
             if (Math.random() + waffen[nummer].getSpruchWk() >= 1.0 && !(waffen[nummer].getSpruch().isEmpty())) {
                 GamePanel.getjTextAreaGame().append(waffen[nummer].getSpruch().get(new Random().nextInt(waffen[nummer].getSpruch().size())) + "\n");
             }
-            if(Math.random()  >= 0.7 && getAktGame().data.getAktWaffe() != -1 ){
-            randomizeStreber();
+            if (Math.random() >= 0.7 && getAktGame().data.getAktWaffe() != -1) {
+                randomizeStreber();
             }
         }
     }
