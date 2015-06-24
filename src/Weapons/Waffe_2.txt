@@ -69,7 +69,7 @@ Freiheit und so. Ausserdem: Hitler.
 600
 0.5
 FREEEEDOOOOOM!
-Die Streber ersticken anihren eigenen Lachern.
+Die Streber ersticken an ihren eigenen Lachern.
 Ein paar der Streber nicken, die anderen kümmern sich um diese Partisanen.
 -END7-
 -START8-
@@ -79,7 +79,7 @@ Pwnd U FTW!
 2000
 750
 0.5
-Die Streber schauen sich aneinenader verwirrt an.
+Die Streber schauen sich aneinander verwirrt an.
 Ein Streber möchte nicht auf einem Planeten mit dir wohnen und begeht Suizid.
 OMG YUNO 360NOSCOPE?!
 I H8 U LMAO LOL XD
@@ -96,7 +96,7 @@ Quince peso? Con quince peso me hago alto giso!
 -END9-
 -START10-
 Gewollte Anmachsprüche
-Nichts ist peinlicher
+Nichts ist peinlicher.
 220
 2000
 1100
@@ -138,7 +138,7 @@ HODOR HODOR
 -END13-
 -START14-
 Senpai noticed me!
-Du rennst "Senpai noticed me" auf die Streber los, welche daraufhin in Panik vor dir wegrennen
+Du rennst "Senpai noticed me" auf die Streber los, welche daraufhin in Panik vor dir wegrennen.
 340
 2000
 1900
@@ -210,5 +210,4 @@ Du bist ein Dovahkiin.
 0.5
 Alle vor dir stehenden Streber scheinen von einem Hurrikan erfasst worden zu sein.
 Vor dir baut sich eine Schneise der Verwüstung auf.
-Beschreibung
 -END20-
