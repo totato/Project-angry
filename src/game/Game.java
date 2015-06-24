@@ -127,7 +127,7 @@ public class Game implements Runnable {
             }
 
             randomizeStreber();
-
+            
             return true;
         }
 

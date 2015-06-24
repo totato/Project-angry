@@ -1,160 +1,200 @@
 -START1-
 Großer Stein
-
-1
+Ein Stein, der fast so aussieht wie eine Granate. Vielleicht fallen die Streber drauf rein?
+20
 0
-2
+20
 1
+Ein paar Streber hechten in Deckung und schlagen sich dabei den Kopf auf.
+Niemand lacht über deinen schlechten Scherz.
 -END1-
 -START2-
 Kartoffelstampfer
-
-10
+Von den Deutschen seit jahrhunderten dazu benutzt, um ihre Übermächtigkeit zu demonstrieren. Jetzt auch dein Werkzeug.
+30
 0
-2
+50
 1
+Du schleuderst die Granate am Stock und sie fliegt viel weiter als erwartet!
+Du schleuderst die Granate am Stock! Sie fällt vor dir ins Gras.
 -END2-
 -START3-
 Windeln
-
-15
+Manche meinen sowas sei ein Kriegsverbrechen. Manche haben hier nichts zu melden.
+50
 0
-2
+100
 1
+Ein Streber warnt: "Achtung, Gas!"
+Grüner Nebel breitet sich über das Schlachtfeld aus.
 -END3-
 -START4-
 Babyfotos
-
-30
+Nacktbabyfotos von dir. Warum hast du die aufbewahrt?
+80
 0
-2
+222
 1
+Die Streber flüchten: Keiner möchte als Pedophil gesehen werden.
+Eine Böe treibt die Bilder weiter, als du wolltest!
 -END4-
 -START5-
 M61 Splitterhandgranate
-
-35
+Gute, amerikanische QUalität. Das beste auf dem Markt? Nein. Macht aber schön bumm.
+100
 0
-2
+286
 1
+Bumm!
+Fire in the Hole!
 -END5-
 -START6-
 Atomgranate
-
-40
+Handgranate mit einem A-Sprengsatz als Sprengmittel. Wirf sie ja weit genug!
+200
 0
-2
+348
 1
+Ein Japanisch aussehender Streber flüchtet vor dir!
+Halakili!
 -END6-
 -START7-
 Pokeball
-
-45
+Wie ein Staubsauger, nur stylischer. Und für Streber.
+220
 0
-2
+400
 1
+Ein paar Streber verschwinden im Ball!
+Eine Prügelei um den Ball beginnt!
 -END7-
 -START8-
-M830/M830A1 
-
-50
+M830/M830A1
+Abraham hätte das nicht gewollt.
+250
 0
-2
+401
 1
+Kontakt, 12 Uhr, Panzer, Lasern, Feuern!
+HEAT laden!
 -END8-
 -START9-
 Protonengranate
-
-55
+Wie die Atomgranate, nur mehr Bums. Viel mehr Bums.
+400
 0
-2
+402
 1
+Du hörst ein leises Zischen, gefolgt von einem Ohrenbetäubenden Knall!
+Ein Blauer Lichtblitz blendet alle im Umfeld.
 -END9-
 -START10-
 improvisierter Zielpunkt: Pzhbz. 2000
-
-60
+Mit vorberechneten Zielkoordinaten schießt es sich viel besser
+600
 0
 2
-1
+1000
+"Feueranforderung empfangen, Ende."
+Du siehst mehrere gleichzeitige Explosionen auf dem Zielpunkt.
 -END10-
 -START11-
 Improvisierter chemischer Kampfstoff
-
-65
+Dein Chemie-GK auf dem, WGG, wo du von einem exzellenten Lehrer belehrt worden bist, zahlt sich endlich aus!
+750
 0
-2
+2000
 1
+Erst das Wasser, dann die Säure...
+Was macht denn der Chaoschemiker hier? Falscher Kurs!
 -END11-
 -START12-
 Nuklearschlag
-
-70
+Du hast ein paar Nukleare Startcdes gekauft. Alles was du noch tun musst ist die Startcodes durchgeben.
+778
 0
-2
+3000
 1
+DEFCON1! DEFCON1!
+Du siehst die Rakete kurz vor ihrem einschlag.
 -END12-
 -START13-
 Orbitalschlag
-
-75
+Die Atomraketen haben die Sateliten im Orbit gestört. Funk sie an, und sie sind deine!
+799
 0
-2
+4000
 1
+Kein Kriegsverbrechen ohne Zeugen!
+Mehrere Raketen fliegen senkrecht auf die Erde zu.
 -END13-
 -START14-
 Umgeleiteter Meteor
-
-80
+Das Weltall ist groß, wie soll der ihne diene Hilfe was treffe?
+800
 0
-2
+5000
 1
+Irgendwo weint ein Dinosaurierbaby.
+Der Himmerl verdunkelt sich ein bisschen.
 -END14-
 -START15-
 Poopoo-Bag
-
-85
+Leg ihn vor eine Haustür und zünd ihn an!
+1000
 0
-2
+6000
 1
+Der Geruch vertreibt Dutzende Streber!
+Es stinkt zum Himmel.
 -END15-
 -START16-
 Interplanetares Bombardemant
-
-90
+Von Mars in den Orbit, in eine Sonnenumlaufbahn, in deinen Orbit, vor die Tür geliefert. Hochexperimentelle Raketen.
+1500
 0
-2
+7000
 1
+Dutzende Raketen schlagen auf!
+Die Explosionen überschallen sich!
 -END16-
 -START17-
 KmfPz/MBT TRP “Saharet”
-
-95
+Wer weiß wo er zielen muss hat den Kampf halb gewonnen.
+1800
 0
-2
+8000
 1
+Die Drohne zerstört alles, was du ihr aufzeigst.
+Die Drohne fliegt zu den Strebern und jagd sich selbst in die Luft.
 -END17-
 -START18-
 Umgeleiteter Planet
-
-100
+Interplanetares Bombardement? Langweilig. Planetares Bombardemant!
+2000
 0
-2
+8500
 1
+Du spürst kurz vor dem Einschlag die Schwerelosigkeit.
+Alles in sichtweite geht auf in einem großen Feuerball.
 -END18-
 -START19-
 Deine Mama
-
-105
+is SO fett...
+3000
 0
-2
+9000
 1
+Der Tag wird zur Nacht.
+Ist das... Elke?
 -END19-
 -START20-
 Nokia
-
-110
+Unzerstörbar, aber alles zerstörend!
+3800
 0
-2
+10000
 1
+Das Nokia geht glatt durch sein Ziel, unbeschädigt!
+Der Planet bekommt Risse als das Nokia aufschlägt!
 -END20-
