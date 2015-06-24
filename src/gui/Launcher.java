@@ -38,8 +38,7 @@ public class Launcher extends WindowProperties {
     //Habe das geändert und auch an anderen Stellen im Programm das angepasst, allerdings das alte immer nur auskommentiert
     public Launcher() throws LineUnavailableException {
         Launcher.setAktLauncher(this);
-        setLanguage(language);
-        launcher = new JFrame(getWords(1));
+        launcher = new JFrame("This game will make you Angry!");
         MenueLeiste();
 
         // Erzeugt die Karten für das Fenster
@@ -63,13 +62,6 @@ public class Launcher extends WindowProperties {
             JOptionPane.showMessageDialog(launcher, "Deine Speicherdatei hat keinen Namen!\n"
                     + "Du könntest nichts laden!", "Freundlicher Hinweis", 3);
         } else {
-            /*java.awt.EventQueue.invokeLater(new Runnable() {
-             MainGUI mainGUI;
-             public void run() {
-             mainGUI = new MainGUI();
-             }
-             });*/
-            //WindowProperties.stopBgMusic();
             launcher.setVisible(false);
             System.out.println("Launcher wird unsichtbar und anschließend zerstört"
                     + "(dispose)");
@@ -82,9 +74,6 @@ public class Launcher extends WindowProperties {
             game.loadGame();
             mainGUI.disableButtons();
         }
-        //Thread gameThread = new Thread(game);
-        //gameThread.start();
-        //MainGUI.getAktMainGUI().changeCard("story card");
     }
 
     /**
@@ -96,10 +85,10 @@ public class Launcher extends WindowProperties {
         launcher.setJMenuBar(menuezeile);
 
         // Das Datei-Menü erzeugen
-        JMenu spielstart = new JMenu(getWords(2));
+        JMenu spielstart = new JMenu("Weiter");
         menuezeile.add(spielstart);
 
-        JMenuItem spielOeffnen = new JMenuItem(getWords(3));
+        JMenuItem spielOeffnen = new JMenuItem("Get angry!");
         spielOeffnen.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("beginne Spiel");
@@ -117,7 +106,7 @@ public class Launcher extends WindowProperties {
 
         spielstart.add(spielOeffnen);
 
-        JMenuItem beendenEintrag = new JMenuItem(getWords(4));
+        JMenuItem beendenEintrag = new JMenuItem("Don't get angry!");
         beendenEintrag.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 beenden();
@@ -125,7 +114,7 @@ public class Launcher extends WindowProperties {
         });
         spielstart.add(beendenEintrag);
 
-        JMenu hilfeMenue = new JMenu(getWords(5));
+        JMenu hilfeMenue = new JMenu("Hilfe");
         menuezeile.add(hilfeMenue);
 
         JMenuItem infoEintrag = new JMenuItem("Informationen");
@@ -144,33 +133,6 @@ public class Launcher extends WindowProperties {
         });
         hilfeMenue.add(Spielhilfe);
 
-        JMenu sprachenMenu = new JMenu("Sprachen");//TODO: Sprache einfügen
-
-        menuezeile.add(sprachenMenu);
-
-        JMenuItem languageGer = new JMenuItem("Deutsch");//TODO: Sprache einfügen
-        languageGer.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    sprachReset("DE");
-                } catch (LineUnavailableException ex) {
-                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-        sprachenMenu.add(languageGer);
-
-        JMenuItem languageEng = new JMenuItem("Englisch");//TODO: Sprache einfügen
-        languageEng.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    sprachReset("EN");
-                } catch (LineUnavailableException ex) {
-                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-        sprachenMenu.add(languageEng);
 
     }
     /*
@@ -194,28 +156,12 @@ public class Launcher extends WindowProperties {
         launcherCard.add(savefilezeile, BorderLayout.SOUTH);
         setBackgrPicture(background, "ExLauncher/BackScreen.png");
 
-        //Das gleiche nun mit den Cutscenes
-        cutsceneCard = new JPanel();
-        cutsceneCard.setLayout(new BorderLayout());
-        bild = new JLabel();
-        cutsceneCard.add(bild, BorderLayout.NORTH);
-        backButton = new JButton(getWords(9));
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    toLauncher(e);
-                } catch (LineUnavailableException ex) {
-                    Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-        cutsceneCard.add(backButton, BorderLayout.SOUTH);
+        
 
         tutorialPanel = new gui.TutorialPanel();
         // Alle Karten werden zusammengefasst in einer art Kartenstapel
         cards = new JPanel(new CardLayout());
         cards.add(launcherCard, "L card");  //Die Karten bekommen einen Namen
-        cards.add(cutsceneCard, "Cs card1");// den Braucht man später zum aufrufen
         cards.add(tutorialPanel, "Tut card");
 
         //Pane wird der Methode übergeben (oben in den Klammern)
@@ -227,35 +173,6 @@ public class Launcher extends WindowProperties {
         cl = (CardLayout) (cards.getLayout());
     }
 
-    /**
-     * Findet heraus welcher Code im Feld "cutscenekey" eingegeben wurde und
-     * beginnt die passende Cutscene.
-     *
-     */
-    /*private void cutsceneZeigen() throws LineUnavailableException {
-     String pfad = "" + (getClass().getClassLoader());
-     if (cutscenekey.getText().equals("Cutscene1")) {
-     System.out.println("Spiele Cutscene 1 ab");
-     cl.show(cards, "Cs card1");//Erstes Bild der Cutscene
-     playCutscene(1, cutsceneCard, bild);
-     stopBgMusic();
-     backgroundMusic("titleSong.wav");
-
-     } else if (cutscenekey.getText().equals("Cutscene2")) {
-     System.out.println("Spiele Cutscene 2 ab");
-     cl.show(cards, "Cs card1");
-     playCutscene(2, cutsceneCard, bild);
-     } else if (cutscenekey.getText().equals("Cutscene3")) {
-     System.out.println("Spiele Cutscene 3 ab");
-     cl.show(cards, "Cs card1");
-     playCutscene(3, cutsceneCard, bild);
-     } else {
-     System.out.println("Spiele keine Cutscene ab.");
-     cutscenekey.setText("Kein Cutsceneschlüssel!");
-
-     }
-
-     }*/
     private void toLauncher(ActionEvent e) throws LineUnavailableException {
         if (e.getSource() == backButton) {
             resetClip(clipLaun);
@@ -266,7 +183,6 @@ public class Launcher extends WindowProperties {
 
     public void toMainLauncher() throws LineUnavailableException {
         cl.show(cards, "L card");
-        //launcherCard.setVisible(true);
 
     }
     /*
@@ -294,17 +210,6 @@ public class Launcher extends WindowProperties {
      Wählt die Sprache aus und startet dann den Launcher neu. Die mitgegebene 
      String ist der Name der Sprache.
      */
-    private void sprachReset(String sprache) throws LineUnavailableException {
-        language = sprache;
-        launcher.setVisible(false);
-        stopBgMusic();
-        System.out.println("Launcher wird unsichtbar und anschließend zerstört"
-                + "(dispose). Neuer Launcher wird gestartet.");
-        launcher.dispose();
-        Launcher l = new Launcher();
-        //l.Launcher();
-    }
-
 
     /*
      Beendet das Programm

@@ -99,7 +99,6 @@ public class Game implements Runnable {
     //Rückgabewert gibt Erfolg an
     public boolean loadLevel(int levelnr, boolean neu) throws IOException, Exception {
 
-        //System.out.println(getClass().getClassLoader().getResource("Levels/Level_" + Integer.toString(levelnr) + ".txt").toString().substring(6));
         List<String> zeilen = WindowProperties.ladeTXT("Levels/Levels.txt");
         int startPos = zeilen.indexOf("-START" + levelnr + "-");
         String temp;

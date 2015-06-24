@@ -63,29 +63,22 @@ public class MainGUI extends WindowProperties {
         MainGUI.setAktMainGUI(this);
 
         
-        setLanguage(language);
         System.out.println("Öffnet das Game Fenster");
-        gamescreen = new JFrame(getWords(18));
+        gamescreen = new JFrame();
         gamescreen.setMaximumSize(new java.awt.Dimension(655, 778));
         gamescreen.setMinimumSize(new java.awt.Dimension(655, 778));
         gamescreen.setPreferredSize(new java.awt.Dimension(655, 778));
-        //gamescreen.getContentPane().setLayout(new java.awt.CardLayout());
         createCards(gamescreen.getContentPane());
 
         gamescreen.setResizable(false);
         gamescreen.setDefaultCloseOperation(3);
         gamescreen.setLocationRelativeTo(null);
 
-        setIconPicture(gamescreen, "ScreenLaun/GameIcon.png");     //TODO: Muss gemacht 
+        setIconPicture(gamescreen, "ScreenLaun/GameIcon.png");    
         gamescreen.setTitle("This game will make you angry.");
-//und eingefügt werden
-        //backgroundMusic("rewind.wav");TODO: Muss gemacht und eingefügt werden
         gamescreen.pack();
         gamescreen.setVisible(true);
-        //levelPruefer();//TODO: An bessere position verlegen und 
-        //a. jeweils nach cutscenes
-        //b. nach beendigung eines levels
-        //feuern lassen.
+
         aktPanel = storyPanel1;
     }
 
@@ -115,8 +108,7 @@ public class MainGUI extends WindowProperties {
 
     private void backToLauncher() throws LineUnavailableException {
         Launcher l = new Launcher();
-        //l.Launcher();
-        //TODO: Musik vom Spiel beenden.
+
         gamescreen.setVisible(false);
 
         System.out.println("gamescreen wird unsichtbar und anschließend zerstört"
@@ -147,38 +139,9 @@ public class MainGUI extends WindowProperties {
         }
         aktPanel.switchTo();
 
-        //Cutscenes.playcutscene(1, pfad);
         clgame.show(getGamecards(), name);
-        /*buttonToMenu.setEnabled(false);
-         buttonToGame.setEnabled(false);
-         timer = new Timer(1900, new AbstractAction() {
-         public void actionPerformed(ActionEvent e) {
-         buttonToMenu.setEnabled(true);
-         buttonToGame.setEnabled(true);
-         }
-         });
-         timer.start();*/
+
         System.out.println("zu  " + name + "  gewechselt");
-    }
-// wird nicht mehr gebraucht :(
-
-    public void addTextToTextArea(JTextArea ta, int maxSigns, String text) {
-        //int maxSigns = 30; for gamePanel
-        int lastSpace = 0;
-        while (text.length() > maxSigns) {
-            System.out.println("Text Lenght" + text.length());
-
-            for (int i = 0; i < maxSigns; i++) {
-                if (text.charAt(i) == 32) {
-                    lastSpace = i;
-                }
-            }
-
-            ta.setText(GamePanel.getjTextAreaGame().getText() + "  " + text.substring(0, lastSpace) + "\n");
-
-            text = text.substring(lastSpace + 1);
-        }
-        ta.setText(GamePanel.getjTextAreaGame().getText() + "  " + text + "\n");
     }
 
     public JPanel getGamecards() {

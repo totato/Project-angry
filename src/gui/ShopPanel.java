@@ -543,8 +543,7 @@ public class ShopPanel extends Panel {
             }
 
         } else {
-            //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
-            MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+            jTextAreaShop.append("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
 
         Game.getAktGame().setShopInfo(-1, false);

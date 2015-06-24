@@ -42,7 +42,6 @@ public class StoryPanel extends Panel {
         List<String> zeilen = WindowProperties.ladeTXT("Story/Story_" + storynr + ".txt");
         int startPos = zeilen.indexOf("-START" + storypart + "-");
         if (startPos > -1) {
-            System.out.println((zeilen.get(startPos + 2)));
             ImageIcon icon = new ImageIcon(getClass().getResource((zeilen.get(startPos + 2))));
 
             return icon;
