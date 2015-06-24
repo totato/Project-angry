@@ -294,5 +294,4 @@ public class Launcher extends WindowProperties {
     private void beenden() {
         System.exit(0);
     }
-
 }

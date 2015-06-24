@@ -20,21 +20,24 @@ Dein Gegner wird Rot.
 -END2-
 -START3-
 Blick3
-Der Daumen gehört nicht in die Faust!
+Starrkampf
+Anstatt vielsagend zu blinzeln beginnst du, die Streber anzustarren.
 15
 0
 2
 0.5
-Streber fällt zu Boden.
-Getroffen!
+Die Augen deines Gegners werden Rot!
+Der Streber begeht lieber Suizid als zu verlieren!
 -END3-
 -START4-
-Blick4
-Fäuste? Pff. Handkantenschlag 4 EVA!
+Assimilation
+Du setzt eine feindliche Brille auf und starrst die Streber durch sie an. Die Linsen bündeln deine Blicke und sorgen für uangenehme Gefühle bei den Strebern!
 20
 0
 2
 0.5
+Der Streber zuckt zusammen, als hätte ihn etwas getroffen.
+Der Streber versucht herauszufinden, ob du einer von ihnen bist.
 -END4-
 -START5-
 Blick5

@@ -486,6 +486,7 @@ public class GamePanel extends Panel {
     public void switchTo() throws LineUnavailableException, Exception {
         super.switchTo();
         Game.getAktGame().resume();
+        
     }
 
     @Override
