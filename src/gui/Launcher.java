@@ -45,7 +45,7 @@ public class Launcher extends WindowProperties {
         launcher.setDefaultCloseOperation(3);
         launcher.setLocationRelativeTo(null);
 
-        setIconPicture(launcher, "ScreenLaun/20941.png");
+        setIconPicture(launcher, "ScreenLaun/20941.png");//TODO
         loadMusic();
         backgroundMusic(clipLaun);
 

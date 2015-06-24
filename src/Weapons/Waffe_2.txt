@@ -117,12 +117,14 @@ Können koptische Kleptomanen keine kommunistische Kuchen konsumieren?
 Ein Streber fällt vor dir auf seine Knie, und bettelt dich darum aufzuhören.
 -END11-
 -START12-
-Schrei12
-
+Ausversehen romantische Weisheiten
+Du versuchst weiterhin, dein Wissen zu verbreiten. Leider kommen deine Informationen nicht so durch, wie du es dir wünschst.
 70
 0
 2
 0.5
+Es ist weniger wenn ich reingehe als wenn ich rauskomme.
+Die Streber sind vollkommen verwirrt und weinen in Verzweiflung.
 -END12-
 -START13-
 Schrei13

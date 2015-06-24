@@ -40,28 +40,34 @@ Der Streber zuckt zusammen, als hätte ihn etwas getroffen.
 Der Streber versucht herauszufinden, ob du einer von ihnen bist.
 -END4-
 -START5-
-Blick5
-
+Externe Gestelle
+Ein erweitertes Gestell für deine Brille sorgt nicht nur für mehr Stabilität, sondern verstärkt auch den Strahl deiner Augen.
 35
 0
 2
 0.5
+Der Streber bleibt stehen, nicht begreifend was ihn anschaut.
+Der Streber schüttelt sich, als ob ihm ein Schauer über den Rücken läuft.
 -END5-
 -START6-
-Blick6
-
+Externe Batterie
+Ein neues Modell mit externer Batterie bündelt deine Blicke nicht nur passiv, sondern sucht aktiv nach dem verletzenstem Muster
 40
 0
 2
 0.5
+Der Streber versteht nicht, was passiert.
+Der Streber schreit in Verwirrung auf!
 -END6-
 -START7-
-Blick7
-
+Aktive Visualisierung
+Dieser neue Apparat bündelt nicht mehr deine Blickenergie, sondern die Energie der Sonne.
 45
 0
 2
 0.5
+Der Punkt den du anschaust scheint zu schmoren.
+Dein Gestell beginnt zu schmelzen.
 -END7-
 -START8-
 Blick8
