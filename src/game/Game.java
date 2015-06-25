@@ -136,7 +136,7 @@ public class Game implements Runnable {
 
     public void saveData(String dateiname) throws IOException, URISyntaxException {
 
-        String pfad = "C:\\" + System.getenv("HOMEPATH") + "\\"+ dateiname;
+        String pfad = "Z:\\" + System.getenv("HOMEPATH") + "\\"+ dateiname;
         
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(pfad));
         oos.writeObject(data);
@@ -144,7 +144,7 @@ public class Game implements Runnable {
     }
 
     public boolean loadData(String dateiname) throws IOException, ClassNotFoundException {
-        String pfad = "C:\\" +System.getenv("HOMEPATH") + "\\" + dateiname;
+        String pfad = "Z:\\" +System.getenv("HOMEPATH") + "\\" + dateiname;
         File f = new File(pfad);
         if (f.exists()) {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pfad));
