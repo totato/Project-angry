@@ -291,15 +291,9 @@ public abstract class WindowProperties {
             return dokument;
 
         } catch (FileNotFoundException ex) {
-            System.err.print("Textdatei nicht gefunden " + ex.getLocalizedMessage());
-            stdin = new BufferedReader(new FileReader("\\"+WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6)));
-            ArrayList<String> dokument = new ArrayList();
-            while (stdin.ready()) {
-                dokument.add(stdin.readLine());
-            }
-            return dokument;
+            System.err.print("Textdatei nicht gefunden");
         } catch (NullPointerException ex) {
-            System.err.print("Textdatei nicht gefunden ");
+            System.err.print("Textdatei nicht gefunden");
         }
         return null;
 
