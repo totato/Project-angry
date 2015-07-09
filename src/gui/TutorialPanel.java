@@ -158,7 +158,6 @@ public class TutorialPanel extends javax.swing.JPanel {
         List<String> zeilen = WindowProperties.ladeTXT("exLauncher/Tutorial.txt");
         int startPos = zeilen.indexOf("-START" + textDisp + "-");
         if (startPos > -1) {
-            System.out.println((zeilen.get(startPos + 2)));
             ImageIcon icon = new ImageIcon(getClass().getResource((zeilen.get(startPos + 2))));
             textDisp++;
             return icon;

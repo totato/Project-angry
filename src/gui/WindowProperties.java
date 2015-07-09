@@ -16,15 +16,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
-import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
 /**
@@ -62,15 +59,13 @@ public abstract class WindowProperties {
             System.out.println("*Musik-Skill geladen*");
             clipSkill.open(audio);
 
-            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/moritz.wav")); //TODO: Richtige Datei einsetzen
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/Desertroad.wav")); //TODO: Richtige Datei einsetzen
             System.out.println("*Musik-Shop geladen*");
             clipShop.open(audio);
 
-            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/moritz.wav")); //TODO: Richtige Datei einsetzen
+            audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/dont_look_back.wav")); //TODO: Richtige Datei einsetzen
             System.out.println("*Musik-Spiel geladen*");
             clipGame.open(audio);
-            //    clipLaun.start();
-            //    clip.loop(50);
         } catch (UnsupportedAudioFileException uae) {
             System.out.println(uae);
         } catch (IOException ioe) {
@@ -155,90 +150,8 @@ public abstract class WindowProperties {
         System.out.println("Icon gesetzt");
     }
 
-    /*
-     Fügt einem JButton ein Hintergrundbild zu. Der Dateiname und der Ordner
-     in dem die Datei gespeichert wurde werden zusammen mitgegeben.
-     */
-    /*public void setButtonBackground(JButton button, String pfad) {
-     ImageIcon background = getImageIcon(pfad);
-     button.setContentAreaFilled(true);
-     button.setIcon(background);
-     System.out.println("Button hat Hintergrund");
-     }*/
-
-    /*
-     Klärt, aus welchem Dokument die getWords Methode Zeilen entnimmt.
-     Wird ganz am Anfang, vor öffnen des Launchers, aufgerufen.
-     */
-    // wird nicht verwendet
-    public void setLanguage(String lg) {
-        words = new String[50]; // TODO: die Zahl ist zu Ändern 
-        try {
-            BufferedReader reader = new BufferedReader(
-                    new FileReader("language_" + lg + ".txt"));
-            int i = 0;
-            String zeile = "";
-            while ((zeile = reader.readLine()) != null && i < words.length) {
-                String[] values = zeile.split("\\;");
-                words[i] = values[0];
-                i++;
-            }
-        } catch (IOException ioex) {
-            System.err.println("Datei nicht Gefunden");
-        }
-    }
-    /*
-     Sucht die String aus der angegebenen Zeile heraus und gibt sie zurück.
-     */
-// wird nicht verwendet
-    public String getWords(int line) {
-       return words[line];
-    }
-
-    public void ladeSpiel() {
-        try {
-            FileReader fr = new FileReader("Save.txt");
-            BufferedReader textReader = new BufferedReader(fr);
-            saveData = new String[10];
-            int i;
-            for (i = 0; i < 5; i++) {
-                saveData[i] = textReader.readLine();
-            }
-            textReader.close();
-        } catch (IOException ioex) {
-            System.err.println("Datei nicht Gefunden");
-        }
-
-    }
-
-    public String getSave(int line) {
-        return saveData[line];
-    }
-
-    /*Schreibt alles mitgegebene in eine .txt-datei, die man im projektordner 
-     findet. TODO: Der Pfad muss angepasst werden, so dass die Datei 
-     mitkompiliert.
     
-     TODO: Das muss schöner gehen. e.v. getter/setter oder was ähnliches?
-    
-     TODO: Fähigkeiten und Waffen hinzufügen
-     */
-    public void speichereSpiel(int levelnr, int brillen, int lebStre,
-            int totStre) {
-        try {
-            FileWriter saveFinder = new FileWriter("Save.txt");
-            PrintWriter saveWriter = new PrintWriter(saveFinder);
-            saveWriter.println("This is your save file. Stop cheating, "
-                    + "start playing!");
-            saveWriter.println(levelnr);//Levelnummer
-            saveWriter.println(brillen);
-            saveWriter.println(lebStre);
-            saveWriter.println(totStre);
-            saveWriter.close();
-        } catch (IOException ioex) {
-            System.err.println("Datei nicht Gefunden");
-        }
-    }
+  
 
     public static void setShortKeys(JLabel label, JButton button, final String card, int sign) {
         if (button == null) {

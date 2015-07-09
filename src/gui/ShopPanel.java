@@ -463,6 +463,7 @@ public class ShopPanel extends Panel {
     private void bToLauncherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bToLauncherActionPerformed
         try {
             //speichereSpiel(beendeteLevel, brillen, lebendeStreber, getoeteteStreber);
+            WindowProperties.stopBgMusic();
             Launcher l = new Launcher();
         } catch (LineUnavailableException ex) {
             Logger.getLogger(ShopPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -532,7 +533,7 @@ public class ShopPanel extends Panel {
         if (Game.getAktGame().upgradeSelected()) {
 
             if (Game.getAktGame().getSelectedWeapon() == Integer.MAX_VALUE) {
-                jTextAreaShop.setText(Game.getAktGame().buyGrenade(1));
+                jTextAreaShop.setText(Game.getAktGame().buyGrenade(10));
             } else {
 
                 try {
@@ -543,8 +544,7 @@ public class ShopPanel extends Panel {
             }
 
         } else {
-            //jTextAreaShop.setText("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
-            MainGUI.getAktMainGUI().addTextToTextArea(jTextAreaShop, 50, "Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
+            jTextAreaShop.append("Hinweis: Zum Upgraden die entsprechende Waffe auf der linken Seite auswählen");
         }
 
         Game.getAktGame().setShopInfo(-1, false);
@@ -664,7 +664,7 @@ public class ShopPanel extends Panel {
                 jTextAreaShop.setText("Die Götter scheinen dich nicht erhört zu haben...");
             }
         }
-        if(jTextField1.getText().equals("Plume")){
+        if (jTextField1.getText().equals("Plume")) {
             Game.getAktGame().loadLevel(211, true);
         }
 
@@ -674,8 +674,8 @@ public class ShopPanel extends Panel {
 
     private void setButtonColor() {
         int brillen = Game.getAktGame().getData().getBrillen();
-         Color schöneresBlau = Color.decode("0xaed9dd");
-         
+        Color schöneresBlau = Color.decode("0xaed9dd");
+
         if (brillen >= Game.getAktGame().getWaffe(1, true).getKosten()) {
             tbShopB0.setBackground(schöneresBlau);
         } else {
@@ -740,7 +740,7 @@ public class ShopPanel extends Panel {
         tbShopB3.setEnabled(!Game.getAktGame().getWaffe(4, true).getName().equals("MAX"));
         tbShopB4.setEnabled(!Game.getAktGame().getWaffe(5, true).getName().equals("MAX"));
         tbShopC1.setEnabled(!Game.getAktGame().getWaffe(6, true).getName().equals("MAX"));
-        
+
         tbShopC2.setEnabled(Game.getAktGame().getData().getWaffenStufe(6) > 0);
 
         tbShopGroup.clearSelection();

@@ -1,6 +1,6 @@
 -START1-
 Schlag
-Du realisierst, das du deine Hände zum Schlagen nutzen kannst!
+Du realisierst, dass du deine Hände zum schlagen nutzen kannst!
 1
 0
 0
@@ -11,7 +11,7 @@ Du fällst hin und nimmst einen Streber mit.
 -START2-
 Selbstkontrolle
 Wenn du schlägst und stehenbleibst kannst du nochmal schlagen!
-10000
+2
 0
 12
 0.2
@@ -86,11 +86,11 @@ Du lernst, dorthin zu schlagen wo's richtig wehtut...
 750
 0.2
 Dir tut schon das zusehen weh.
-Der Streber jault auf und wälzt sich in schmerzen auf dem Boden.
+Der Streber jault auf und wälzt sich in Schmerzen auf dem Boden.
 -END9-
 -START10-
 Interne Verbesserung MK. I
-lange Fingernägel könnten den Strebern vielleicht mehr wehtun als kurze?
+Lange Fingernägel könnten den Strebern vielleicht mehr wehtun als kurze?
 36
 0
 900
@@ -110,7 +110,7 @@ Er leidet, du spürst keinen Schmerz.
 -END11-
 -START12-
 Psychologische Abhärtung
-Du zielst nichtmehr in die MAgengrube, wo es wirklcih wehtut, sondern gehst tiefer, wo es wirklich wirklich wehtut.
+Du zielst nichtmehr in die Magengrube, wo es wirklich wehtut, sondern gehst tiefer, wo es wirklich wirklich wehtut.
 50
 0
 1500
@@ -120,7 +120,7 @@ Du fühlst dich wie ein Sadist. Zu recht.
 -END12-
 -START13-
 Externe Verbesserung MK. I
-Anstatt auf Natürliche Hornhaut zu setzen setzt du auf Technik und hast dir externe Implantate besorgt.
+Anstatt auf natürliche Hornhaut zu setzen setzt du auf Technik und hast dir externe Implantate besorgt.
 60
 0
 1700
@@ -190,7 +190,7 @@ Ein Körperteil weniger zum drum kümmern...
 -END19-
 -START20-
 Externe Verbesserungen MK. VI
-Du installierst neue Triebwerke und fliegst, Handkante vorraus, durch die Streber.
+Du installierst neue Triebwerke und fliegst, Handkante voraus, durch die Streber.
 111
 0
 10000

@@ -1,7 +1,5 @@
 package game;
 
-import static game.Data.ANZAHL_SKILLS;
-import static game.Game.getAktGame;
 import gui.WindowProperties;
 import java.io.IOException;
 import java.util.ArrayList;
