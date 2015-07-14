@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -46,11 +47,11 @@ public abstract class WindowProperties {
      Dateianhang, in die Methode mit eingegeben.   
      */
     public static void loadMusic() throws LineUnavailableException {
-        clipLaun = AudioSystem.getClip();
-        clipGame = AudioSystem.getClip();
-        clipSkill = AudioSystem.getClip();
-        clipShop = AudioSystem.getClip();
         try {
+            clipLaun = AudioSystem.getClip();
+            clipGame = AudioSystem.getClip();
+            clipSkill = AudioSystem.getClip();
+            clipShop = AudioSystem.getClip();
             AudioInputStream audio = AudioSystem.getAudioInputStream(WindowProperties.class.getClassLoader().getResource("exSound/titleSong.wav"));
             System.out.println("*Musik-Laun geladen*");
             clipLaun.open(audio);
@@ -74,15 +75,21 @@ public abstract class WindowProperties {
             System.out.println(lua);
         } catch (IllegalArgumentException iae) {
             System.out.println(iae);
+        } catch (NullPointerException npe) {
+            System.out.println(npe);
         }
         System.out.println("Alle Musikdateien geladen.");
     }
 
     public static void backgroundMusic(Clip clipActual) throws LineUnavailableException {
+        try{
         clip = clipActual;
         System.out.println("*Musik spielt*");
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch(NullPointerException npe){
+            System.out.println(npe);
+        }
     }
 
     /*
@@ -95,16 +102,16 @@ public abstract class WindowProperties {
             System.out.println(npe);
         }
     }
-    
+
     public static void resetClip(Clip clipRes) throws LineUnavailableException {
-    try {
-        
-    clip.setMicrosecondPosition(0);
-    clipRes.setMicrosecondPosition(0);
-    } catch(NullPointerException npe) {
+        try {
+
+            clip.setMicrosecondPosition(0);
+            clipRes.setMicrosecondPosition(0);
+        } catch (NullPointerException npe) {
             System.out.println(npe);
         }
-}
+    }
 
     public static List<BufferedImage> ladeBildliste(String pfad) throws IOException {
         List<String> bilderTXT = WindowProperties.ladeTXT(pfad);
@@ -149,9 +156,6 @@ public abstract class WindowProperties {
         frame.setIconImage(icon.getImage());
         System.out.println("Icon gesetzt");
     }
-
-    
-  
 
     public static void setShortKeys(JLabel label, JButton button, final String card, int sign) {
         if (button == null) {
@@ -204,8 +208,8 @@ public abstract class WindowProperties {
             return dokument;
 
         } catch (FileNotFoundException ex) {
-            System.err.print("Textdatei nicht gefunden "+ ex.getLocalizedMessage());
-            stdin = new BufferedReader(new FileReader("\\"+WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6)));
+            System.err.print("Textdatei nicht gefunden " + ex.getLocalizedMessage());
+            stdin = new BufferedReader(new FileReader("\\" + WindowProperties.class.getClassLoader().getResource(quelle).toString().substring(6)));
             ArrayList<String> dokument = new ArrayList();
             while (stdin.ready()) {
                 dokument.add(stdin.readLine());
